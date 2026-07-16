@@ -1,0 +1,23 @@
+{
+  "scientific method": {
+    "requires": ["observation", "hypothesis"],
+    "builds_into": ["experimentation", "theory formulation"],
+    "related_concepts": ["data collection", "analysis"],
+    "future_chapters": ["Advanced Experiments", "Data Science Basics"],
+    "cross_chapter_links": ["Math: Statistics"]
+  },
+  "observation": {
+    "requires": ["five senses", "attention to detail"],
+    "builds_into": ["scientific method", "hypothesis"],
+    "related_concepts": ["measurement", "recording"],
+    "future_chapters": ["Biology: Field Studies"],
+    "cross_chapter_links": []
+  },
+  "hypothesis": {
+    "requires": ["observation", "critical thinking"],
+    "builds_into": ["scientific method", "experimentation"],
+    "related_concepts": ["prediction", "educated guess"],
+    "future_chapters": ["Chemistry: Chemical Reactions"],
+    "cross_chapter_links": ["Language Arts: Predicting Outcomes"]
+  }
+}

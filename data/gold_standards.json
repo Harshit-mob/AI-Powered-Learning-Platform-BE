@@ -1,0 +1,16 @@
+[
+  {
+    "question": "Riya notices that her plant is wilting and wonders if it needs more sunlight. What step of the scientific method is she performing?",
+    "expected_answer": "Observation",
+    "bloom_level": "APPLY",
+    "cognitive_level": "REASONING",
+    "difficulty": 3
+  },
+  {
+    "question": "What is the primary purpose of a control group in a scientific experiment?",
+    "expected_answer": "To provide a baseline for comparison",
+    "bloom_level": "UNDERSTAND",
+    "cognitive_level": "CONCEPTUAL",
+    "difficulty": 2
+  }
+]

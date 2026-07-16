@@ -1,0 +1,949 @@
+[
+  {
+    "id": "9a6eb459-6c8f-4970-a229-ca2830f8dd74",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "TRUE_FALSE",
+    "concept": "Disproving hypothesis",
+    "text": "True or False: The coal hypothesis correctly explained the Sun's heat.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "BOOLEAN",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "No",
+      "disprove",
+      "hypothesis",
+      "False",
+      "false"
+    ],
+    "difficulty": 1,
+    "estimated_time": 17,
+    "hint_level_1": "If the Sun were coal, it would have run out a long time ago.",
+    "hint_level_2": "The math showed the Sun would burn out in only 5,000 years.",
+    "full_explanation": "The hypothesis was supported by evidence false because the Sun would have burned out in 5,000 years if it were made of coal. Since the Sun has lasted much longer, this theory was incorrect.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect"
+    ],
+    "question_hash": "456b172ab42efd84d73b0f8000c847153e0543870acea3535dce1149d3d98be2",
+    "bloom_level": "UNDERSTAND",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 96,
+    "speaking_time": 5.88,
+    "thinking_time": 10.14,
+    "cluster_id": "disproving_hypothesis_understand_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.111,
+    "metadata_score": 75,
+    "normalized_concept": "disproving_hypothesis",
+    "cluster_name": "Disproving Hypothesis - True False",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.790092+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "8575404e-e9f0-4dcd-82f3-3bec4e928de3",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "FILL_BLANK",
+    "concept": "Hypothesis on Sun's heat",
+    "text": "Fill in the blank: The Sun's heat was originally assumed to come from ______.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "sun",
+      "coal"
+    ],
+    "difficulty": 1,
+    "estimated_time": 16,
+    "hint_level_1": "It is a dark rock used for heating.",
+    "hint_level_2": "The hypothesis stated it was a large amount of ______.",
+    "full_explanation": "Some people hypothesized that the Sun was made of coal and that it was burning to produce light and heat.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Coal",
+    "acceptable_answers": [
+      "Burning Coal"
+    ],
+    "question_hash": "7095f6bd6055be1257423a0f9e48e9b9b2fde80c2d1aa012cdb72e7d340ee583",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 7.26,
+    "thinking_time": 8.05,
+    "cluster_id": "hypothesis_on_suns_heat_remember_fill_blank",
+    "session_tags": [
+      "easy",
+      "fill_blank",
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 72,
+    "coverage_weight": 0.111,
+    "metadata_score": 95,
+    "normalized_concept": "hypothesis_on_suns_heat",
+    "cluster_name": "Hypothesis On Sun'S Heat - Fill Blank",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.792830+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "9f686aa2-ba6a-45cb-a880-e41ceb50293f",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "UNDERSTANDING",
+    "concept": "Scientific reasoning",
+    "text": "What did scientists use to disprove the coal hypothesis?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "logical reasoning",
+      "math",
+      "disprove",
+      "calculations",
+      "calculation"
+    ],
+    "difficulty": 2,
+    "estimated_time": 19,
+    "hint_level_1": "They used math to find out how long the coal would last.",
+    "hint_level_2": "They made a calculation about the Sun's lifespan.",
+    "full_explanation": "By using calculations to determine how long coal would last if burned at the Sun's scale, scientists could support the idea was wrong.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Calculations",
+    "acceptable_answers": [
+      "Logical Reasoning",
+      "Math"
+    ],
+    "question_hash": "734cc15caeee690cdbc45440f3c68e100cc1bea4c2d5a8cc3017b2284a6af6aa",
+    "bloom_level": "APPLY",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CONCEPT",
+    "voice_score": 97,
+    "speaking_time": 4.95,
+    "thinking_time": 14.03,
+    "cluster_id": "scientific_reasoning_apply_understanding",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 85,
+    "coverage_weight": 0.111,
+    "metadata_score": 75,
+    "normalized_concept": "scientific_reasoning",
+    "cluster_name": "Scientific Reasoning - Understanding",
+    "question_purpose": "Practice",
+    "progression_level": 3,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.795303+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "fab2d0dc-5712-4048-8e04-5e198ec03b45",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "REASONING",
+    "concept": "Nature of hypothesis",
+    "text": "Is a hypothesis always correct?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "no",
+      "hypothesis",
+      "test",
+      "not always"
+    ],
+    "difficulty": 2,
+    "estimated_time": 13,
+    "hint_level_1": "Think about the coal theory. Was it correct?",
+    "hint_level_2": "A hypothesis is just an assumption that needs to be tested.",
+    "full_explanation": "No, a hypothesis is just a possible explanation. It must be tested against evidence, and it can be supported by evidence wrong, just like the coal theory.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "False",
+      "Not Always"
+    ],
+    "question_hash": "33e402d2b4dbb1dbbba7e5f732ddc3a825b906e30621175d17ba1c4b0789052f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 99,
+    "speaking_time": 3.11,
+    "thinking_time": 9.82,
+    "cluster_id": "nature_of_hypothesis_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "practice",
+      "reasoning",
+      "voice_friendly"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.296,
+    "metadata_score": 60,
+    "normalized_concept": "nature_of_hypothesis",
+    "cluster_name": "Nature Of Hypothesis - Reasoning",
+    "question_purpose": "Practice",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.797921+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "25e9a8f6-c5bb-45b8-a9d8-672cc7f8b9ea",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "CAUSE_EFFECT",
+    "concept": "Disproving hypothesis",
+    "text": "What is the primary result of a hypothesis that doesn't fit the facts?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "SHORT_PHRASE",
+    "evaluation_method": "KEYWORD_MATCH",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "disprove",
+      "rejected",
+      "disproven",
+      "hypothesis"
+    ],
+    "difficulty": 3,
+    "estimated_time": 19,
+    "hint_level_1": "If the facts show the idea is wrong, the idea is ____.",
+    "hint_level_2": "Think about how this applies to a practical scenario.",
+    "full_explanation": "When evidence or calculations show that an assumption cannot be true, the hypothesis is disproven, and scientists look for new, better explanations.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "It is disproven",
+    "acceptable_answers": [
+      "Disproven",
+      "Rejected"
+    ],
+    "question_hash": "f3048e18ec68e1326227bbd208fe89ff98bd68ddef5742e7418c690c09cb3e88",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "CAUSE_EFFECT",
+    "intent": "FACT",
+    "voice_score": 93,
+    "speaking_time": 6.8,
+    "thinking_time": 11.35,
+    "cluster_id": "disproving_hypothesis_remember_cause_effect",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 64,
+    "coverage_weight": 0.111,
+    "metadata_score": 73,
+    "normalized_concept": "disproving_hypothesis",
+    "cluster_name": "Disproving Hypothesis - Cause Effect",
+    "question_purpose": "Assessment",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.799974+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "6825f239-931d-4951-930b-1f56266c0752",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "OBSERVATION",
+    "concept": "Observable facts",
+    "text": "Does the Sun show signs of burning out today?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "sun",
+      "no",
+      "observation",
+      "burning"
+    ],
+    "difficulty": 2,
+    "estimated_time": 13,
+    "hint_level_1": "Think about the current state of the Sun.",
+    "hint_level_2": "The text says the Sun 'shows no sign of burning out'.",
+    "full_explanation": "No, the Sun shows no signs of burning out. This observation helped scientists realize that simple burning processes like coal were not responsible for its heat.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "Not Really"
+    ],
+    "question_hash": "e302081aab02a34b22bc7f70745cca025a42e18e1f4cbdfa51b6c50d7e32ffd7",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "OBSERVATION",
+    "intent": "OBSERVATION",
+    "voice_score": 100,
+    "speaking_time": 4.95,
+    "thinking_time": 8.03,
+    "cluster_id": "observable_facts_remember_observation",
+    "session_tags": [
+      "apply",
+      "assessment",
+      "observation",
+      "voice_friendly"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.148,
+    "metadata_score": 95,
+    "normalized_concept": "observable_facts",
+    "cluster_name": "Observable Facts - Observation",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.802128+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "5c7485cc-841e-4c1f-827d-ed52185f0c4b",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "UNDERSTANDING",
+    "concept": "Meaning of Science",
+    "text": "What is the study of why things happen, like the Sun's heat?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "science",
+      "question"
+    ],
+    "difficulty": 1,
+    "estimated_time": 18,
+    "hint_level_1": "It is the topic of this unit.",
+    "hint_level_2": "It involves asking questions and testing answers.",
+    "full_explanation": "Science is the process of asking questions, creating hypotheses, and using evidence to find answers about how the world works.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Science",
+    "acceptable_answers": [
+      "Scientific Study"
+    ],
+    "question_hash": "4fb4efef5f277fb576190f1bc1fe50e22b28d16e3a01a085f2db0f0fab8b3a93",
+    "bloom_level": "UNDERSTAND",
+    "cognitive_level": "CAUSE_EFFECT",
+    "intent": "CONCEPT",
+    "voice_score": 99,
+    "speaking_time": 6.74,
+    "thinking_time": 10.44,
+    "cluster_id": "meaning_of_science_understand_understanding",
+    "session_tags": [
+      "easy",
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 76,
+    "coverage_weight": 0.112,
+    "metadata_score": 95,
+    "normalized_concept": "meaning_of_science",
+    "cluster_name": "Meaning Of Science - Understanding",
+    "question_purpose": "Warmup",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.804504+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "4774e06c-2284-4ccd-b0f3-7440e7d25c6e",
+    "learning_unit_id": "04ad6a4c-19bd-4eb7-9ce6-0543b382d7c2",
+    "question_type": "RECALL",
+    "concept": "Scientific method",
+    "text": "When a hypothesis is proven by many experiments, what does it become?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Understand the scientific discovery that the sun's energy originates from the fusion of hydrogen into helium within its atoms.",
+    "keywords": [
+      "Theory",
+      "theory",
+      "hypothesis",
+      "experiments"
+    ],
+    "difficulty": 2,
+    "estimated_time": 16,
+    "hint_level_1": "It is a scientific idea that has been supported by evidence.",
+    "hint_level_2": "Consider how this concept applies in a practical scenario.",
+    "full_explanation": "Once a hypothesis is supported by consistent observations and successful experiments, scientists accept it as a theory.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Theory",
+    "acceptable_answers": [
+      "A Theory"
+    ],
+    "question_hash": "6ed5cb1e095529f114077897300720aa99df52d8d5aefc3d4531975833c999b9",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 97,
+    "speaking_time": 6.74,
+    "thinking_time": 8.94,
+    "cluster_id": "scientific_method_remember_recall",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 75,
+    "coverage_weight": 0.15,
+    "metadata_score": 75,
+    "normalized_concept": "scientific_method",
+    "cluster_name": "Scientific Method - Recall",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [
+      "Analysis",
+      "Experiment",
+      "Hypothesis",
+      "Observation",
+      "Question"
+    ],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.818507+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "8e098fef-4acf-4b6a-a012-9d698a98a8a8",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "TRUE_FALSE",
+    "concept": "Testing requirement for theory",
+    "text": "True or False: A hypothesis becomes a theory before it is tested.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "BOOLEAN",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "testing",
+      "hypothesis",
+      "no",
+      "theory",
+      "false"
+    ],
+    "difficulty": 2,
+    "estimated_time": 16,
+    "hint_level_1": "Testing must happen first.",
+    "hint_level_2": "You need evidence and repeated testing before something is called a theory.",
+    "full_explanation": "A hypothesis only becomes a theory after it is thoroughly tested and supported by evidence correct through evidence.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect"
+    ],
+    "question_hash": "73a93fa485babe2eae9d515804305bb389c15e357a926af81e2bdbdfa054ace0",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 98,
+    "speaking_time": 6.34,
+    "thinking_time": 8.94,
+    "cluster_id": "testing_requirement_for_theory_remember_true_false",
+    "session_tags": [
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.125,
+    "metadata_score": 75,
+    "normalized_concept": "testing_requirement_for_theory",
+    "cluster_name": "Testing Requirement For Theory - True False",
+    "question_purpose": "Practice",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.938706+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "e7c71ecb-a800-46cc-9241-b7ab70a18f30",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "FILL_BLANK",
+    "concept": "Scientific terminology",
+    "text": "Fill in the blank: A hypothesis becomes a ______ once proven correct.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "theory",
+      "hypothesis"
+    ],
+    "difficulty": 1,
+    "estimated_time": 14,
+    "hint_level_1": "It is the conclusion of the scientific method process.",
+    "hint_level_2": "Consider how this concept applies in a practical scenario.",
+    "full_explanation": "After a hypothesis is tested and shown to be correct, scientists call the result a theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Theory",
+    "acceptable_answers": [
+      "Scientific Theory"
+    ],
+    "question_hash": "f59c2195a6c79a11eb34033484eae252c90f2220d3fc9ed3f05c4fbef032d122",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 6.34,
+    "thinking_time": 7.44,
+    "cluster_id": "scientific_terminology_remember_fill_blank",
+    "session_tags": [
+      "easy",
+      "fill_blank",
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 73,
+    "coverage_weight": 0.125,
+    "metadata_score": 95,
+    "normalized_concept": "scientific_terminology",
+    "cluster_name": "Scientific Terminology - Fill Blank",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.941358+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "d91668f2-ade2-4100-911c-7b0ac4fe6242",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "UNDERSTANDING",
+    "concept": "Nature of a theory",
+    "text": "Can an unproven hypothesis be called a theory?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "no",
+      "theory",
+      "hypothesis",
+      "false"
+    ],
+    "difficulty": 2,
+    "estimated_time": 13,
+    "hint_level_1": "Only supported by evidence ideas get that name.",
+    "hint_level_2": "A theory requires evidence, not just an unproven idea.",
+    "full_explanation": "An unproven idea is just a hypothesis. It must be tested and supported by evidence correct before it can be called a theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "False",
+      "Absolutely Not"
+    ],
+    "question_hash": "fa703aa37106a34a6a0afd11d24275d22d33bee6f4799b68a350dbaf9ad09558",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CONCEPT",
+    "voice_score": 98,
+    "speaking_time": 4.49,
+    "thinking_time": 7.73,
+    "cluster_id": "nature_of_a_theory_remember_understanding",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 85,
+    "coverage_weight": 0.125,
+    "metadata_score": 75,
+    "normalized_concept": "nature_of_a_theory",
+    "cluster_name": "Nature Of A Theory - Understanding",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.943763+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "982dcdf6-2f77-49d2-8c85-6fc9c0cc96f5",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "COMPARISON",
+    "concept": "Scientific theory vs guess",
+    "text": "Is a scientific theory the same as a random guess?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "no",
+      "guess",
+      "it is different",
+      "theory"
+    ],
+    "difficulty": 3,
+    "estimated_time": 16,
+    "hint_level_1": "Guesses don't need scientific evidence, but theories do.",
+    "hint_level_2": "A theory is based on evidence, while a guess is not.",
+    "full_explanation": "A scientific theory is backed by evidence and repeated testing, which makes it much stronger and more reliable than a simple guess.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "Absolutely Not",
+      "Different"
+    ],
+    "question_hash": "4aeb8486a6c90b023e75a7810cbf34042b436ee4d92368b632f60cd8f2ca88e9",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "COMPARISON",
+    "intent": "COMPARISON",
+    "voice_score": 99,
+    "speaking_time": 5.42,
+    "thinking_time": 9.83,
+    "cluster_id": "scientific_theory_vs_guess_remember_comparison",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 81,
+    "coverage_weight": 0.125,
+    "metadata_score": 75,
+    "normalized_concept": "scientific_theory_vs_guess",
+    "cluster_name": "Scientific Theory Vs Guess - Comparison",
+    "question_purpose": "Assessment",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.946449+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "8bb67cd2-a8a7-4bfb-9956-ac9e1b8badb8",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "CAUSE_EFFECT",
+    "concept": "Role of repetition in theory",
+    "text": "Does repeating a test help create a theory?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "it does",
+      "testing",
+      "repetition",
+      "yes",
+      "theory"
+    ],
+    "difficulty": 3,
+    "estimated_time": 14,
+    "hint_level_1": "Scientists perform tests over and over.",
+    "hint_level_2": "Repetition provides the evidence needed to confirm a theory.",
+    "full_explanation": "Repeating tests gives us more evidence. When results are consistent, it helps confirm the hypothesis into a theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "Certainly",
+      "It Does"
+    ],
+    "question_hash": "0cd68d84746cdb7dfbdba15f9a65c39c3110bb70ae464cc3ae5e801ce2ffed3e",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "CAUSE_EFFECT",
+    "intent": "CONCEPT",
+    "voice_score": 99,
+    "speaking_time": 4.49,
+    "thinking_time": 9.23,
+    "cluster_id": "role_of_repetition_in_theory_remember_cause_effect",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 81,
+    "coverage_weight": 0.125,
+    "metadata_score": 95,
+    "normalized_concept": "role_of_repetition_in_theory",
+    "cluster_name": "Role Of Repetition In Theory - Cause Effect",
+    "question_purpose": "Assessment",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.948466+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "1ab3a6f2-6da2-4048-9e7c-cffaa6ca003e",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "RECALL",
+    "concept": "Scientific method outcome",
+    "text": "What is the final stage mentioned after testing a hypothesis?",
+    "mcq_options": [
+      "Observation",
+      "Experiment",
+      "Theory",
+      "Guess"
+    ],
+    "correct_option": "Theory",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "theory",
+      "conclusion",
+      "hypothesis"
+    ],
+    "difficulty": 1,
+    "estimated_time": 13,
+    "hint_level_1": "Think of the final result of an investigation.",
+    "hint_level_2": "It is the term for a supported by evidence hypothesis.",
+    "full_explanation": "Once a hypothesis is verified through testing, it moves into the final stage of being accepted as a scientific theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "expected_answer": "Theory",
+    "acceptable_answers": [
+      "Scientific Theory",
+      "Conclusion"
+    ],
+    "question_hash": "0b49ebc70d7316b1ed357d203ddfefbcdab98315d6121d81dc88c6f5cded6dfa",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 97,
+    "speaking_time": 5.42,
+    "thinking_time": 6.83,
+    "cluster_id": "scientific_method_outcome_remember_recall",
+    "session_tags": [
+      "easy",
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.125,
+    "metadata_score": 75,
+    "normalized_concept": "scientific_method_outcome",
+    "cluster_name": "Scientific Method Outcome - Recall",
+    "question_purpose": "Warmup",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.956032+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "f218d96e-a6d1-41b6-960a-15f3f41fe755",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "UNDERSTANDING",
+    "concept": "Hypothesis failure",
+    "text": "If a hypothesis fails testing, is it a theory?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "testing",
+      "not a theory",
+      "hypothesis",
+      "no",
+      "theory"
+    ],
+    "difficulty": 2,
+    "estimated_time": 14,
+    "hint_level_1": "Only supported by evidence hypotheses become theories.",
+    "hint_level_2": "If the test fails, the hypothesis is not correct.",
+    "full_explanation": "A theory must be supported by correct evidence. If a hypothesis fails testing, it is not considered a theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "Not"
+    ],
+    "question_hash": "0c936b7fb12eff006f818b9c36ee0f7675a0f967c42b5f92563e1b19c26499ee",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CONCEPT",
+    "voice_score": 99,
+    "speaking_time": 5.35,
+    "thinking_time": 8.03,
+    "cluster_id": "hypothesis_failure_remember_understanding",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 71,
+    "coverage_weight": 0.125,
+    "metadata_score": 75,
+    "normalized_concept": "hypothesis_failure",
+    "cluster_name": "Hypothesis Failure - Understanding",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.958330+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "cf1fdf5e-643d-477f-b01d-1e8487432721",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "APPLICATION",
+    "concept": "Order of scientific steps",
+    "text": "Which of these is the correct order: Hypothesis then Theory?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "theory",
+      "hypothesis",
+      "yes",
+      "correct"
+    ],
+    "difficulty": 2,
+    "estimated_time": 17,
+    "hint_level_1": "Hypothesis comes before scientific evidence.",
+    "hint_level_2": "You have a guess first, then you get a theory after proving it.",
+    "full_explanation": "The correct order is that you start with a hypothesis and then, after proving it with evidence, it becomes a theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "Correct",
+      "That Is Correct"
+    ],
+    "question_hash": "35e5e52235f4f811a6d4093580ce21ed354d0d2e7e14eff1a2ebe8a4fe354201",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "APPLICATION",
+    "intent": "APPLICATION",
+    "voice_score": 98,
+    "speaking_time": 5.42,
+    "thinking_time": 11.33,
+    "cluster_id": "order_of_scientific_steps_remember_application",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.125,
+    "metadata_score": 75,
+    "normalized_concept": "order_of_scientific_steps",
+    "cluster_name": "Order Of Scientific Steps - Application",
+    "question_purpose": "Practice",
+    "progression_level": 3,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:18:33.960514+05:30",
+    "updated_at": null
+  }
+]

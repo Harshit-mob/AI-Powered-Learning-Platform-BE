@@ -1,0 +1,14 @@
+forbidden_terms:
+  theory:
+    - "proven"
+    - "absolute truth"
+    - "proof"
+    - "100% true"
+  hypothesis:
+    - "fact"
+    - "certainty"
+replacements:
+  "is proven": "is supported by evidence"
+  "proven": "supported by evidence"
+  "absolute truth": "current scientific consensus"
+  "proof": "evidence"

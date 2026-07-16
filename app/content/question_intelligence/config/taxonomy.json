@@ -1,0 +1,17 @@
+{
+  "tags": {
+    "difficulty": ["easy", "medium", "hard"],
+    "purpose": ["warmup", "practice", "assessment", "challenge", "mastery"],
+    "question_type": ["definition", "recall", "reasoning", "fill_blank", "mcq", "observation"],
+    "learning": ["remember", "understand", "apply", "analyze", "evaluate", "create"],
+    "delivery": ["voice_friendly", "flashcard", "revision", "teaching"]
+  },
+  "bloom_consistency": {
+    "definition": ["remember", "understand"],
+    "concept": ["remember", "understand", "apply"],
+    "process": ["understand", "apply", "analyze"],
+    "reasoning": ["analyze", "evaluate", "create"],
+    "experiment": ["apply", "analyze", "evaluate", "create"],
+    "observation": ["remember", "understand", "analyze"]
+  }
+}

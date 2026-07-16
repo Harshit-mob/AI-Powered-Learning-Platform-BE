@@ -1,0 +1,41 @@
+from fastapi import APIRouter, Depends
+from app.api.v1.responses import SuccessResponse, create_response
+from app.schemas.auth.auth_schema import RegisterRequest, LoginRequest, SocialLoginRequest, RefreshTokenRequest
+from app.application.auth_service import AuthService
+from app.api.v1.dependencies import get_uow, get_current_student
+from app.repositories.base.unit_of_work import UnitOfWork
+
+router = APIRouter(prefix="/auth", tags=["Authentication"])
+
+@router.post("/register", response_model=SuccessResponse)
+def register(request: RegisterRequest, uow: UnitOfWork = Depends(get_uow)):
+    service = AuthService(uow)
+    data = service.register_student(request.model_dump())
+    return create_response(data, "Registration successful")
+
+@router.post("/login", response_model=SuccessResponse)
+def login(request: LoginRequest, uow: UnitOfWork = Depends(get_uow)):
+    service = AuthService(uow)
+    data = service.login_student(request.model_dump())
+    return create_response(data, "Login successful")
+
+@router.post("/social-login", response_model=SuccessResponse)
+def social_login(request: SocialLoginRequest, uow: UnitOfWork = Depends(get_uow)):
+    service = AuthService(uow)
+    data = service.social_login(request.provider, request.provider_token)
+    return create_response(data, f"{request.provider.capitalize()} login successful")
+
+@router.post("/refresh", response_model=SuccessResponse)
+def refresh_token(request: RefreshTokenRequest, uow: UnitOfWork = Depends(get_uow)):
+    service = AuthService(uow)
+    data = service.refresh_access_token(request.refresh_token)
+    return create_response(data, "Tokens refreshed successfully")
+
+@router.post("/logout", response_model=SuccessResponse)
+def logout(student = Depends(get_current_student)):
+    # In a real system, you might blacklist the JWT here.
+    return create_response({}, "Logged out successfully")
+
+@router.get("/me", response_model=SuccessResponse)
+def get_me(student = Depends(get_current_student)):
+    return create_response({"student_id": str(student.id), "email": student.email, "name": student.name})

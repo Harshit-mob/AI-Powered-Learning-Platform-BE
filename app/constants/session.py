@@ -1,0 +1,26 @@
+from enum import Enum
+
+class SessionType(str, Enum):
+    PRACTICE = "PRACTICE"
+    REVISION = "REVISION"
+    ASSESSMENT = "ASSESSMENT"
+    RECOVERY = "RECOVERY"
+    CHALLENGE = "CHALLENGE"
+    DAILY = "DAILY"
+    WEEKLY_REVIEW = "WEEKLY_REVIEW"
+    MOCK_TEST = "MOCK_TEST"
+    ADAPTIVE = "ADAPTIVE"
+
+class ContentType(str, Enum):
+    BOOK = "BOOK"
+    CHAPTER = "CHAPTER"
+    TOPIC = "TOPIC"
+    SUBTOPIC = "SUBTOPIC"
+    LEARNING_UNIT = "LEARNING_UNIT"
+    MIXED = "MIXED"
+
+class CompletionReason(str, Enum):
+    COMPLETED = "COMPLETED"
+    TIMEOUT = "TIMEOUT"
+    STUDENT_EXITED = "STUDENT_EXITED"
+    TEACHER_ENDED = "TEACHER_ENDED"

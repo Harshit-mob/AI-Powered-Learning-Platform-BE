@@ -1,0 +1,428 @@
+[
+  {
+    "id": "60c01018-e2fc-40ef-b22d-da9a186dc691",
+    "learning_unit_id": "3173631f-cc92-4bd0-aac8-5717faca06c0",
+    "question_type": "UNDERSTANDING",
+    "concept": "Scientific Method",
+    "text": "What is the very first step when starting a scientific investigation?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "SHORT_PHRASE",
+    "evaluation_method": "KEYWORD_MATCH",
+    "learning_objective": "Define science as a process of acquiring knowledge through inquiry and investigation.",
+    "keywords": [
+      "Questions",
+      "inquiry",
+      "Asking",
+      "questions"
+    ],
+    "difficulty": 2,
+    "estimated_time": 18,
+    "hint_level_1": "You need to wonder about something first.",
+    "hint_level_2": "You ask a ... to begin the process.",
+    "full_explanation": "Everything in science starts with curiosity. By asking a question, we identify what we want to learn or solve.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Asking questions",
+    "acceptable_answers": [
+      "Questioning",
+      "To ask a question"
+    ],
+    "question_hash": "8ef75027d43867691cfdee72ea551fd72ce2372aff4cb46bfaa5881469a0eafd",
+    "bloom_level": "UNDERSTAND",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CONCEPT",
+    "voice_score": 91,
+    "speaking_time": 5.88,
+    "thinking_time": 11.94,
+    "cluster_id": "scientific_method_understand_understanding",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.125,
+    "metadata_score": 95,
+    "normalized_concept": "scientific_method",
+    "cluster_name": "Scientific Method - Understanding",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [
+      "Analysis",
+      "Experiment",
+      "Hypothesis",
+      "Observation",
+      "Question"
+    ],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.123858+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "b05694ef-97ae-4495-a4da-f869c998e3a0",
+    "learning_unit_id": "319cc8ba-ba24-45ff-93ef-d5d55c711bfe",
+    "question_type": "TRUE_FALSE",
+    "concept": "Disproving the coal hypothesis",
+    "text": "True or False: The coal burning hypothesis was proven correct.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "BOOLEAN",
+    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "keywords": [
+      "false",
+      "no",
+      "coal",
+      "hypothesis"
+    ],
+    "difficulty": 1,
+    "estimated_time": 13,
+    "hint_level_1": "Think about how long the Sun has been shining.",
+    "hint_level_2": "If the Sun were coal, it would have burned out already.",
+    "full_explanation": "The hypothesis was supported by evidence false because calculations showed the Sun would have burned out in only 5,000 years if it were coal.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect"
+    ],
+    "question_hash": "a0fd5cb3a6b3404d380db7443ab9251f00112e365704a226c78ef396cc2912f2",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 98,
+    "speaking_time": 5.42,
+    "thinking_time": 6.83,
+    "cluster_id": "disproving_the_coal_hypothesis_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.15,
+    "metadata_score": 75,
+    "normalized_concept": "disproving_the_coal_hypothesis",
+    "cluster_name": "Disproving The Coal Hypothesis - True False",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.200671+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "325da16d-17b5-4d44-961f-1e5d802eb036",
+    "learning_unit_id": "04ad6a4c-19bd-4eb7-9ce6-0543b382d7c2",
+    "question_type": "RECALL",
+    "concept": "Scientific process",
+    "text": "When a hypothesis is proven by experiments, it becomes a...",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Understand the scientific discovery that the sun's energy originates from the fusion of hydrogen into helium within its atoms.",
+    "keywords": [
+      "Theory",
+      "theory",
+      "hypothesis"
+    ],
+    "difficulty": 2,
+    "estimated_time": 16,
+    "hint_level_1": "It sounds like 'thee-oh-ree'.",
+    "hint_level_2": "It is the opposite of just a guess.",
+    "full_explanation": "Once a hypothesis is supported by evidence from observations and experiments, it is accepted as a scientific theory.",
+    "source_pages": [
+      1
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Theory",
+    "acceptable_answers": [
+      "Scientific Theory"
+    ],
+    "question_hash": "d8406bfc1d1dabfeef2d34251f3a4a4a14485c7545c1344a0314dea7c5b43fec",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 98,
+    "speaking_time": 7.42,
+    "thinking_time": 8.33,
+    "cluster_id": "scientific_process_remember_recall",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 66,
+    "coverage_weight": 0.15,
+    "metadata_score": 75,
+    "normalized_concept": "scientific_process",
+    "cluster_name": "Scientific Process - Recall",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.229599+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "740e8647-8aac-4c87-85ba-2bb11c1d52cf",
+    "learning_unit_id": "d21296e5-e4ee-40c8-8ff5-cdf951822523",
+    "question_type": "DEFINITION",
+    "concept": "Scientific Method Steps",
+    "text": "What is the very first step in the scientific method?",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "SHORT_PHRASE",
+    "evaluation_method": "KEYWORD_MATCH",
+    "learning_objective": "Understand that the first step in the scientific method is identifying and stating a problem or phenomenon that needs explanation.",
+    "keywords": [
+      "problem",
+      "scientific method",
+      "identifying"
+    ],
+    "difficulty": 1,
+    "estimated_time": 16,
+    "hint_level_1": "Think about what a scientist needs to do before they can find an answer.",
+    "hint_level_2": "It involves clearly stating what you want to study or explain.",
+    "full_explanation": "In the scientific method, everything starts with a question. Scientists must first identify and state the problem they want to solve or the phenomenon they don't yet understand.",
+    "source_pages": [
+      2
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Identifying the problem",
+    "acceptable_answers": [
+      "Stating The Problem",
+      "Define The Problem",
+      "Finding A Problem"
+    ],
+    "question_hash": "223a5dc01ceab9f7800545a9b0ddc4c96093310669b5c69470a6d8e7b9c5db46",
+    "bloom_level": "UNDERSTAND",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 94,
+    "speaking_time": 5.42,
+    "thinking_time": 10.44,
+    "cluster_id": "scientific_method_steps_understand_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "revision",
+      "voice_friendly"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.071,
+    "metadata_score": 97,
+    "normalized_concept": "scientific_method_steps",
+    "cluster_name": "Scientific Method Steps - Definition",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.312215+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "2452e6e6-8ffd-4f8c-a1b2-b6399ed05a30",
+    "learning_unit_id": "d21296e5-e4ee-40c8-8ff5-cdf951822523",
+    "question_type": "TRUE_FALSE",
+    "concept": "Scientific Method Steps",
+    "text": "True or False: The scientific method starts with experiments.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "BOOLEAN",
+    "learning_objective": "Understand that the first step in the scientific method is identifying and stating a problem or phenomenon that needs explanation.",
+    "keywords": [
+      "experiments",
+      "scientific method",
+      "false",
+      "no"
+    ],
+    "difficulty": 1,
+    "estimated_time": 12,
+    "hint_level_1": "Experiments come after you know what you are studying.",
+    "hint_level_2": "What is the first step we talked about?",
+    "full_explanation": "Experiments are not the first step. The scientific method begins by identifying and stating the problem first.",
+    "source_pages": [
+      2
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect"
+    ],
+    "question_hash": "58b924e05cdd1ae728201d7f6af1972090ecafbbb3af1167f5b945eae4c135eb",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 97,
+    "speaking_time": 4.95,
+    "thinking_time": 6.53,
+    "cluster_id": "scientific_method_steps_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.107,
+    "metadata_score": 95,
+    "normalized_concept": "scientific_method_steps",
+    "cluster_name": "Scientific Method Steps - True False",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.320295+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "6a5bd960-da38-4c77-9e7e-edff601b624b",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "FILL_BLANK",
+    "concept": "Scientific terminology",
+    "text": "Fill in the blank: A hypothesis becomes a ______ once it is proven correct.",
+    "mcq_options": [],
+    "correct_option": "",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "Theory",
+      "theory",
+      "hypothesis"
+    ],
+    "difficulty": 1,
+    "estimated_time": 16,
+    "hint_level_1": "It sounds like 'the-ree'.",
+    "hint_level_2": "Think about how this applies to a practical scenario.",
+    "full_explanation": "Once a hypothesis is supported by enough evidence, scientists call the final conclusion a theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "expected_answer": "Theory",
+    "acceptable_answers": [
+      "Scientific Theory"
+    ],
+    "question_hash": "76a6f891eefdf8e17f0c4987b8a11f28b6d0bfce0267a9ab25f7dc6c621eecce",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 7.26,
+    "thinking_time": 8.05,
+    "cluster_id": "scientific_terminology_remember_fill_blank",
+    "session_tags": [
+      "easy",
+      "fill_blank",
+      "remember",
+      "teaching",
+      "voice_friendly"
+    ],
+    "production_score": 62,
+    "coverage_weight": 0.107,
+    "metadata_score": 73,
+    "normalized_concept": "scientific_terminology",
+    "cluster_name": "Scientific Terminology - Fill Blank",
+    "question_purpose": "Warmup",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.387307+05:30",
+    "updated_at": null
+  },
+  {
+    "id": "279491cb-4954-43bd-a6c0-c64a3429bb8b",
+    "learning_unit_id": "74dc2373-35e4-43f5-ae84-f93f527e5a38",
+    "question_type": "UNDERSTANDING",
+    "concept": "Definition of theory",
+    "text": "If a hypothesis is proven correct, can we call it a theory?",
+    "mcq_options": [
+      "Yes",
+      "No",
+      "Maybe",
+      "Not really"
+    ],
+    "correct_option": "Yes",
+    "answer_complexity": "WORD",
+    "evaluation_method": "WORD_MATCH",
+    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
+    "keywords": [
+      "Yes",
+      "True",
+      "hypothesis",
+      "theory",
+      "proven"
+    ],
+    "difficulty": 2,
+    "estimated_time": 16,
+    "hint_level_1": "The definition says it becomes a theory.",
+    "hint_level_2": "Yes, once supported by evidence with evidence, it qualifies as a theory.",
+    "full_explanation": "Yes, once a hypothesis is verified through testing and evidence, it reaches the stage of being called a scientific theory.",
+    "source_pages": [
+      4
+    ],
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "True",
+      "That Is Correct",
+      "Yeah"
+    ],
+    "question_hash": "d8d632591f758eda381d11dc9554193f65f2e55790707146285fe6eca814e627",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CONCEPT",
+    "voice_score": 99,
+    "speaking_time": 6.74,
+    "thinking_time": 8.94,
+    "cluster_id": "definition_of_theory_remember_understanding",
+    "session_tags": [
+      "practice",
+      "voice_friendly"
+    ],
+    "production_score": 85,
+    "coverage_weight": 0.107,
+    "metadata_score": 75,
+    "normalized_concept": "definition_of_theory",
+    "cluster_name": "Definition Of Theory - Understanding",
+    "question_purpose": "Practice",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": [],
+    "created_at": "2026-07-13 17:26:46.392297+05:30",
+    "updated_at": null
+  }
+]

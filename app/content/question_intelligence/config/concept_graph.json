@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "theory": ["hypothesis", "evidence", "testing", "observation"],
+    "hypothesis": ["evidence", "testing", "observation"],
+    "evidence": ["testing", "observation"],
+    "testing": ["observation"],
+    
+    "experiment": ["observation", "question", "variables"],
+    "variables": ["observation", "question"],
+    "question": ["observation"],
+    
+    "scientific_method": ["observation", "question", "hypothesis", "experiment", "analysis"],
+    "analysis": ["experiment", "hypothesis", "question", "observation"],
+    
+    "definition_of_science": ["knowledge", "observation", "inquiry"],
+    "evidence_and_proof": ["hypothesis", "experiment", "observation", "scientific_method"],
+    "torch_components": ["electric_circuit", "electricity", "current"],
+    
+    "observation": []
+  },
+  "intent_requirements": {
+    "EVALUATE": ["variables", "evidence"],
+    "ANALYZE": ["observation"]
+  }
+}

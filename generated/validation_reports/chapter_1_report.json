@@ -1,0 +1,23 @@
+{
+    "normalization_stats": {
+        "characters_corrected": 30,
+        "spacing_fixes": 5,
+        "headers_removed": 0,
+        "footers_removed": 11,
+        "paragraphs_merged": 0,
+        "potential_ocr_issues": 0,
+        "warnings": 0
+    },
+    "validation_report": {
+        "is_valid": true,
+        "missing_headings": 0,
+        "broken_paragraphs": 0,
+        "very_short_paragraphs": 0,
+        "repeated_paragraphs": 0,
+        "unknown_ocr_tokens": 0,
+        "very_long_sentences": 1,
+        "warnings": [
+            "Very long sentence detected: '\nobservations and collected in formation...'"
+        ]
+    }
+}

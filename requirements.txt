@@ -1,0 +1,16 @@
+# Dependencies will be added here in the next step
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+sqlalchemy>=2.0.27
+alembic>=1.13.1
+psycopg2-binary>=2.9.9
+pydantic[email]>=2.6.3
+pydantic-settings>=2.2.1
+python-dotenv>=1.0.1
+pytest>=8.1.1
+pymupdf>=1.23.0
+google-genai>=0.1.1
+python-jose[cryptography]>=3.3.0
+passlib[argon2]>=1.7.4
+python-multipart>=0.0.9
+PyJWT>=2.8.0
