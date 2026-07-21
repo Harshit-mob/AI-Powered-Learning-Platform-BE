@@ -25,3 +25,9 @@ def daily_checkin(request: DailyCheckinRequest, student = Depends(get_current_st
     service = StudentService(uow)
     service.set_daily_learning(student.id, request.learning_date, request.topic_ids, request.source)
     return create_response({}, "Daily learning recorded successfully")
+
+@router.get("/daily-checkin/status", response_model=SuccessResponse)
+def check_daily_status(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
+    service = StudentService(uow)
+    data = service.check_daily_status(student.id)
+    return create_response(data, "Daily check-in status retrieved successfully")

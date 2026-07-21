@@ -91,10 +91,14 @@ class QuotaDistributionPolicy(DistributionPolicy):
             diff_counts[d] = diff_counts.get(d, 0) + 1
             bloom_counts[b] = bloom_counts.get(b, 0) + 1
             
-        # Sufficiency Check
-        if len(selected_variants) < self.target_count and not self.allow_partial:
-            raise SessionEngineException(f"INSUFFICIENT_QUESTIONS|Only {len(selected_variants)} eligible questions are available for this topic. Please generate additional question variants.")
-            
+        # Sufficiency Check: require at least MIN_QUESTIONS, not necessarily target_count
+        MIN_QUESTIONS = 3
+        if len(selected_variants) < MIN_QUESTIONS and not self.allow_partial:
+            raise SessionEngineException(
+                f"INSUFFICIENT_QUESTIONS|Only {len(selected_variants)} eligible questions are available for this topic. "
+                f"A minimum of {MIN_QUESTIONS} questions are required to generate a session."
+            )
+
         return selected_variants
 
 class PolicyFactory:
@@ -104,13 +108,15 @@ class PolicyFactory:
             return QuotaDistributionPolicy(
                 target_count=10,
                 difficulty_distribution=SessionConfig.DAILY_POLICY["difficulty_distribution"],
-                bloom_distribution=SessionConfig.DAILY_POLICY["bloom_distribution"]
+                bloom_distribution=SessionConfig.DAILY_POLICY["bloom_distribution"],
+                allow_partial=True   # generate with however many are available
             )
         elif session_type == SessionType.CHAPTER_REVISION:
             return QuotaDistributionPolicy(
                 target_count=20,
                 difficulty_distribution=SessionConfig.REVISION_POLICY["difficulty_distribution"],
-                bloom_distribution=SessionConfig.REVISION_POLICY["bloom_distribution"]
+                bloom_distribution=SessionConfig.REVISION_POLICY["bloom_distribution"],
+                allow_partial=True
             )
         elif session_type == SessionType.WEAK_POINT:
             return QuotaDistributionPolicy(
@@ -124,5 +130,6 @@ class PolicyFactory:
             return QuotaDistributionPolicy(
                 target_count=10,
                 difficulty_distribution={"EASY": 0.5, "MEDIUM": 0.3, "HARD": 0.2},
-                bloom_distribution={"RECALL": 1.0}
+                bloom_distribution={"RECALL": 1.0},
+                allow_partial=True   # always partial-safe
             )

@@ -36,14 +36,14 @@ def complete_session(session_id: uuid.UUID, student = Depends(get_current_studen
     data = service.complete_session(student.id, session_id)
     return create_response(data, "Session completed successfully")
 
+@router.get("/recommendations", response_model=SuccessResponse)
+def get_recommendations(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
+    service = SessionApplicationService(uow)
+    data = service.get_session_recommendations(student.id)
+    return create_response(data, "Recommendations retrieved successfully")
+
 @router.get("/{session_id}", response_model=SuccessResponse)
 def resume_session(session_id: uuid.UUID, student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
     service = SessionApplicationService(uow)
     data = service.resume_session(student.id, session_id)
     return create_response(data, "Session resumed successfully")
-
-@router.get("/recommendations/", response_model=SuccessResponse)
-def get_recommendations(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
-    service = SessionApplicationService(uow)
-    data = service.get_session_recommendations(student.id)
-    return create_response(data, "Recommendations retrieved successfully")

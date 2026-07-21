@@ -30,7 +30,8 @@ from app.models.learning.student_mastery import StudentMastery
 from app.models.learning.student_daily_learning import StudentDailyLearning
 
 # Set the sqlalchemy.url dynamically from our settings
-config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
+# Use database_url_fixed to normalize postgres:// -> postgresql:// (Render compatibility)
+config.set_main_option("sqlalchemy.url", settings.database_url_fixed)
 
 # add your model's MetaData object here
 # for 'autogenerate' support

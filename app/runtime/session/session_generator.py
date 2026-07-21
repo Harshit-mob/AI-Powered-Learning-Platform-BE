@@ -56,14 +56,6 @@ class SessionGenerator:
         primary_content_id = content_id[0] if isinstance(content_id, list) else content_id
         
         with self.uow:
-            self.uow.sessions.create_session({
-                "id": session_id,
-                "student_id": student_id,
-                "session_type": session_type.value,
-                "content_id": primary_content_id,
-                "content_type": content_type
-            })
-            
             # 5. Rank Learning Units using session_id for seed
             ranked_lus = self.lu_coverage.rank_learning_units(lu_map, context, session_type, session_id)
             
@@ -84,6 +76,24 @@ class SessionGenerator:
             
             # 8. Pedagogical Sequencer
             ordered_questions = self.sequencer.sequence(final_pool)
+
+            # 4. Create Session Entity now that we know the final question count
+            self.uow.sessions.create_session({
+                "id": session_id,
+                "student_id": student_id,
+                "session_type": session_type.value,
+                "content_id": primary_content_id,
+                "content_type": content_type,
+                "questions_requested": len(ordered_questions),
+                "questions_answered": 0,
+                "questions_correct": 0,
+                "questions_skipped": 0,
+                "session_duration_seconds": 0,
+                "average_response_time": 0.0,
+                "average_voice_score": 0.0,
+                "accuracy": 0.0,
+                "mastery_gain": 0.0,
+            })
             
             self.uow.commit()
 

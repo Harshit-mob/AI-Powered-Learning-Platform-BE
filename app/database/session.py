@@ -5,10 +5,11 @@ from app.core.config import settings
 
 # Create the SQLAlchemy Engine
 # The engine is the starting point for any SQLAlchemy application
+# Use database_url_fixed to normalize postgres:// -> postgresql:// (Render compatibility)
 engine = create_engine(
-    settings.DATABASE_URL, 
-    pool_pre_ping=True, # Tests the connection before issuing a query
-    echo=settings.DEBUG # Prints SQL queries in the terminal if DEBUG is True
+    settings.database_url_fixed,
+    pool_pre_ping=True,  # Tests the connection before issuing a query
+    echo=settings.DEBUG  # Prints SQL queries in the terminal if DEBUG is True
 )
 
 # SessionLocal class will be used to create actual database sessions

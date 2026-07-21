@@ -5,12 +5,14 @@ from app.repositories.base.unit_of_work import UnitOfWork
 from app.application.recommendations.providers.daily_practice import DailyPracticeProvider
 from app.application.recommendations.providers.chapter_revision import ChapterRevisionProvider
 from app.application.recommendations.providers.weak_point import WeakPointProvider
+from app.application.recommendations.providers.revision import RevisionProvider
 
 class RecommendationEngine:
     def __init__(self, uow: UnitOfWork):
         self.uow = uow
         self.providers = [
             DailyPracticeProvider(self.uow),
+            RevisionProvider(self.uow),
             WeakPointProvider(self.uow),
             ChapterRevisionProvider(self.uow)
         ]

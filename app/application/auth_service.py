@@ -15,18 +15,31 @@ class AuthService:
             # Check if email exists
             if self.uow.students.find_by_email(email):
                 raise APIException("AUTH_EMAIL_EXISTS", "Email already registered", 400)
-                
+
+            # Auto-assign default board & grade (only one row each in DB for now;
+            # in future these will come from the frontend registration flow)
+            from app.models.course import Board, Grade
+            default_board = self.uow.session.query(Board).first()
+            default_grade = self.uow.session.query(Grade).first()
+
+            if not default_board or not default_grade:
+                raise APIException(
+                    "SETUP_INCOMPLETE",
+                    "No board or grade configured in the system. Please contact admin.",
+                    500
+                )
+
             # Create user
             student_id = uuid.uuid4()
             hashed_pwd = get_password_hash(data["password"])
-            
+
             student = self.uow.students.create({
                 "id": student_id,
                 "email": email,
                 "hashed_password": hashed_pwd,
                 "name": data["name"],
-                "grade_id": data.get("grade_id"),
-                "board_id": data.get("board_id")
+                "grade_id": data.get("grade_id") or default_grade.id,
+                "board_id": data.get("board_id") or default_board.id,
             })
             self.uow.commit()
             
@@ -103,11 +116,19 @@ class AuthService:
             student = self.uow.students.find_by_email(email)
             if not student:
                 student_id = uuid.uuid4()
+
+                # Auto-assign default board & grade for social login too
+                from app.models.course import Board, Grade
+                default_board = self.uow.session.query(Board).first()
+                default_grade = self.uow.session.query(Grade).first()
+
                 student = self.uow.students.create({
                     "id": student_id,
                     "email": email,
                     "hashed_password": "social_login_no_password",
-                    "name": name
+                    "name": name,
+                    "board_id": default_board.id if default_board else None,
+                    "grade_id": default_grade.id if default_grade else None,
                 })
                 self.uow.commit()
                 

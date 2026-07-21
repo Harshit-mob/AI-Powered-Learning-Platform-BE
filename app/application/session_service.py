@@ -66,7 +66,7 @@ class SessionApplicationService:
         
         return session_payload.model_dump()
 
-    def answer_question(self, student_id: uuid.UUID, payload: Dict[str, Any]) -> Dict[str, Any]:
+    def answer_question(self, student_id: uuid.UUID, payload: Dict[str, Any]) -> Dict[str, Any]:  # noqa
         sid = payload["session_id"]
         session_id = sid if isinstance(sid, uuid.UUID) else uuid.UUID(str(sid))
         qid = payload["question_id"]
@@ -78,15 +78,24 @@ class SessionApplicationService:
         hints_used = payload.get("hints_used", 0)
         device_type = payload.get("device_type", "UNKNOWN")
         is_skipped = payload.get("is_skipped", False)
-        
+
+        # Safe defaults — always bound regardless of code path
+        eval_status: str = "SKIPPED"
+        eval_score: float = 0.0
+        eval_method: str = "SKIPPED"
+        is_correct: bool = False
+        mastery_change: float = 0.0
+        explanation: str = ""
+        expected_answer: str = ""
+
         with self.uow:
             question = self.uow.questions.get_by_id(question_id)
             if not question:
                 raise APIException("NOT_FOUND", "Question not found", 404)
-                
+
             expected_answer = question.expected_answer or question.correct_option or ""
             question_type = question.question_type or "MCQ"
-            
+
             if is_skipped:
                 eval_status = "SKIPPED"
                 explanation = f"You skipped this question. The correct answer was: {expected_answer}."
@@ -107,19 +116,25 @@ class SessionApplicationService:
                     device_type=device_type,
                     confidence_rating=None
                 )
-                
-                result = self.eval_engine.evaluate(
+
+                # Use a distinct name so Python does not treat 'result' as local
+                eval_result = self.eval_engine.evaluate(
                     submission=submission,
                     expected_answer=expected_answer,
                     question_type=question_type,
                     acceptable_answers=question.acceptable_answers
                 )
-                
-                if result.evaluation_score >= 1.0:
+
+                # Extract values immediately
+                eval_score = eval_result.evaluation_score
+                eval_method = eval_result.evaluation_method
+                is_correct = eval_result.is_correct
+
+                if eval_score >= 1.0:
                     eval_status = "CORRECT"
                     explanation = question.full_explanation or "Great job! You got it right!"
                     mastery_change = 0.05
-                elif result.evaluation_score > 0.0:
+                elif eval_score > 0.0:
                     eval_status = "PARTIAL"
                     explanation = question.full_explanation or f"You're on the right track! The full answer is: {expected_answer}"
                     mastery_change = 0.02
@@ -127,19 +142,14 @@ class SessionApplicationService:
                     eval_status = "WRONG"
                     explanation = question.full_explanation or f"Good effort! The correct concept here is: {expected_answer}. Keep practicing, you're doing great!"
                     mastery_change = -0.02
-                    
-                is_correct = result.is_correct
-                eval_score = result.evaluation_score
-                eval_method = result.evaluation_method
-            
-            # In Phase 1, we track mastery directly at the Learning Unit level
-            # We map learning_unit_id to concept_id in the mastery table to avoid schema migrations
+
+            # Track mastery at the Learning Unit level
             lu_id = question.learning_unit_id
             if lu_id:
                 mastery = self.uow.mastery.get_by_concept(student_id, lu_id)
                 current_pct = mastery.mastery_percentage if mastery else 0.0
                 new_pct = min(1.0, max(0.0, current_pct + mastery_change))
-                
+
                 mastery_status = "NEW"
                 if new_pct > 0.0:
                     mastery_status = "LEARNING"
@@ -147,17 +157,17 @@ class SessionApplicationService:
                     mastery_status = "PRACTICING"
                 if new_pct >= 0.8:
                     mastery_status = "MASTERED"
-                
+
                 correct_count = (mastery.correct_count if mastery else 0) + (1 if eval_status == "CORRECT" else 0)
                 wrong_count = (mastery.wrong_count if mastery else 0) + (1 if eval_status == "WRONG" else 0)
-                
+
                 self.uow.mastery.upsert_mastery(student_id, lu_id, {
                     "mastery_percentage": new_pct,
                     "status": mastery_status,
                     "correct_count": correct_count,
                     "wrong_count": wrong_count
                 })
-                
+
             from app.models.assessment.student_response import StudentResponse
             db_answer = StudentResponse(
                 session_id=session_id,
@@ -174,10 +184,10 @@ class SessionApplicationService:
             )
             self.uow.session.add(db_answer)
             self.uow.commit()
-            
+
         return {
             "status": eval_status,
-            "evaluation": result.evaluation_score,
+            "evaluation": eval_score,
             "correct_answer": expected_answer,
             "explanation": explanation,
             "mastery_change": mastery_change
@@ -189,74 +199,81 @@ class SessionApplicationService:
             from app.models.quiz import Question
             from app.models.course import LearningUnit
             
-            answers = self.uow.session.query(StudentResponse).filter(StudentResponse.session_id == session_id).all()
-            
-            total = len(answers)
+            raw_answers = self.uow.session.query(StudentResponse).filter(StudentResponse.session_id == session_id).all()
+
+            # Deduplicate: keep the BEST attempt per question
+            # (correct > partial score > wrong > skipped)
+            best_by_question: dict = {}
+            for a in raw_answers:
+                qid = a.question_id
+                if qid not in best_by_question:
+                    best_by_question[qid] = a
+                else:
+                    existing = best_by_question[qid]
+                    # Prefer correct, then higher score, then non-skipped
+                    if (not existing.is_correct and a.is_correct) or \
+                       (not existing.is_correct and not a.is_correct and
+                        (a.evaluation_score or 0) > (existing.evaluation_score or 0)):
+                        best_by_question[qid] = a
+
+            answers = list(best_by_question.values())
+
+            total = len(answers)                # unique questions touched
             correct = sum(1 for a in answers if a.is_correct)
             skipped = sum(1 for a in answers if getattr(a, 'evaluation_method', '') == "SKIPPED")
-            accuracy = round(correct / total, 2) if total > 0 else 0.0
-            score = correct * 10
-            
-            mastery_gain = round((accuracy - 0.5) * 0.1, 2) if accuracy > 0 else 0.0
+            answered = total - skipped          # unique questions actually attempted
+            wrong = answered - correct          # attempted but incorrect
+            accuracy = round(correct / answered, 2) if answered > 0 else 0.0
+            # ── Session-type-aware XP Reward Config ──────────────────────────
+            # These match the xp_reward shown in recommendation cards.
+            # xp_per_correct  : XP per correct answer
+            # completion_bonus : flat bonus just for finishing the session
+            # accuracy_bonus   : extra XP if accuracy >= 80%
+            REWARD_CONFIG = {
+                "DAILY_PRACTICE":   {"xp_per_correct": 5,  "completion_bonus": 20, "accuracy_bonus": 15},
+                "TOPIC_REVISION":   {"xp_per_correct": 6,  "completion_bonus": 20, "accuracy_bonus": 15},
+                "REVISION":         {"xp_per_correct": 6,  "completion_bonus": 20, "accuracy_bonus": 20},
+                "WEAK_POINT":       {"xp_per_correct": 8,  "completion_bonus": 20, "accuracy_bonus": 25},
+                "CHAPTER_REVISION": {"xp_per_correct": 8,  "completion_bonus": 30, "accuracy_bonus": 30},
+                "EXAM_PREPARATION": {"xp_per_correct": 10, "completion_bonus": 30, "accuracy_bonus": 40},
+                "MOCK_TEST":        {"xp_per_correct": 10, "completion_bonus": 30, "accuracy_bonus": 40},
+                "CHALLENGE":        {"xp_per_correct": 12, "completion_bonus": 25, "accuracy_bonus": 50},
+            }
+
+            # Read session type from DB (set at generation time)
+            session_row = self.uow.sessions.get_by_id(session_id)
+            session_type_key = (session_row.session_type if session_row else None) or "DAILY_PRACTICE"
+            reward = REWARD_CONFIG.get(session_type_key, REWARD_CONFIG["DAILY_PRACTICE"])
+
+            xp_from_correct   = correct * reward["xp_per_correct"]
+            xp_completion     = reward["completion_bonus"] if answered > 0 else 0
+            xp_accuracy_bonus = reward["accuracy_bonus"] if accuracy >= 0.8 else 0
+            score = xp_from_correct + xp_completion + xp_accuracy_bonus
+
+            # Average response time — exclude skipped (their time is not meaningful)
+            timed_answers = [a for a in answers if getattr(a, 'evaluation_method', '') != "SKIPPED"]
+            avg_response_time = round(
+                sum(a.time_taken_seconds for a in timed_answers) / len(timed_answers), 2
+            ) if timed_answers else 0.0
+
+            # Average voice score (only voice answers that have a score)
+            voiced_answers = [a for a in answers if a.voice_score is not None]
+            avg_voice_score = round(
+                sum(a.voice_score for a in voiced_answers) / len(voiced_answers), 2
+            ) if voiced_answers else 0.0
+
+            # mastery_gain: scales +0.05 (100% correct) → -0.05 (0% correct)
+            # Formula: (accuracy - 0.5) * 0.1 was wrong — gave -0.028 for 22%
+            # New: simply proportional to accuracy, clipped to [-0.05, +0.05]
+            if answered > 0:
+                mastery_gain = round(max(-0.05, min(0.05, (accuracy - 0.5) * 0.1)), 4)
+            else:
+                mastery_gain = 0.0
+
             
             leveled_up = False
             
-            session = self.uow.sessions.get_by_id(session_id)
-            if session:
-                from datetime import datetime, timezone, timedelta
-                now = datetime.now(timezone.utc)
-                session.end_time = now
-                session.accuracy = accuracy
-                session.mastery_gain = mastery_gain
-                session.questions_answered = total
-                session.questions_correct = correct
-                session.questions_skipped = skipped
-                
-            student = self.uow.students.find_by_id(student_id)
-            if student:
-                # 1. Update Overall Mastery Percentage
-                mastery_records = self.uow.mastery.get_by_student(student_id)
-                if mastery_records:
-                    avg_mastery = sum(m.mastery_percentage for m in mastery_records) / len(mastery_records)
-                    student.overall_mastery_percentage = min(1.0, round(avg_mastery, 2))
-                elif mastery_gain > 0:
-                    student.overall_mastery_percentage = min(1.0, student.overall_mastery_percentage + mastery_gain)
-                    
-                # 2. Update Total Study Minutes
-                if session and session.start_time and session.end_time:
-                    duration_minutes = int((session.end_time - session.start_time).total_seconds() / 60)
-                    student.total_study_minutes += max(0, duration_minutes)
-                    
-                # 3. Bump Streak (Max +1 per day)
-                if accuracy > 0.0:
-                    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
-                    from app.models.quiz import LearningSession
-                    completed_today = self.uow.session.query(LearningSession).filter(
-                        LearningSession.student_id == student_id,
-                        LearningSession.end_time >= today_start,
-                        LearningSession.id != session_id
-                    ).count()
-                    
-                    if completed_today == 0:
-                        student.streak_days += 1
-                        
-                # 4. XP and Leveling
-                student.total_xp += score
-                new_level = (student.total_xp // 100) + 1
-                if new_level > student.current_level:
-                    student.current_level = new_level
-                    leveled_up = True
-                    
-                streak = student.streak_days
-                total_xp = student.total_xp
-                current_level = student.current_level
-                self.uow.commit()
-            else:
-                streak = 0
-                total_xp = score
-                current_level = 1
-            
-            # 4. Identify Weak and Strong Learning Units for this session
+            # ── Identify Weak and Strong Learning Units ───────────────────────
             weak_lus = []
             strong_lus = []
             
@@ -287,9 +304,84 @@ class SessionApplicationService:
                             weak_lus.append(title)
                         elif lu_acc >= 0.8:
                             strong_lus.append(title)
-                
+
+            # ── Update Session Row with ALL computed fields ───────────────────
+            session = self.uow.sessions.get_by_id(session_id)
+            if session:
+                from datetime import datetime, timezone
+                now = datetime.now(timezone.utc)
+                session.end_time = now
+                session.questions_answered = answered
+                session.questions_correct = correct
+                session.questions_skipped = skipped
+                session.accuracy = accuracy
+                session.mastery_gain = mastery_gain
+                session.average_response_time = avg_response_time
+                session.average_voice_score = avg_voice_score
+                session.completion_reason = "COMPLETED"
+                session.weak_concepts = weak_lus if weak_lus else None
+                session.strong_concepts = strong_lus if strong_lus else None
+
+                # session_duration_seconds: actual wall-clock time of the session
+                if session.start_time:
+                    session.session_duration_seconds = int(
+                        (now - session.start_time).total_seconds()
+                    )
+
+            # ── Update Student Stats ──────────────────────────────────────────
+            student = self.uow.students.find_by_id(student_id)
+            if student:
+                # 1. Update Overall Mastery Percentage
+                mastery_records = self.uow.mastery.get_by_student(student_id)
+                if mastery_records:
+                    avg_mastery = sum(m.mastery_percentage for m in mastery_records) / len(mastery_records)
+                    student.overall_mastery_percentage = min(1.0, round(avg_mastery, 2))
+                elif mastery_gain > 0:
+                    student.overall_mastery_percentage = min(1.0, student.overall_mastery_percentage + mastery_gain)
+                    
+                # 2. Update Total Study Minutes
+                if session and session.start_time and session.end_time:
+                    duration_minutes = int((session.end_time - session.start_time).total_seconds() / 60)
+                    student.total_study_minutes += max(0, duration_minutes)
+                    
+                # 3. Bump Streak (Max +1 per day)
+                now = datetime.now(timezone.utc)
+                if accuracy > 0.0:
+                    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
+                    from app.models.assessment.learning_session import LearningSession
+                    completed_today = self.uow.session.query(LearningSession).filter(
+                        LearningSession.student_id == student_id,
+                        LearningSession.end_time >= today_start,
+                        LearningSession.id != session_id
+                    ).count()
+                    
+                    if completed_today == 0:
+                        student.streak_days += 1
+                        
+                # 4. XP and Leveling
+                student.total_xp += score
+                new_level = (student.total_xp // 100) + 1
+                if new_level > student.current_level:
+                    student.current_level = new_level
+                    leveled_up = True
+                    
+                streak = student.streak_days
+                total_xp = student.total_xp
+                current_level = student.current_level
+                self.uow.commit()
+            else:
+                streak = 0
+                total_xp = score
+                current_level = 1
+
         return {
             "score": score,
+            "xp_breakdown": {
+                "xp_from_correct": xp_from_correct,
+                "completion_bonus": xp_completion,
+                "accuracy_bonus": xp_accuracy_bonus,
+                "total": score,
+            },
             "accuracy": accuracy,
             "mastery_gain": mastery_gain,
             "total_xp": total_xp,

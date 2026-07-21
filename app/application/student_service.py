@@ -152,3 +152,21 @@ class StudentService:
                 self.uow.session.add(daily_learning)
                 
             self.uow.commit()
+
+    def check_daily_status(self, student_id: uuid.UUID) -> Dict[str, Any]:
+        from app.models.learning.student_daily_learning import StudentDailyLearning
+        from datetime import datetime, timezone
+        
+        with self.uow:
+            today = datetime.now(timezone.utc).date()
+            
+            # Check if there are any records for today
+            count = self.uow.session.query(StudentDailyLearning).filter(
+                StudentDailyLearning.student_id == student_id,
+                StudentDailyLearning.learning_date == today
+            ).count()
+            
+            return {
+                "is_completed": count > 0,
+                "learning_date": today.isoformat()
+            }
