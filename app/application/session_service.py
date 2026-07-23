@@ -1,4 +1,5 @@
 import uuid
+from datetime import datetime, timezone
 from typing import Dict, Any, List
 
 from app.repositories.base.unit_of_work import UnitOfWork
@@ -308,7 +309,6 @@ class SessionApplicationService:
             # ── Update Session Row with ALL computed fields ───────────────────
             session = self.uow.sessions.get_by_id(session_id)
             if session:
-                from datetime import datetime, timezone
                 now = datetime.now(timezone.utc)
                 session.end_time = now
                 session.questions_answered = answered
@@ -344,19 +344,26 @@ class SessionApplicationService:
                     duration_minutes = int((session.end_time - session.start_time).total_seconds() / 60)
                     student.total_study_minutes += max(0, duration_minutes)
                     
-                # 3. Bump Streak (Max +1 per day)
+                # 3. Bump Streak (Max +1 per calendar day)
+                # Rules:
+                #   - Any completed session counts, regardless of accuracy/score
+                #   - Only +1 per calendar day (not per session)
+                #   - Compare by local calendar date to avoid UTC midnight edge cases
                 now = datetime.now(timezone.utc)
-                if accuracy > 0.0:
-                    today_start = now.replace(hour=0, minute=0, second=0, microsecond=0)
-                    from app.models.assessment.learning_session import LearningSession
-                    completed_today = self.uow.session.query(LearningSession).filter(
-                        LearningSession.student_id == student_id,
-                        LearningSession.end_time >= today_start,
-                        LearningSession.id != session_id
-                    ).count()
-                    
-                    if completed_today == 0:
-                        student.streak_days += 1
+                today_date = now.date()  # use .date() not midnight UTC to avoid IST edge cases
+
+                from app.models.assessment.learning_session import LearningSession
+                # Count other COMPLETED sessions for this student on the same calendar date
+                completed_today = self.uow.session.query(LearningSession).filter(
+                    LearningSession.student_id == student_id,
+                    LearningSession.completion_reason == "COMPLETED",
+                    LearningSession.end_time >= datetime(today_date.year, today_date.month, today_date.day, tzinfo=timezone.utc),
+                    LearningSession.id != session_id
+                ).count()
+
+                # Only bump if this is the FIRST completed session today
+                if completed_today == 0:
+                    student.streak_days += 1
                         
                 # 4. XP and Leveling
                 student.total_xp += score

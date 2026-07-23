@@ -49,3 +49,6 @@ htmlcov/
 
 # Database
 *.sqlite3
+*.sql
+*_dump.sql
+*_migration.sql
