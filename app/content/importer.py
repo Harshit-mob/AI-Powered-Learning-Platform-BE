@@ -1,7 +1,7 @@
 import logging
 from sqlalchemy.orm import Session
-from app.services.content.curriculum_parser import ParsedCurriculum
-from app.services.content.learning_unit_builder import ParsedLearningUnit
+from app.content.curriculum_parser import ParsedCurriculum
+from app.content.learning_unit_builder import ParsedLearningUnit
 from app.models.course import Board, Grade, Subject, Chapter, Topic, Subtopic, LearningUnit
 
 logger = logging.getLogger(__name__)

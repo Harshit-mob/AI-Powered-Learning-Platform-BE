@@ -1,603 +1,543 @@
 [
   {
-    "title": "Definition of Science",
-    "content": "Science is the process of acquiring knowledge about the world we live in by asking questions, observing, doing experiments and reasoning out to find answers.",
-    "learning_objective": "Define science as a process of acquiring knowledge through inquiry and investigation.",
+    "title": "The Role of Magnets in Navigation and Daily Life",
+    "content": "Reshma lives in a coastal town of Kerala and is very fond of writing short stories. Her grandmother loves listening to her stories, so Reshma was writing a new story to share with her grandmother on her 60th birthday. Exploring Magnets The story was based on a ship carrying spices from Kerala for trade in the olden days. Reshma was aware that in those days, the sailors used stars to find directions at night. But in her story, a situation arose wherein the sailors got caught in a storm with an overcast sky and stars were not visible. Reshma could not take her story forward as she could not think of a way for sailors to find directions. She searched for in formation on the in ternet and her school library. She learnt that the travellers used a device, known as a magnetic compass, for finding directions. Reshma had seen pencil boxes and purses which had magnets to keep them closed. A writing board in her school also had a duster with a magnet. But she had never looked at those carefully. She now became curious to learn more about magnets and magnetic compasses.",
+    "learning_objective": "Understand the historical use of magnets for navigation and identify their presence in common household items.",
     "keywords": [
-      "Science",
-      "Knowledge",
-      "Acquiring",
-      "Questions",
-      "Observation",
-      "Experiment",
-      "Reasoning"
+      "magnetic compass",
+      "navigation",
+      "everyday magnets",
+      "discovery"
     ],
     "difficulty": 1,
-    "estimated_reading_time": 30,
+    "estimated_reading_time": 75,
     "source_pages": [
       1
     ],
-    "summary": "Science is defined as the method of gaining knowledge about the world by asking questions, observing, experimenting, and reasoning.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
+    "summary": "Historically, magnets were crucial for navigation, as seen with the magnetic compass used by sailors. Today, magnets are found in many everyday objects like pencil boxes and writing boards.",
+    "subtopic_title": "The Discovery and Everyday Use of Magnets"
   },
   {
-    "title": "Science and Natural Phenomena",
-    "content": "Humans have always been curious to know more about the living and non-living things around them, and the various natural phenomena they can observe such as the formation of day and night, change of weather, and occurrence of seasons. The constant efforts to understand the working of nature, through centuries of careful observation and analysis, has given birth to science and its various branches.",
-    "learning_objective": "Understand that human curiosity about natural phenomena drives the development of science.",
+    "title": "Distinguishing Natural and Artificial Magnets",
+    "content": "The magnets used by sailors in the olden days were based on naturally occurring magnets, known as lodestones which were discovered in ancient times. Later on, people found out that magnets could also be made from pieces of iron. Nowadays, we have magnets made of different materials. The magnets that you find in your school laboratory and those used in pencil boxes, stickers, toys are all artificial magnets.",
+    "learning_objective": "Differentiate between naturally occurring magnets (lodestones) and modern artificial magnets, understanding their origin and common applications.",
     "keywords": [
-      "Curiosity",
-      "Natural phenomena",
-      "Observation",
-      "Analysis",
-      "Nature",
-      "Science"
+      "natural magnets",
+      "lodestones",
+      "artificial magnets",
+      "iron",
+      "different materials"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 70,
+    "source_pages": [
+      2
+    ],
+    "summary": "Natural magnets, called lodestones, were discovered in ancient times. Today, most magnets are artificial, made from materials like iron, and are found in many everyday items such as toys and school supplies.",
+    "subtopic_title": "Natural and Artificial Magnets and Their Shapes"
+  },
+  {
+    "title": "Identifying Different Shapes of Magnets",
+    "content": "The magnets can be of various shapes. Common examples include Bar magnet, U-shaped magnet, and Ring magnet.",
+    "learning_objective": "Identify and recognize common shapes of artificial magnets, such as bar, U-shaped, and ring magnets.",
+    "keywords": [
+      "magnet shapes",
+      "bar magnet",
+      "U-shaped magnet",
+      "ring magnet",
+      "artificial magnets"
     ],
     "difficulty": 1,
     "estimated_reading_time": 60,
     "source_pages": [
-      1
+      2
     ],
-    "summary": "Human curiosity about natural phenomena has led to centuries of observation and analysis, giving rise to science.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
+    "summary": "Artificial magnets come in many forms, with common examples including the bar magnet, U-shaped magnet, and ring magnet.",
+    "subtopic_title": "Natural and Artificial Magnets and Their Shapes"
   },
   {
-    "title": "The Continuous Nature of Scientific Knowledge",
-    "content": "Science is the process of acquiring knowledge about the world we live in by asking questions, observing, doing experiments and reasoning out to find answers. This process has been going on for centuries and will continue for ever, because knowledge can never be complete. The more we discover, the more questions we find, the answers to which are not known.",
-    "learning_objective": "Recognize that scientific knowledge is never complete and the process of discovery is ongoing.",
+    "title": "Activity: Classifying Materials by Magnetic Attraction",
+    "content": "Collect a few objects made of different materials and also a magnet. Predict which of the objects will stick to the magnet. Now hold a magnet in your hand and bring it near the objects one by one. Observe which of the objects stick to the magnet. Do magnets stick to objects made of certain materials only? Record your observations. Was your prediction correct for all objects? Which materials stuck to the magnet? What conclusion can you draw?",
+    "learning_objective": "Conduct a simple experiment to observe which objects are attracted to a magnet and make predictions about their magnetic properties.",
     "keywords": [
-      "Science",
-      "Knowledge",
-      "Process",
-      "Centuries",
-      "Discovery",
-      "Questions"
+      "magnetic attraction",
+      "experiment",
+      "prediction",
+      "observation",
+      "materials"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 80,
+    "source_pages": [
+      2,
+      3
+    ],
+    "summary": "Perform an experiment by bringing a magnet close to various objects to observe which ones are attracted. This helps identify materials that interact with magnets.",
+    "subtopic_title": "Identifying Materials Attracted by a Magnet (Activity 4.1)"
+  },
+  {
+    "title": "Understanding Magnetic Materials",
+    "content": "Through this activity, we found out that some of the objects were attracted to the magnet and stuck to it, while others were not. The materials which are attracted towards a magnet are called magnetic materials. The metal iron is a magnetic material. Nickel and cobalt are other metals that are also magnetic. Some of their combinations with other metals are also attracted towards magnets.",
+    "learning_objective": "Define magnetic materials and identify common examples such as iron, nickel, and cobalt.",
+    "keywords": [
+      "magnetic materials",
+      "iron",
+      "nickel",
+      "cobalt",
+      "attracted"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 70,
+    "source_pages": [
+      3,
+      4
+    ],
+    "summary": "Magnetic materials are substances attracted to a magnet. Key examples include metals like iron, nickel, and cobalt, and some of their alloys.",
+    "subtopic_title": "Identifying Materials Attracted by a Magnet (Activity 4.1)"
+  },
+  {
+    "title": "Understanding Non-magnetic Materials",
+    "content": "The materials which are not attracted towards a magnet are called non-magnetic materials. Which materials listed in Table 4.1 were found to be non-magnetic?",
+    "learning_objective": "Define non-magnetic materials and identify examples of materials that are not attracted to a magnet.",
+    "keywords": [
+      "non-magnetic materials",
+      "not attracted"
+    ],
+    "difficulty": 1,
+    "estimated_reading_time": 60,
+    "source_pages": [
+      4
+    ],
+    "summary": "Non-magnetic materials are those that are not attracted by a magnet, such as wood, plastic, or glass.",
+    "subtopic_title": "Identifying Materials Attracted by a Magnet (Activity 4.1)"
+  },
+  {
+    "title": "Demonstrating Magnetic Poles Using Iron Filings",
+    "content": "Spread some iron filings (very small pieces of iron) on a sheet of paper. Place a bar magnet over them. Tap the paper and observe carefully what happens to the iron filings. Do you observe anything special about the way they stick to the magnet? Do the iron filings stick all over the magnet uniformly? Or do the iron filings stick more at some places? We find that maximum iron filings stick near the ends of the bar magnet, while a very few iron filings stick at the remaining part of the magnet. Do all parts of a magnet attract magnetic materials equally? If we repeat this activity with magnets of other shapes, do we get the same result?",
+    "learning_objective": "Perform an activity to observe that magnetic attraction is strongest at specific points on a magnet, leading to the identification of poles.",
+    "keywords": [
+      "iron filings",
+      "bar magnet",
+      "magnetic attraction",
+      "poles",
+      "experiment"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 80,
+    "source_pages": [
+      4
+    ],
+    "summary": "An experiment with iron filings demonstrates that a magnet's attractive force is concentrated at its ends, indicating the location of its poles, and not uniformly distributed.",
+    "subtopic_title": "Observing Magnetic Attraction (Activity 4.2)"
+  },
+  {
+    "title": "Identifying the North and South Poles of a Magnet",
+    "content": "These ends of the magnet are called the two poles of the magnet\u2014the North pole and the South pole. Most of the iron filings stick to the poles of a magnet of any shape.",
+    "learning_objective": "Define the North and South poles as the regions of strongest magnetic attraction on a magnet.",
+    "keywords": [
+      "North pole",
+      "South pole",
+      "poles of a magnet",
+      "magnetic attraction"
     ],
     "difficulty": 2,
     "estimated_reading_time": 60,
     "source_pages": [
-      1
+      5
     ],
-    "summary": "Science is a continuous process of acquiring knowledge that will continue forever because discoveries lead to more questions.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
+    "summary": "The two ends of a magnet, where magnetic attraction is strongest, are known as the North pole and the South pole.",
+    "subtopic_title": "Observing Magnetic Attraction (Activity 4.2)"
   },
   {
-    "title": "Historical Inquiry into the Sun's Nature",
-    "content": "Long, long ago people had no idea what the sun was and how it got its heat. The nature of the sun was a problem for them. But since they realized that their existence was dependent on the sun, they worshipped it as god. But some people had more curious minds. They were not satisfied with the explanation that the sun was a god. Little by little as they made observations and collected information about the sun and other heavenly bodies, they realized that the sun was just one of the billions and billions of stars in the universe. It just happened to be closer to us than the other stars. So it wasn't so unique after all!",
-    "learning_objective": "Understand how early humans questioned and investigated the sun's nature, moving beyond superstitious beliefs through observation.",
+    "title": "Magnets Always Have Two Poles",
+    "content": "It is not possible to obtain a magnet with a single pole. If a magnet is broken into smaller pieces, North and South poles always exist in pairs even in the smallest piece of the magnet. A single North pole or a South pole cannot exist.",
+    "learning_objective": "Understand and explain the fundamental principle that magnetic poles always exist in pairs (North and South) and cannot be isolated.",
     "keywords": [
-      "Sun",
-      "Heat",
-      "Curiosity",
-      "Observation",
-      "Information",
-      "Stars",
-      "Universe"
+      "magnetic poles",
+      "North pole",
+      "South pole",
+      "pole pairs",
+      "cannot exist alone"
     ],
-    "difficulty": 2,
-    "estimated_reading_time": 120,
+    "difficulty": 3,
+    "estimated_reading_time": 65,
     "source_pages": [
-      1
+      5
     ],
-    "summary": "Early people initially worshipped the sun but curious minds used observation to discover it's one of many stars in the universe.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
+    "summary": "A magnet always has both a North and a South pole; even if broken into smaller pieces, each new piece will still possess both poles, as a single isolated pole cannot exist.",
+    "subtopic_title": "Observing Magnetic Attraction (Activity 4.2)"
   },
   {
-    "title": "Hypothesis on the Sun's Heat Source",
-    "content": "Next came the question of how the sun got its heat. Some people said that there was a huge amount of coal on the sun which was burning. This was an assumption or hypothesis which offered a possible explanation to the problem. But it didn't take long to disprove this hypothesis. It was calculated that if this was so, the sun would burn out in 5000 years. And we know that it has been there for a much longer time and shows no sign of burning out.",
-    "learning_objective": "Explain the initial hypothesis about the sun's heat (burning coal) and how it was disproven through logical reasoning and comparison with observable facts.",
+    "title": "Activity: Observing the Directional Property of a Suspended Magnet",
+    "content": "Suspend a bar magnet with a thread tied to the middle of the magnet. You may need to adjust the position of the string till the magnet is balanced horizontally. Now rotate the magnet gently in the horizontal direction and let it come to rest. Mark the position corresponding to the ends of the magnet on the ground. Join these two points on the ground with a line. This line indicates the direction along which the magnet comes to rest. Now again rotate the magnet by giving a gentle push at its one end and wait till it comes to rest. Does the magnet rest along the same line?",
+    "learning_objective": "Perform an experiment to observe that a freely suspended bar magnet consistently aligns itself in a specific direction.",
     "keywords": [
-      "Sun",
-      "Heat",
-      "Hypothesis",
-      "Coal",
-      "Burning",
-      "Disprove",
-      "Time"
+      "freely suspended magnet",
+      "bar magnet",
+      "experiment",
+      "direction",
+      "rest"
     ],
     "difficulty": 2,
     "estimated_reading_time": 90,
     "source_pages": [
-      1
+      5
     ],
-    "summary": "An early hypothesis that the sun's heat came from burning coal was disproven by calculating its limited lifespan, which contradicted the sun's long existence.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
+    "summary": "By suspending a bar magnet freely and rotating it, one can observe that it consistently returns to rest aligned along a particular direction, demonstrating its directional property.",
+    "subtopic_title": "Freely Suspended Magnets and Direction (Activity 4.3)"
   },
   {
-    "title": "Sun's Energy Source: Hydrogen Fusion",
-    "content": "Further observations were made to collect more information on the nature of light emitted by the sun. From this, scientists discovered that the sun consists mostly of the hydrogen gas. This baffled them. How could so much energy come from hydrogen? In the meantime, some other scientists were carrying out experiments with particles that existed in side atoms. They discovered that under certain circumstances, atoms could give out huge amounts of energy. This happened when the particles present in side the atoms were disturbed in certain ways. Could this also be the source of energy of the sun? Scientists then had another hypothesis that the hydrogen atoms in the sun were constantly coming to gether to form a gas called helium. During this process, changes took place in side the atoms and huge amount of energy was given out. This was the source of the sun's energy. Further observations and experiments proved that this hypothesis was the theory.",
-    "learning_objective": "Understand the scientific discovery that the sun's energy originates from the fusion of hydrogen into helium within its atoms.",
+    "title": "Understanding North-South Alignment and Earth as a Magnet",
+    "content": "A freely suspended magnet comes to rest along the north-south direction. The end of the magnet that points towards north direction is called the North-seeking pole or the North pole of the magnet. The other end that points towards the South direction is called the South-seeking pole or the South pole of the magnet. A freely suspended magnet rests along the north-south direction because our Earth itself behaves like a giant magnet.",
+    "learning_objective": "Explain why a freely suspended magnet aligns itself in the North-South direction and relate this to Earth's magnetic properties.",
     "keywords": [
-      "Sun",
-      "Energy",
-      "Hydrogen",
-      "Helium",
-      "Fusion",
-      "Atoms",
-      "Hypothesis",
-      "Theory"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 180,
-    "source_pages": [
-      1
-    ],
-    "summary": "Scientists discovered the sun is mostly hydrogen, and through experiments, hypothesized and proved that its energy comes from hydrogen fusing into helium, releasing immense energy.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
-  },
-  {
-    "title": "Application of Sun's Energy Principles",
-    "content": "Having learnt so much about what was happening in the sun, scientists next wanted to apply this knowledge and see if they could carry out similar processes on the earth. They succeeded and made the atomic and the hydrogen bomb. In the hydrogen bomb, which is more powerful than the atomic bomb, the processes going on in the sun were duplicated. Did the scientists stop after that? Of course they didn't. They now wanted to control this energy so that it could be used to do some useful work, like generating electricity. They have succeeded in using the principle of the atomic bomb to generate electricity. This is an important and useful application of the theory discussed earlier. But till now it has not been possible to control the energy in the hydrogen bomb.",
-    "learning_objective": "Describe how the understanding of the sun's energy process led to technological applications like atomic and hydrogen bombs, and the ongoing effort to harness this energy for electricity generation.",
-    "keywords": [
-      "Sun",
-      "Energy",
-      "Application",
-      "Earth",
-      "Atomic bomb",
-      "Hydrogen bomb",
-      "Electricity",
-      "Control"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 150,
-    "source_pages": [
-      1
-    ],
-    "summary": "Knowledge of the sun's energy led to the development of nuclear weapons and efforts to generate electricity, though controlling hydrogen fusion energy remains a challenge.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
-  },
-  {
-    "title": "Ongoing Research in Solar Energy",
-    "content": "Scientists all over the world are trying to control the large amount of energy given out when hydrogen atoms combine to form helium atoms. Some day this may become possible, and when it does, it may solve all our energy problems!",
-    "learning_objective": "Understand that scientists worldwide are actively researching how to control the energy released from hydrogen fusion to solve global energy problems.",
-    "keywords": [
-      "Scientists",
-      "Control",
-      "Energy",
-      "Hydrogen",
-      "Helium",
-      "Research",
-      "Solve",
-      "Problems"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 45,
-    "source_pages": [
-      1
-    ],
-    "summary": "Global scientific efforts are focused on controlling the energy from hydrogen fusion, which could potentially solve all our energy problems.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
-  },
-  {
-    "title": "Introduction to the Scientific Method",
-    "content": "This step-by-step process involved in learning about the sun is known as the scientific method. Scientists use this scientific method in their research work.",
-    "learning_objective": "Introduce the scientific method as the systematic process scientists use for research and discovery.",
-    "keywords": [
-      "Scientific method",
-      "Process",
-      "Learning",
-      "Research",
-      "Scientists"
-    ],
-    "difficulty": 1,
-    "estimated_reading_time": 30,
-    "source_pages": [
-      2
-    ],
-    "summary": "The scientific method is the structured process used by scientists to conduct research and learn about the world.",
-    "subtopic_title": "The Meaning of 'Science' and 'Scientific Method'"
-  },
-  {
-    "title": "Early Hypotheses on the Sun's Heat",
-    "content": "Long Ago People Had No Idea What THE SUN WAS AND HOW IT GOT ITS HEAT. What is this huge bright ball? Why is it so Some people thought that there was a huge amount of hot? They wondered. The nature of the sun coal burning on the sun. This was a hypothes is. But was a problem for them. this hypothes is could not explain why the sun had been burning for billions of years. So it was rejected. They made observations and collected Another hypothes is was made, based on more in formation. They realized that the sun observations\u2014the source of the sun's energy was was one of the billions of stars in the hydrogen atoms which came to gether to form helium. universe. Experiments were carried out to test the hypothes is. This hypothes is was found to be correct. It now became a theory.",
-    "learning_objective": "Describe early hypotheses about the sun's heat, including the coal burning theory and the eventual understanding of hydrogen fusion.",
-    "keywords": [
-      "Sun",
-      "Heat",
-      "Hypothesis",
-      "Coal",
-      "Observation",
-      "Hydrogen",
-      "Helium",
-      "Theory"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 120,
-    "source_pages": [
-      3
-    ],
-    "summary": "Early theories about the sun's heat, like burning coal, were rejected as observations revealed it was a star whose energy came from hydrogen fusing into helium.",
-    "subtopic_title": "The Sun's Heat and Energy Source"
-  },
-  {
-    "title": "Scientific Method: Problem Identification",
-    "content": "Problem\nScientists encounter something they cannot understand or explain. They first state the problem.",
-    "learning_objective": "Understand that the first step in the scientific method is identifying and stating a problem or phenomenon that needs explanation.",
-    "keywords": [
-      "Scientific method",
-      "Problem",
-      "Understand",
-      "Explain",
-      "State"
-    ],
-    "difficulty": 1,
-    "estimated_reading_time": 20,
-    "source_pages": [
-      2
-    ],
-    "summary": "The scientific method begins with scientists identifying and clearly stating a problem they cannot understand or explain.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Scientific Method: Observation and Information Gathering",
-    "content": "Observation and n collecting in formation\nScientists obtain facts and ideas from books, journals and other scientists. Observations n and measurements are made to collect more in formation.",
-    "learning_objective": "Explain the importance of making observations and collecting information from various sources as part of the scientific method.",
-    "keywords": [
-      "Scientific method",
-      "Observation",
-      "Information",
-      "Facts",
-      "Measurements",
-      "Books",
-      "Journals"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 40,
-    "source_pages": [
-      4
-    ],
-    "summary": "Gathering information through observations, measurements, and consulting existing resources is a crucial step in the scientific method.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Scientific Method: Formulating a Hypothesis",
-    "content": "Hypothesis\nScientists then try to think of a possible solution to the problem. This is called a hypothes is. It is a logical guess based on known facts.",
-    "learning_objective": "Define a hypothesis as a logical guess or proposed solution to a problem, based on existing knowledge.",
-    "keywords": [
-      "Scientific method",
-      "Hypothesis",
-      "Solution",
-      "Logical guess",
-      "Facts",
-      "Problem"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 35,
-    "source_pages": [
-      4
-    ],
-    "summary": "A hypothesis is a potential solution or explanation for a problem, formed as a logical guess based on available facts.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Scientific Method: Experimentation and Hypothesis Testing",
-    "content": "Experiment\nScientists carry out further observations and experiments to test if the hypothes is is correct. In an experiment, observations and measurements are made under certain conditions. If they notice that the hypothes is is not correct, they may modify it or try to find a completely new hypothes is.",
-    "learning_objective": "Describe the role of experiments in testing hypotheses, involving controlled observations and measurements, and the process of modifying or rejecting hypotheses if results are inconsistent.",
-    "keywords": [
-      "Scientific method",
-      "Experiment",
-      "Hypothesis testing",
-      "Observations",
-      "Measurements",
-      "Conditions",
-      "Modify",
-      "Reject"
+      "North-south direction",
+      "North-seeking pole",
+      "South-seeking pole",
+      "Earth as a magnet",
+      "freely suspended magnet"
     ],
     "difficulty": 3,
     "estimated_reading_time": 75,
-    "source_pages": [
-      4
-    ],
-    "summary": "Experiments are conducted under specific conditions to test hypotheses through observations and measurements, leading to modification or rejection of the hypothesis if necessary.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Scientific Method: From Hypothesis to Theory",
-    "content": "Theory\nOnce the hypothes is is proved to be correct, it becomes the conclusion or theory.",
-    "learning_objective": "Explain that a hypothesis, once proven correct through repeated testing and evidence, becomes a scientific theory.",
-    "keywords": [
-      "Scientific method",
-      "Hypothesis",
-      "Proved",
-      "Correct",
-      "Conclusion",
-      "Theory"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 25,
-    "source_pages": [
-      4
-    ],
-    "summary": "When a hypothesis is consistently proven correct through evidence, it evolves into a scientific theory.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Evolution of Scientific Theories",
-    "content": "In course of time as better scientific tools and in struments become available, more and more observations may be made. It may then be found that the theory does not support the new observations. A new theory may then be needed, and the whole process would have to start again. In this way, the process of development of science goes on.",
-    "learning_objective": "Understand that scientific theories can be revised or replaced by new theories as new evidence and better tools become available, highlighting the dynamic nature of science.",
-    "keywords": [
-      "Scientific theories",
-      "Tools",
-      "Instruments",
-      "Observations",
-      "New theory",
-      "Development",
-      "Science"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 60,
-    "source_pages": [
-      4
-    ],
-    "summary": "Scientific theories can be updated or replaced by new ones when new observations or tools provide contradictory evidence, driving the continuous development of science.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Scientific Method: Application of Theories",
-    "content": "Application\nScientists then try to find useful applications of the theory so that humankind benefits from it. For example, the theory that if a magnet is moved near a coil of wire, an electric current flows in the wire, has found applications in the form of generators that supply electricity to our houses.",
-    "learning_objective": "Recognize that a key goal of science is to find practical applications for theories that benefit humanity, providing an example of electromagnetism and generators.",
-    "keywords": [
-      "Scientific method",
-      "Application",
-      "Theory",
-      "Benefit",
-      "Humankind",
-      "Magnet",
-      "Wire",
-      "Electric current",
-      "Generators",
-      "Electricity"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 75,
-    "source_pages": [
-      4
-    ],
-    "summary": "After establishing a theory, scientists seek practical applications for it, such as using the principle of electromagnetism to create generators for electricity.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Collaboration in Scientific Research",
-    "content": "Scientists rarely work alone. They mostly work to gether in teams. Often several teams around the world try to solve the same problem and consult one another. When several scientists think about how to solve a problem, a solution is easier to find. Similarly, if you work as a group with friends in trying to solve a problem, you will come up with a solution much faster.",
-    "learning_objective": "Understand the importance of collaboration and teamwork in scientific research, as problems are often solved more effectively and quickly when scientists work together.",
-    "keywords": [
-      "Scientists",
-      "Collaboration",
-      "Teams",
-      "Work together",
-      "Problem solving",
-      "Solution",
-      "Consult"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 75,
-    "source_pages": [
-      4
-    ],
-    "summary": "Science is often a collaborative effort, with teams working together globally to solve problems more efficiently.",
-    "subtopic_title": "Steps of the Scientific Method"
-  },
-  {
-    "title": "Applying the Scientific Method to Daily Problems",
-    "content": "Scientists are people who follow the scientific method to solve problems or to discover new things. You too can work like a scientist by using this method to learn about things around you. You only need an inquisitive mind and clear logical thinking.",
-    "learning_objective": "Recognize that the scientific method can be applied by anyone to solve everyday problems and learn about the world.",
-    "keywords": [
-      "Scientific method",
-      "Apply",
-      "Daily life",
-      "Problems",
-      "Learn",
-      "Inquisitive mind",
-      "Logical thinking"
-    ],
-    "difficulty": 1,
-    "estimated_reading_time": 45,
-    "source_pages": [
-      5
-    ],
-    "summary": "Anyone can use the scientific method, similar to scientists, to solve everyday problems and learn about their surroundings with an inquisitive mind and logical thinking.",
-    "subtopic_title": "The Scientific Method and You"
-  },
-  {
-    "title": "Example: Repairing a Torch Using the Scientific Method",
-    "content": "For example, suppose your torch stops working. You encounter a problem-how to repair the torch. You do not know much about how a torch works, so you collect information by reading books or consulting an adult or an electrician. You find out that the torch contains cells that provide electric current, a bulb or LED that lights up when current is passed through it, a switch that turns the current on and off, and connecting wires in side the torch. You next think of the possible reasons for the torch not working. You may think of any of these reasons: a. There are no cells in the torch. b. The cells have run out. c. The bulb or LED has fused. d. The switch is not working properly, or some wire in side is broken. All these are your hypotheses. To check which hypothes is is correct, you will need to make observations and carry out certain experiments.",
-    "learning_objective": "Illustrate how the scientific method (problem identification, information gathering, hypothesis formulation) can be used to troubleshoot a common problem like a non-working torch.",
-    "keywords": [
-      "Torch",
-      "Repair",
-      "Scientific method",
-      "Problem",
-      "Information",
-      "Hypotheses",
-      "Cells",
-      "Bulb",
-      "Switch",
-      "Wires"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 150,
-    "source_pages": [
-      5
-    ],
-    "summary": "Troubleshooting a broken torch involves applying the scientific method: gathering information about its parts, forming hypotheses about the cause (e.g., dead batteries, fused bulb), and planning experiments to test them.",
-    "subtopic_title": "The Scientific Method and You"
-  },
-  {
-    "title": "Testing Hypotheses for a Non-Working Torch",
-    "content": "Check if the cells are there in the torch. If not, your hypothes is a is correct. Put in cells. If the cells are present, take them out and put in new ones. If the torch now lights up, hypothes is b is correct. Take them out and put in new ones. If the torch now lights up, hypothes is b is correct. Check the bulb or LED. If it does not light up when connected to an electric cell, hypothes is c is correct. Change the bulb or LED. If none of these hypothes is a, b or c is correct, then there must be something wrong with the switch or the wires. You may, however, realize that you do not have the expertise to repair or change the switch or wires. You then decide that it is better to get the expert help of an electrician for repairing the torch.",
-    "learning_objective": "Demonstrate the experimental testing of hypotheses in a practical scenario, showing how to isolate the problem by testing each possibility systematically.",
-    "keywords": [
-      "Hypotheses",
-      "Testing",
-      "Experiments",
-      "Torch",
-      "Cells",
-      "Bulb",
-      "Switch",
-      "Wires",
-      "Electrician"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 135,
-    "source_pages": [
-      5
-    ],
-    "summary": "Testing hypotheses for a faulty torch involves systematically checking components like cells and the bulb, and if these aren't the issue, recognizing the need for expert help for internal wiring or switch problems.",
-    "subtopic_title": "The Scientific Method and You"
-  },
-  {
-    "title": "Definition of Technology",
-    "content": "While science deals with discovering new principles, technology deals with using these principles to make things that can do useful jobs. A scientific discovery has the potential of leading to the development of new technologies. People who develop new technologies are known as technologists.",
-    "learning_objective": "Define technology as the practical application of scientific principles to create useful tools and devices.",
-    "keywords": [
-      "Technology",
-      "Science",
-      "Principles",
-      "Application",
-      "Useful",
-      "Jobs",
-      "Discovery",
-      "Technologists"
-    ],
-    "difficulty": 1,
-    "estimated_reading_time": 50,
-    "source_pages": [
-      4
-    ],
-    "summary": "Technology is the application of scientific principles to create useful tools and devices, distinguishing it from science which focuses on discovering those principles.",
-    "subtopic_title": "What Is Technology?"
-  },
-  {
-    "title": "X-ray Machine: A Technological Application",
-    "content": "For example, rays called X-rays, which could pass through many materials, in cluding muscles in the human body, were discovered in 1895. It was realized that X-rays could be used to take photographs of the bones in side the human body. Soon the X-ray machine was developed.",
-    "learning_objective": "Provide an example of how a scientific discovery (X-rays) led to the development of a significant technology (X-ray machine) for practical use.",
-    "keywords": [
-      "X-rays",
-      "Discovery",
-      "Technology",
-      "X-ray machine",
-      "Application",
-      "Bones",
-      "Photographs"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 55,
-    "source_pages": [
-      4
-    ],
-    "summary": "The discovery of X-rays, which can penetrate the body, led to the development of the X-ray machine for imaging bones, demonstrating a direct application of science.",
-    "subtopic_title": "What Is Technology?"
-  },
-  {
-    "title": "Benefits of Science in Health",
-    "content": "Scientists have studied our body and life processes very carefully. They have discovered causes and cures of diseases. Today we expect to live a healthier and longer life because of this. In fact, nowadays scientists have even started talking of the possibility of stopping the ageing process so that we may remain young and healthy forever!",
-    "learning_objective": "Identify how scientific research has significantly improved human health by understanding diseases and developing cures, leading to longer lifespans.",
-    "keywords": [
-      "Science",
-      "Health",
-      "Body",
-      "Life processes",
-      "Diseases",
-      "Cures",
-      "Longer life",
-      "Ageing"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 60,
-    "source_pages": [
-      5
-    ],
-    "summary": "Science has greatly benefited health by enabling the study of the body, discovery of disease causes and cures, and extending human lifespans.",
-    "subtopic_title": "Science and Us: Benefits and Impacts"
-  },
-  {
-    "title": "Advancements in Communication and Transport",
-    "content": "This is an area that has seen tremendous progress in the last few years, helped mainly by smaller and more powerful computers. We use computers to send letters through e-mail. We can get information on topics of our choice from libraries in Europe or the USA through the Internet. Cricket matches being played on the other side of the globe are shown to us on TV through satellites. Satellites also send data about the weather which is analyzed by supercomputers to predict the weather. Computers help us book our railway and air tickets. Today we can book our air tickets from our mobile phone even while sitting in a restaurant! Travelling time has reduced considerably, due to aeroplanes that are controlled by computers and railway signalling systems that use computers.",
-    "learning_objective": "Describe the impact of science and technology, particularly computers and satellites, on revolutionizing communication (email, internet) and transportation (faster travel, advanced systems).",
-    "keywords": [
-      "Science",
-      "Technology",
-      "Computers",
-      "Satellites",
-      "Communication",
-      "Internet",
-      "Email",
-      "Transport",
-      "Aeroplanes",
-      "Railways"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 180,
-    "source_pages": [
-      5
-    ],
-    "summary": "Science, powered by computers and satellites, has transformed communication through email and the internet, and transportation by enabling faster travel and sophisticated control systems.",
-    "subtopic_title": "Science and Us: Benefits and Impacts"
-  },
-  {
-    "title": "Science in Energy Production",
-    "content": "With the possibility of coal and petroleum deposits disappearing in the near future, scientists are busy finding alternate sources of energy. Already solar energy, wind energy and tidal energy are being successfully used to generate electricity. The Indian government has planned to make the desert area of Rajasthan one of the biggest electricity generating areas in the world, using solar energy.",
-    "learning_objective": "Understand the role of science in developing alternative energy sources like solar, wind, and tidal power to address the depletion of fossil fuels.",
-    "keywords": [
-      "Science",
-      "Energy",
-      "Alternate sources",
-      "Solar energy",
-      "Wind energy",
-      "Tidal energy",
-      "Electricity",
-      "Fossil fuels"
-    ],
-    "difficulty": 2,
-    "estimated_reading_time": 75,
-    "source_pages": [
-      5
-    ],
-    "summary": "Scientists are developing alternative energy sources like solar, wind, and tidal power to ensure a sustainable electricity supply as fossil fuels dwindle.",
-    "subtopic_title": "Science and Us: Benefits and Impacts"
-  },
-  {
-    "title": "Negative Impacts of Scientific Progress",
-    "content": "We have to pay a price for everything\u2014we have certainly paid a price for scientific progress also. Long ago, people thought that the conveniences offered by science would help human beings to live a more comfortable and tension-free life. Though science has brought comforts, it has also increased tensions. Because of scientific progress, life has become so fast-paced that everyone is more busy and tense. No wonder, incidences of high blood pressure and heart attacks have increased. Scientific progress has caused an imbalance in nature. The natural resources in the world are getting more and more polluted. This could have disastrous consequences. The weapons of mass destruction created with the help of science may wipe out the human race from the earth.",
-    "learning_objective": "Acknowledge the negative consequences of scientific progress, including increased stress, environmental pollution, and the potential for large-scale destruction.",
-    "keywords": [
-      "Science",
-      "Negative impacts",
-      "Stress",
-      "Tension",
-      "Fast-paced life",
-      "Pollution",
-      "Nature",
-      "Weapons of mass destruction"
-    ],
-    "difficulty": 3,
-    "estimated_reading_time": 150,
     "source_pages": [
       6
     ],
-    "summary": "Despite its comforts, scientific progress has led to increased stress, environmental pollution, and the creation of dangerous weapons, posing risks to humanity.",
-    "subtopic_title": "Science and Us: Benefits and Impacts"
+    "summary": "A freely suspended magnet consistently points North-South, with its ends defined as North-seeking and South-seeking poles. This phenomenon occurs because Earth itself acts as a massive magnet.",
+    "subtopic_title": "Freely Suspended Magnets and Direction (Activity 4.3)"
   },
   {
-    "title": "Science as a Neutral Tool",
-    "content": "Is Science Good Or Bad? Think And Discuss! Critical thinking So, what do you think\u2014is science good or bad? The answer is\u2014neither. Science is a tool in our hands. We may use it wisely to make the world a better place to live in, or we may use it foolishly to destroy what we have built up over centuries. The choice is ours!",
-    "learning_objective": "Understand that science itself is neutral; its impact, whether beneficial or detrimental, depends on how humans choose to use its discoveries and technologies.",
+    "title": "Using Magnetic Alignment to Identify Magnets",
+    "content": "Repeat this activity with a small iron bar in place of the bar magnet. What do you observe? Does it always rest along north-south direction? It does not. It can rest along any direction. This implies that only magnets rest along north-south direction. This activity provides us with a way to test whether a piece of metal is a magnet or not.",
+    "learning_objective": "Use the directional property of a freely suspended magnet to distinguish between magnetic and non-magnetic materials.",
     "keywords": [
-      "Science",
-      "Good",
-      "Bad",
-      "Tool",
-      "Wisely",
-      "Foolishly",
-      "Choice",
-      "Impact"
+      "test magnet",
+      "iron bar",
+      "North-south alignment",
+      "magnetic property",
+      "identify magnet"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 65,
+    "source_pages": [
+      6
+    ],
+    "summary": "Only true magnets consistently align themselves North-South when freely suspended. This property can be used to test whether an unknown piece of metal is a magnet or not, as non-magnetic materials will not show this alignment.",
+    "subtopic_title": "Freely Suspended Magnets and Direction (Activity 4.3)"
+  },
+  {
+    "title": "The Magnetic Compass: A Tool for Direction Finding",
+    "content": "The property of a freely suspended magnet to always rest along the north-south direction is used to find directions. Based on this, a small device called a magnetic compass was developed in olden days for finding directions. It has a magnet in the shape of a needle which can rotate freely. The needle of a magnetic compass indicates the north-south direction.",
+    "learning_objective": "Explain the primary purpose of a magnetic compass and how its freely rotating magnetic needle indicates the North-South direction.",
+    "keywords": [
+      "magnetic compass",
+      "direction finding",
+      "navigation",
+      "magnetic needle",
+      "north-south"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 70,
+    "source_pages": [
+      6
+    ],
+    "summary": "A magnetic compass is a navigation tool that utilizes a freely rotating magnetic needle, which always aligns itself in the North-South direction, to help find directions.",
+    "subtopic_title": "The Magnetic Compass"
+  },
+  {
+    "title": "Using a Magnetic Compass to Determine Directions",
+    "content": "The compass is kept at the place where we wish to know the directions. After some time, the needle comes to rest in the north-south direction. The compass box is then gently rotated until the north and south marked on the dial are aligned with the needle. Now all directions at that place are as indicated on the dial.",
+    "learning_objective": "Describe the steps involved in using a magnetic compass to accurately determine all cardinal directions.",
+    "keywords": [
+      "magnetic compass use",
+      "align needle",
+      "cardinal directions",
+      "dial"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 65,
+    "source_pages": [
+      6
+    ],
+    "summary": "To use a magnetic compass, place it on a flat surface, wait for the needle to settle North-South, then rotate the compass box until the dial's North and South markings match the needle, revealing all directions.",
+    "subtopic_title": "The Magnetic Compass"
+  },
+  {
+    "title": "Components and Design of a Magnetic Compass",
+    "content": "A magnetic compass is usually a small circular box with a transparent cover on it. The magnet, in the shape of a needle, is mounted on a pin standing on the bottom of the box. This needle is balanced on the pin in such a manner that it can move around this point easily, that is, it can rotate freely. The end of the needle which rests in the North direction is usually painted red. Below the needle, there is a dial with directions marked on it.",
+    "learning_objective": "Identify and describe the key components of a magnetic compass, including its needle, pivot, and dial.",
+    "keywords": [
+      "compass structure",
+      "compass needle",
+      "transparent cover",
+      "pivot pin",
+      "dial"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 75,
+    "source_pages": [
+      6
+    ],
+    "summary": "A magnetic compass typically consists of a small circular box with a transparent cover, a freely rotating magnetic needle mounted on a pin, and a dial marked with directions beneath the needle.",
+    "subtopic_title": "The Magnetic Compass"
+  },
+  {
+    "title": "How to Magnetize an Iron Needle",
+    "content": "Collect a few materials like a cork piece, iron sewing needle, a permanent bar magnet, a glass bowl, and water. Place the iron sewing needle on a wooden table. Then keep any one pole of the magnet at one end of the needle. Move the magnet over the needle along its length. When it reaches the other end of the needle, lift it up. Bring the same pole of the magnet you started with to the same end of the sewing needle from which you began, and repeat the previous step. Repeat this process at least 30 to 40 times. Bring some iron filings or steel pins near the needle. If the pins or iron filings get attracted to the needle, then that means that the needle has become a magnet.",
+    "learning_objective": "Follow instructions to magnetize an iron sewing needle using a permanent bar magnet, and test its magnetism.",
+    "keywords": [
+      "magnetize",
+      "iron needle",
+      "bar magnet",
+      "stroking method",
+      "iron filings",
+      "steel pins"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 90,
+    "source_pages": [
+      7
+    ],
+    "summary": "An iron needle can be magnetized by repeatedly stroking it in one direction with a permanent magnet. Its successful magnetization can be verified by its ability to attract small iron filings or pins.",
+    "subtopic_title": "Making Your Own Magnetic Compass (Activity 4.4)"
+  },
+  {
+    "title": "Building a Simple Magnetic Compass",
+    "content": "Pass this needle through the cork horizontally. Float the cork in a glass bowl filled with water, such that the needle always remains above the level of water. When the needle comes to rest, your magnetic compass is ready for use. Note the direction in which either side of the needle points. Rotate the cork gently and wait till it stops rotating. Repeat this a few more times. Do the ends of the needle always point in the same direction?",
+    "learning_objective": "Construct a functional, simple magnetic compass using a magnetized needle, a cork, and a bowl of water, and observe its directional behavior.",
+    "keywords": [
+      "homemade compass",
+      "cork",
+      "glass bowl",
+      "water",
+      "magnetized needle",
+      "direction"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 80,
+    "source_pages": [
+      7
+    ],
+    "summary": "A simple magnetic compass can be built by embedding a magnetized needle into a cork and floating it in water. The needle will align itself North-South, indicating directions.",
+    "subtopic_title": "Making Your Own Magnetic Compass (Activity 4.4)"
+  },
+  {
+    "title": "Ancient Indian Navigation: The Matsya-Yantra",
+    "content": "Much before the widespread use of the modern magnetic compass, a device similar to the compass needle made by you was used by Indians for navigation at sea. It consisted of a magnetised fish-shaped iron piece, kept in a vessel of oil. It was called matsya-yantra (or machchhyantra).",
+    "learning_objective": "Appreciate the historical development of navigation tools by learning about the ancient Indian matsya-yantra.",
+    "keywords": [
+      "matsya-yantra",
+      "machchhyantra",
+      "ancient navigation",
+      "Indian history",
+      "magnetized fish"
     ],
     "difficulty": 2,
     "estimated_reading_time": 60,
     "source_pages": [
-      6
+      7
     ],
-    "summary": "Science is a neutral tool; whether it leads to positive or negative outcomes depends entirely on human choices and how it is applied.",
-    "subtopic_title": "Science and Us: Benefits and Impacts"
+    "summary": "Before modern compasses, ancient Indians used the 'matsya-yantra,' a magnetized fish-shaped iron piece floating in oil, for sea navigation.",
+    "subtopic_title": "Making Your Own Magnetic Compass (Activity 4.4)"
+  },
+  {
+    "title": "Observing Attraction and Repulsion Between Magnets",
+    "content": "Take a pair of bar magnets on which North and South poles have been marked. Place the longer side of magnet A over 5\u20136 round shaped pencils. Now bring one end of magnet B near the end of magnet A placed on the pencils. Make sure that the two magnets do not touch each other. Observe what happens. Next, bring the other end of magnet B near the same end of magnet A. Does the magnet A on the pencils begin to move? Does it always move in the direction of the approaching magnet? What do these observations suggest?",
+    "learning_objective": "Conduct an experiment to directly observe the forces of attraction and repulsion when bringing different poles of two bar magnets close to each other.",
+    "keywords": [
+      "bar magnets",
+      "attraction",
+      "repulsion",
+      "experiment",
+      "poles",
+      "observe"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 90,
+    "source_pages": [
+      8
+    ],
+    "summary": "By bringing marked bar magnets together, one can observe that some interactions cause the magnets to attract, while others cause them to repel, demonstrating fundamental magnetic forces.",
+    "subtopic_title": "Interaction between Bar Magnets (Activity 4.5)"
+  },
+  {
+    "title": "Understanding the Laws of Magnetic Attraction and Repulsion",
+    "content": "You will see that unlike poles of two magnets, that is, the North pole of one magnet and the South pole of another magnet, attract each other. The like poles, that is, either the North poles or the South poles of both magnets, repel each other.",
+    "learning_objective": "State the fundamental law of magnetism: unlike poles attract, and like poles repel.",
+    "keywords": [
+      "attraction",
+      "repulsion",
+      "like poles",
+      "unlike poles",
+      "North pole",
+      "South pole"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 60,
+    "source_pages": [
+      8
+    ],
+    "summary": "The fundamental rule of magnetism states that opposite poles (North and South) attract each other, while similar poles (North-North or South-South) repel each other.",
+    "subtopic_title": "Interaction between Bar Magnets (Activity 4.5)"
+  },
+  {
+    "title": "Distinguishing Magnets from Iron Using Repulsion",
+    "content": "Repeat the activity by using an iron bar in place of one of the magnets. What do you observe this time? You will find that both the ends of the iron bar will be attracted by both the North and South poles of the magnet. From this activity, we find that a magnet can be identified by its property of repulsion.",
+    "learning_objective": "Explain how an iron bar is attracted by both poles of a magnet, and conclude that only repulsion can definitively identify a magnet.",
+    "keywords": [
+      "iron bar",
+      "attraction",
+      "repulsion",
+      "test for magnet",
+      "magnetic material"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 70,
+    "source_pages": [
+      9
+    ],
+    "summary": "An iron bar is attracted by both poles of a magnet, but only a true magnet will experience repulsion from another magnet's like pole. Therefore, repulsion is the definitive test to identify a magnet.",
+    "subtopic_title": "Interaction between Bar Magnets (Activity 4.5)"
+  },
+  {
+    "title": "Observing Compass Needle Deflection with a Bar Magnet",
+    "content": "Take a magnetic compass and a bar magnet. Place the magnetic compass over a horizontal surface and wait for its needle to come to rest. Now slowly bring North pole of the bar magnet close to the North pole of the compass needle. Observe the compass needle carefully. What do you observe? Does the needle deflect? If yes, in which direction? Now repeat the above step with the South pole of the bar magnet. Do you observe any difference this time? The compass needle is also a magnet. Will it show the same behaviour if a magnet is brought closer to it?",
+    "learning_objective": "Perform an experiment to observe how the magnetic needle of a compass deflects when a bar magnet is brought near, applying the concepts of attraction and repulsion.",
+    "keywords": [
+      "magnetic compass",
+      "bar magnet",
+      "compass needle",
+      "deflection",
+      "experiment",
+      "attraction",
+      "repulsion"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 80,
+    "source_pages": [
+      9
+    ],
+    "summary": "Observe the deflection of a magnetic compass needle when a bar magnet's North or South pole is brought near. This demonstrates the forces of attraction and repulsion between magnets.",
+    "subtopic_title": "Magnet-Compass Needle Interaction (Activity 4.6)"
+  },
+  {
+    "title": "Analyzing Compass Deflection: Like Poles Repel, Unlike Poles Attract",
+    "content": "When the North pole of a magnet is brought closer to the North pole of the compass needle, it moves away. When the South pole of the magnet is brought closer to the North pole of the compass needle, it moves closer.",
+    "learning_objective": "Explain the observed deflections of a compass needle by applying the rules of magnetic attraction (unlike poles) and repulsion (like poles).",
+    "keywords": [
+      "North pole",
+      "South pole",
+      "compass needle",
+      "deflection",
+      "attraction",
+      "repulsion"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 60,
+    "source_pages": [
+      10
+    ],
+    "summary": "Bringing a magnet's North pole near a compass needle's North pole causes repulsion, while bringing its South pole causes attraction, illustrating the fundamental magnetic principles.",
+    "subtopic_title": "Magnet-Compass Needle Interaction (Activity 4.6)"
+  },
+  {
+    "title": "Investigating Magnetic Force Through Non-Magnetic Barriers",
+    "content": "Repeat the first or second part of Activity 4.6. Without disturbing the bar magnet and magnetic compass, place a piece of wood between them, perpendicular to the table. Observe the compass needle carefully. Is there any effect on the deflection of compass needle due to the piece of wood? Repeat the process by replacing the piece of wood with a cardboard sheet, thin plastic sheet, and a thin glass sheet. Suppose we place a piece of wood between the compass needle and the magnet. Will this affect the deflection of the compass needle?",
+    "learning_objective": "Conduct an experiment to determine if non-magnetic materials placed between a magnet and a compass needle affect the magnetic interaction.",
+    "keywords": [
+      "magnetic effect",
+      "non-magnetic materials",
+      "wood",
+      "cardboard",
+      "plastic",
+      "glass",
+      "experiment",
+      "compass needle"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 85,
+    "source_pages": [
+      10
+    ],
+    "summary": "Perform an experiment by placing various non-magnetic materials (wood, cardboard, plastic, glass) between a magnet and a compass to observe if they block or alter the magnetic effect.",
+    "subtopic_title": "Magnetic Effect through Non-magnetic Materials (Activity 4.7)"
+  },
+  {
+    "title": "Magnetic Force Penetrates Non-Magnetic Barriers",
+    "content": "You would observe that there is no appreciable change in the deflection of the needle when a sheet of any of the above material is placed between the magnet and the compass needle. Therefore, we can conclude that the magnetic effect can act through non-magnetic materials.",
+    "learning_objective": "Conclude from experimental observations that magnetic forces can pass through non-magnetic materials without significant reduction.",
+    "keywords": [
+      "magnetic force",
+      "non-magnetic materials",
+      "magnetic effect",
+      "penetration"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 60,
+    "source_pages": [
+      11
+    ],
+    "summary": "Experiments show that non-magnetic materials like wood or plastic do not obstruct magnetic forces, indicating that magnetic effects can pass through them.",
+    "subtopic_title": "Magnetic Effect through Non-magnetic Materials (Activity 4.7)"
+  },
+  {
+    "title": "Exploring Magnetic Properties Through Fun Activities",
+    "content": "After learning about magnets, Reshma was excited and decided to set up some fun activities using magnets at her school fair. You may try making these yourself and may also think of some more fun ideas. Magnets can move some objects without touching them! Is that not amazing? Can we make a garland? Can we take the steel balls out of the maze by moving a magnet below the cardboard tray? Can we pick out a steel paper clip fallen in water using a magnet, without getting our fingers or the magnet wet? Will two matchbox-magnet cars with like poles facing each other speed towards each other or run away from each other when brought closer?",
+    "learning_objective": "Engage in various hands-on activities to observe how magnets can interact with objects at a distance and apply knowledge of attraction/repulsion in playful scenarios.",
+    "keywords": [
+      "fun with magnets",
+      "magnetic garland",
+      "magnetic maze",
+      "picking objects",
+      "magnetic cars",
+      "force at a distance"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 80,
+    "source_pages": [
+      11,
+      12
+    ],
+    "summary": "Explore the fascinating properties of magnets through various fun activities like creating magnetic garlands, navigating steel balls through a maze, picking up objects from water, and predicting the interaction of magnet-powered cars.",
+    "subtopic_title": "Magnetic Activities"
+  },
+  {
+    "title": "How to Prevent Magnets from Losing Their Strength",
+    "content": "\"Do not heat me or drop me or hammer me. Do not keep me near mobile phones or remote controls.\" Caution Have fun, but treat magnets with care.",
+    "learning_objective": "Identify common actions, such as heating, dropping, or exposing to electronic devices, that can cause a magnet to lose its magnetic properties.",
+    "keywords": [
+      "demagnetization",
+      "heat",
+      "drop",
+      "hammer",
+      "mobile phones",
+      "remote controls",
+      "magnet care"
+    ],
+    "difficulty": 2,
+    "estimated_reading_time": 60,
+    "source_pages": [
+      13
+    ],
+    "summary": "To maintain a magnet's strength, avoid heating, dropping, or hammering it, and keep it away from electronic devices like mobile phones and remote controls.",
+    "subtopic_title": "Handling and Storing Magnets"
+  },
+  {
+    "title": "Best Practices for Storing Magnets",
+    "content": "How to keep the magnets safe? Magnet says, \"Store me properly. Keep me in pairs with unlike poles on the same side. Keep a piece of wood in between. Place two pieces of soft iron across the ends.\" N S S Wooden piece Iron piece",
+    "learning_objective": "Describe the recommended methods for storing magnets, including pairing them with unlike poles and using soft iron pieces, to preserve their magnetic strength.",
+    "keywords": [
+      "magnet storage",
+      "unlike poles",
+      "wood spacer",
+      "soft iron pieces",
+      "magnetic strength"
+    ],
+    "difficulty": 3,
+    "estimated_reading_time": 70,
+    "source_pages": [
+      13
+    ],
+    "summary": "Proper magnet storage involves keeping them in pairs with unlike poles together, separated by a piece of wood, and placing soft iron pieces across their ends to maintain their magnetic strength.",
+    "subtopic_title": "Handling and Storing Magnets"
   }
 ]

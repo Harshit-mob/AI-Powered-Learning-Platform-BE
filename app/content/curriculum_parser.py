@@ -1,7 +1,7 @@
 import logging
 from typing import List, Optional, Dict, Any
 from pydantic import BaseModel, Field
-from app.services.content.ai_provider import AIProviderInterface, PromptBuilder
+from app.content.ai_provider import AIProviderInterface, PromptBuilder
 
 logger = logging.getLogger(__name__)
 

@@ -1,0 +1,774 @@
+[
+  {
+    "question": "What type of materials are attracted to a magnet?",
+    "question_type": "DEFINITION",
+    "concept": "Magnetic Materials",
+    "expected_answer": "Magnetic materials",
+    "acceptable_answers": [
+      "magnetic",
+      "magnetic objects",
+      "The Magnetic Materials",
+      "It is magnetic materials",
+      "Magnetic materials is the answer"
+    ],
+    "evaluation_method": "KEYWORD_MATCH",
+    "hint_level_1": "Think about what the unit calls things that stick to a magnet.",
+    "hint_level_2": "These materials get pulled towards the magnet. They are called M_____ materials.",
+    "full_explanation": "Correct answer is Magnetic materials. These are materials that are pulled towards a magnet. For example, iron is a magnetic material because it sticks to a magnet, while wood is not.",
+    "difficulty": 1,
+    "keywords": [
+      "magnetic",
+      "attracted",
+      "materials"
+    ],
+    "learning_unit_id": "44d6beb5-dce8-4e9b-9217-f0b56bbf1a71",
+    "learning_objective": "Classify objects as magnetic or non-magnetic through observation.",
+    "source_pages": [
+      2,
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "magnetic",
+      "attracted",
+      "magnet"
+    ],
+    "question_hash": "474fc3be842e215357b4596ecc96a53c722819593f60fc65b5ee9d95ca7001b3",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 93,
+    "speaking_time": 4.95,
+    "thinking_time": 6.83,
+    "cluster_id": "magnetic_materials_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.286,
+    "metadata_score": 99,
+    "estimated_time": 12,
+    "normalized_concept": "magnetic_materials",
+    "cluster_name": "Magnetic Materials - Easy - Remember - Definition",
+    "question_purpose": "11.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What kind of materials are not pulled by a magnet?",
+    "question_type": "DEFINITION",
+    "concept": "Non-magnetic Materials",
+    "expected_answer": "Non-magnetic materials",
+    "acceptable_answers": [
+      "not magnetic",
+      "non-magnetic",
+      "The Non-Magnetic Materials",
+      "It is non-magnetic materials",
+      "Non-magnetic materials is the answer"
+    ],
+    "evaluation_method": "KEYWORD_MATCH",
+    "hint_level_1": "It's the opposite of magnetic materials.",
+    "hint_level_2": "Focus on the exact Definition required to answer this.",
+    "full_explanation": "Correct answer is Non-magnetic materials. These are materials that do not get attracted to or stick to a magnet. Wood and plastic are examples, and they do not interact with magnets.",
+    "difficulty": 1,
+    "keywords": [
+      "non-magnetic",
+      "not pulled",
+      "materials"
+    ],
+    "learning_unit_id": "44d6beb5-dce8-4e9b-9217-f0b56bbf1a71",
+    "learning_objective": "Classify objects as magnetic or non-magnetic through observation.",
+    "source_pages": [
+      2,
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "non-magnetic",
+      "not pulled",
+      "magnet"
+    ],
+    "question_hash": "cd1bbd6200b26f806a1fc318dc1b4d9e7dd61f403e2d40dc61108cf4986b5435",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 94,
+    "speaking_time": 5.42,
+    "thinking_time": 7.14,
+    "cluster_id": "materials_nonmagnetic_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.286,
+    "metadata_score": 93,
+    "estimated_time": 13,
+    "normalized_concept": "materials_nonmagnetic",
+    "cluster_name": "Non-Magnetic Materials - Easy - Remember - Definition",
+    "question_purpose": "11.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: A wooden block will stick to a magnet.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Non-magnetic Materials",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect",
+      "Nope"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Think about common materials like wood. Do they usually stick to magnets?",
+    "hint_level_2": "Wood is not a metal like iron. Magnets do not attract wood.",
+    "full_explanation": "Correct answer is False. Wood is a non-magnetic material, which means it will not be attracted to a magnet. Only magnetic materials like iron stick to magnets.",
+    "difficulty": 1,
+    "keywords": [
+      "non-magnetic materials",
+      "wooden block",
+      "magnet",
+      "stick",
+      "non-magnetic"
+    ],
+    "learning_unit_id": "44d6beb5-dce8-4e9b-9217-f0b56bbf1a71",
+    "learning_objective": "Classify objects as magnetic or non-magnetic through observation.",
+    "source_pages": [
+      2,
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "False",
+      "wood",
+      "stick",
+      "magnet"
+    ],
+    "question_hash": "39db0bd696416afd6bdaa7aee9ff89aec5dd78cc4e44d02a3f4c4966e09c53cd",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 99,
+    "speaking_time": 5.88,
+    "thinking_time": 7.14,
+    "cluster_id": "materials_nonmagnetic_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.428,
+    "metadata_score": 91,
+    "estimated_time": 14,
+    "normalized_concept": "materials_nonmagnetic",
+    "cluster_name": "Non-Magnetic Materials - Easy - Remember - True False",
+    "question_purpose": "10.8",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What kind of materials are attracted to a magnet?",
+    "question_type": "DEFINITION",
+    "concept": "Definition of Magnetic Materials",
+    "expected_answer": "Magnetic materials",
+    "acceptable_answers": [
+      "Magnetic",
+      "Magnets attract them",
+      "The Magnetic Materials",
+      "It is magnetic materials",
+      "Magnetic materials is the answer"
+    ],
+    "evaluation_method": "KEYWORD_MATCH",
+    "hint_level_1": "Think about the name given to things that magnets pull.",
+    "hint_level_2": "These materials have the word 'magnet' in their name.",
+    "full_explanation": "Correct answer: Magnetic materials. These are materials that get pulled towards a magnet. It's how we define them. Materials like wood or plastic are not attracted. For example, an iron nail is a magnetic material.",
+    "difficulty": 1,
+    "keywords": [
+      "definition of magnetic materials",
+      "attracted",
+      "magnet",
+      "magnetic"
+    ],
+    "learning_unit_id": "b8ea64f1-2130-42ca-a9a8-28dea1854f02",
+    "learning_objective": "Identify specific metals that are magnetic and define the two classes of materials.",
+    "source_pages": [
+      4
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [
+      "Magnetic materials",
+      "Non-magnetic materials",
+      "Soft materials",
+      "Hard materials"
+    ],
+    "correct_option": "Magnetic materials",
+    "voice_expected_keywords": [
+      "magnetic materials",
+      "magnetic"
+    ],
+    "question_hash": "69b3279f5fd1822decaadee7e1ffc371a4f2a1e099b35483935b86d0a00e6667",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 93,
+    "speaking_time": 4.95,
+    "thinking_time": 6.83,
+    "cluster_id": "magnetic_materials_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.4,
+    "metadata_score": 94,
+    "estimated_time": 12,
+    "normalized_concept": "magnetic_materials",
+    "cluster_name": "Definition Of Magnetic Materials - Easy - Remember - Definition",
+    "question_purpose": "10.8",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: Materials that show attraction to a magnet are called magnetic materials.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Definition of Magnetic Materials",
+    "expected_answer": "True",
+    "acceptable_answers": [
+      "Yes",
+      "That's right",
+      "Correct"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Think about the basic definition of a magnetic material.",
+    "hint_level_2": "If a magnet pulls something, what is that something called?",
+    "full_explanation": "Correct answer: True. Magnetic materials are defined by their attraction to magnets. If a material is attracted, it is magnetic. For example, iron is attracted to a magnet, so it's a magnetic material.",
+    "difficulty": 1,
+    "keywords": [
+      "definition of magnetic materials",
+      "attraction",
+      "magnet",
+      "magnetic"
+    ],
+    "learning_unit_id": "b8ea64f1-2130-42ca-a9a8-28dea1854f02",
+    "learning_objective": "Identify specific metals that are magnetic and define the two classes of materials.",
+    "source_pages": [
+      4
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "True",
+      "False",
+      "Sometimes true",
+      "Cannot say"
+    ],
+    "correct_option": "True",
+    "voice_expected_keywords": [
+      "True",
+      "False"
+    ],
+    "question_hash": "ecbbc1fae69ae987add7924ca00b3009076d477c5f3af3b8b2184905029610fb",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 95,
+    "speaking_time": 7.26,
+    "thinking_time": 8.05,
+    "cluster_id": "magnetic_materials_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.6,
+    "metadata_score": 91,
+    "estimated_time": 16,
+    "normalized_concept": "magnetic_materials",
+    "cluster_name": "Definition Of Magnetic Materials - Easy - Remember - True False",
+    "question_purpose": "11.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What are the two special ends of a magnet called?",
+    "question_type": "DEFINITION",
+    "concept": "Definition/Nature of Magnetic Poles",
+    "expected_answer": "Poles",
+    "acceptable_answers": [
+      "magnetic poles",
+      "Poles is the answer",
+      "It Is Poles",
+      "The Poles"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "These are the parts that attract other magnetic things the most.",
+    "hint_level_2": "Focus on the exact Definition required to answer this.",
+    "full_explanation": "The two ends of a magnet are called poles because this is where the magnetic force is strongest. Calling them 'sides' or 'middle' would be incorrect as those parts have weaker magnetism. Like the 'ends' of a road, they are distinct points.",
+    "difficulty": 1,
+    "keywords": [
+      "definition/nature of magnetic poles",
+      "special ends",
+      "magnet",
+      "called"
+    ],
+    "learning_unit_id": "c3c541bd-2626-4992-995c-87a1bd1b873a",
+    "learning_objective": "Observe the concentration of magnetic strength at the poles of a magnet.",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Sides",
+      "Middle",
+      "Poles",
+      "Corners"
+    ],
+    "correct_option": "Poles",
+    "voice_expected_keywords": [
+      "poles",
+      "magnetic poles"
+    ],
+    "question_hash": "7e754e80e7b8dc227541d616f7e144de1079303f39dea95048109660f06506e6",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 100,
+    "speaking_time": 5.42,
+    "thinking_time": 6.83,
+    "cluster_id": "definitionnature_magnetic_poles_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 75,
+    "coverage_weight": 0.2,
+    "metadata_score": 92,
+    "estimated_time": 13,
+    "normalized_concept": "definitionnature_magnetic_poles",
+    "cluster_name": "Definition/Nature Of Magnetic Poles - Easy - Remember - Definition",
+    "question_purpose": "12.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: A magnet has only one pole.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Definition/Nature of Magnetic Poles",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect",
+      "Nope"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "How many ends does a typical bar magnet have?",
+    "hint_level_2": "Remember the names North and South.",
+    "full_explanation": "A magnet always has two poles, a North pole and a South pole, even if you break it. It cannot have just one pole because magnetism always comes in pairs. Think of a coin having two sides, heads and tails, never just one.",
+    "difficulty": 1,
+    "keywords": [
+      "definition/nature of magnetic poles",
+      "magnet",
+      "one pole"
+    ],
+    "learning_unit_id": "c3c541bd-2626-4992-995c-87a1bd1b873a",
+    "learning_objective": "Observe the concentration of magnetic strength at the poles of a magnet.",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "True",
+      "False",
+      "Sometimes true",
+      "Cannot be determined"
+    ],
+    "correct_option": "False",
+    "voice_expected_keywords": [
+      "False",
+      "No",
+      "Incorrect"
+    ],
+    "question_hash": "2eeecbe44162e423786abb08f136fc9cf4afc767b826847173494a16bd8894a9",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 100,
+    "speaking_time": 4.95,
+    "thinking_time": 6.53,
+    "cluster_id": "definitionnature_magnetic_poles_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.3,
+    "metadata_score": 93,
+    "estimated_time": 12,
+    "normalized_concept": "definitionnature_magnetic_poles",
+    "cluster_name": "Definition/Nature Of Magnetic Poles - Easy - Remember - True False",
+    "question_purpose": "9.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Iron filings usually cluster at the ______ of a bar magnet.",
+    "question_type": "FILL_BLANK",
+    "concept": "Identification of Poles using Iron Filings",
+    "expected_answer": "poles",
+    "acceptable_answers": [
+      "two ends",
+      "both ends",
+      "ends",
+      "Poles is the answer",
+      "It Is Poles",
+      "The Poles"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "These are the points of strongest attraction.",
+    "hint_level_2": "Think about the specific parts of the magnet, like the tips.",
+    "full_explanation": "The poles or ends of a magnet are where its magnetic strength is concentrated. This causes the iron filings to gather there. If they clustered elsewhere, it would mean the strongest part was not the end. Imagine a crowded bus, everyone gathers at the exits.",
+    "difficulty": 2,
+    "keywords": [
+      "identification of poles using iron filings",
+      "iron filings",
+      "cluster",
+      "bar magnet",
+      "ends"
+    ],
+    "learning_unit_id": "c3c541bd-2626-4992-995c-87a1bd1b873a",
+    "learning_objective": "Observe the concentration of magnetic strength at the poles of a magnet.",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "middle",
+      "sides",
+      "poles",
+      "top"
+    ],
+    "correct_option": "poles",
+    "voice_expected_keywords": [
+      "ends",
+      "poles",
+      "two ends"
+    ],
+    "question_hash": "c9ba48df0d9514ab1bfcb578b752131c28d59a0df1497b0989cb5b9ed3058445",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 5.88,
+    "thinking_time": 8.64,
+    "cluster_id": "filings_identification_iron_poles_using_2_remember_fill_blank",
+    "session_tags": [
+      "fill_blank",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.3,
+    "metadata_score": 92,
+    "estimated_time": 15,
+    "normalized_concept": "filings_identification_iron_poles_using",
+    "cluster_name": "Identification Of Poles Using Iron Filings - Easy - Remember - Fill Blank",
+    "question_purpose": "11.0",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: The two defined poles of a magnet are East and West.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Naming of Poles",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect",
+      "Nope"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Think about the primary directions used for magnet poles.",
+    "hint_level_2": "Are the poles named after Earth's cardinal directions for sunrise/sunset?",
+    "full_explanation": "This statement is false. The two defined poles of a magnet are always North and South. East and West are cardinal directions but are not used to name a magnet's poles. Knowing these specific names helps us understand magnetic interactions correctly.",
+    "difficulty": 2,
+    "keywords": [
+      "naming of poles",
+      "defined poles",
+      "east west"
+    ],
+    "learning_unit_id": "c3c541bd-2626-4992-995c-87a1bd1b873a",
+    "learning_objective": "Observe the concentration of magnetic strength at the poles of a magnet.",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "True",
+      "False",
+      "Sometimes true",
+      "Only for weak magnets"
+    ],
+    "correct_option": "False",
+    "voice_expected_keywords": [
+      "False",
+      "No",
+      "Incorrect"
+    ],
+    "question_hash": "fbc14a316dd2932d9488b508a5c17b8d9c0fb94467335c3168100e5071c7d29e",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "DEFINITION",
+    "voice_score": 99,
+    "speaking_time": 7.26,
+    "thinking_time": 9.55,
+    "cluster_id": "naming_poles_2_remember_true_false",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 73,
+    "coverage_weight": 0.2,
+    "metadata_score": 91,
+    "estimated_time": 17,
+    "normalized_concept": "naming_poles",
+    "cluster_name": "Naming Of Poles - Easy - Remember - True False",
+    "question_purpose": "12.2",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What happens when two identical magnetic poles are brought close?",
+    "question_type": "DEFINITION",
+    "concept": "Repulsion",
+    "expected_answer": "Repel",
+    "acceptable_answers": [
+      "They repel",
+      "Push away",
+      "Repel is the answer",
+      "The Repel",
+      "It Is Repel"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Think about what happens when a North pole meets another North pole.",
+    "hint_level_2": "Do they pull together or push apart?",
+    "full_explanation": "The correct answer is 'repel'. When identical poles (like two North or two South) are brought close, they push each other away. 'Attract' is incorrect, as that's for opposite poles. Think about how two magnets push apart if you try to force the same ends together.",
+    "difficulty": 1,
+    "keywords": [
+      "repulsion",
+      "identical poles"
+    ],
+    "learning_unit_id": "8c9cce7c-9255-4aa3-9c5c-45a3734d8e4b",
+    "learning_objective": "Distinguish between attraction and repulsion based on magnet polarity.",
+    "source_pages": [
+      8,
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Attract",
+      "Repel",
+      "Spin",
+      "Stick"
+    ],
+    "correct_option": "Repel",
+    "voice_expected_keywords": [
+      "Repel",
+      "Push away"
+    ],
+    "question_hash": "609f4a170af819e3852ad956b4f16f5420fb2a9513e313bbea7d7423558f8e61",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 97,
+    "speaking_time": 5.42,
+    "thinking_time": 6.83,
+    "cluster_id": "repulsion_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 1.0,
+    "metadata_score": 94,
+    "estimated_time": 13,
+    "normalized_concept": "repulsion",
+    "cluster_name": "Repulsion - Easy - Remember - Definition",
+    "question_purpose": "11.2",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Can a magnetic force pass through a piece of wood?",
+    "question_type": "TRUE_FALSE",
+    "concept": "Magnetic force transmission through non-magnetic materials",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "Correct",
+      "Yeah",
+      "True"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Think about what kind of material wood is in terms of magnetism.",
+    "hint_level_2": "The learning unit mentions that magnetic force can act through non-magnetic materials like wood.",
+    "full_explanation": "Correct answer: Yes. Magnetic force can pass through wood because wood is a non-magnetic material. It does not block the magnetic effect. Materials that are not magnets allow the force to act through them, just like seeing through a window.",
+    "difficulty": 1,
+    "keywords": [
+      "magnetic force transmission through non-magnetic materials",
+      "magnetic force",
+      "wood",
+      "pass"
+    ],
+    "learning_unit_id": "1323afe7-782f-4257-a7bc-0b9513cc18a7",
+    "learning_objective": "Investigate the transmission of magnetic force through non-magnetic materials.",
+    "source_pages": [
+      10,
+      11
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Yes",
+      "No",
+      "Only sometimes",
+      "Depends on the wood"
+    ],
+    "correct_option": "Yes",
+    "voice_expected_keywords": [
+      "yes",
+      "true",
+      "pass through"
+    ],
+    "question_hash": "8394833d5e4186ed7556be425fdec92bc0d64771dfa1159879b7fe26fa1e57ef",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 99,
+    "speaking_time": 5.42,
+    "thinking_time": 6.83,
+    "cluster_id": "force_magnetic_materials_nonmagnetic_through_transmission_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 85,
+    "coverage_weight": 1.0,
+    "metadata_score": 93,
+    "estimated_time": 13,
+    "normalized_concept": "force_magnetic_materials_nonmagnetic_through_transmission",
+    "cluster_name": "Magnetic Force Transmission Through Non-Magnetic Materials - Easy - Remember - True False",
+    "question_purpose": "11.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  }
+]

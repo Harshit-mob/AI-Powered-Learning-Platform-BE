@@ -5,18 +5,25 @@ import json
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from app.services.content.loader import ContentLoader
-from app.services.content.ocr_service import OCRService
-from app.services.content.pdf_extractor import PDFExtractor
-from app.services.content.cleaner import ContentCleaner
-from app.services.content.normalizer import ContentNormalizer
-from app.services.content.validator import ContentValidator
-from app.services.content.ai_provider import default_ai_provider, BatchManager, TokenEstimator
-from app.services.content.curriculum_parser import CurriculumParser
-from app.services.content.learning_unit_builder import LearningUnitBuilder
-from app.services.content.importer import ContentImporter
+from app.content.loader import ContentLoader
+from app.content.ocr_service import OCRService
+from app.content.pdf_extractor import PDFExtractor
+from app.content.cleaner import ContentCleaner
+from app.content.normalizer import ContentNormalizer
+from app.content.validator import ContentValidator
+from app.content.ai_provider import default_ai_provider, BatchManager, TokenEstimator
+from app.content.curriculum_parser import CurriculumParser
+from app.content.learning_unit_builder import LearningUnitBuilder
+from app.content.importer import ContentImporter
 from app.database.session import SessionLocal, engine
 from app.models.course import Base
+# Import other models so SQLAlchemy maps relationships correctly
+from app.models.quiz import Question
+from app.models.core.student import Student
+from app.models.learning.student_mastery import StudentMastery
+from app.models.learning.student_daily_learning import StudentDailyLearning
+from app.models.assessment.learning_session import LearningSession
+from app.models.assessment.student_response import StudentResponse
 
 def test_pipeline():
     start_time = time.time()
@@ -29,7 +36,8 @@ def test_pipeline():
     # 0. Setup DB
     Base.metadata.create_all(bind=engine)
     
-    pdf_path = "content/cbse/grade_6/science/chapter_1/chapter_1.pdf"
+    # Accept PDF path from command-line arguments, default to chapter_1.pdf
+    pdf_path = sys.argv[1] if len(sys.argv) > 1 else "content/cbse/grade_6/science/chapter_1/chapter_1.pdf"
     print(f"\n=== Starting Optimized AI Content Pipeline for: {pdf_path} ===")
     
     if not os.path.exists(pdf_path):

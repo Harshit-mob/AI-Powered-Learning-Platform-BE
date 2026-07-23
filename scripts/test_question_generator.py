@@ -6,8 +6,8 @@ import logging
 # Add the project root to the sys.path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from app.services.content.ai_provider import default_ai_provider
-from app.services.content.question_generator import QuestionGenerationService
+from app.content.ai_provider import default_ai_provider
+from app.content.question_generator import QuestionGenerationService
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s %(message)s')

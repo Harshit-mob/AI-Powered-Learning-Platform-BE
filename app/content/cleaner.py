@@ -1,7 +1,7 @@
 import re
 import logging
 from typing import List
-from app.services.content.pdf_extractor import ExtractedPage
+from app.content.pdf_extractor import ExtractedPage
 
 logger = logging.getLogger(__name__)
 

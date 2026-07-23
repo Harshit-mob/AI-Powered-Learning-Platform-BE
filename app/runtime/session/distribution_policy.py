@@ -46,18 +46,14 @@ class QuotaDistributionPolicy(DistributionPolicy):
     ) -> List[VariantScore]:
         
         selected_variants: List[VariantScore] = []
+        selected_qids = set()
         lu_used = set()
         
         # Track current counts
         diff_counts = {k: 0 for k in self.diff_quotas.keys()}
         bloom_counts = {k: 0 for k in self.bloom_quotas.keys()}
         
-        # We need to pick EXACTLY target_count.
-        # We process highest ranked LUs first.
-        # If we still need more questions and have exhausted LUs, we might need to take 2nd variants from top LUs.
-        # For Phase 1, rule is "Maximum one question variant per Learning Unit".
-        
-        # First Pass: Try to pick best variant per LU that fulfills open quotas
+        # First Pass: Try to pick best variant per LU that fulfills open quotas (1 question per LU maximum)
         for lu_id in ranked_lus:
             if len(selected_variants) >= self.target_count:
                 break
@@ -83,6 +79,7 @@ class QuotaDistributionPolicy(DistributionPolicy):
                 chosen.selection_reasons.append("soft_fallback")
                 
             selected_variants.append(chosen)
+            selected_qids.add(chosen.question.id)
             lu_used.add(lu_id)
             
             # Update counts
@@ -90,6 +87,34 @@ class QuotaDistributionPolicy(DistributionPolicy):
             b = chosen.bloom
             diff_counts[d] = diff_counts.get(d, 0) + 1
             bloom_counts[b] = bloom_counts.get(b, 0) + 1
+            
+        # Second Pass: If target count not reached, loop back and pick additional questions from the same LUs
+        if len(selected_variants) < self.target_count:
+            added_any = True
+            while len(selected_variants) < self.target_count and added_any:
+                added_any = False
+                for lu_id in ranked_lus:
+                    if len(selected_variants) >= self.target_count:
+                        break
+                    
+                    candidates = variants_by_lu.get(lu_id, [])
+                    next_variant = None
+                    for variant in candidates:
+                        if variant.question.id not in selected_qids:
+                            next_variant = variant
+                            break
+                            
+                    if next_variant:
+                        next_variant.selection_reasons.append("target_count_fill")
+                        selected_variants.append(next_variant)
+                        selected_qids.add(next_variant.question.id)
+                        
+                        # Update counts
+                        d = next_variant.difficulty
+                        b = next_variant.bloom
+                        diff_counts[d] = diff_counts.get(d, 0) + 1
+                        bloom_counts[b] = bloom_counts.get(b, 0) + 1
+                        added_any = True
             
         # Sufficiency Check: require at least MIN_QUESTIONS, not necessarily target_count
         MIN_QUESTIONS = 3

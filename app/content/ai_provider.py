@@ -19,8 +19,8 @@ T = TypeVar('T', bound=BaseModel)
 class PromptBuilder:
     def __init__(self, prompts_dir: str = None):
         if prompts_dir is None:
-            # Default to backend/app/prompts/
-            self.prompts_dir = Path(__file__).parent.parent.parent / "prompts"
+            # Default to app/prompts/
+            self.prompts_dir = Path(__file__).parent.parent / "prompts"
         else:
             self.prompts_dir = Path(prompts_dir)
             
@@ -149,8 +149,8 @@ class GoogleGeminiProvider:
     """
     Concrete implementation using Google Gemini 2.5 Flash, highly optimized with Retries and PromptBuilder.
     """
-    def __init__(self, model_name: str = "gemini-3.1-flash-lite"):
-        self.model_name = model_name
+    def __init__(self, model_name: str = None):
+        self.model_name = model_name or os.environ.get("GEMINI_MODEL_NAME", "gemini-3.1-flash-lite")
         api_key = os.environ.get("GEMINI_API_KEY")
         if not api_key:
             logger.warning("GEMINI_API_KEY environment variable is not set. The AI Provider will fail.")
@@ -173,7 +173,7 @@ class GoogleGeminiProvider:
     def generate_structured_data(self, system_prompt: str, content: str, schema: Type[T]) -> T:
         return RetryManager.execute_with_retry(
             func=lambda: self._do_generate(system_prompt, content, schema),
-            max_attempts=3,
+            max_attempts=10,
             base_delay=5
         )
 
@@ -191,7 +191,7 @@ class GoogleGeminiProvider:
             
         return RetryManager.execute_with_retry(
             func=_generate,
-            max_attempts=5,
+            max_attempts=10,
             base_delay=5
         )
 

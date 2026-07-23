@@ -5,19 +5,19 @@ import time
 from typing import List, Dict, Any, Tuple
 from pydantic import BaseModel, ValidationError
 
-from app.services.content.ai_provider import AIProviderInterface, PromptBuilder
-from app.services.content.question_validator import SchemaValidator
+from app.content.ai_provider import AIProviderInterface, PromptBuilder
+from app.content.question_validator import SchemaValidator
 from app.models.quiz import Question
 from sqlalchemy.dialects.postgresql import insert
 
-from app.services.content.quality_engine.validation_models import QualityConfig, ValidationSeverity
-from app.services.content.quality_engine.duplicate_analyzer import DuplicateAnalyzer
-from app.services.content.quality_engine.coverage_analyzer import CoverageAnalyzer
-from app.services.content.quality_engine.question_quality_analyzer import QuestionQualityAnalyzer
-from app.services.content.quality_engine.question_validator import QuestionValidator as QualityEngineValidator
-from app.services.content.quality_engine.question_statistics import QuestionStatistics
-from app.services.content.quality_engine.generation_reporter import GenerationReporter
-from app.services.content.question_intelligence.intelligence_engine import IntelligenceEngine
+from app.content.quality_engine.validation_models import QualityConfig, ValidationSeverity
+from app.content.quality_engine.duplicate_analyzer import DuplicateAnalyzer
+from app.content.quality_engine.coverage_analyzer import CoverageAnalyzer
+from app.content.quality_engine.question_quality_analyzer import QuestionQualityAnalyzer
+from app.content.quality_engine.question_validator import QuestionValidator as QualityEngineValidator
+from app.content.quality_engine.question_statistics import QuestionStatistics
+from app.content.quality_engine.generation_reporter import GenerationReporter
+from app.content.question_intelligence.intelligence_engine import IntelligenceEngine
 
 logger = logging.getLogger(__name__)
 

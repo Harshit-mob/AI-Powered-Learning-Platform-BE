@@ -54,35 +54,35 @@ class AnswerValidator:
             
             # 1. Reject vague answers
             if ans_lower in self.VAGUE_ANSWERS:
-        seen = set()
+                continue
+                
+            if ans_lower not in seen:
+                new_acceptable.append(ans_str)
+                seen.add(ans_lower)
         
         # 5. Synthesize natural spoken variants for the expected answer
         # The user requested natural spoken variants (e.g. "Science" -> "The science", "It is science", "Science is the answer")
         # We completely OVERWRITE any LLM-provided synonyms to strictly reject unrelated synonyms.
         if expected and expected.lower() not in ["true", "false", "yes", "no"]:
-            natural_variants = [
-                expected,
-                f"The {expected.lower()}",
-                f"It is {expected.lower()}",
-        exp_lower = expected.lower()
-        variants = set()
-        variants.add(f"the {exp_lower}")
-        variants.add(f"it is {exp_lower}")
-        variants.add(f"{exp_lower} is the answer")
-        
-        # If it's a verb (ends with 'ing' or 'tion'), add natural spoken versions
-        if exp_lower.endswith("tion"):
-            base = exp_lower[:-4]
-            variants.add(f"{base}ing carefully")
-            variants.add(f"by {base}ing")
-            variants.add(f"we {base}")
+            exp_lower = expected.lower()
+            variants = set()
+            variants.add(f"the {exp_lower}")
+            variants.add(f"it is {exp_lower}")
+            variants.add(f"{exp_lower} is the answer")
             
-        for variant in variants:
-            if variant.lower() not in seen:
-                new_acceptable.append(variant.capitalize() if len(variant.split()) > 3 else variant.title())
-                seen.add(variant.lower())
-                repaired = True
-                warnings.append(f"Synthesized natural variant: {variant}")
+            # If it's a verb (ends with 'ing' or 'tion'), add natural spoken versions
+            if exp_lower.endswith("tion"):
+                base = exp_lower[:-4]
+                variants.add(f"{base}ing carefully")
+                variants.add(f"by {base}ing")
+                variants.add(f"we {base}")
+                
+            for variant in variants:
+                if variant.lower() not in seen:
+                    new_acceptable.append(variant.capitalize() if len(variant.split()) > 3 else variant.title())
+                    seen.add(variant.lower())
+                    repaired = True
+                    warnings.append(f"Synthesized natural variant: {variant}")
         
         question["acceptable_answers"] = new_acceptable
         

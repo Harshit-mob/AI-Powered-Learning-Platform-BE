@@ -14,23 +14,21 @@ from app.models.quiz import Question
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s %(message)s')
 logger = logging.getLogger(__name__)
 
-def regenerate():
-    print("\n=== Starting Complete Regeneration of Chapter 1 Questions ===")
+def generate_questions_for_chapter(chapter_title):
+    print(f"\n=== Starting Question Generation for Chapter: {chapter_title} ===")
     
     db = SessionLocal()
     try:
-        # 1. Delete all existing questions
-        print("\n[1/4] Deleting existing questions from the database...")
-        deleted_count = db.query(Question).delete()
-        db.commit()
-        print(f"Deleted {deleted_count} questions.")
-        
-        # 2. Fetch Chapter 1
-        print("\n[2/4] Fetching Chapter 1 and Learning Units...")
-        chapter = db.query(Chapter).first()
+        # 1. Fetch Chapter
+        print("\n[1/3] Fetching Chapter and Learning Units...")
+        chapter = db.query(Chapter).filter(Chapter.title == chapter_title).first()
         
         if not chapter:
-            print("Error: No Chapter found in the database.")
+            # Try partial match
+            chapter = db.query(Chapter).filter(Chapter.title.ilike(f"%{chapter_title}%")).first()
+            
+        if not chapter:
+            print(f"Error: Chapter '{chapter_title}' not found in the database.")
             return
             
         subject = chapter.subject
@@ -39,7 +37,7 @@ def regenerate():
         
         print(f"Context: {board.name} | Grade {grade.name} | {subject.name} | {chapter.title}")
         
-        # 3. Generate Questions
+        # 2. Generate Questions
         generator = QuestionGenerationService(ai_provider=default_ai_provider)
         
         all_questions = []
@@ -49,7 +47,7 @@ def regenerate():
         total_time = 0
         quality_reports = []
         
-        print("\n[3/4] Generating & Validating Questions for all Learning Units...")
+        print("\n[2/3] Generating & Validating Questions for all Learning Units...")
         
         for topic in chapter.topics:
             for subtopic in topic.subtopics:
@@ -58,15 +56,15 @@ def regenerate():
                 
                 db_units = subtopic.learning_units
                 subset = [
-                    {
-                        "id": str(lu.id),
-                        "title": lu.title,
-                        "learning_objective": lu.learning_objective,
-                        "content": lu.content,
-                        "keywords": lu.keywords,
-                        "difficulty": lu.difficulty,
-                        "source_pages": lu.source_pages
-                    } for lu in db_units
+                     {
+                         "id": str(lu.id),
+                         "title": lu.title,
+                         "learning_objective": lu.learning_objective,
+                         "content": lu.content,
+                         "keywords": lu.keywords,
+                         "difficulty": lu.difficulty,
+                         "source_pages": lu.source_pages
+                     } for lu in db_units
                 ]
                 
                 print(f"\nProcessing Subtopic: '{subtopic.title}' with {len(subset)} units...")
@@ -87,16 +85,17 @@ def regenerate():
                 total_time += stats["execution_time_seconds"]
                 quality_reports.append(stats.get("quality_report", ""))
 
-        print("\n[4/4] Saving Questions to Database...")
+        # 3. Save Questions to Database
+        print("\n[3/3] Saving Questions to Database...")
         saved_count = generator.save_question_bank(all_questions, db)
         print(f"Successfully saved {saved_count} questions to the database.")
         
-        # Dump to questions.json
-        print("\n[4/4] Dumping to questions.json...")
+        # Dump to questions_chapter.json
+        print("\n[4/4] Dumping to generated/questions/ ...")
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         out_dir = os.path.join(base_dir, "generated", "questions")
         os.makedirs(out_dir, exist_ok=True)
-        out_file = os.path.join(out_dir, "questions.json")
+        out_file = os.path.join(out_dir, f"questions_{chapter.id}.json")
         
         with open(out_file, "w") as f:
             json.dump([q.model_dump() for q in all_questions], f, indent=2)
@@ -109,4 +108,7 @@ def regenerate():
         db.close()
 
 if __name__ == "__main__":
-    regenerate()
+    if len(sys.argv) < 2:
+        print("Usage: python scripts/generate_chapter_questions.py <chapter_title>")
+        sys.exit(1)
+    generate_questions_for_chapter(sys.argv[1])
