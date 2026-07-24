@@ -1,13 +1,29 @@
 import uuid
-from typing import Dict, Any, Optional
+from typing import List, Dict, Any, Optional
 from datetime import datetime, timezone
+from collections import defaultdict
 
 from app.application.recommendations.providers.base import RecommendationProvider
 from app.models.learning.student_mastery import StudentMastery
+from app.models.course import Subject, Chapter, Topic, Subtopic, LearningUnit
 
 class WeakPointProvider(RecommendationProvider):
-    def get_recommendation(self, student_id: uuid.UUID) -> Optional[Dict[str, Any]]:
-        masteries = self.uow.session.query(StudentMastery).filter(
+    def get_recommendation(self, student_id: uuid.UUID) -> Optional[List[Dict[str, Any]]]:
+        # Get masteries with subject details by joining LearningUnit
+        masteries = self.uow.session.query(
+            StudentMastery,
+            Subject.name.label("subject_name")
+        ).join(
+            LearningUnit, LearningUnit.id == StudentMastery.concept_id
+        ).join(
+            Subtopic, Subtopic.id == LearningUnit.subtopic_id
+        ).join(
+            Topic, Topic.id == Subtopic.topic_id
+        ).join(
+            Chapter, Chapter.id == Topic.chapter_id
+        ).join(
+            Subject, Subject.id == Chapter.subject_id
+        ).filter(
             StudentMastery.student_id == student_id
         ).all()
         
@@ -15,45 +31,47 @@ class WeakPointProvider(RecommendationProvider):
             return None
             
         now = datetime.now(timezone.utc)
-        
-        # Calculate Priority Score for each mastery record
-        # Priority = Low Mastery + Time Since Practice + Recent Wrong Answers
-        scored_masteries = []
-        for m in masteries:
-            mastery_score = 1.0 - m.mastery_percentage # High priority if mastery is low
+        subject_masteries = defaultdict(list)
+        for m, subject_name in masteries:
+            subject_masteries[subject_name].append(m)
             
-            days_since = 0
-            if m.updated_at:
-                days_since = (now - m.updated_at).days
-            time_score = min(1.0, days_since / 14.0) # Caps at 14 days
-            
-            wrong_ratio = 0
-            total = m.correct_count + m.wrong_count
-            if total > 0:
-                wrong_ratio = m.wrong_count / total
+        recs = []
+        for subject_name, m_list in subject_masteries.items():
+            scored_masteries = []
+            for m in m_list:
+                mastery_score = 1.0 - m.mastery_percentage # High priority if mastery is low
                 
-            priority_score = (mastery_score * 0.5) + (time_score * 0.3) + (wrong_ratio * 0.2)
+                days_since = 0
+                if m.updated_at:
+                    days_since = (now - m.updated_at).days
+                time_score = min(1.0, days_since / 14.0) # Caps at 14 days
+                
+                wrong_ratio = 0
+                total = m.correct_count + m.wrong_count
+                if total > 0:
+                    wrong_ratio = m.wrong_count / total
+                    
+                priority_score = (mastery_score * 0.5) + (time_score * 0.3) + (wrong_ratio * 0.2)
+                scored_masteries.append((priority_score, m))
+                
+            # Sort by highest priority
+            scored_masteries.sort(key=lambda x: x[0], reverse=True)
+            top_weak = scored_masteries[0][1]
+            top_score = scored_masteries[0][0]
             
-            scored_masteries.append((priority_score, m))
-            
-        # Sort by highest priority
-        scored_masteries.sort(key=lambda x: x[0], reverse=True)
-        top_weak = scored_masteries[0][1]
-        top_score = scored_masteries[0][0]
-        
-        # Only recommend if the score is somewhat high, meaning they actually need it
-        if top_score < 0.3:
-            return None
-            
-        return {
-            "title": "Weak Point Booster",
-            "priority": 2,
-            "estimated_duration": 8,
-            "question_count": 8,
-            "xp_reward": 80,
-            "status": "NEEDS_ATTENTION",
-            "reason": "Targeted practice on concepts you struggled with recently",
-            "session_type": "WEAK_POINT",
-            "content_type": "STUDENT",
-            "content_ids": [str(student_id)]
-        }
+            # Only recommend if the score is somewhat high, meaning they actually need it
+            if top_score >= 0.3:
+                recs.append({
+                    "title": f"Weak point booster ({subject_name.lower()})",
+                    "priority": 2,
+                    "estimated_duration": 8,
+                    "question_count": 8,
+                    "xp_reward": 80,
+                    "status": "NEEDS_ATTENTION",
+                    "reason": f"Targeted practice on {subject_name} concepts you struggled with recently",
+                    "session_type": "WEAK_POINT",
+                    "content_type": "STUDENT",
+                    "content_ids": [str(student_id)]
+                })
+                
+        return recs if recs else None

@@ -49,6 +49,28 @@ class PDFExtractor:
             logger.error(f"Failed to open PDF for extraction: {str(e)}")
             raise RuntimeError(f"Failed to open PDF: {str(e)}")
 
+        # Dynamic language detection
+        detected_lang = 'en'
+        if 'hindi' in str(path).lower() or 'hi' in str(path).lower().split('/'):
+            detected_lang = 'hi'
+        else:
+            # Check native text of first few pages (up to 5 pages)
+            sample_text = ""
+            for page_num in range(min(5, len(doc))):
+                try:
+                    p = doc.load_page(page_num)
+                    sample_text += p.get_text("text")
+                except Exception:
+                    pass
+            # Count Devanagari Unicode characters (range: U+0900 to U+097F)
+            devanagari_count = sum(1 for char in sample_text if 0x0900 <= ord(char) <= 0x097F)
+            if devanagari_count > 10:
+                detected_lang = 'hi'
+                logger.info(f"Detected Devanagari script. Setting OCR language to 'hi'.")
+
+        if detected_lang != 'en' and self.ocr_service and hasattr(self.ocr_service, 'set_language'):
+            self.ocr_service.set_language(detected_lang)
+
         for page_num in range(len(doc)):
             try:
                 page = doc.load_page(page_num)

@@ -41,17 +41,14 @@ class DuplicateAnalyzer:
             if similarity >= 0.70:
                 return True
                 
-            # 2. V2 Strict Diversity Check within the same concept
             same_answer = (exp_ans and existing["expected_answer"] == exp_ans and exp_ans not in ["true", "false", "yes", "no"])
-            same_bloom = (existing.get("bloom_level") == q.get("bloom_level"))
-            same_reasoning = (existing.get("cognitive_level") == q.get("cognitive_level"))
-            
             words_new = q_text.split()
             words_old = existing["question"].split()
             same_opening = (len(words_new) > 2 and len(words_old) > 2 and words_new[:2] == words_old[:2])
             
-            # If they share the exact same expected answer AND (same opening words OR same bloom level OR same reasoning), they are too similar
-            if same_answer and (same_opening or same_bloom or same_reasoning):
+            # If they share the exact same expected answer AND same opening words, they are too similar.
+            # We allow different questions with the same answer to support language learning / vocabulary drills.
+            if same_answer and same_opening:
                 return True
                 
             # If they are exactly identical questions
@@ -67,22 +64,12 @@ class DuplicateAnalyzer:
             "evaluation_method": eval_method
         })
         
-        # Track explanation starters for diversity
+        # Track explanation starters for diversity (bypassed duplicate rejection for common prefix phrasing)
         expl = str(q.get("full_explanation", "")).strip()
         if expl:
             words = expl.split()
             if len(words) >= 2:
                 starter = f"{words[0]} {words[1]}".lower()
-                # Ban specific starts completely
-                if starter in ["science is", "observation is", "a hypothesis"]:
-                    return True
-                
-                # Check 10% reuse
-                if self._total_questions > 10:
-                    usage_pct = self._expl_starters[starter] / self._total_questions
-                    if usage_pct > 0.10:
-                        return True
-                
                 self._expl_starters[starter] += 1
                 
         self._total_questions += 1

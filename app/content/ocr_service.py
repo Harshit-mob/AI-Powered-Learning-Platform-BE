@@ -31,6 +31,14 @@ class OCRService:
         else:
             logger.warning("PaddleOCR is not installed. OCR fallback will return empty text.")
 
+    def set_language(self, lang: str):
+        if self.lang != lang:
+            logger.info(f"Switching OCR language from {self.lang} to {lang}")
+            self.lang = lang
+            if PADDLE_AVAILABLE:
+                self._engine = PaddleOCR(use_textline_orientation=True, lang=self.lang)
+
+
     def process_image(self, image_bytes: bytes) -> Tuple[str, float]:
         """
         Takes raw image bytes, runs OCR, and returns the extracted text and average confidence.

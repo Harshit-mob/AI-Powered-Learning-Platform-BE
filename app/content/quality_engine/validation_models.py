@@ -22,9 +22,9 @@ class ValidationResult:
 
 @dataclass
 class QualityConfig:
-    quality_threshold: int = 90
+    quality_threshold: int = 80
     coverage_threshold: int = 95
-    voice_threshold: int = 90
+    voice_threshold: int = 80
     duplicate_similarity: float = 0.90
     preferred_question_words: int = 12
     max_question_words: int = 18

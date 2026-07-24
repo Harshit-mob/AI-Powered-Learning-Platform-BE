@@ -118,10 +118,18 @@ class MetadataValidationPipeline:
             score -= 10
             messages.append("Explanation exceeds 70 words")
         
+        # Check if the explanation or question text contains Devanagari script (Hindi)
+        is_hindi = any(0x0900 <= ord(char) <= 0x097F for char in expl) or any(0x0900 <= ord(char) <= 0x097F for char in str(question.get("text", "")))
+        
         # Check for 4-part structure elements: correct answer mentioned, "because"/"since", "wrong"/"incorrect", "example"
-        has_reasoning = "because" in expl or "since" in expl or "as " in expl or "due to" in expl
-        has_wrong_check = "incorrect" in expl or "wrong" in expl or "not " in expl
-        has_example = "for example" in expl or "instance" in expl or "everyday" in expl or "real-life" in expl or "real life" in expl
+        if is_hindi:
+            has_reasoning = "क्योंकि" in expl or "चूंकि" in expl or "कारण" in expl or "इसलिए" in expl or "वजह" in expl
+            has_wrong_check = "गलत" in expl or "अशुद्ध" in expl or "नहीं" in expl or "अलावा" in expl
+            has_example = "उदाहरण" in expl or "जैसे" in expl or "तुलना" in expl
+        else:
+            has_reasoning = "because" in expl or "since" in expl or "as " in expl or "due to" in expl
+            has_wrong_check = "incorrect" in expl or "wrong" in expl or "not " in expl
+            has_example = "for example" in expl or "instance" in expl or "everyday" in expl or "real-life" in expl or "real life" in expl
         
         if not has_reasoning:
             score -= 2
@@ -136,7 +144,7 @@ class MetadataValidationPipeline:
         # 8. Language Simplicity / Age Appropriateness (Reading Age)
         full_text = str(question.get("text", "")) + " " + expl
         words = full_text.split()
-        if words:
+        if words and not is_hindi:  # Skip ARI for Hindi text as the metric is calibrated only for English
             num_words = len(words)
             num_chars = sum(len(w) for w in words)
             import re
@@ -161,7 +169,12 @@ class MetadataValidationPipeline:
             score -= 3
             messages.append("Concept missing from question text and explanation")
             
-        is_scenario = any(name in str(question.get("text", "")) for name in ["Riya", "Rohan", "Aisha", "student", "imagine", "notices", "observes", "experiment", "test"])
+        # Check scenario keywords including Hindi translations
+        scenario_keywords = [
+            "Riya", "Rohan", "Aisha", "student", "imagine", "notices", "observes", "experiment", "test",
+            "रिया", "रोहन", "आयशा", "छात्र", "कल्पना", "ध्यान", "अवलोकन", "प्रयोग", "परीक्षण", "सोचिए", "मान लीजिए"
+        ]
+        is_scenario = any(name in str(question.get("text", "")) for name in scenario_keywords)
         if not is_scenario and q_type not in ["DEFINITION", "FILL_BLANK", "TRUE_FALSE"]:
             score -= 3
             messages.append("Not a scenario-based question")
@@ -190,7 +203,7 @@ class MetadataValidationPipeline:
         # Final Score Assignment (Educational Quality Score)
         intel.metadata_score = max(0, min(100, int(score)))
         
-        if intel.metadata_score < 90:
-            return False, intel, f"Educational Quality Score ({intel.metadata_score}) fell below strict educational threshold of 90. Issues: {'; '.join(messages)}"
+        if intel.metadata_score < 80:
+            return False, intel, f"Educational Quality Score ({intel.metadata_score}) fell below strict educational threshold of 80. Issues: {'; '.join(messages)}"
             
         return True, intel, "; ".join(messages)

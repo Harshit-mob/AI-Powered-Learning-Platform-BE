@@ -44,6 +44,21 @@ class RevisionProvider(RecommendationProvider):
         }
         scope = scope_map.get(content_type, "topic")
 
+        # Resolve Subject Name
+        subject_name = "general"
+        try:
+            from app.models.course import Subject, Chapter, Topic
+            if content_type == "CHAPTER":
+                subj = self.uow.session.query(Subject).join(Chapter).filter(Chapter.id == content_id).first()
+                if subj:
+                    subject_name = subj.name.lower()
+            elif content_type in ("TOPIC", "MULTI_TOPIC"):
+                subj = self.uow.session.query(Subject).join(Chapter).join(Topic).filter(Topic.id == content_id).first()
+                if subj:
+                    subject_name = subj.name.lower()
+        except Exception:
+            pass
+
         # Build a human-readable label from the content
         content_label = self._resolve_label(content_type, content_id)
 
@@ -51,14 +66,14 @@ class RevisionProvider(RecommendationProvider):
         accuracy_pct = int((last_session.accuracy or 0.0) * 100)
 
         return {
-            "title": "Revision Session",
+            "title": f"Revision ({subject_name})",
             "priority": 2,                          # sits between Daily Practice (1) and Chapter Revision (3)
             "estimated_duration": 10,
             "question_count": 10,
             "xp_reward": 60,
             "status": "READY",
             "reason": (
-                f"You scored {accuracy_pct}% in your last session"
+                f"You scored {accuracy_pct}% in your last {subject_name} session"
                 + (f" — {weak_count} weak topic(s) need attention." if weak_count else ".")
             ),
             "session_type": "REVISION",

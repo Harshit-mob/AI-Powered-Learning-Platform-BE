@@ -66,20 +66,30 @@ class AnswerValidator:
         if expected and expected.lower() not in ["true", "false", "yes", "no"]:
             exp_lower = expected.lower()
             variants = set()
-            variants.add(f"the {exp_lower}")
-            variants.add(f"it is {exp_lower}")
-            variants.add(f"{exp_lower} is the answer")
             
-            # If it's a verb (ends with 'ing' or 'tion'), add natural spoken versions
-            if exp_lower.endswith("tion"):
-                base = exp_lower[:-4]
-                variants.add(f"{base}ing carefully")
-                variants.add(f"by {base}ing")
-                variants.add(f"we {base}")
+            # Detect Hindi (Devanagari script)
+            is_hindi_ans = any(0x0900 <= ord(char) <= 0x097F for char in exp_lower)
+            
+            if is_hindi_ans:
+                variants.add(f"उत्तर {exp_lower} है")
+                variants.add(f"सही उत्तर {exp_lower} है")
+                variants.add(f"यह {exp_lower} है")
+            else:
+                variants.add(f"the {exp_lower}")
+                variants.add(f"it is {exp_lower}")
+                variants.add(f"{exp_lower} is the answer")
+                
+                # If it's a verb (ends with 'ing' or 'tion'), add natural spoken versions
+                if exp_lower.endswith("tion"):
+                    base = exp_lower[:-4]
+                    variants.add(f"{base}ing carefully")
+                    variants.add(f"by {base}ing")
+                    variants.add(f"we {base}")
                 
             for variant in variants:
                 if variant.lower() not in seen:
-                    new_acceptable.append(variant.capitalize() if len(variant.split()) > 3 else variant.title())
+                    # For Hindi we don't need title case / capitalize as it does not apply
+                    new_acceptable.append(variant if is_hindi_ans else (variant.capitalize() if len(variant.split()) > 3 else variant.title()))
                     seen.add(variant.lower())
                     repaired = True
                     warnings.append(f"Synthesized natural variant: {variant}")
