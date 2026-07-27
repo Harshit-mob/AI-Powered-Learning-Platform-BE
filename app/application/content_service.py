@@ -47,7 +47,7 @@ class ContentService:
             
             completed_sessions = self.uow.session.query(LearningSession.content_id).filter(
                 LearningSession.student_id == student_id,
-                LearningSession.content_type == "TOPIC",
+                LearningSession.content_type.in_(["TOPIC", "MULTI_TOPIC"]),
                 LearningSession.completion_reason == "COMPLETED"
             ).all()
             completed_session_topic_ids = {str(s[0]) for s in completed_sessions}

@@ -323,7 +323,7 @@ class SessionApplicationService:
                 session.strong_concepts = strong_lus if strong_lus else None
 
                 # Mark daily learning status as COMPLETED for this topic
-                if session.content_type == "TOPIC":
+                if session.content_type in ("TOPIC", "MULTI_TOPIC"):
                     from app.models.learning.student_daily_learning import StudentDailyLearning
                     daily_learning = self.uow.session.query(StudentDailyLearning).filter(
                         StudentDailyLearning.student_id == student_id,
