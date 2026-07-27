@@ -83,10 +83,6 @@ class ContentService:
                             
                 avg_mastery = int((mastery_sum / len(chapter_lu_ids)) * 100) if chapter_lu_ids else 0
                 
-                total_topics = len(topics)
-                ratio = (completed_lus / len(chapter_lu_ids)) if chapter_lu_ids else 0
-                completed_topics = int(total_topics * ratio)
-                
                 topics_data = [
                     {
                         "id": str(t.Topic.id),
@@ -96,6 +92,9 @@ class ContentService:
                     }
                     for t in topics
                 ]
+                
+                total_topics = len(topics)
+                completed_topics = sum(1 for t in topics_data if t["is_completed"])
                 
                 result.append({
                     "chapter_id": str(chapter.id),
