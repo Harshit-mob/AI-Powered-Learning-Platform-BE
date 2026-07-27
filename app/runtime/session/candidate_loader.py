@@ -22,7 +22,22 @@ class CandidateLoader:
             stmt = select(Question).join(Question.learning_unit)
             
             if content_type == "TOPIC":
-                stmt = stmt.join(LearningUnit.subtopic).where(Subtopic.topic_id == content_id)
+                # Check how many questions this topic has
+                topic_stmt = select(Question).join(Question.learning_unit).join(LearningUnit.subtopic).where(Subtopic.topic_id == content_id)
+                questions_check = self.uow.session.execute(topic_stmt).scalars().all()
+                if len(questions_check) < 10:
+                    topic_obj = self.uow.session.query(Topic).filter(Topic.id == content_id).first()
+                    if topic_obj:
+                        import logging
+                        logging.getLogger(__name__).info(
+                            f"Topic {content_id} has only {len(questions_check)} questions. "
+                            f"Merging with other topics in chapter {topic_obj.chapter_id} to ensure a full session."
+                        )
+                        stmt = stmt.join(LearningUnit.subtopic).join(Subtopic.topic).where(Topic.chapter_id == topic_obj.chapter_id)
+                    else:
+                        stmt = stmt.join(LearningUnit.subtopic).where(Subtopic.topic_id == content_id)
+                else:
+                    stmt = stmt.join(LearningUnit.subtopic).where(Subtopic.topic_id == content_id)
             elif content_type == "CHAPTER":
                 stmt = stmt.join(LearningUnit.subtopic).join(Subtopic.topic).where(Topic.chapter_id == content_id)
             elif content_type == "LEARNING_UNIT":
