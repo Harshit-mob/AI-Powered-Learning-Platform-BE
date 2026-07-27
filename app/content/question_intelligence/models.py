@@ -7,6 +7,8 @@ class BloomLevel(Enum):
     UNDERSTAND = "UNDERSTAND"
     APPLY = "APPLY"
     ANALYZE = "ANALYZE"
+    EVALUATE = "EVALUATE"
+    CREATE = "CREATE"
 
 class CognitiveLevel(Enum):
     RECALL = "RECALL"

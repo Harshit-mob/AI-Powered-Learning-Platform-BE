@@ -53,6 +53,8 @@ class PDFExtractor:
         detected_lang = 'en'
         if 'hindi' in str(path).lower() or 'hi' in str(path).lower().split('/'):
             detected_lang = 'hi'
+        elif 'gujarati' in str(path).lower() or 'gu' in str(path).lower().split('/'):
+            detected_lang = 'gu'
         else:
             # Check native text of first few pages (up to 5 pages)
             sample_text = ""
@@ -64,9 +66,15 @@ class PDFExtractor:
                     pass
             # Count Devanagari Unicode characters (range: U+0900 to U+097F)
             devanagari_count = sum(1 for char in sample_text if 0x0900 <= ord(char) <= 0x097F)
+            # Count Gujarati Unicode characters (range: U+0A80 to U+0AFF)
+            gujarati_count = sum(1 for char in sample_text if 0x0A80 <= ord(char) <= 0x0AFF)
+            
             if devanagari_count > 10:
                 detected_lang = 'hi'
                 logger.info(f"Detected Devanagari script. Setting OCR language to 'hi'.")
+            elif gujarati_count > 10:
+                detected_lang = 'gu'
+                logger.info(f"Detected Gujarati script. Setting OCR language to 'gu'.")
 
         if detected_lang != 'en' and self.ocr_service and hasattr(self.ocr_service, 'set_language'):
             self.ocr_service.set_language(detected_lang)

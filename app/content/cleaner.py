@@ -35,6 +35,7 @@ class ContentCleaner:
             if not text.strip():
                 continue
                 
+            text = text.replace('\x00', '')
             text = self._normalize_spaces(text)
             text = self._fix_ocr_mistakes(text)
             text = self._fix_broken_lines(text)

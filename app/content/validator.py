@@ -49,8 +49,8 @@ class ContentValidator:
                 report["very_short_paragraphs"] += 1
                 
             # Check for unknown tokens/garbage (e.g., %$#@^&)
-            # Find characters that are not standard text, punctuation, or numbers. Include Devanagari range for Hindi.
-            special_chars = len(re.findall(r'[^a-zA-Z0-9\s.,!?:;\'"()\[\]{}\-/%°\u0900-\u097f]', p))
+            # Find characters that are not standard text, punctuation, or numbers. Include Devanagari (Hindi) and Gujarati ranges.
+            special_chars = len(re.findall(r'[^a-zA-Z0-9\s.,!?:;\'"()\[\]{}\-/%°\u0900-\u097f\u0a80-\u0aff]', p))
             if len(p) > 0 and (special_chars / len(p)) > 0.15: # >15% special chars
                 report["unknown_ocr_tokens"] += 1
                 report["warnings"].append(f"High unknown OCR token density in: '{p[:40]}...'")

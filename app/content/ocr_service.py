@@ -25,9 +25,10 @@ class OCRService:
         self._engine = None
         
         if PADDLE_AVAILABLE:
-            # Initialize OCR engine (lazy-loaded on startup)
-            # use_textline_orientation=True helps with scanned images that might be slightly rotated
-            self._engine = PaddleOCR(use_textline_orientation=True, lang=self.lang)
+            if self.lang != 'gu':
+                # Initialize OCR engine (lazy-loaded on startup)
+                # use_textline_orientation=True helps with scanned images that might be slightly rotated
+                self._engine = PaddleOCR(use_textline_orientation=True, lang=self.lang)
         else:
             logger.warning("PaddleOCR is not installed. OCR fallback will return empty text.")
 
@@ -35,7 +36,7 @@ class OCRService:
         if self.lang != lang:
             logger.info(f"Switching OCR language from {self.lang} to {lang}")
             self.lang = lang
-            if PADDLE_AVAILABLE:
+            if PADDLE_AVAILABLE and lang != 'gu':
                 self._engine = PaddleOCR(use_textline_orientation=True, lang=self.lang)
 
 
@@ -48,7 +49,27 @@ class OCRService:
             
         Returns:
             Tuple[str, float]: Extracted text and the confidence score (0.0 to 1.0).
+            
         """
+        if self.lang == 'gu':
+            try:
+                from app.content.ai_provider import default_ai_provider
+                from google.genai import types
+                
+                logger.info("Using Gemini to transcribe Gujarati page image...")
+                img_part = types.Part.from_bytes(data=image_bytes, mime_type="image/png")
+                
+                prompt = "You are an expert Gujarati OCR transcriber. Transcribe all Gujarati text from this page image. Preserve paragraphs and headings. Output only the transcribed Gujarati text."
+                transcription = default_ai_provider.generate_text(
+                    system_prompt=prompt,
+                    content=[img_part, "Transcribe this page."]
+                )
+                
+                return transcription, 1.0
+            except Exception as e:
+                logger.error(f"Gemini Gujarati OCR failed: {e}")
+                return "", 0.0
+
         if not self._engine:
             logger.error("OCR engine is not initialized. Cannot process image.")
             return "", 0.0

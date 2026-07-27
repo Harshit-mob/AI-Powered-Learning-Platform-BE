@@ -57,8 +57,8 @@ class ContentImporter:
                 
                 for p_subtopic in p_topic.subtopics:
                     subtopic = Subtopic(
-                        title=p_subtopic.title,
-                        content=p_subtopic.content,
+                        title=p_subtopic.title.replace('\x00', '') if p_subtopic.title else "",
+                        content=p_subtopic.content.replace('\x00', '') if p_subtopic.content else "",
                         topic_id=topic.id
                     )
                     db.add(subtopic)
@@ -80,16 +80,21 @@ class ContentImporter:
         try:
             db_units = []
             for p_unit in units:
+                content = p_unit.content.replace('\x00', '') if p_unit.content else ""
+                title = p_unit.title.replace('\x00', '') if p_unit.title else ""
+                learning_objective = p_unit.learning_objective.replace('\x00', '') if p_unit.learning_objective else ""
+                summary = p_unit.summary.replace('\x00', '') if p_unit.summary else ""
+                
                 unit = LearningUnit(
                     subtopic_id=subtopic_id,
-                    title=p_unit.title,
-                    content=p_unit.content,
-                    learning_objective=p_unit.learning_objective,
+                    title=title,
+                    content=content,
+                    learning_objective=learning_objective,
                     keywords=p_unit.keywords,
                     difficulty=p_unit.difficulty,
                     estimated_reading_time=p_unit.estimated_reading_time,
                     source_pages=p_unit.source_pages,
-                    summary=p_unit.summary
+                    summary=summary
                 )
                 db.add(unit)
                 db_units.append(unit)
