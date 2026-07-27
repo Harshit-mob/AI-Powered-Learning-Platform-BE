@@ -43,10 +43,22 @@ class ContentService:
             masteries = self.uow.mastery.get_by_student(student_id)
             mastery_by_concept = {m.concept_id: m for m in masteries}
             
-            daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
-                StudentDailyLearning.student_id == student_id
+            from app.models.assessment.learning_session import LearningSession
+            
+            completed_sessions = self.uow.session.query(LearningSession.content_id).filter(
+                LearningSession.student_id == student_id,
+                LearningSession.content_type == "TOPIC",
+                LearningSession.completion_reason == "COMPLETED"
             ).all()
-            completed_topic_ids = {str(dl.topic_id) for dl in daily_learnings}
+            completed_session_topic_ids = {str(s[0]) for s in completed_sessions}
+
+            daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
+                StudentDailyLearning.student_id == student_id,
+                StudentDailyLearning.status == "COMPLETED"
+            ).all()
+            completed_daily_topic_ids = {str(dl.topic_id) for dl in daily_learnings}
+            
+            completed_topic_ids = completed_session_topic_ids.union(completed_daily_topic_ids)
             
             result = []
             for chapter in chapters:

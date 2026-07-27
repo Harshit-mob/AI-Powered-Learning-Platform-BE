@@ -322,6 +322,16 @@ class SessionApplicationService:
                 session.weak_concepts = weak_lus if weak_lus else None
                 session.strong_concepts = strong_lus if strong_lus else None
 
+                # Mark daily learning status as COMPLETED for this topic
+                if session.content_type == "TOPIC":
+                    from app.models.learning.student_daily_learning import StudentDailyLearning
+                    daily_learning = self.uow.session.query(StudentDailyLearning).filter(
+                        StudentDailyLearning.student_id == student_id,
+                        StudentDailyLearning.topic_id == session.content_id
+                    ).first()
+                    if daily_learning:
+                        daily_learning.status = "COMPLETED"
+
                 # session_duration_seconds: actual wall-clock time of the session
                 if session.start_time:
                     session.session_duration_seconds = int(
