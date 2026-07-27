@@ -50,76 +50,88 @@ class StudentService:
             # Ensure it is displayed safely depending on whether DB stores 0-1 or 0-100
             display_prog = int(mastery_val * 100) if mastery_val <= 1.0 else int(mastery_val)
 
-            from sqlalchemy import func
-            from app.models.course import Subject, Chapter, Topic, Subtopic, LearningUnit
-            from app.models.learning.student_mastery import StudentMastery
+            from app.models.course import Subject, Chapter, Topic
+            from app.models.assessment.learning_session import LearningSession
+            from app.models.learning.student_daily_learning import StudentDailyLearning
             
-            # 1. Total LUs per chapter and subject
-            chapter_lu_counts = self.uow.session.query(
-                Subject.id, Subject.name, Chapter.id, Chapter.title, func.count(LearningUnit.id)
+            # Get completed topic IDs for the student
+            completed_sessions = self.uow.session.query(LearningSession.content_id).filter(
+                LearningSession.student_id == student_id,
+                LearningSession.content_type.in_(["TOPIC", "MULTI_TOPIC"]),
+                LearningSession.completion_reason == "COMPLETED"
+            ).all()
+            completed_session_topic_ids = {str(s[0]) for s in completed_sessions}
+
+            daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
+                StudentDailyLearning.student_id == student_id,
+                StudentDailyLearning.status == "COMPLETED"
+            ).all()
+            completed_daily_topic_ids = {str(dl.topic_id) for dl in daily_learnings}
+            
+            completed_topic_ids = completed_session_topic_ids.union(completed_daily_topic_ids)
+
+            # Retrieve all topics grouped by subject and chapter
+            topics_query = self.uow.session.query(
+                Subject.id, Subject.name, Chapter.id, Chapter.title, Topic.id
             ).select_from(Subject)\
              .join(Chapter, Chapter.subject_id == Subject.id)\
-             .join(Topic, Topic.chapter_id == Chapter.id)\
-             .join(Subtopic, Subtopic.topic_id == Topic.id)\
-             .join(LearningUnit, LearningUnit.subtopic_id == Subtopic.id)\
-             .group_by(Subject.id, Subject.name, Chapter.id, Chapter.title).all()
+             .join(Topic, Topic.chapter_id == Chapter.id).all()
              
-            # 2. Sum of mastery per chapter for this student
-            student_mastery_sum = self.uow.session.query(
-                Chapter.id, func.sum(StudentMastery.mastery_percentage)
-            ).join(Topic, Topic.chapter_id == Chapter.id)\
-             .join(Subtopic, Subtopic.topic_id == Topic.id)\
-             .join(LearningUnit, LearningUnit.subtopic_id == Subtopic.id)\
-             .join(StudentMastery, StudentMastery.concept_id == LearningUnit.id)\
-             .filter(StudentMastery.student_id == student_id)\
-             .group_by(Chapter.id).all()
-             
-            mastery_dict = {ch_id: val for ch_id, val in student_mastery_sum}
-            
             subject_map = {}
-            grand_total_lus = 0
-            grand_total_mastery = 0.0
-            
-            for sub_id, sub_name, ch_id, ch_title, total_lus in chapter_lu_counts:
-                if sub_id not in subject_map:
-                    subject_map[sub_id] = {
-                        "subject_id": str(sub_id),
+            for sub_id, sub_name, ch_id, ch_title, topic_id in topics_query:
+                sub_id_str = str(sub_id)
+                ch_id_str = str(ch_id)
+                
+                if sub_id_str not in subject_map:
+                    subject_map[sub_id_str] = {
+                        "subject_id": sub_id_str,
                         "subject_name": sub_name,
                         "progress": 0,
-                        "chapters": [],
-                        "_total_lus": 0,
-                        "_total_mastery": 0.0
+                        "chapters": {},
+                        "_total_topics": 0,
+                        "_completed_topics": 0
                     }
-                    
-                sum_mastery = mastery_dict.get(ch_id, 0.0)
                 
-                # Subject totals
-                subject_map[sub_id]["_total_lus"] += total_lus
-                subject_map[sub_id]["_total_mastery"] += sum_mastery
+                sub = subject_map[sub_id_str]
+                if ch_id_str not in sub["chapters"]:
+                    sub["chapters"][ch_id_str] = {
+                        "chapter_id": ch_id_str,
+                        "chapter_title": ch_title,
+                        "progress": 0,
+                        "_total_topics": 0,
+                        "_completed_topics": 0
+                    }
                 
-                # Grand totals
-                grand_total_lus += total_lus
-                grand_total_mastery += sum_mastery
+                ch = sub["chapters"][ch_id_str]
+                ch["_total_topics"] += 1
+                sub["_total_topics"] += 1
                 
-                avg_mastery = sum_mastery / total_lus if total_lus > 0 else 0.0
-                progress_pct = int(avg_mastery * 100) if avg_mastery <= 1.0 else int(avg_mastery)
-                
-                subject_map[sub_id]["chapters"].append({
-                    "chapter_id": str(ch_id),
-                    "chapter_title": ch_title,
-                    "progress": progress_pct
-                })
-                
+                if str(topic_id) in completed_topic_ids:
+                    ch["_completed_topics"] += 1
+                    sub["_completed_topics"] += 1
+
             subject_progress = []
-            for sub in subject_map.values():
-                sub_lus = sub.pop("_total_lus")
-                sub_mast = sub.pop("_total_mastery")
-                sub_pct = (sub_mast / sub_lus) if sub_lus > 0 else 0.0
-                sub["progress"] = int(sub_pct * 100) if sub_pct <= 1.0 else int(sub_pct)
+            grand_total_topics = 0
+            grand_completed_topics = 0
+            
+            for sub_id, sub in subject_map.items():
+                chapters_list = []
+                for ch_id, ch in sub["chapters"].items():
+                    total_ch = ch.pop("_total_topics")
+                    completed_ch = ch.pop("_completed_topics")
+                    ch["progress"] = int((completed_ch / total_ch) * 100) if total_ch > 0 else 0
+                    chapters_list.append(ch)
+                
+                total_sub = sub.pop("_total_topics")
+                completed_sub = sub.pop("_completed_topics")
+                sub["progress"] = int((completed_sub / total_sub) * 100) if total_sub > 0 else 0
+                sub["chapters"] = chapters_list
                 subject_progress.append(sub)
                 
-            absolute_overall_pct = (grand_total_mastery / grand_total_lus) if grand_total_lus > 0 else 0.0
-            absolute_overall_progress = int(absolute_overall_pct * 100) if absolute_overall_pct <= 1.0 else int(absolute_overall_pct)
+                grand_total_topics += total_sub
+                grand_completed_topics += completed_sub
+                
+            absolute_overall_progress = int((grand_completed_topics / grand_total_topics) * 100) if grand_total_topics > 0 else 0
 
             return {
                 "overall_progress": absolute_overall_progress,
@@ -128,7 +140,7 @@ class StudentService:
                 "target_xp": getattr(student, "current_level", 1) * 100,
                 "streak_days": student.streak_days,
                 "subject_progress": subject_progress,
-                "current_mastery": mastery_val,
+                "current_mastery": display_prog,
                 "recent_sessions": recent_sessions
             }
             
