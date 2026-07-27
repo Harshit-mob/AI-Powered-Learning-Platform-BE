@@ -65,12 +65,33 @@ class RevisionProvider(RecommendationProvider):
         weak_count = len(last_session.weak_concepts or [])
         accuracy_pct = int((last_session.accuracy or 0.0) * 100)
 
+        from sqlalchemy import func
+        from app.models.course import LearningUnit, Subtopic, Topic
+        
+        if content_type == "CHAPTER":
+            total_lus = self.uow.session.query(func.count(LearningUnit.id))\
+                .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
+                .join(Topic, Topic.id == Subtopic.topic_id)\
+                .filter(Topic.chapter_id == content_id).scalar() or 0
+        elif content_type in ("TOPIC", "MULTI_TOPIC"):
+            total_lus = self.uow.session.query(func.count(LearningUnit.id))\
+                .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
+                .filter(Subtopic.topic_id == content_id).scalar() or 0
+        else:
+            total_lus = 5
+            
+        q_count = min(10, total_lus)
+        if q_count < 3:
+            q_count = 3
+            
+        xp = q_count * 6 + 20 + 20
+
         return {
             "title": f"Revision ({subject_name})",
             "priority": 2,                          # sits between Daily Practice (1) and Chapter Revision (3)
-            "estimated_duration": 10,
-            "question_count": 10,
-            "xp_reward": 60,
+            "estimated_duration": q_count,
+            "question_count": q_count,
+            "xp_reward": xp,
             "status": "READY",
             "reason": (
                 f"You scored {accuracy_pct}% in your last {subject_name} session"

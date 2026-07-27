@@ -30,18 +30,31 @@ class DailyPracticeProvider(RecommendationProvider):
         if not daily_learnings:
             return None
             
+        from sqlalchemy import func
+        from app.models.course import LearningUnit, Subtopic
+
         subject_topics = defaultdict(list)
         for dl, subject_name in daily_learnings:
             subject_topics[subject_name].append(str(dl.topic_id))
             
         recs = []
         for subject_name, topic_ids in subject_topics.items():
+            total_lus = self.uow.session.query(func.count(LearningUnit.id))\
+                .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
+                .filter(Subtopic.topic_id.in_(topic_ids)).scalar() or 0
+            
+            q_count = min(10, total_lus)
+            if q_count < 3:
+                q_count = 3
+                
+            xp = q_count * 5 + 20 + 15
+            
             recs.append({
                 "title": f"Daily session ({subject_name.lower()})",
                 "priority": 1,
-                "estimated_duration": 10 + (len(topic_ids) * 2),
-                "question_count": 10 + (len(topic_ids) * 2),
-                "xp_reward": 50,
+                "estimated_duration": q_count,
+                "question_count": q_count,
+                "xp_reward": xp,
                 "status": "READY",
                 "reason": f"Daily practice for {subject_name}",
                 "session_type": "DAILY_PRACTICE",

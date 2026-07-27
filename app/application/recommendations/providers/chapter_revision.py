@@ -65,12 +65,17 @@ class ChapterRevisionProvider(RecommendationProvider):
             else:
                 reason = "Average mastery too low to unlock chapter review."
                 
+        q_count = min(20, len(lu_ids))
+        if q_count < 3:
+            q_count = 3
+        xp = q_count * 8 + 30 + 30
+
         return {
             "title": "Chapter Revision",
             "priority": 3,
-            "estimated_duration": 15,
-            "question_count": 20,
-            "xp_reward": 100,
+            "estimated_duration": q_count,
+            "question_count": q_count,
+            "xp_reward": xp,
             "status": status,
             "reason": reason,
             "session_type": "CHAPTER_REVISION",

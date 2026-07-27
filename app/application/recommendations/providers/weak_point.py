@@ -61,12 +61,17 @@ class WeakPointProvider(RecommendationProvider):
             
             # Only recommend if the score is somewhat high, meaning they actually need it
             if top_score >= 0.3:
+                q_count = min(8, len(scored_masteries))
+                if q_count < 3:
+                    q_count = 3
+                xp = q_count * 8 + 20 + 25
+                
                 recs.append({
                     "title": f"Weak point booster ({subject_name.lower()})",
                     "priority": 2,
-                    "estimated_duration": 8,
-                    "question_count": 8,
-                    "xp_reward": 80,
+                    "estimated_duration": q_count,
+                    "question_count": q_count,
+                    "xp_reward": xp,
                     "status": "NEEDS_ATTENTION",
                     "reason": f"Targeted practice on {subject_name} concepts you struggled with recently",
                     "session_type": "WEAK_POINT",
