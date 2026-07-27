@@ -25,7 +25,7 @@ class ContentService:
                 {
                     "subject_id": str(s.Subject.id),
                     "subject_name": s.Subject.name,
-                    "icon": f"https://ui-avatars.com/api/?name={s.Subject.name}&background=random", 
+                    "icon": f"https://ui-avatars.com/api/?name={s.Subject.name}&background=random&format=png", 
                     "total_chapters": s.total_chapters
                 }
                 for s in subjects
