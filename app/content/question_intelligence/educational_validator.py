@@ -61,9 +61,12 @@ class EducationalValidator:
             return True, "" # Can't validate against an empty/stopword-only LO
             
         # We want to ensure the question OR the concept has at least ONE meaningful word in common with the learning objective.
-        # For Hindi, we bypass this strict check to prevent false-positive rejections due to translation/inflection differences.
-        is_hindi_content = any(0x0900 <= ord(char) <= 0x097F for char in text + concept + learning_objective)
-        if is_hindi_content:
+        # For Hindi and Gujarati, we bypass this strict check to prevent false-positive rejections due to translation/inflection differences.
+        is_indic_content = any(
+            (0x0900 <= ord(char) <= 0x097F) or (0x0a80 <= ord(char) <= 0x0aff)
+            for char in text + concept + learning_objective
+        )
+        if is_indic_content:
             return True, ""
 
         overlap_with_text = lo_tokens.intersection(text_tokens)

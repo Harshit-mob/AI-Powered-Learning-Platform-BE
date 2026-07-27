@@ -27,10 +27,17 @@ class ContentImporter:
                 db.add(board)
                 db.flush() # Flush to generate UUIDs instantly without committing
                 
-            # 2. Get or Create Grade
-            grade = db.query(Grade).filter(Grade.name == parsed.grade, Grade.board_id == board.id).first()
+            # 2. Get or Create Grade (normalized to support "Grade 6" -> "6")
+            import re
+            grade_digits = re.search(r'\d+', parsed.grade)
+            grade_name_norm = grade_digits.group(0) if grade_digits else parsed.grade.strip()
+            
+            grade = db.query(Grade).filter(
+                (Grade.name == grade_name_norm) | (Grade.name == parsed.grade), 
+                Grade.board_id == board.id
+            ).first()
             if not grade:
-                grade = Grade(name=parsed.grade, board_id=board.id)
+                grade = Grade(name=grade_name_norm, board_id=board.id)
                 db.add(grade)
                 db.flush()
                 
