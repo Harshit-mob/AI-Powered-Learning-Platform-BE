@@ -11,7 +11,7 @@ class DailyPracticeProvider(RecommendationProvider):
     def get_recommendation(self, student_id: uuid.UUID) -> Optional[List[Dict[str, Any]]]:
         today = datetime.now(timezone.utc).date()
         
-        # Get today's uncompleted daily learnings with subject details
+        # 1. Get today's uncompleted daily learnings with subject details
         daily_learnings = self.uow.session.query(
             StudentDailyLearning,
             Subject.name.label("subject_name")
@@ -27,18 +27,36 @@ class DailyPracticeProvider(RecommendationProvider):
             StudentDailyLearning.status == "PENDING"
         ).all()
         
+        # 2. If no check-ins for today, fallback to past daily learnings (regardless of date/status)
+        if not daily_learnings:
+            daily_learnings = self.uow.session.query(
+                StudentDailyLearning,
+                Subject.name.label("subject_name")
+            ).join(
+                Topic, Topic.id == StudentDailyLearning.topic_id
+            ).join(
+                Chapter, Chapter.id == Topic.chapter_id
+            ).join(
+                Subject, Subject.id == Chapter.subject_id
+            ).filter(
+                StudentDailyLearning.student_id == student_id
+            ).order_by(
+                StudentDailyLearning.learning_date.desc()
+            ).all()
+            
         if not daily_learnings:
             return None
             
         from sqlalchemy import func
         from app.models.course import LearningUnit, Subtopic
 
-        subject_topics = defaultdict(list)
+        subject_topics = defaultdict(set)
         for dl, subject_name in daily_learnings:
-            subject_topics[subject_name].append(str(dl.topic_id))
+            subject_topics[subject_name].add(str(dl.topic_id))
             
         recs = []
-        for subject_name, topic_ids in subject_topics.items():
+        for subject_name, topic_set in subject_topics.items():
+            topic_ids = list(topic_set)
             total_lus = self.uow.session.query(func.count(LearningUnit.id))\
                 .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
                 .filter(Subtopic.topic_id.in_(topic_ids)).scalar() or 0
