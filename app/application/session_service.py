@@ -354,31 +354,33 @@ class SessionApplicationService:
                     duration_minutes = int((session.end_time - session.start_time).total_seconds() / 60)
                     student.total_study_minutes += max(0, duration_minutes)
                     
-                # 3. Bump Streak (Max +1 per calendar day)
+                # 3. Bump Streak (Max +1 per calendar day, only on DAILY_PRACTICE session)
                 # Rules:
-                #   - Any completed session counts, regardless of accuracy/score
+                #   - Only DAILY_PRACTICE session counts
                 #   - Only +1 per calendar day (not per session)
                 #   - Compare by local calendar date to avoid UTC midnight edge cases
                 
-                # Check and reset streak if they missed yesterday
+                # Check and reset streak if they missed yesterday's daily session
                 from app.application.student_service import check_and_update_student_streak
                 check_and_update_student_streak(self.uow, student_id)
                 
-                now = datetime.now(timezone.utc)
-                today_date = now.date()  # use .date() not midnight UTC to avoid IST edge cases
+                if session and session.session_type == "DAILY_PRACTICE":
+                    now = datetime.now(timezone.utc)
+                    today_date = now.date()  # use .date() not midnight UTC to avoid IST edge cases
 
-                from app.models.assessment.learning_session import LearningSession
-                # Count other COMPLETED sessions for this student on the same calendar date
-                completed_today = self.uow.session.query(LearningSession).filter(
-                    LearningSession.student_id == student_id,
-                    LearningSession.completion_reason == "COMPLETED",
-                    LearningSession.end_time >= datetime(today_date.year, today_date.month, today_date.day, tzinfo=timezone.utc),
-                    LearningSession.id != session_id
-                ).count()
+                    from app.models.assessment.learning_session import LearningSession
+                    # Count other COMPLETED DAILY_PRACTICE sessions for this student on the same calendar date
+                    completed_today = self.uow.session.query(LearningSession).filter(
+                        LearningSession.student_id == student_id,
+                        LearningSession.session_type == "DAILY_PRACTICE",
+                        LearningSession.completion_reason == "COMPLETED",
+                        LearningSession.end_time >= datetime(today_date.year, today_date.month, today_date.day, tzinfo=timezone.utc),
+                        LearningSession.id != session_id
+                    ).count()
 
-                # Only bump if this is the FIRST completed session today
-                if completed_today == 0:
-                    student.streak_days += 1
+                    # Only bump if this is the FIRST completed daily session today
+                    if completed_today == 0:
+                        student.streak_days += 1
                         
                 # 4. XP and Leveling
                 student.total_xp += score

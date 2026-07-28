@@ -198,9 +198,10 @@ def check_and_update_student_streak(uow: UnitOfWork, student_id: uuid.UUID) -> i
     today_date = now.date()
     yesterday_date = today_date - timedelta(days=1)
     
-    # Find the most recent completed session for this student
+    # Find the most recent completed DAILY_PRACTICE session for this student
     latest_completed = uow.session.query(LearningSession).filter(
         LearningSession.student_id == student_id,
+        LearningSession.session_type == "DAILY_PRACTICE",
         LearningSession.completion_reason == "COMPLETED",
         LearningSession.end_time.isnot(None)
     ).order_by(LearningSession.end_time.desc()).first()
