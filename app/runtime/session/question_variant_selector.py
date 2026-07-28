@@ -57,12 +57,15 @@ class QuestionVariantSelector:
             elif bloom_val in ["EVALUATE", "EVALUATION"]: bloom_val = "EVALUATION"
             elif bloom_val in ["CREATE", "CREATION"]: bloom_val = "CREATION"
 
-            if is_correct:
+            if is_correct and session_type != SessionType.REVISION:
                 score = -1000.0
                 reasons.append("exhausted_variant")
             elif attempts == 0:
                 score = 100.0
                 reasons.append("unseen_variant")
+            elif is_correct and session_type == SessionType.REVISION:
+                score = 10.0
+                reasons.append("correct_variant")
             else:
                 score = 50.0 - attempts
                 reasons.append("incorrect_variant")
