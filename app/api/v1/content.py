@@ -18,3 +18,9 @@ def get_chapters(subject_id: uuid.UUID, student = Depends(get_current_student), 
     service = ContentService(uow)
     data = service.get_chapters(student.id, subject_id)
     return create_response(data, "Chapters retrieved successfully")
+
+@router.get("/curriculum", response_model=SuccessResponse)
+def get_full_curriculum(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
+    service = ContentService(uow)
+    data = service.get_full_curriculum(student.id)
+    return create_response(data, "Curriculum retrieved successfully")

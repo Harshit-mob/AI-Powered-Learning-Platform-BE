@@ -112,3 +112,14 @@ class ContentService:
                 })
             
             return result
+
+    def get_full_curriculum(self, student_id: uuid.UUID) -> List[Dict[str, Any]]:
+        subjects = self.get_subjects(student_id)
+        result = []
+        for s in subjects:
+            subject_id = uuid.UUID(s["subject_id"])
+            chapters = self.get_chapters(student_id, subject_id)
+            s_copy = dict(s)
+            s_copy["chapters"] = chapters
+            result.append(s_copy)
+        return result
