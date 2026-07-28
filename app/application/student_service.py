@@ -163,7 +163,7 @@ class StudentService:
                 
             # For each subject, delete existing entries for this date and insert new ones
             for subject_id, t_ids in subject_topics.items():
-                self.uow.session.query(StudentDailyLearning).join(
+                ids_to_delete = self.uow.session.query(StudentDailyLearning.id).join(
                     Topic, Topic.id == StudentDailyLearning.topic_id
                 ).join(
                     Chapter, Chapter.id == Topic.chapter_id
@@ -171,7 +171,13 @@ class StudentService:
                     StudentDailyLearning.student_id == student_id,
                     StudentDailyLearning.learning_date == learning_date,
                     Chapter.subject_id == subject_id
-                ).delete(synchronize_session='fetch')
+                ).all()
+                
+                id_list = [row[0] for row in ids_to_delete]
+                if id_list:
+                    self.uow.session.query(StudentDailyLearning).filter(
+                        StudentDailyLearning.id.in_(id_list)
+                    ).delete(synchronize_session='fetch')
                 
                 for topic_id in t_ids:
                     daily_learning = StudentDailyLearning(
