@@ -27,19 +27,19 @@ class ParsedQuestion(BaseModel):
     question_type: str
     concept: str
     expected_answer: str
-    acceptable_answers: List[str]
+    acceptable_answers: List[str] = []
     evaluation_method: str
     hint_level_1: str
     hint_level_2: str
     full_explanation: str
     difficulty: int
-    keywords: List[str]
+    keywords: List[str] = []
     learning_unit_id: str
     learning_objective: str
-    source_pages: List[int]
-    estimated_answer_time: int
-    supported_answer_modes: List[str]
-    answer_complexity: str
+    source_pages: List[int] = []
+    estimated_answer_time: int = 5
+    supported_answer_modes: List[str] = []
+    answer_complexity: str = "WORD"
     mcq_options: List[str] = []
     correct_option: str = ""
     voice_expected_keywords: List[str] = []

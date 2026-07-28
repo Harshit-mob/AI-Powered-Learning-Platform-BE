@@ -45,6 +45,10 @@ class QuestionValidator:
             
         # Answer Validation
         acc_answers = q.get("acceptable_answers", [])
+        if not acc_answers and expected_ans:
+            acc_answers = [expected_ans]
+            q["acceptable_answers"] = acc_answers
+
         if not acc_answers:
             issues.append(ValidationIssue("NO_ACCEPTABLE_ANSWERS", ValidationSeverity.CRITICAL, "No acceptable answers provided."))
             is_valid = False
