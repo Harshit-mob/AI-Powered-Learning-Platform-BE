@@ -58,14 +58,11 @@ class ContentService:
             ).all()
             completed_daily_topic_ids = {str(dl.topic_id) for dl in daily_learnings}
             
-            # Fetch today's daily learnings (selected topics)
-            from datetime import datetime, timezone
-            today = datetime.now(timezone.utc).date()
-            today_daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
-                StudentDailyLearning.student_id == student_id,
-                StudentDailyLearning.learning_date == today
+            # Fetch all daily learnings history (selected topics)
+            all_daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
+                StudentDailyLearning.student_id == student_id
             ).all()
-            selected_topic_ids = {str(dl.topic_id) for dl in today_daily_learnings}
+            selected_topic_ids = {str(dl.topic_id) for dl in all_daily_learnings}
             
             completed_topic_ids = completed_session_topic_ids.union(completed_daily_topic_ids)
             
