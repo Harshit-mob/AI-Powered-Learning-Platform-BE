@@ -359,6 +359,11 @@ class SessionApplicationService:
                 #   - Any completed session counts, regardless of accuracy/score
                 #   - Only +1 per calendar day (not per session)
                 #   - Compare by local calendar date to avoid UTC midnight edge cases
+                
+                # Check and reset streak if they missed yesterday
+                from app.application.student_service import check_and_update_student_streak
+                check_and_update_student_streak(self.uow, student_id)
+                
                 now = datetime.now(timezone.utc)
                 today_date = now.date()  # use .date() not midnight UTC to avoid IST edge cases
 

@@ -8,6 +8,7 @@ class StudentService:
 
     def get_profile(self, student_id: uuid.UUID) -> Dict[str, Any]:
         with self.uow:
+            check_and_update_student_streak(self.uow, student_id)
             student = self.uow.students.find_by_id(student_id)
             if not student:
                 return {}
@@ -30,6 +31,7 @@ class StudentService:
 
     def get_progress(self, student_id: uuid.UUID) -> Dict[str, Any]:
         with self.uow:
+            check_and_update_student_streak(self.uow, student_id)
             student = self.uow.students.find_by_id(student_id)
             if not student:
                 return {}
@@ -182,3 +184,44 @@ class StudentService:
                 "is_completed": count > 0,
                 "learning_date": today.isoformat()
             }
+
+
+def check_and_update_student_streak(uow: UnitOfWork, student_id: uuid.UUID) -> int:
+    from datetime import datetime, timezone, timedelta
+    from app.models.assessment.learning_session import LearningSession
+    
+    student = uow.students.find_by_id(student_id)
+    if not student:
+        return 0
+        
+    now = datetime.now(timezone.utc)
+    today_date = now.date()
+    yesterday_date = today_date - timedelta(days=1)
+    
+    # Find the most recent completed session for this student
+    latest_completed = uow.session.query(LearningSession).filter(
+        LearningSession.student_id == student_id,
+        LearningSession.completion_reason == "COMPLETED",
+        LearningSession.end_time.isnot(None)
+    ).order_by(LearningSession.end_time.desc()).first()
+    
+    if not latest_completed:
+        # No sessions ever completed
+        student.streak_days = 0
+        uow.commit()
+        return 0
+        
+    latest_date = latest_completed.end_time.date()
+    
+    if latest_date == today_date:
+        # Already completed today, streak is active
+        pass
+    elif latest_date == yesterday_date:
+        # Completed yesterday, but not today yet. Streak is still active.
+        pass
+    else:
+        # Last completion was before yesterday. Streak is broken!
+        student.streak_days = 0
+        uow.commit()
+        
+    return student.streak_days
