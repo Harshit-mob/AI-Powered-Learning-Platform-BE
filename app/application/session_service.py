@@ -322,15 +322,32 @@ class SessionApplicationService:
                 session.weak_concepts = weak_lus if weak_lus else None
                 session.strong_concepts = strong_lus if strong_lus else None
 
-                # Mark daily learning status as COMPLETED for this topic
+                # Mark daily learning status as COMPLETED for this topic's subject
                 if session.content_type in ("TOPIC", "MULTI_TOPIC"):
                     from app.models.learning.student_daily_learning import StudentDailyLearning
-                    daily_learning = self.uow.session.query(StudentDailyLearning).filter(
-                        StudentDailyLearning.student_id == student_id,
-                        StudentDailyLearning.topic_id == session.content_id
-                    ).first()
-                    if daily_learning:
-                        daily_learning.status = "COMPLETED"
+                    from app.models.course import Topic, Chapter
+                    
+                    # Find the subject of the session topic
+                    topic_obj = self.uow.session.query(Topic).join(
+                        Chapter, Chapter.id == Topic.chapter_id
+                    ).filter(Topic.id == session.content_id).first()
+                    
+                    if topic_obj:
+                        subject_id = topic_obj.chapter.subject_id
+                        
+                        # Find all pending check-ins of this subject for this student and mark them COMPLETED
+                        pending_checkins = self.uow.session.query(StudentDailyLearning).join(
+                            Topic, Topic.id == StudentDailyLearning.topic_id
+                        ).join(
+                            Chapter, Chapter.id == Topic.chapter_id
+                        ).filter(
+                            StudentDailyLearning.student_id == student_id,
+                            Chapter.subject_id == subject_id,
+                            StudentDailyLearning.status == "PENDING"
+                        ).all()
+                        
+                        for dl in pending_checkins:
+                            dl.status = "COMPLETED"
 
                 # session_duration_seconds: actual wall-clock time of the session
                 if session.start_time:

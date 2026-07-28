@@ -148,23 +148,41 @@ class StudentService:
             
     def set_daily_learning(self, student_id: uuid.UUID, learning_date: Any, topic_ids: list[uuid.UUID], source: str) -> None:
         from app.models.learning.student_daily_learning import StudentDailyLearning
+        from app.models.course import Topic, Chapter
+        from collections import defaultdict
+        
         with self.uow:
-            # Delete any existing entries for this student on this date to ensure idempotency
-            self.uow.session.query(StudentDailyLearning).filter(
-                StudentDailyLearning.student_id == student_id,
-                StudentDailyLearning.learning_date == learning_date
-            ).delete()
+            # Group topic_ids by subject_id
+            topics = self.uow.session.query(Topic, Chapter.subject_id).join(
+                Chapter, Chapter.id == Topic.chapter_id
+            ).filter(Topic.id.in_(topic_ids)).all()
             
-            for topic_id in topic_ids:
-                daily_learning = StudentDailyLearning(
-                    student_id=student_id,
-                    topic_id=topic_id,
-                    learning_date=learning_date,
-                    source=source,
-                    status="PENDING"
-                )
-                self.uow.session.add(daily_learning)
+            subject_topics = defaultdict(list)
+            for t, subject_id in topics:
+                subject_topics[subject_id].append(t.id)
                 
+            # For each subject, delete existing entries for this date and insert new ones
+            for subject_id, t_ids in subject_topics.items():
+                self.uow.session.query(StudentDailyLearning).join(
+                    Topic, Topic.id == StudentDailyLearning.topic_id
+                ).join(
+                    Chapter, Chapter.id == Topic.chapter_id
+                ).filter(
+                    StudentDailyLearning.student_id == student_id,
+                    StudentDailyLearning.learning_date == learning_date,
+                    Chapter.subject_id == subject_id
+                ).delete(synchronize_session='fetch')
+                
+                for topic_id in t_ids:
+                    daily_learning = StudentDailyLearning(
+                        student_id=student_id,
+                        topic_id=topic_id,
+                        learning_date=learning_date,
+                        source=source,
+                        status="PENDING"
+                    )
+                    self.uow.session.add(daily_learning)
+                    
             self.uow.commit()
 
     def check_daily_status(self, student_id: uuid.UUID) -> Dict[str, Any]:
