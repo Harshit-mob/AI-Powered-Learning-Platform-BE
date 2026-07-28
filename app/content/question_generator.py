@@ -313,7 +313,11 @@ class QuestionGenerationService:
                 "\n\n--- HINDI MCQ RULE ---\n"
                 "IMPORTANT: Since the subject is Hindi, you MUST generate ONLY MCQ (Multiple Choice Questions) type questions. "
                 "For every generated question, set 'question_type' to 'MCQ', 'evaluation_method' to 'MCQ', "
-                "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'."
+                "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
+                "You MUST target exactly 12-15 questions per Learning Unit. To achieve this, generate a wide variety of "
+                "questions (including definitions, reasoning, true/false, fill-in-the-blank, and recall) but format them "
+                "ALL as MCQs with exactly 4 options. For example, a True/False question can be formatted as an MCQ "
+                "where options are ['हाँ (True)', 'नहीं (False)', 'तथ्य अपूर्ण है', 'इनमें से कोई नहीं']."
             )
         
         all_validated = []

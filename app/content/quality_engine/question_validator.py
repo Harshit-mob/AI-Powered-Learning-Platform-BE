@@ -49,10 +49,11 @@ class QuestionValidator:
             issues.append(ValidationIssue("NO_ACCEPTABLE_ANSWERS", ValidationSeverity.CRITICAL, "No acceptable answers provided."))
             is_valid = False
         else:
-            if len(acc_answers) < 2:
-                issues.append(ValidationIssue("FEW_ANSWERS", ValidationSeverity.CRITICAL, "Minimum 2 acceptable answers required."))
+            min_required = 1 if q_type == "MCQ" else 2
+            if len(acc_answers) < min_required:
+                issues.append(ValidationIssue("FEW_ANSWERS", ValidationSeverity.CRITICAL, f"Minimum {min_required} acceptable answers required."))
                 is_valid = False
-            elif len(acc_answers) < 5:
+            elif len(acc_answers) < 5 and q_type != "MCQ":
                 issues.append(ValidationIssue("FEW_ANSWERS_RECOMMENDATION", ValidationSeverity.INFO, "Recommend 5-10 acceptable answers for voice friendliness."))
                 
             norm_acc_ans = [a.strip().lower() for a in acc_answers]

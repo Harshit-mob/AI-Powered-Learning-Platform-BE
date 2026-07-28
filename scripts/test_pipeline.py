@@ -156,6 +156,32 @@ def test_pipeline():
             total_units_inserted += len(inserted)
             
         print(f"Successfully inserted Curriculum and {total_units_inserted} Learning Units.")
+        
+        # Cleanup Empty Topics & Subtopics
+        print("\n[Cleanup] Removing topics and subtopics with 0 learning units...")
+        from app.models.course import Topic, Subtopic
+        
+        # Delete subtopics with 0 learning units under this chapter
+        subtopics_to_delete = db.query(Subtopic).filter(
+            Subtopic.topic.has(chapter_id=db_chapter.id)
+        ).filter(
+            ~Subtopic.learning_units.any()
+        ).all()
+        for st in subtopics_to_delete:
+            db.delete(st)
+        db.flush()
+        
+        # Delete topics with 0 subtopics under this chapter
+        topics_to_delete = db.query(Topic).filter(
+            Topic.chapter_id == db_chapter.id
+        ).filter(
+            ~Topic.subtopics.any()
+        ).all()
+        for t in topics_to_delete:
+            db.delete(t)
+            
+        db.commit()
+        print("Cleanup completed successfully.")
     finally:
         db.close()
         
