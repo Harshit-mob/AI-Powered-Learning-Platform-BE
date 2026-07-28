@@ -1,197 +1,142 @@
 {
   "board": "CBSE",
-  "grade": "6",
-  "subject": "Science",
+  "grade": "Grade 6",
+  "subject": "Hindi",
   "chapter": {
-    "title": "Exploring Magnets",
+    "title": "सोनकंठी गौरैया",
     "topics": [
       {
-        "title": "Introduction to Magnets and Their Types",
-        "summary": "Magnets, first discovered as natural lodestones and later produced artificially, are used for various purposes including navigation and everyday items, and come in different shapes.",
+        "title": "बालक का निशानेबाज़ी का शौक",
+        "summary": "यह अनुभाग मुख्य पात्र (भानजे) के गन और निशानेबाज़ी के बचपन के शौक का वर्णन करता है।",
         "learning_objectives": [
-          "Understand the historical significance of magnets in navigation.",
-          "Identify naturally occurring magnets (lodestones) and artificial magnets.",
-          "Recognize common shapes of artificial magnets.",
-          "Appreciate the presence of magnets in daily life."
+          "बच्चों के शुरुआती शौक को समझना",
+          "तत्कालीन मनोरंजन के साधनों की पहचान"
         ],
         "keywords": [
-          "Magnetic compass",
-          "Bar magnet",
-          "U-shaped magnet",
-          "Ring magnet"
+          "गन",
+          "निशानेबाज़ी",
+          "गुलेल",
+          "शिकार"
         ],
         "source_pages": [
-          1,
-          2
+          1
         ],
         "subtopics": [
           {
-            "title": "The Discovery and Everyday Use of Magnets",
-            "summary": "The chapter begins with a story illustrating the historical need for navigation tools, leading to the discovery of magnets and their use in devices like the magnetic compass, as well as their presence in common household items.",
-            "content": "Reshma lives in a coastal town of Kerala and is very fond of writing short stories. Her grandmother loves listening to her stories, so Reshma was writing a new story to share with her grandmother on her 60th birthday. Exploring Magnets The story was based on a ship carrying spices from Kerala for trade in the olden days. Reshma was aware that in those days, the sailors used stars to find directions at night. But in her story, a situation arose wherein the sailors got caught in a storm with an overcast sky and stars were not visible. Reshma could not take her story forward as she could not think of a way for sailors to find directions. She searched for in formation on the in ternet and her school library. She learnt that the travellers used a device, known as a magnetic compass, for finding directions. Reshma had seen pencil boxes and purses which had magnets to keep them closed. A writing board in her school also had a duster with a magnet. But she had never looked at those carefully. She now became curious to learn more about magnets and magnetic compasses. Reprint 2026-27",
+            "title": "गन से दोस्ती",
+            "summary": "भानजे की गन से जुड़ी शुरुआती कहानी और उससे निशानेबाज़ी का अभ्यास।",
+            "content": "में गन से खूब यारी भी हो गई। जब आसपास निशानेबाजी के मुकाबले होते थे, तब उनमें भाग लेने उड़ाने-भगाने के लिए भी किया जाता था। गन से सोलह आना सटीक निशाना लगता था।",
             "learning_objectives": [
-              "Recognize the historical importance of magnets in navigation.",
-              "Identify everyday objects that utilize magnets.",
-              "Develop curiosity about magnetic properties."
-            ],
-            "estimated_reading_time": 30,
-            "source_pages": [
-              1
-            ]
-          },
-          {
-            "title": "Natural and Artificial Magnets and Their Shapes",
-            "summary": "This subtopic distinguishes between naturally occurring lodestones and modern artificial magnets, illustrating how magnets are made from iron and come in various shapes like bar, U-shaped, and ring magnets.",
-            "content": "The magnets used by sailors in the olden days were based on naturally occurring magnets, known as lodestones which were discovered in ancient times. Later on, people found out that magnets could also be made from pieces of iron. Nowadays, we have magnets made of different materials. The magnets that you find in your school laboratory and those used in pencil boxes, stickers, toys are all artificial magnets (Fig. 4.1). The magnets can be of various shapes, some of which are shown in Fig. 4.2. Fig. 4.1: Some common items that have magnets attached to them 4.1 Magnetic and Non-magnetic Materials Bar magnet U-shaped magnet Ring magnet Fig. 4.2: Magnets of different shapes Curiosity | Textbook of Science | Grade 6 Reprint 2026-27",
-            "learning_objectives": [
-              "Differentiate between natural magnets (lodestones) and artificial magnets.",
-              "Identify various common shapes of artificial magnets.",
-              "Understand that magnets can be made from iron and other materials."
-            ],
-            "estimated_reading_time": 20,
-            "source_pages": [
-              2
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Magnetic and Non-magnetic Materials",
-        "summary": "This topic defines magnetic materials as those attracted by a magnet, such as iron, nickel, and cobalt, and non-magnetic materials as those not attracted by a magnet. An activity helps students identify these materials.",
-        "learning_objectives": [
-          "Define magnetic materials.",
-          "Define non-magnetic materials.",
-          "Identify examples of magnetic and non-magnetic materials.",
-          "Conduct an experiment to classify materials as magnetic or non-magnetic."
-        ],
-        "keywords": [
-          "Magnetic materials",
-          "Non-magnetic materials",
-          "Observe",
-          "Predict",
-          "Record"
-        ],
-        "source_pages": [
-          2,
-          3,
-          4
-        ],
-        "subtopics": [
-          {
-            "title": "Identifying Materials Attracted by a Magnet (Activity 4.1)",
-            "summary": "Through an activity, students test various objects to see if they stick to a magnet, differentiating between magnetic and non-magnetic materials.",
-            "content": "4.1 Magnetic and Non-magnetic Materials Activity 4.1: Let us explore \n‹\n‹\nCollect a few objects made of different materials and also a magnet.\n\n‹\n‹\nPredict which of the objects will stick to the magnet.\nWrite your prediction in Table 4.1.\n\n‹\n‹\nNow hold a magnet in your hand and bring it near the objects one by one (Fig. 4.3). Observe which of the objects stick to the magnet.\nDo magnets stick to objects made of certain materials only??\nBar magnet\nU-shaped magnet\nRing magnet\nFig. 4.2: Magnets of different shapes\nCuriosity | Textbook of Science | Grade\n6\nReprint 2026-27 Name of the object\nMaterial which the object is made of\n(plastic/wood/glass/\niron/any other)\nAttracted by the magnet (Yes/No)\nPrediction\nObservation\nPencil\nWood\nEraser\nRubber\nFig. 4.3: Identifying the materials attracted by a magnet\n\n‹\n‹\nRecord your observations in Table 4.1.\nTable 4.1: Identifying the materials attracted by a magnet\nExploring Magnets\nReprint 2026-27 Was your prediction correct for all objects? Which materials stuck to the magnet? What conclusion can you draw?\nThrough this activity, we found out that some of the objects were attracted to the magnet and stuck to it, while others were not. The materials which are attracted to wards a magnet are called magnetic materials.\nThe metal iron is a magnetic material.\nNickel and cobalt are other metals that are also magnetic. Some of their combinations with other metals are also attracted to wards magnets. The materials which are not attracted to wards a magnet are called non-magnetic materials.\nWhich materials listed in Table 4.1 were found to be non-magnetic?\n?",
-            "learning_objectives": [
-              "Perform an experiment to classify materials.",
-              "Distinguish between magnetic and non-magnetic materials based on observation.",
-              "List examples of magnetic materials like iron, nickel, and cobalt."
-            ],
-            "estimated_reading_time": 70,
-            "source_pages": [
-              2,
-              3,
-              4
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Poles of a Magnet",
-        "summary": "This topic explains that a magnet's attractive force is strongest at its ends, called poles (North and South), and emphasizes that these poles always exist in pairs, even if the magnet is broken.",
-        "learning_objectives": [
-          "Locate the poles of a magnet.",
-          "Understand that magnetic attraction is strongest at the poles.",
-          "Explain why a magnet cannot have a single pole."
-        ],
-        "keywords": [
-          "North pole of a magnet",
-          "South pole of a magnet",
-          "Observe",
-          "Investigate"
-        ],
-        "source_pages": [
-          4,
-          5
-        ],
-        "subtopics": [
-          {
-            "title": "Observing Magnetic Attraction (Activity 4.2)",
-            "summary": "An activity with iron filings demonstrates that magnetic attraction is concentrated at the ends of a magnet, defining these areas as the North and South poles.",
-            "content": "4.2 Poles of Magnet Activity 4.2: Let us in vestigate \n‹\n‹\nSpread some iron filings (very small pieces of iron) on a sheet of paper.\n\n‹\n‹\nPlace a bar magnet over them. Tap the paper and observe carefully what happens to the iron filings.\nDo you observe anything special about the way they stick to the magnet? Do the iron filings stick all over the magnet uniformly? Or do the iron filings stick more at some places?\nWe find that maximum iron filings stick near the ends of the bar magnet, as shown in Fig. 4.4, while a very few iron filings stick at the remaining part of the magnet.\nFig. 4.4: Iron filings sticking to a bar magnet\nDo all parts of a magnet attract magnetic materials equally?\n?\nIf we repeat this activity with magnets of other shapes, do we get the same result?\n?\nCuriosity | Textbook of Science | Grade\n6\nReprint 2026-27 If we have noticed the direction where the Sun rises or sets, we have an approximate idea of where East or West is. Hence, we can locate the direction along which the magnet rests.\nThese ends of the magnet are called the two poles of the magnet—the North pole and the South pole. Most of the iron filings stick to the poles of a magnet of any shape.\nIt is not possible to obtain a magnet with a single pole. If a magnet is broken into smaller pieces, North and South poles always exist in pairs even in the smallest piece of the magnet.\nA single North pole or a South pole cannot exist.",
-            "learning_objectives": [
-              "Observe the distribution of magnetic force around a magnet using iron filings.",
-              "Define the North and South poles of a magnet.",
-              "State the principle that poles always exist in pairs."
-            ],
-            "estimated_reading_time": 50,
-            "source_pages": [
-              4,
-              5
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Finding Directions",
-        "summary": "This topic explains how a freely suspended magnet always aligns itself in the North-South direction, a property used in magnetic compasses to find directions, and that Earth itself acts as a giant magnet.",
-        "learning_objectives": [
-          "Describe the behavior of a freely suspended magnet.",
-          "Explain how a magnetic compass works.",
-          "Identify the North-seeking and South-seeking poles of a magnet.",
-          "Understand that Earth behaves as a giant magnet."
-        ],
-        "keywords": [
-          "Magnetic compass",
-          "North pole of a magnet",
-          "South pole of a magnet",
-          "Experiment",
-          "Construct"
-        ],
-        "source_pages": [
-          5,
-          6,
-          7
-        ],
-        "subtopics": [
-          {
-            "title": "Freely Suspended Magnets and Direction (Activity 4.3)",
-            "summary": "An experiment demonstrates that a freely suspended bar magnet always comes to rest in the North-South direction, distinguishing its North and South poles.",
-            "content": "4.3 Finding Directions Activity 4.3: Let us experiment \n‹\n‹\nSuspend a bar magnet with a thread tied to the middle of the magnet as shown in Fig. 4.5. You may need to adjust the position of the string till the magnet is balanced horizontally.\n\n‹\n‹\nNow rotate the magnet gently in the horizontal direction and let it come to rest.\n\n‹\n‹\nMark the position corresponding to the ends of the magnet on the ground (or on a piece of paper stuck to the ground). Join these two points on the ground with a line. This line in dicates the direction along which the magnet comes to rest.\n\n‹\n‹\nNow again rotate the magnet by giving a gentle push at its one end and wait till it comes to rest. Does the magnet rest along the same line?\nFig. 4.5: A freely suspended bar magnet\nCan we find a magnet with a single pole?\n?\nWhat direction does this line in dicate along which the magnet rests? How can we find it out?\nExploring Magnets\nReprint 2026-27 A freely suspended magnet comes to rest along the north-south direction. The end of the magnet that points to wards north direction is called the North-seeking pole or the North pole of the magnet. The other end that points to wards the South direction is called the South-seeking pole or the South\npole of the magnet. A freely suspended magnet rests along the north-south direction because our\nEarth itself behaves like a giant magnet.\nRepeat this activity with a small iron bar in place of the bar magnet. What do you observe? Does it always rest along north-south direction? It does not. It can rest along any direction. This implies that only magnets rest along north-south direction. This activity provides us with a way to test whether a piece of metal is a magnet or not.",
-            "learning_objectives": [
-              "Perform an experiment to observe the directional property of a magnet.",
-              "Identify the North and South poles of a freely suspended magnet.",
-              "Differentiate a magnet from a non-magnetic material using its directional property."
-            ],
-            "estimated_reading_time": 80,
-            "source_pages": [
-              5,
-              6
-            ]
-          },
-          {
-            "title": "The Magnetic Compass",
-            "summary": "The magnetic compass, a device with a freely rotating magnetic needle, uses the directional property of magnets to indicate the North-South direction for navigation.",
-            "content": "The property of a freely suspended magnet to always rest along the north-south direction is used to find directions.\nBased on this, a small device called a magnetic compass was developed in olden days for finding directions. It has a magnet in the shape of a needle which can rotate freely (Fig. 4.6). The needle of a magnetic compass in dicates the north-south direction.\nThe compass is kept at the place where we wish to know the directions. After some time, the needle comes to rest in the north-south direction.\nThe compass box is then gently rotated until the north and south marked on the dial are aligned with the needle. Now all directions at that place are as in dicated on the dial.\nA magnetic compass is usually a small circular box with a transparent cover on it, as shown in Fig. 4.6.\nThe magnet, in the shape of a needle, is mounted on a pin standing on the bottom of the box. This needle is balanced on the pin in such a manner that it can move around this point easily, that is, it can rotate freely. The end of the needle which rests in the North direction is usually painted red. Below the needle, there is a dial with directions marked on it.\nHow can we make our own magnetic compass?\nMore to know!\nFig. 4.6: A magnetic compass\nCuriosity | Textbook of Science | Grade\n6\nReprint 2026-27",
-            "learning_objectives": [
-              "Describe the structure and function of a magnetic compass.",
-              "Explain how a magnetic compass is used to find directions.",
-              "Recognize the importance of a freely rotating magnetic needle in a compass."
+              "पात्र के परिचय को समझना"
             ],
             "estimated_reading_time": 60,
             "source_pages": [
-              6
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "title": "सोनकंठी गौरैया का रहस्य",
+        "summary": "एक अनोखी गौरैया के शिकार के बाद उपजी जिज्ञासा और दुविधा।",
+        "learning_objectives": [
+          "जिज्ञासा और खोज की प्रवृत्ति को समझना",
+          "संदेह और प्रश्न करने की क्षमता का विकास"
+        ],
+        "keywords": [
+          "गौरैया",
+          "सुनहरा रंग",
+          "पशोपेश",
+          "दुर्लभ"
+        ],
+        "source_pages": [
+          3
+        ],
+        "subtopics": [
+          {
+            "title": "अनोखी गौरैया की पहचान",
+            "summary": "सुनहरे रंग वाली गौरैया को देखकर बच्चों का भ्रमित होना।",
+            "content": "गले पर सुनहरा रंग था, सवाल खडा हो गया कि यह गौरया न तो क्या है? माथा खुजाते चिड़या को उलट-पलटकर दूसरे बच्चों ने भी देखा, लेकिन सुनहरा रंग था.",
+            "learning_objectives": [
+              "प्रकृति में भिन्नता को पहचानना"
+            ],
+            "estimated_reading_time": 60,
+            "source_pages": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "title": "सलीम अली का पक्षी-प्रेम",
+        "summary": "शिकारी से पक्षी विशेषज्ञ बनने की यात्रा का वर्णन।",
+        "learning_objectives": [
+          "सलीम अली के जीवन के संघर्ष को जानना",
+          "पक्षी विज्ञान के महत्व को समझना"
+        ],
+        "keywords": [
+          "सलीम अली",
+          "पक्षी विशेषज्ञ",
+          "संरक्षण",
+          "शोध"
+        ],
+        "source_pages": [
+          3
+        ],
+        "subtopics": [
+          {
+            "title": "परिवर्तन का मोड़",
+            "summary": "डॉक्टर मिलाड के साथ चर्चा और पक्षी संरक्षण की शुरुआत।",
+            "content": "उसी दिन उस भानजे ने ठान ली कि वह पंछियों के बारे में ज्यादा से ज्यादा जानने की कोशिश करेगा। बॉम्बे नैचुरल हिस्टी सोसाइटी से जुड़कर पक्षी विशेषज्ञ बन गए।",
+            "learning_objectives": [
+              "प्रेरणादायक जीवन प्रसंगों को समझना"
+            ],
+            "estimated_reading_time": 90,
+            "source_pages": [
+              3
+            ]
+          }
+        ]
+      },
+      {
+        "title": "शब्दावली और व्याकरण",
+        "summary": "पाठ में प्रयुक्त कठिन शब्दों के अर्थ और व्याकरण संबंधी अभ्यास।",
+        "learning_objectives": [
+          "शब्दकोश का विस्तार",
+          "पर्यायवाची और विलोम शब्दों का प्रयोग"
+        ],
+        "keywords": [
+          "दुरल्लभ",
+          "जिज्ञासा",
+          "संरक्षण",
+          "विलोम"
+        ],
+        "source_pages": [
+          4,
+          7,
+          8
+        ],
+        "subtopics": [
+          {
+            "title": "शब्दार्थ कोश",
+            "summary": "पाठ के कठिन शब्दों का सरल अर्थ।",
+            "content": "दुरल्लभ-कठिनाई से प्राप्त होने वाला, शिकार-शिकार करने वाला, जिज्ञासा-सीखने की इच्छा, संरक्षण-सुरक्षा देना।",
+            "learning_objectives": [
+              "शब्दावली याद करना"
+            ],
+            "estimated_reading_time": 120,
+            "source_pages": [
+              4
             ]
           },
           {
-            "title": "Making Your Own Magnetic Compass (Activity 4.4)",
-            "summary": "This subtopic provides instructions for magnetizing an iron needle and constructing a simple magnetic compass using a cork and water, similar to ancient navigation tools.",
-            "content": "Activity 4.4: Let us construct\n\n‹\n‹\nCollect a few materials like a cork piece, iron sewing needle, a permanent bar magnet, a glass bowl, and water.\n\n‹\n‹\nPlace the iron sewing needle on a wooden table. Then keep any one pole of the magnet at one end of the needle. Move the magnet over the needle along its length as shown in Fig.\n4.7a. When it reaches the other end of the needle, lift it up.\n\n‹\n‹\nBring the same pole of the magnet you started with to the same end of the sewing needle from which you began, and repeat the previous step. Repeat this process at least 30 to 40 times.\n\n‹\n‹\nBring some iron filings or steel pins near the needle.\nIf the pins or iron filings get attracted to the needle, then that means that the needle has become a magnet.\n\n‹\n‹\nPass this needle through the cork horizontally.\nFloat the cork in a glass bowl filled with water, such that the needle always remains above the level of water as shown in Fig. 4.7b.\n\n‹\n‹\nWhen the needle comes to rest, your magnetic compass is ready for use. Note the direction in which either side of the needle points.\n\n‹\n‹\nRotate the cork gently and wait till it stops rotating.\nRepeat this a few more times. Do the ends of the needle always point in the same direction?\nFig. 4.7(a): Making an iron needle a magnet\nFig. 4.7(b): A compass needle in a bowl of water\nMuch before the widespread use of the modern magnetic compass (Fig. 4.6), a device similar to the compass needle made by you (Fig.\n4.7b) was used by Indians for navigation at sea. It consisted of a magnetised fish-shaped iron piece, kept in a vessel of oil. It was called matsya-yantra (or machchhyantra).\nWhat happens when we bring two magnets closer to each other?\nDo you know?\nExploring Magnets\nReprint 2026-27",
+            "title": "विलोम शब्द",
+            "summary": "दिए गए शब्दों के विपरीत अर्थ वाले शब्द।",
+            "content": "विदेश-स्वदेश, गहरा-उथला, सवाल-जवाब, निर्माण-विनाश, नुकसान-फायदा, ज्यादा-कम।",
             "learning_objectives": [
-              "Perform an experiment to magnetize an iron needle.",
-              "Construct a simple magnetic compass.",
-              "Appreciate the historical context of early navigation devices like matsya-yantra."
+              "विपरीतार्थक शब्दों का ज्ञान"
             ],
-            "estimated_reading_time": 90,
+            "estimated_reading_time": 45,
             "source_pages": [
               7
             ]
@@ -199,136 +144,122 @@
         ]
       },
       {
-        "title": "Attraction and Repulsion between Magnets",
-        "summary": "This topic explains the fundamental principle of magnetism: like poles repel each other, and unlike poles attract each other. It also describes how magnets attract non-magnetic materials like iron and that magnetic effects can act through non-magnetic substances.",
+        "title": "बोध प्रश्न",
+        "summary": "पाठ की समझ के लिए अभ्यास प्रश्न।",
         "learning_objectives": [
-          "State the law of magnetic attraction and repulsion.",
-          "Distinguish between attraction and repulsion.",
-          "Explain how a magnet can be identified by its property of repulsion.",
-          "Describe how magnetic effects can pass through non-magnetic materials."
+          "विश्लेषणात्मक क्षमता का विकास"
         ],
         "keywords": [
-          "Attraction",
-          "Repulsion",
-          "North pole of a magnet",
-          "South pole of a magnet",
-          "Experiment",
-          "Investigate",
-          "Conclude"
+          "प्रश्न",
+          "उत्तर",
+          "विश्लेषण"
         ],
         "source_pages": [
-          8,
-          9,
-          10,
-          11
+          5,
+          6
         ],
         "subtopics": [
           {
-            "title": "Interaction between Bar Magnets (Activity 4.5)",
-            "summary": "An experiment demonstrates that unlike poles of two magnets attract each other, while like poles repel, and that both poles of a magnet attract an iron bar.",
-            "content": "4.4 Attraction and Repulsion between Magnets Activity 4.5: Let us experiment \n‹\n‹\nTake a pair of bar magnets on which North and South poles have been marked. Mark the two bar magnets as\nA and B.\n\n‹\n‹\nPlace the longer side of magnet A over 5–6 round shaped pencils as shown in Fig. 4.8a.\n\n‹\n‹\nNow bring one end of magnet B near the end of magnet\nA placed on the pencils. Make sure that the two magnets do not touch each other. Observe what happens.\n\n‹\n‹\nNext, bring the other end of magnet B near the same end of magnet A (Fig. 4.8b). Does the magnet A on the pencils begin to move? Does it always move in the direction of the approaching magnet? What do these observations suggest?\nYou will see that unlike poles of two magnets, that is, the\nNorth pole of one magnet and the South pole of another magnet, attract each other. The like poles, that is, either the North poles or the South poles of both magnets, repel each other.\nMagnet A\nMagnet B\nMagnet A\nMagnet B\nFig. 4.8: Interaction between two bar magnets\n(a)\n(b)\nCuriosity | Textbook of Science | Grade\n6\nReprint 2026-27 \n‹\n‹\nRepeat the activity by using an iron bar in place of one of the magnets. What do you observe this time?\nYou will find that both the ends of the iron bar will be attracted by both the North and South poles of the magnet.\nFrom this activity, we find that a magnet can be identified by its property of repulsion.",
+            "title": "लघु उत्तरीय प्रश्न",
+            "summary": "गौरैया शिकार से जुड़ी प्रतिक्रियाएं।",
+            "content": "पक्षी देखते ही भानजे की क्या प्रतिक्रिया थी? मामा किस परेशानी में पड़ गए?",
             "learning_objectives": [
-              "Perform an experiment to observe attraction and repulsion between magnets.",
-              "Formulate the rules of attraction and repulsion between magnetic poles.",
-              "Differentiate between magnetic and non-magnetic materials based on their interaction with a magnet (repulsion being key for magnets)."
+              "पाठ की घटनाओं का स्मरण"
             ],
-            "estimated_reading_time": 70,
+            "estimated_reading_time": 100,
             "source_pages": [
-              8,
-              9
-            ]
-          },
-          {
-            "title": "Magnet-Compass Needle Interaction (Activity 4.6)",
-            "summary": "This activity uses a magnetic compass to further demonstrate that like poles repel and unlike poles attract, showing the deflection of the compass needle when another magnet is brought near.",
-            "content": "Activity 4.6: Let us experiment \n‹\n‹\nTake a magnetic compass and a bar magnet.\n\n‹\n‹\nPlace the magnetic compass over a horizontal surface and wait for its needle to come to\nrest.\n\n‹\n‹\nNow slowly bring North pole of the bar magnet close to the North pole of the compass needle as shown in\nFig. 4.9a. Observe the compass needle carefully.\nWhat do you observe? Does the needle deflect? If yes, in which direction?\n\n‹\n‹\nNow repeat the above step with the South pole of the bar magnet. Do you observe any difference this time?\n(b)\n(a)\nFig. 4.9: A compass needle and a magnet\nThe compass needle is also a magnet. Will it show the same behaviour if a magnet is brought closer to it?\nExploring Magnets\nReprint 2026-27 When the North pole of a magnet is brought closer to the\nNorth pole of the compass needle, it moves away as shown in Fig. 4.9a. When the South pole of the magnet is brought closer to the North pole of the compass needle, it moves closer (Fig. 4.9b).",
-            "learning_objectives": [
-              "Observe the deflection of a compass needle due to another magnet.",
-              "Relate the deflection to the principles of magnetic attraction and repulsion."
-            ],
-            "estimated_reading_time": 50,
-            "source_pages": [
-              9,
-              10
-            ]
-          },
-          {
-            "title": "Magnetic Effect through Non-magnetic Materials (Activity 4.7)",
-            "summary": "An experiment shows that placing non-magnetic materials like wood, cardboard, plastic, or glass between a magnet and a compass needle does not stop the magnetic effect, concluding that magnetism can act through these materials.",
-            "content": "Activity 4.7: Let us in vestigate \n‹\n‹\nIs there any effect on the deflection of compass needle due to the piece of wood? Record your observation in\nTable 4.2.\n\n‹\n‹\nRepeat the process by replacing the piece of wood with a cardboard sheet, thin plastic sheet, and a thin glass sheet.\nSuppose we place a piece of wood between the compass needle and the magnet. Will this affect the deflection of the compass needle?\nFig. 4.10: Compass needle and a magnet with a piece of wood in between\nWood\n\n‹\n‹\nRepeat the first or second part of\nActivity 4.6.\n\n‹\n‹\nWithout disturbing the bar magnet and magnetic compass, place a piece of wood between them, perpendicular to the table as shown in Fig.\n4.10. Observe the compass needle carefully.\nCuriosity | Textbook of Science | Grade\n6\nReprint 2026-27 You would observe that there is no appreciable change in the deflection of the needle when a sheet of any of the above material is placed between the magnet and the compass needle. Therefore, we can conclude that the magnetic effect can act through non-magnetic materials.\n4.5 Fun with Magnets",
-            "learning_objectives": [
-              "Perform an experiment to test the magnetic effect through various non-magnetic materials.",
-              "Conclude that magnetic force can pass through non-magnetic substances."
-            ],
-            "estimated_reading_time": 55,
-            "source_pages": [
-              10,
-              11
+              5
             ]
           }
         ]
       },
       {
-        "title": "Fun with Magnets",
-        "summary": "This topic presents several engaging activities and thought experiments to explore the practical and intriguing applications of magnets, demonstrating their ability to interact with objects without direct contact.",
+        "title": "भाषा कौशल और रचनात्मक कार्य",
+        "summary": "रचनात्मक लेखन और संवाद लेखन।",
         "learning_objectives": [
-          "Develop creative uses for magnets in daily life.",
-          "Understand that magnets can exert force without direct contact.",
-          "Apply knowledge of attraction and repulsion in fun scenarios."
+          "रचनात्मक लेखन क्षमता",
+          "संवाद निर्माण"
         ],
         "keywords": [
-          "Explore",
-          "Experiment",
-          "Predict",
-          "Observe"
+          "लघुकथा",
+          "संवाद",
+          "प्रोजेक्ट"
         ],
         "source_pages": [
-          11,
-          12
+          9
         ],
         "subtopics": [
           {
-            "title": "Magnetic Activities",
-            "summary": "This section illustrates several fun activities with magnets, such as making a magnetic garland, navigating steel balls through a maze, picking up objects from water, and predicting the movement of magnet-powered cars.",
-            "content": "4.5 Fun with Magnets After learning about magnets, Reshma was excited and decided to set up some fun activities using magnets at her school fair. You may try making these yourself and may also think of some more fun ideas. Can we make a garland? (Fig. 4.11) Table 4.2: Observing the effect of magnet through non-magnetic materials Fig. 4.11: Magnetic garland Magnets can move some objects without to uching them! Is that not amazing? S. no. Material placed between the magnet and the compass needle Observations 1. Wood 2. Cardboard 3. Plastic 4. Glass Exploring Magnets Reprint 2026-27 Can we take the steel balls out of the maze by moving a magnet below the cardboard tray? (Fig. 4.12) Can we pick out a steel paper clip fallen in water using a magnet, without getting our fingers or the magnet wet?\n(Fig. 4.13) Fig. 4.14: Two matchbox-magnet cars with like poles of the magnets facing each other In some magnets, the North and South poles are marked as N and S. In some other magnets, the North pole is in dicated by a white dot. Sometimes, the North pole of a magnet is painted red and South pole is painted blue. Will the two cars speed to wards each other or run away from each other when brought closer? (Fig. 4.14) Fig. 4.13: Steel paperclip in water Fig. 4.12: Steel balls in a maze More to know! Curiosity | Textbook of Science | Grade 6 Reprint 2026-27",
+            "title": "लघुकथा लेखन",
+            "summary": "मैं-पिंजरे में बंद तोता पर आधारित लेखन।",
+            "content": "हरे-भरे बाग में सुखी जीवन। अचानक चिड़ीमार का जाल और पिंजरे का अनुभव साझा करना।",
             "learning_objectives": [
-              "Engage in hands-on activities demonstrating magnetic principles.",
-              "Observe magnetic force acting at a distance.",
-              "Predict outcomes of magnetic interactions based on pole alignment."
+              "कल्पनाशीलता का विकास"
+            ],
+            "estimated_reading_time": 150,
+            "source_pages": [
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "title": "भाषा और मुहावरे",
+        "summary": "मुहावरों का वाक्यों में प्रयोग और अर्थ।",
+        "learning_objectives": [
+          "मुहावरों की समझ"
+        ],
+        "keywords": [
+          "मुहावरे",
+          "शेखी",
+          "हैरान"
+        ],
+        "source_pages": [
+          4
+        ],
+        "subtopics": [
+          {
+            "title": "मुहावरों का अर्थ",
+            "summary": "पाठ में आए महत्वपूर्ण मुहावरे।",
+            "content": "शेखी बघारना—बड़ी-बड़ी बातें करना; टस से मस ना होना—अपने निर्णय से ना हिलना; दाँतों तले उँंगली दबाना—हैरान होना।",
+            "learning_objectives": [
+              "मुहावरों का सटीक प्रयोग"
             ],
             "estimated_reading_time": 60,
             "source_pages": [
-              11,
-              12
+              4
             ]
           }
         ]
       },
       {
-        "title": "Magnet Care and Storage",
-        "summary": "This section provides crucial advice on how to properly handle and store magnets to prevent demagnetization and ensure their longevity, emphasizing that magnets should not be heated, dropped, or kept near electronic devices.",
+        "title": "व्याकरण-कारक",
+        "summary": "कारक के विभिन्न भेदों का अभ्यास।",
         "learning_objectives": [
-          "Identify actions that can damage or demagnetize magnets.",
-          "Explain proper storage techniques for magnets to maintain their strength.",
-          "Understand the importance of keeping magnets away from electronic devices."
+          "कारक के प्रकारों को पहचानना"
         ],
-        "keywords": [],
+        "keywords": [
+          "कारक",
+          "कर्म",
+          "कर्ता",
+          "संप्रदान"
+        ],
         "source_pages": [
-          13
+          8,
+          9
         ],
         "subtopics": [
           {
-            "title": "Handling and Storing Magnets",
-            "summary": "Learn how to properly care for magnets by avoiding heat, drops, or impacts, and how to store them with unlike poles facing each other, separated by wood, and with soft iron pieces across their ends to maintain their magnetic strength.",
-            "content": "Keywords Attraction Conclude Non-magnetic materials Experiment Magnetic compass Bar magnet Construct Magnetic materials Investigate Observe North pole of a magnet Explore South pole of a magnet U-shaped magnet Repulsion Predict Ring magnet Record “Do not heat me or drop me or hammer me. Do not keep me near mobile phones or remote controls.” Caution Have fun, but treat magnets with care. How to keep the magnets safe? Magnet says, “Store me properly. Keep me in pairs with unlike poles on the same side. Keep a piece of wood in between. Place two pieces of soft iron across the ends.” N S S Wooden piece Iron piece More to know! N Exploring Magnets Reprint 2026-27",
+            "title": "कारक पहचान",
+            "summary": "वाक्यों में प्रयुक्त कारक की पहचान करना।",
+            "content": "विभिन्न वाक्यों में प्रयुक्त संज्ञा या सर्वनाम के पदों का क्रिया से संबंध पहचानना।",
             "learning_objectives": [
-              "List methods that can cause a magnet to lose its properties.",
-              "Describe the correct way to store different types of magnets.",
-              "Explain why certain storage methods are effective."
+              "कारक के आठ भेदों का अभ्यास"
             ],
-            "estimated_reading_time": 35,
+            "estimated_reading_time": 120,
             "source_pages": [
-              13
+              8,
+              9
             ]
           }
         ]

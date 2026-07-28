@@ -308,6 +308,13 @@ class QuestionGenerationService:
     ) -> Dict[str, Any]:
         start_time = time.time()
         system_prompt = self.prompt_builder.build("question_generator.md")
+        if subject.lower() == "hindi":
+            system_prompt += (
+                "\n\n--- HINDI MCQ RULE ---\n"
+                "IMPORTANT: Since the subject is Hindi, you MUST generate ONLY MCQ (Multiple Choice Questions) type questions. "
+                "For every generated question, set 'question_type' to 'MCQ', 'evaluation_method' to 'MCQ', "
+                "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'."
+            )
         
         all_validated = []
         total_fail = 0
