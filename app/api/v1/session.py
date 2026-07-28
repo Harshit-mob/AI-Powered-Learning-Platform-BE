@@ -21,6 +21,7 @@ def generate_session(request: SessionGenerateRequest, student = Depends(get_curr
     elif request.scope.upper() == "STUDENT":
         payload["student_ids"] = request.ids
         
+    payload["session_type"] = request.session_type
     data = service.generate_session(student.id, payload)
     return create_response(data, "Session generated successfully")
 

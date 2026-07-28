@@ -24,26 +24,34 @@ class SessionApplicationService:
         topic_ids = payload.get("topic_ids")
         multi_topic_ids = payload.get("multi_topic_ids")
         student_ids = payload.get("student_ids")
+        session_type_str = payload.get("session_type")
+        
+        req_session_type = None
+        if session_type_str:
+            try:
+                req_session_type = SessionType(session_type_str.upper())
+            except ValueError:
+                pass
         
         if chapter_ids and not topic_ids and not multi_topic_ids and not student_ids:
             cid = chapter_ids[0]
             content_id = cid if isinstance(cid, uuid.UUID) else uuid.UUID(str(cid))
             content_type = "CHAPTER"
-            session_type = SessionType.CHAPTER_REVISION
+            session_type = req_session_type or SessionType.CHAPTER_REVISION
         elif topic_ids and not chapter_ids and not multi_topic_ids and not student_ids:
             tid = topic_ids[0]
             content_id = tid if isinstance(tid, uuid.UUID) else uuid.UUID(str(tid))
             content_type = "TOPIC"
-            session_type = SessionType.DAILY_PRACTICE
+            session_type = req_session_type or SessionType.DAILY_PRACTICE
         elif multi_topic_ids and not chapter_ids and not topic_ids and not student_ids:
             content_id = [tid if isinstance(tid, uuid.UUID) else uuid.UUID(str(tid)) for tid in multi_topic_ids]
             content_type = "MULTI_TOPIC"
-            session_type = SessionType.DAILY_PRACTICE
+            session_type = req_session_type or SessionType.DAILY_PRACTICE
         elif student_ids and not chapter_ids and not topic_ids and not multi_topic_ids:
             sid = student_ids[0]
             content_id = [sid if isinstance(sid, uuid.UUID) else uuid.UUID(str(sid))]
             content_type = "STUDENT"
-            session_type = SessionType.WEAK_POINT
+            session_type = req_session_type or SessionType.WEAK_POINT
         else:
             raise APIException("INVALID_REQUEST", "Provide exactly one scope", 400)
             

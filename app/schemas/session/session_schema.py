@@ -6,6 +6,7 @@ from app.schemas.common.base import CamelBaseModel
 class SessionGenerateRequest(CamelBaseModel):
     scope: str = Field(..., description="Must be TOPIC, CHAPTER, MULTI_TOPIC, or STUDENT")
     ids: List[uuid.UUID] = Field(..., min_length=1)
+    session_type: Optional[str] = Field(default=None, description="Optional session type, e.g. DAILY_PRACTICE, REVISION")
 
 class AnswerSubmissionRequest(CamelBaseModel):
     session_id: uuid.UUID

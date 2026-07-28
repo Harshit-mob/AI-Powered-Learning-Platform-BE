@@ -126,6 +126,21 @@ class QuotaDistributionPolicy(DistributionPolicy):
 
         return selected_variants
 
+class RevisionDistributionPolicy(DistributionPolicy):
+    """
+    Returns all eligible question variants for the session without any quota limit.
+    """
+    def apply(
+        self, 
+        ranked_lus: List[uuid.UUID], 
+        variants_by_lu: Dict[uuid.UUID, List[VariantScore]]
+    ) -> List[VariantScore]:
+        selected: List[VariantScore] = []
+        for lu_id in ranked_lus:
+            candidates = variants_by_lu.get(lu_id, [])
+            selected.extend(candidates)
+        return selected
+
 class PolicyFactory:
     @staticmethod
     def get_policy(session_type: SessionType) -> DistributionPolicy:
@@ -150,6 +165,8 @@ class PolicyFactory:
                 bloom_distribution={"RECALL": 0.2, "COMPREHENSION": 0.4, "APPLICATION": 0.4},
                 allow_partial=True
             )
+        elif session_type == SessionType.REVISION:
+            return RevisionDistributionPolicy()
         else:
             # Default fallback
             return QuotaDistributionPolicy(

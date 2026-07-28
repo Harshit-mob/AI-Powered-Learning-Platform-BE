@@ -75,7 +75,7 @@ class SessionGenerator:
             final_pool = [v.question for v in final_scored_variants]
             
             # 8. Pedagogical Sequencer
-            ordered_questions = self.sequencer.sequence(final_pool)
+            ordered_questions = self.sequencer.sequence(final_pool, session_type, student_id, self.uow)
 
             # 4. Create Session Entity now that we know the final question count
             self.uow.sessions.create_session({
