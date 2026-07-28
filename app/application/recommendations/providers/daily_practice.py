@@ -45,22 +45,29 @@ class DailyPracticeProvider(RecommendationProvider):
         subject_topics = {}
         all_subjects = set(subject_today_topics.keys()) | set(subject_past_topics.keys())
         for subject_name in all_subjects:
-            if subject_name in subject_today_topics:
-                # Prioritize today's check-ins
-                subject_topics[subject_name] = list(set(subject_today_topics[subject_name]))
-            else:
-                # Fall back to past check-ins
-                subject_topics[subject_name] = list(set(subject_past_topics[subject_name]))
+            today_list = subject_today_topics.get(subject_name, [])
+            past_list = subject_past_topics.get(subject_name, [])
+            
+            # De-duplicate while preserving order (today's check-ins first, then past ones)
+            combined = []
+            seen = set()
+            for tid in today_list + past_list:
+                if tid not in seen:
+                    combined.append(tid)
+                    seen.add(tid)
+            subject_topics[subject_name] = combined
             
         recs = []
-        for subject_name, topic_set in subject_topics.items():
-            topic_ids = list(topic_set)
+        for subject_name, topic_ids in subject_topics.items():
             total_lus = self.uow.session.query(func.count(LearningUnit.id))\
                 .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
                 .filter(Subtopic.topic_id.in_(topic_ids)).scalar() or 0
             
-            q_count = min(10, total_lus)
-            if q_count < 3:
+            # Target 10-15 questions for daily practice to majorly cover the content
+            q_count = min(15, total_lus)
+            if q_count < 10 and total_lus >= 10:
+                q_count = 10
+            elif q_count < 3:
                 q_count = 3
                 
             xp = q_count * 5 + 20 + 15
