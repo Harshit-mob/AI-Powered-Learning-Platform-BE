@@ -8,6 +8,16 @@ class SessionGenerateRequest(CamelBaseModel):
     ids: List[uuid.UUID] = Field(..., min_length=1)
     session_type: Optional[str] = Field(default=None, description="Optional session type, e.g. DAILY_PRACTICE, REVISION")
 
+    model_config = {
+        "json_schema_extra": {
+            "example": {
+                "scope": "MULTI_TOPIC",
+                "ids": ["7868a3f7-d314-44ba-bbc4-3eb88a2fa419", "0ec69a28-0f7d-4fe0-b78b-68c62f5c952c"],
+                "sessionType": "REVISION"
+            }
+        }
+    }
+
 class AnswerSubmissionRequest(CamelBaseModel):
     session_id: uuid.UUID
     question_id: uuid.UUID
