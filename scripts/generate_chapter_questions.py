@@ -122,7 +122,41 @@ def generate_questions_for_chapter(chapter_title):
         ).all()
         for t in topics_to_delete:
             db.delete(t)
-        db.commit()
+        db.flush()
+        
+        # 4. Merge topics with less than 5 questions under this chapter
+        print("\n[Cleanup] Merging topics with less than 5 questions...")
+        topics = db.query(Topic).filter(Topic.chapter_id == chapter.id).all()
+        
+        topic_question_counts = []
+        for t in topics:
+            q_count = db.query(Question).filter(
+                Question.learning_unit.has(LearningUnit.subtopic.has(Subtopic.topic_id == t.id))
+            ).count()
+            topic_question_counts.append((t, q_count))
+            
+        print("Current topic question counts:")
+        for t, q_count in topic_question_counts:
+            print(f"Topic: '{t.title}' | Questions: {q_count}")
+            
+        valid_targets = [item for item in topic_question_counts if item[1] >= 5]
+        if valid_targets:
+            target_topic = max(valid_targets, key=lambda x: x[1])[0]
+            print(f"Target topic for merge: '{target_topic.title}'")
+            
+            for t, q_count in topic_question_counts:
+                if q_count < 5 and t.id != target_topic.id:
+                    print(f"Merging topic '{t.title}' (questions: {q_count}) into '{target_topic.title}'")
+                    subtopics = db.query(Subtopic).filter(Subtopic.topic_id == t.id).all()
+                    for st in subtopics:
+                        st.topic_id = target_topic.id
+                    db.flush()
+                    db.delete(t)
+            db.commit()
+            print("Topic merging completed successfully.")
+        else:
+            db.commit()
+            print("No valid target topic with >= 5 questions found or all topics are below 5 questions. Skipping merge.")
         print("Cleanup completed successfully.")
         
         # Dump to questions_chapter.json
