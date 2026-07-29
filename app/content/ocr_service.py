@@ -25,7 +25,7 @@ class OCRService:
         self._engine = None
         
         if PADDLE_AVAILABLE:
-            if self.lang != 'gu':
+            if self.lang not in ('gu', 'hi'):
                 # Initialize OCR engine (lazy-loaded on startup)
                 # use_textline_orientation=True helps with scanned images that might be slightly rotated
                 self._engine = PaddleOCR(use_textline_orientation=True, lang=self.lang)
@@ -36,7 +36,7 @@ class OCRService:
         if self.lang != lang:
             logger.info(f"Switching OCR language from {self.lang} to {lang}")
             self.lang = lang
-            if PADDLE_AVAILABLE and lang != 'gu':
+            if PADDLE_AVAILABLE and lang not in ('gu', 'hi'):
                 self._engine = PaddleOCR(use_textline_orientation=True, lang=self.lang)
 
 
@@ -51,15 +51,16 @@ class OCRService:
             Tuple[str, float]: Extracted text and the confidence score (0.0 to 1.0).
             
         """
-        if self.lang == 'gu':
+        if self.lang in ('gu', 'hi'):
             try:
                 from app.content.ai_provider import default_ai_provider
                 from google.genai import types
                 
-                logger.info("Using Gemini to transcribe Gujarati page image...")
+                lang_name = "Hindi" if self.lang == "hi" else "Gujarati"
+                logger.info(f"Using Gemini to transcribe {lang_name} page image...")
                 img_part = types.Part.from_bytes(data=image_bytes, mime_type="image/png")
                 
-                prompt = "You are an expert Gujarati OCR transcriber. Transcribe all Gujarati text from this page image. Preserve paragraphs and headings. Output only the transcribed Gujarati text."
+                prompt = f"You are an expert {lang_name} OCR transcriber. Transcribe all {lang_name} text from this page image. Preserve paragraphs and headings. Output only the transcribed {lang_name} text."
                 transcription = default_ai_provider.generate_text(
                     system_prompt=prompt,
                     content=[img_part, "Transcribe this page."]
@@ -67,7 +68,7 @@ class OCRService:
                 
                 return transcription, 1.0
             except Exception as e:
-                logger.error(f"Gemini Gujarati OCR failed: {e}")
+                logger.error(f"Gemini {self.lang} OCR failed: {e}")
                 return "", 0.0
 
         if not self._engine:
