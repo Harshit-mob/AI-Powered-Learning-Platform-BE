@@ -308,16 +308,20 @@ class QuestionGenerationService:
     ) -> Dict[str, Any]:
         start_time = time.time()
         system_prompt = self.prompt_builder.build("question_generator.md")
-        if subject.lower() == "hindi":
+        if subject.lower() in ("hindi", "gujarati"):
+            lang_name = "Hindi" if subject.lower() == "hindi" else "Gujarati"
             system_prompt += (
-                "\n\n--- HINDI MCQ RULE ---\n"
-                "IMPORTANT: Since the subject is Hindi, you MUST generate ONLY MCQ (Multiple Choice Questions) type questions. "
+                f"\n\n--- {lang_name.upper()} MCQ & EXERCISE-ONLY RULE ---\n"
+                f"IMPORTANT: Since the subject is {lang_name}, you MUST generate ONLY MCQ (Multiple Choice Questions) type questions. "
                 "For every generated question, set 'question_type' to 'MCQ', 'evaluation_method' to 'MCQ', "
                 "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
-                "You MUST target exactly 12-15 questions per Learning Unit. To achieve this, generate a wide variety of "
-                "questions (including definitions, reasoning, true/false, fill-in-the-blank, and recall) but format them "
-                "ALL as MCQs with exactly 4 options. For example, a True/False question can be formatted as an MCQ "
-                "where options are ['हाँ (True)', 'नहीं (False)', 'तथ्य अपूर्ण है', 'इनमें से कोई नहीं']."
+                f"For {lang_name}, you MUST ONLY generate questions that are direct translations, adaptations, or MCQ-formatting "
+                "of the textbook exercises (अभ्यास / स्वाध्याय) found at the end of the chapter, or that test the word meanings "
+                "(शब्दार्थ / शब्द कोश) found in the glossary section. Use the story text of the chapter solely as context to "
+                "accurately determine the correct answers to these exercise questions. Do not invent new comprehension or concept "
+                "questions that are not present in the vocabulary or exercises sections.\n"
+                "The general target of 12-15 questions per Learning Unit is relaxed for this language subject; only generate "
+                "the questions that naturally correspond to the vocabulary terms or exercise items mapped to the current Learning Unit."
             )
         
         all_validated = []

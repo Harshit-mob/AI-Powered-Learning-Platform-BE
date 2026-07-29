@@ -68,22 +68,7 @@ def test_pipeline():
     pages = extractor.extract(pdf_path)
     ocr_end = time.time()
     print(f"Extracted {len(pages)} pages.")
-    
-    # Option A page filtering for Hindi/Gujarati
-    meta_json_path = os.path.join(os.path.dirname(pdf_path), "metadata.json")
-    if os.path.exists(meta_json_path):
-        try:
-            with open(meta_json_path, 'r', encoding='utf-8') as f:
-                meta_data = json.load(f)
-                glossary_pages = meta_data.get("glossary_pages", [])
-                assignment_pages = meta_data.get("assignment_pages", [])
-                if (glossary_pages or assignment_pages) and metadata.subject.lower() in ("hindi", "gujarati"):
-                    target_pages = set(glossary_pages + assignment_pages)
-                    print(f"\n[Option A] Filtering extraction to target pages: {sorted(list(target_pages))}")
-                    pages = [p for p in pages if p.page_number in target_pages]
-                    print(f"Filtered pages count: {len(pages)}")
-        except Exception as e:
-            print(f"Warning: Failed to load/parse metadata.json for page filtering: {e}")
+
     
     # Step 3: Cleaning & Normalization
     print("\n[3/6] Cleaning and Normalizing text...")
