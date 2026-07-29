@@ -90,6 +90,41 @@ def generate_questions_for_chapter(chapter_title):
         saved_count = generator.save_question_bank(all_questions, db)
         print(f"Successfully saved {saved_count} questions to the database.")
         
+        # Cleanup Learning Units, Subtopics, and Topics with 0 questions under this chapter
+        print("\n[Cleanup] Removing learning units, subtopics, and topics with 0 questions...")
+        from app.models.course import Topic, Subtopic, LearningUnit
+        
+        # 1. Delete learning units with 0 questions under this chapter
+        lus_to_delete = db.query(LearningUnit).filter(
+            LearningUnit.subtopic.has(Subtopic.topic.has(chapter_id=chapter.id))
+        ).filter(
+            ~LearningUnit.questions.any()
+        ).all()
+        for lu in lus_to_delete:
+            db.delete(lu)
+        db.flush()
+        
+        # 2. Delete subtopics with 0 learning units left under this chapter
+        subtopics_to_delete = db.query(Subtopic).filter(
+            Subtopic.topic.has(chapter_id=chapter.id)
+        ).filter(
+            ~Subtopic.learning_units.any()
+        ).all()
+        for st in subtopics_to_delete:
+            db.delete(st)
+        db.flush()
+        
+        # 3. Delete topics with 0 subtopics left under this chapter
+        topics_to_delete = db.query(Topic).filter(
+            Topic.chapter_id == chapter.id
+        ).filter(
+            ~Topic.subtopics.any()
+        ).all()
+        for t in topics_to_delete:
+            db.delete(t)
+        db.commit()
+        print("Cleanup completed successfully.")
+        
         # Dump to questions_chapter.json
         print("\n[4/4] Dumping to generated/questions/ ...")
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
