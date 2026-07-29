@@ -17,7 +17,7 @@ CRITICAL RULES:
      5. Grammar and language puzzles (व्याकरण, शब्द-युग्म, अक्षरों का खेल, मात्राओं का अंतर).
      6. Supplementary readings or additional poems (जैसे 'पुष्प की अभिलाषा', वंदे मातरम्).
      7. Comparative and analytical tasks (साझी समझ, तुलना).
-    - You MUST extract the raw, verbatim text of all definitions, word meanings, and exercise questions from the textbook pages into the 'content' field of the corresponding subtopic. Do NOT summarize, rewrite, or paraphrase the exercises; we need the exact original sentences (e.g. sentences used in grammar exercises like 'शिकारी ज्यादा से ज्यादा चिड़ियों को...', 'सलीम अली ने जीवनी लिखी') preserved verbatim so they can be turned into questions.
+    - You MUST extract the raw, verbatim text of all definitions, word meanings, and exercise questions from the textbook pages into the 'content' field of the corresponding subtopic. Do NOT summarize, rewrite, or paraphrase the exercises; we need the exact original sentences (e.g. sentences used in grammar exercises like 'शिकारी ज्यादा से ज्यादा चिड़ियों को...', 'सलीम अली ने जीवनी लिखी') preserved verbatim so they can be turned into questions. Specifically, you MUST create dedicated, separate subtopics for grammatical concepts found in the exercises, such as 'कारक' (cases) and 'भाववाचक संज्ञा' (abstract nouns).
     - Do not group these distinct sections together. Each section must be represented by its own Topic and Subtopic.
 9. Only return strict JSON that perfectly matches the required schema.
 

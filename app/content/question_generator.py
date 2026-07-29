@@ -325,11 +325,34 @@ class QuestionGenerationService:
                 "the questions that naturally correspond to the vocabulary terms or exercise items mapped to the current Learning Unit."
             )
         
+        glossary_pages = []
+        assignment_pages = []
+        if subject.lower() in ("hindi", "gujarati"):
+            import glob
+            meta_paths = glob.glob("content/**/metadata.json", recursive=True)
+            for mp in meta_paths:
+                try:
+                    with open(mp, 'r', encoding='utf-8') as f:
+                        meta = json.load(f)
+                        if meta.get("chapter_title", "").strip().lower() == chapter.strip().lower():
+                            glossary_pages = meta.get("glossary_pages", [])
+                            assignment_pages = meta.get("assignment_pages", [])
+                            break
+                except Exception:
+                    pass
+
         all_validated = []
         total_fail = 0
         total_gen = 0
         
         for idx, unit in enumerate(learning_units, 1):
+            if subject.lower() in ("hindi", "gujarati"):
+                unit_pages = unit.get("source_pages", [])
+                target_pages = set(glossary_pages + assignment_pages)
+                if target_pages and not set(unit_pages).intersection(target_pages):
+                    logger.info(f"Skipping question generation for unit '{unit.get('title')}' (pages {unit_pages}) as it does not overlap with glossary/assignments ({target_pages})")
+                    continue
+
             payload_str = self.build_question_generation_payload(subject, grade, board, chapter, topic, sub_topic, [unit])
             validated, failures = self._process_single_unit(system_prompt, payload_str, unit)
             
