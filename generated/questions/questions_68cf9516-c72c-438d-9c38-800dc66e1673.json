@@ -1,0 +1,2706 @@
+[
+  {
+    "question": "Which famous book does this story come from?",
+    "question_type": "RECALL",
+    "concept": "Literary origin",
+    "expected_answer": "The Adventures of Tom Sawyer",
+    "acceptable_answers": [
+      "It is The Adventures of Tom Sawyer",
+      "Tom Sawyer",
+      "The adventures of tom sawyer is the answer",
+      "The the adventures of tom sawyer"
+    ],
+    "evaluation_method": "KEYWORD_MATCH",
+    "hint_level_1": "It is a story about a famous young boy's adventures.",
+    "hint_level_2": "Focus on the exact Recall required to answer this.",
+    "full_explanation": "1) The book is The Adventures of Tom Sawyer. 2) The unit states the extract is taken from this specific novel by Mark Twain. 3) It is not a standalone short story, but part of a classic book. 4) Like reading a single chapter from a Harry Potter book.",
+    "difficulty": 1,
+    "keywords": [
+      "literary origin",
+      "tom sawyer",
+      "book"
+    ],
+    "learning_unit_id": "566a8031-17b8-4f6d-9218-aba169477ceb",
+    "learning_objective": "Understand literary origin",
+    "source_pages": [
+      1
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Tom Sawyer",
+      "Adventures"
+    ],
+    "question_hash": "0061e1cd644887c4a23a560478b7898b6f53fd27c29510ad435e8f9ec9b4b2cb",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 84,
+    "speaking_time": 4.49,
+    "thinking_time": 7.44,
+    "cluster_id": "literary_origin_1_remember_recall",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 1.0,
+    "metadata_score": 85,
+    "estimated_time": 12,
+    "normalized_concept": "literary_origin",
+    "cluster_name": "Literary Origin - Easy - Remember - Recall",
+    "question_purpose": "8.6",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: Tom loves Monday mornings.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Tom's feelings on Monday",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "Incorrect",
+      "No"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Does he look forward to the school week?",
+    "hint_level_2": "The text says he is miserable on these mornings.",
+    "full_explanation": "1) False. 2) Tom is actually miserable on Monday mornings. 3) It is not true because he explicitly describes the start of the week as suffering. 4) If you enjoy something, you feel happy, but Tom feels the exact opposite.",
+    "difficulty": 1,
+    "keywords": [
+      "tom's feelings on monday",
+      "tom",
+      "monday"
+    ],
+    "learning_unit_id": "7480e8fd-70d3-45ba-8179-4aea282872bb",
+    "learning_objective": "Interpret character feelings",
+    "source_pages": [
+      1
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "True",
+      "False",
+      "He is neutral",
+      "He loves school"
+    ],
+    "correct_option": "False",
+    "voice_expected_keywords": [
+      "False",
+      "No"
+    ],
+    "question_hash": "2291b7d46cf5754a87eb47a0ea2b6ae6de0ce80d8b9715640cfcade2d5f8ed46",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 99,
+    "speaking_time": 4.03,
+    "thinking_time": 5.92,
+    "cluster_id": "feelings_monday_on_toms_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.429,
+    "metadata_score": 93,
+    "estimated_time": 10,
+    "normalized_concept": "feelings_monday_on_toms",
+    "cluster_name": "Tom'S Feelings On Monday - Easy - Remember - True False",
+    "question_purpose": "9.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Choose the word that describes Tom's feeling on Monday: Happy or Miserable?",
+    "question_type": "MCQ",
+    "concept": "Tom's feelings on Monday",
+    "expected_answer": "Miserable",
+    "acceptable_answers": [
+      "The Miserable",
+      "Miserable is the answer",
+      "It Is Miserable"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "He definitely does not feel happy.",
+    "hint_level_2": "The first sentence says he found himself 'miserable'.",
+    "full_explanation": "1) Miserable. 2) The text explicitly uses this word. 3) It is not happy because he feels school is a form of suffering. 4) When you are feeling very sad or gloomy, you are miserable.",
+    "difficulty": 1,
+    "keywords": [
+      "tom's feelings on monday",
+      "tom",
+      "feelings"
+    ],
+    "learning_unit_id": "7480e8fd-70d3-45ba-8179-4aea282872bb",
+    "learning_objective": "Interpret character feelings",
+    "source_pages": [
+      1
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Happy",
+      "Miserable",
+      "Excited",
+      "Carefree"
+    ],
+    "correct_option": "Miserable",
+    "voice_expected_keywords": [
+      "Miserable"
+    ],
+    "question_hash": "512b414e5a5a74b52c5c727a542ad0699b7b829cc073049069b0fc3da0524b7d",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 6.34,
+    "thinking_time": 7.44,
+    "cluster_id": "feelings_monday_on_toms_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 81,
+    "coverage_weight": 0.571,
+    "metadata_score": 89,
+    "estimated_time": 14,
+    "normalized_concept": "feelings_monday_on_toms",
+    "cluster_name": "Tom'S Feelings On Monday - Easy - Remember - Mcq",
+    "question_purpose": "7.4",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Who is Tom speaking to during his dying act?",
+    "question_type": "RECALL",
+    "concept": "Character exaggeration",
+    "expected_answer": "Sid",
+    "acceptable_answers": [
+      "His brother Sid",
+      "Sid is the answer",
+      "It Is Sid",
+      "The Sid"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "The person he is talking to is his brother.",
+    "hint_level_2": "The text says 'I forgive everybody, ___.'",
+    "full_explanation": "The correct answer is Sid. It is correct because Sid is the audience for Tom's act. Other names like 'the new girl' are incorrect because she is only mentioned in the request, not present. An everyday example is explaining your day to a family member at dinner.",
+    "difficulty": 1,
+    "keywords": [
+      "character exaggeration",
+      "tom"
+    ],
+    "learning_unit_id": "f3010b4a-9013-4aa0-9257-ade726043374",
+    "learning_objective": "Examine character exaggeration",
+    "source_pages": [
+      4
+    ],
+    "estimated_answer_time": 3,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Sid"
+    ],
+    "question_hash": "712f757610f87615938d0eef73294600eb6236afe7a98d638edfbd0e393e171f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 99,
+    "speaking_time": 4.95,
+    "thinking_time": 6.53,
+    "cluster_id": "character_exaggeration_1_remember_recall",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.25,
+    "metadata_score": 91,
+    "estimated_time": 12,
+    "normalized_concept": "character_exaggeration",
+    "cluster_name": "Character Exaggeration - Easy - Remember - Recall",
+    "question_purpose": "10.5",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Which of these is the most accurate description of Tom's 'Dying Act'?",
+    "question_type": "MCQ",
+    "concept": "Character exaggeration",
+    "expected_answer": "A performance to gain sympathy",
+    "acceptable_answers": [
+      "A performance to gain sympathy is the answer",
+      "It is a performance to gain sympathy",
+      "The a performance to gain sympathy"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "Tom is not in pain, so what is the real goal?",
+    "hint_level_2": "He wants others to feel bad for him.",
+    "full_explanation": "The correct answer is a performance to gain sympathy. It is correct because Tom's entire speech is designed to make others pity him. 'A real medical emergency' is incorrect as he is clearly healthy. An everyday example is a child crying loudly when they barely tripped to get extra attention.",
+    "difficulty": 2,
+    "keywords": [
+      "character exaggeration",
+      "performance",
+      "sympathy",
+      "dying"
+    ],
+    "learning_unit_id": "f3010b4a-9013-4aa0-9257-ade726043374",
+    "learning_objective": "Examine character exaggeration",
+    "source_pages": [
+      4
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "SHORT_SENTENCE",
+    "mcq_options": [
+      "A real medical emergency",
+      "A way to prank his friends",
+      "A performance to gain sympathy",
+      "A request for a new cat"
+    ],
+    "correct_option": "A performance to gain sympathy",
+    "voice_expected_keywords": [
+      "sympathy",
+      "performance"
+    ],
+    "question_hash": "4cd29963b35c7aa3ec4d5a0facd310b9d714e3bcca54389c0c851ebc468877a4",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "CONCEPT",
+    "voice_score": 72,
+    "speaking_time": 6.34,
+    "thinking_time": 10.15,
+    "cluster_id": "character_exaggeration_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.25,
+    "metadata_score": 91,
+    "estimated_time": 17,
+    "normalized_concept": "character_exaggeration",
+    "cluster_name": "Character Exaggeration - Easy - Remember - Mcq",
+    "question_purpose": "12.2",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Does Tom's 'dying act' work in the end?",
+    "question_type": "UNDERSTANDING",
+    "concept": "Character exaggeration",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "It worked"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Look at Sid's reaction: 'Oh, Tom, you ain't dying, are you?'",
+    "hint_level_2": "Sid is clearly worried and confused, meaning the act successfully captured his attention.",
+    "full_explanation": "The correct answer is Yes. It worked because Sid is immediately concerned about Tom's health. 'No' is wrong because Sid fell for the performance. An everyday example is a prank that gets a reaction from your parents because they think it's real.",
+    "difficulty": 2,
+    "keywords": [
+      "character exaggeration",
+      "work",
+      "sid",
+      "worried"
+    ],
+    "learning_unit_id": "f3010b4a-9013-4aa0-9257-ade726043374",
+    "learning_objective": "Examine character exaggeration",
+    "source_pages": [
+      4
+    ],
+    "estimated_answer_time": 4,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Yes",
+      "worked"
+    ],
+    "question_hash": "64e4936f7fe290fbed93c89f61184c689d9e659f8db2b2fd1623a293243c0e02",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CONCEPT",
+    "voice_score": 100,
+    "speaking_time": 4.49,
+    "thinking_time": 7.73,
+    "cluster_id": "character_exaggeration_2_remember_understanding",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.25,
+    "metadata_score": 92,
+    "estimated_time": 13,
+    "normalized_concept": "character_exaggeration",
+    "cluster_name": "Character Exaggeration - Easy - Remember - Understanding",
+    "question_purpose": "11.2",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Karan wants to look cool. He starts acting like a famous actor. What is Karan doing?",
+    "question_type": "APPLICATION",
+    "concept": "Character exaggeration",
+    "expected_answer": "Exaggerating",
+    "acceptable_answers": [
+      "Role playing",
+      "Pretending",
+      "Acting",
+      "Exaggerating is the answer",
+      "The Exaggerating",
+      "It Is Exaggerating"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "He is changing his natural behavior to seem like someone else.",
+    "hint_level_2": "He is 'acting' a part, similar to how Tom acts out his illness.",
+    "full_explanation": "The correct answer is exaggerating. This is correct because Karan is blowing up his behavior to create an image. 'Studying' is incorrect because he is performing, not learning. An everyday example is a child copying their favorite superhero's moves to feel strong.",
+    "difficulty": 3,
+    "keywords": [
+      "character exaggeration",
+      "acting",
+      "behavior"
+    ],
+    "learning_unit_id": "f3010b4a-9013-4aa0-9257-ade726043374",
+    "learning_objective": "Examine character exaggeration",
+    "source_pages": [
+      4
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "exaggerating",
+      "pretending"
+    ],
+    "question_hash": "f3e17931b4a08c7b87b234ee5e5a62446c9e9c6ad8999b08e60b6fee1222f947",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "APPLICATION",
+    "intent": "APPLICATION",
+    "voice_score": 95,
+    "speaking_time": 9.78,
+    "thinking_time": 14.65,
+    "cluster_id": "character_exaggeration_3_remember_application",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.25,
+    "metadata_score": 81,
+    "estimated_time": 25,
+    "normalized_concept": "character_exaggeration",
+    "cluster_name": "Character Exaggeration - Medium - Remember - Application",
+    "question_purpose": "13.3",
+    "progression_level": 3,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: Aunt Polly believes Tom is actually dying.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Aunt Polly's reaction",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "Not at all",
+      "No",
+      "Incorrect"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Does Aunt Polly rush for a doctor in a panic?",
+    "hint_level_2": "She says 'I don't believe it!' to Tom.",
+    "full_explanation": "False. Aunt Polly does not believe Tom. She recognizes his behavior as a trick and tells him to stop the nonsense. Believing he was dying would be incorrect because his actions were clearly exaggerated. Just like when you can tell someone is joking even if they act very serious.",
+    "difficulty": 1,
+    "keywords": [
+      "aunt polly's reaction",
+      "aunt polly",
+      "belief"
+    ],
+    "learning_unit_id": "88854e98-1554-41ab-961d-06872d00d938",
+    "learning_objective": "Understand the conclusion of the trick",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "False",
+      "No"
+    ],
+    "question_hash": "fe7ffbfcf2cb89444b023aafa49233e61e6696b435ed6c764376d37b437bc079",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 97,
+    "speaking_time": 5.42,
+    "thinking_time": 6.83,
+    "cluster_id": "aunt_pollys_reaction_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.3,
+    "metadata_score": 93,
+    "estimated_time": 13,
+    "normalized_concept": "aunt_pollys_reaction",
+    "cluster_name": "Aunt Polly'S Reaction - Easy - Remember - True False",
+    "question_purpose": "10.2",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Fill in the blank: Aunt Polly calls Tom's act a bunch of ______.",
+    "question_type": "FILL_BLANK",
+    "concept": "Aunt Polly's attitude",
+    "expected_answer": "Nonsense",
+    "acceptable_answers": [
+      "Rubbage",
+      "The Nonsense",
+      "Nonsense is the answer",
+      "It Is Nonsense"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "It means something that does not make sense.",
+    "hint_level_2": "Focus on the exact Fill Blank required to answer this.",
+    "full_explanation": "Nonsense. Aunt Polly uses this word to dismiss Tom's fake injury because she sees through his trick. Saying 'truth' would be incorrect because the whole situation is a lie. Like a teacher telling a student to stop the nonsense when they are acting silly.",
+    "difficulty": 1,
+    "keywords": [
+      "aunt polly's attitude"
+    ],
+    "learning_unit_id": "88854e98-1554-41ab-961d-06872d00d938",
+    "learning_objective": "Understand the conclusion of the trick",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Nonsense"
+    ],
+    "question_hash": "f69a3dec6341277f05b3ec764491330090de445e49b927dc3bcb762206139ec1",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 6.8,
+    "thinking_time": 7.74,
+    "cluster_id": "attitude_aunt_pollys_1_remember_fill_blank",
+    "session_tags": [
+      "easy",
+      "fill_blank",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 61,
+    "coverage_weight": 0.3,
+    "metadata_score": 90,
+    "estimated_time": 15,
+    "normalized_concept": "attitude_aunt_pollys",
+    "cluster_name": "Aunt Polly'S Attitude - Easy - Remember - Fill Blank",
+    "question_purpose": "11.2",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Maya sees Tom complaining about his toe. Is Tom actually sick?",
+    "question_type": "MCQ",
+    "concept": "Tom's excuse",
+    "expected_answer": "No, he is pretending",
+    "acceptable_answers": [
+      "No, he is pretending is the answer",
+      "It is no, he is pretending",
+      "The no, he is pretending"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "Tom is making up a story.",
+    "hint_level_2": "Aunt Polly calls his claim nonsense.",
+    "full_explanation": "No, he is pretending. Tom makes up the story about his toe to avoid going to school. Saying 'Yes' is incorrect because the story is purely a trick. Just like when someone acts sick to avoid a difficult test they haven't studied for.",
+    "difficulty": 2,
+    "keywords": [
+      "tom's excuse",
+      "tom",
+      "pretending"
+    ],
+    "learning_unit_id": "88854e98-1554-41ab-961d-06872d00d938",
+    "learning_objective": "Understand the conclusion of the trick",
+    "source_pages": [
+      4,
+      5
+    ],
+    "estimated_answer_time": 8,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "SHORT_SENTENCE",
+    "mcq_options": [
+      "Yes, he is very sick",
+      "No, he is pretending",
+      "He has a broken leg",
+      "He actually has a toothache"
+    ],
+    "correct_option": "No, he is pretending",
+    "voice_expected_keywords": [
+      "No",
+      "Pretending"
+    ],
+    "question_hash": "8fb66e535347ef9fa197a032eea18e6a289fb7c23342616705f959672004da4f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 85,
+    "speaking_time": 6.68,
+    "thinking_time": 9.55,
+    "cluster_id": "excuse_toms_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 82,
+    "coverage_weight": 0.4,
+    "metadata_score": 89,
+    "estimated_time": 17,
+    "normalized_concept": "excuse_toms",
+    "cluster_name": "Tom'S Excuse - Easy - Remember - Mcq",
+    "question_purpose": "9.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Can you see or touch an abstract noun?",
+    "question_type": "TRUE_FALSE",
+    "concept": "Nature of abstract nouns",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "Cannot touch them",
+      "Nope",
+      "False"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Think about feelings like happiness or ideas.",
+    "hint_level_2": "Abstract nouns are things we can only feel, not touch with our hands.",
+    "full_explanation": "1) No. 2) Abstract nouns represent ideas and feelings, which have no physical shape. 3) People often confuse them with concrete nouns that have a physical form. 4) For example, you can touch a chair, but you cannot touch the 'comfort' it provides.",
+    "difficulty": 1,
+    "keywords": [
+      "nature of abstract nouns"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No",
+      "False"
+    ],
+    "question_hash": "5993ab1ad595f6d95e5c8b48b1bead7ec424da66330bcd0234c6eb625283d80d",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 99,
+    "speaking_time": 4.49,
+    "thinking_time": 6.23,
+    "cluster_id": "abstract_nature_nouns_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.086,
+    "metadata_score": 95,
+    "estimated_time": 11,
+    "normalized_concept": "abstract_nature_nouns",
+    "cluster_name": "Nature Of Abstract Nouns - Easy - Remember - True False",
+    "question_purpose": "10.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: Abstract nouns represent things we can see and touch.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Nature of abstract nouns",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "Incorrect",
+      "No"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Check the definition of abstract nouns again.",
+    "hint_level_2": "They are the opposite of physical things.",
+    "full_explanation": "1) False. 2) Abstract nouns represent things that cannot be seen or touched. 3) Concrete nouns are the ones you can see and touch. 4) For example, 'joy' is abstract, but a 'ball' is concrete.",
+    "difficulty": 1,
+    "keywords": [
+      "nature of abstract nouns",
+      "abstract nouns"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "False",
+      "No"
+    ],
+    "question_hash": "9193e64edfd8e408c24d5e3cca970299a4a56dc20862ed8dd1531cd906b01708",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 97,
+    "speaking_time": 6.34,
+    "thinking_time": 7.44,
+    "cluster_id": "abstract_nature_nouns_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.086,
+    "metadata_score": 93,
+    "estimated_time": 14,
+    "normalized_concept": "abstract_nature_nouns",
+    "cluster_name": "Nature Of Abstract Nouns - Easy - Remember - True False",
+    "question_purpose": "8.6",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Riya says 'Happiness' is a noun. Is she right?",
+    "question_type": "REASONING",
+    "concept": "Nature of abstract nouns",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "True",
+      "She is correct"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Is 'happiness' something you can feel?",
+    "hint_level_2": "Since happiness is a feeling or state of being, it is an abstract noun.",
+    "full_explanation": "1) Yes. 2) Happiness is an abstract noun because it names a feeling. 3) Some might think only names of places or objects are nouns, but feelings are also nouns. 4) For example, 'Sadness' is another abstract noun for a feeling.",
+    "difficulty": 2,
+    "keywords": [
+      "nature of abstract nouns",
+      "abstract nouns"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Yes",
+      "True"
+    ],
+    "question_hash": "85bdbe5f62dacd4dbdfe14fd18481830a64bac45a1b1a001d3180f2ab3220986",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 99,
+    "speaking_time": 5.75,
+    "thinking_time": 11.03,
+    "cluster_id": "abstract_nature_nouns_2_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 87,
+    "coverage_weight": 0.229,
+    "metadata_score": 91,
+    "estimated_time": 17,
+    "normalized_concept": "abstract_nature_nouns",
+    "cluster_name": "Nature Of Abstract Nouns - Easy - Remember - Reasoning",
+    "question_purpose": "9.6",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "The word 'behave' is a verb. What is the abstract noun form?",
+    "question_type": "RECALL",
+    "concept": "Forming abstract nouns from verbs",
+    "expected_answer": "Behaviour",
+    "acceptable_answers": [
+      "Behavior",
+      "Behaviour is the answer",
+      "The Behaviour",
+      "It Is Behaviour"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Add a suffix to 'behave' to turn it into a noun.",
+    "hint_level_2": "The word ends with 'iour'.",
+    "full_explanation": "1) Behaviour. 2) We form this by adding the suffix '-iour' to the verb. 3) It changes from an action (behave) to a state or quality (behaviour). 4) Like turning 'act' into 'action'.",
+    "difficulty": 2,
+    "keywords": [
+      "forming abstract nouns from verbs",
+      "abstract nouns",
+      "verbs"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "behaviour",
+      "behavior"
+    ],
+    "question_hash": "864872ae32f036c101f4d48b431e5ae02a00613a97311607c0cd6348e87b1ed7",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 97,
+    "speaking_time": 7.14,
+    "thinking_time": 8.94,
+    "cluster_id": "abstract_forming_from_nouns_verbs_2_remember_recall",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 70,
+    "coverage_weight": 0.086,
+    "metadata_score": 87,
+    "estimated_time": 17,
+    "normalized_concept": "abstract_forming_from_nouns_verbs",
+    "cluster_name": "Forming Abstract Nouns From Verbs - Easy - Remember - Recall",
+    "question_purpose": "8.5",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Which word is an abstract noun: 'table', 'happiness', or 'run'?",
+    "question_type": "MCQ",
+    "concept": "Identifying abstract nouns",
+    "expected_answer": "Happiness",
+    "acceptable_answers": [
+      "The Happiness",
+      "It Is Happiness",
+      "Happiness is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "One is an object, one is an action, and one is a feeling.",
+    "hint_level_2": "Abstract nouns are things we can only feel.",
+    "full_explanation": "1) Happiness. 2) It is a feeling and cannot be touched, fitting the definition perfectly. 3) 'Table' is a concrete noun and 'run' is a verb. 4) For instance, 'Friendship' is another abstract noun.",
+    "difficulty": 2,
+    "keywords": [
+      "identifying abstract nouns",
+      "abstract nouns"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 6,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Table",
+      "Happiness",
+      "Run",
+      "Book"
+    ],
+    "correct_option": "Happiness",
+    "voice_expected_keywords": [
+      "happiness"
+    ],
+    "question_hash": "3ef19e12af17698498f65e8d583e01ba7685d5bfe4706a122271910c3aab9243",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 6.22,
+    "thinking_time": 8.33,
+    "cluster_id": "abstract_identifying_nouns_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 75,
+    "coverage_weight": 0.114,
+    "metadata_score": 89,
+    "estimated_time": 15,
+    "normalized_concept": "abstract_identifying_nouns",
+    "cluster_name": "Identifying Abstract Nouns - Easy - Remember - Mcq",
+    "question_purpose": "9.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What suffix did we add to 'happy' to make it a noun?",
+    "question_type": "RECALL",
+    "concept": "Forming abstract nouns from adjectives",
+    "expected_answer": "ness",
+    "acceptable_answers": [
+      "-ness",
+      "It Is Ness",
+      "Ness is the answer",
+      "The Ness"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Look at the end of the word 'happiness'.",
+    "hint_level_2": "It is a four-letter suffix starting with 'n'.",
+    "full_explanation": "1) ness. 2) The suffix '-ness' is added to adjectives to turn them into nouns. 3) Sometimes students confuse suffixes like '-tion' or '-ment'. 4) Example: 'Sad' becomes 'sadness'.",
+    "difficulty": 2,
+    "keywords": [
+      "forming abstract nouns from adjectives",
+      "abstract nouns",
+      "adjectives"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "ness"
+    ],
+    "question_hash": "b8f3243c7d3d093ee547a48d4b7433b84a701826a7ef1a362d388802abe52c1b",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 100,
+    "speaking_time": 6.34,
+    "thinking_time": 8.94,
+    "cluster_id": "abstract_adjectives_forming_from_nouns_2_remember_recall",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 76,
+    "coverage_weight": 0.086,
+    "metadata_score": 87,
+    "estimated_time": 16,
+    "normalized_concept": "abstract_adjectives_forming_from_nouns",
+    "cluster_name": "Forming Abstract Nouns From Adjectives - Easy - Remember - Recall",
+    "question_purpose": "11.2",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Is 'speech' an abstract noun formed from the verb 'speak'?",
+    "question_type": "TRUE_FALSE",
+    "concept": "Forming abstract nouns from verbs",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "True",
+      "That is correct"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Can you touch a speech? No, it's something we hear.",
+    "hint_level_2": "The verb 'speak' changes to 'speech' to describe the act.",
+    "full_explanation": "1) Yes. 2) 'Speech' represents the spoken words as an idea or event, making it an abstract noun. 3) People might think it's a verb, but it's the noun form of 'speak'. 4) For example, a person gives a speech.",
+    "difficulty": 3,
+    "keywords": [
+      "forming abstract nouns from verbs",
+      "abstract nouns",
+      "verbs"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 6,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Yes",
+      "True"
+    ],
+    "question_hash": "d3b3e778a98c59a90d37ec401fc5ab32385d6c21c901e3c20f29daa324426fcb",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 97,
+    "speaking_time": 5.42,
+    "thinking_time": 9.83,
+    "cluster_id": "abstract_forming_from_nouns_verbs_3_remember_true_false",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.086,
+    "metadata_score": 93,
+    "estimated_time": 16,
+    "normalized_concept": "abstract_forming_from_nouns_verbs",
+    "cluster_name": "Forming Abstract Nouns From Verbs - Medium - Remember - True False",
+    "question_purpose": "7.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Meera says she can hold 'imagination' in her hand. Is she correct?",
+    "question_type": "REASONING",
+    "concept": "Nature of abstract nouns",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "Incorrect",
+      "False"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Can you physically grab an idea?",
+    "hint_level_2": "Imagination is an abstract concept, not a physical object.",
+    "full_explanation": "1) No. 2) Imagination is an abstract noun because it is a mental process. 3) You cannot touch it because it has no shape or form. 4) Like 'hope' or 'dream', it only exists in your mind.",
+    "difficulty": 3,
+    "keywords": [
+      "nature of abstract nouns"
+    ],
+    "learning_unit_id": "a749ec93-8e8f-42a4-bde8-d10e20486ce7",
+    "learning_objective": "Define and identify abstract nouns",
+    "source_pages": [
+      8
+    ],
+    "estimated_answer_time": 6,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No",
+      "False"
+    ],
+    "question_hash": "70e5b46e28b9e13e42d73610d1dbbb8ba3a2217653c42715402434eec0bf03b7",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 99,
+    "speaking_time": 7.14,
+    "thinking_time": 13.44,
+    "cluster_id": "abstract_nature_nouns_3_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 83,
+    "coverage_weight": 0.227,
+    "metadata_score": 89,
+    "estimated_time": 21,
+    "normalized_concept": "abstract_nature_nouns",
+    "cluster_name": "Nature Of Abstract Nouns - Medium - Remember - Reasoning",
+    "question_purpose": "6.7",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What is the noun form of the word 'discover' based on our text?",
+    "question_type": "DEFINITION",
+    "concept": "Noun forms",
+    "expected_answer": "Discovery",
+    "acceptable_answers": [
+      "The discovery",
+      "It Is Discovery",
+      "Discovery is the answer"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Recall the primary characteristics of Noun Forms.",
+    "hint_level_2": "The scientist made an important ____.",
+    "full_explanation": "1) The correct word is Discovery. 2) Discovery is a noun, representing the thing that was found. 3) 'Discovered' is a verb showing an action. 4) Example: The discovery of gold surprised the explorers.",
+    "difficulty": 1,
+    "keywords": [
+      "noun forms",
+      "noun"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Discovery"
+    ],
+    "question_hash": "516489e2c6edf1752178543025472269ed9e53f31df7f5035244bf7197141e54",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 98,
+    "speaking_time": 6.8,
+    "thinking_time": 7.74,
+    "cluster_id": "forms_noun_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.062,
+    "metadata_score": 92,
+    "estimated_time": 15,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Easy - Remember - Definition",
+    "question_purpose": "10.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Choose the correct noun: 'The musician brings me great (happy / happiness).'",
+    "question_type": "MCQ",
+    "concept": "Noun forms",
+    "expected_answer": "Happiness",
+    "acceptable_answers": [
+      "The Happiness",
+      "It Is Happiness",
+      "Happiness is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "You are looking for a feeling or state.",
+    "hint_level_2": "Happy is an adjective, happiness is the noun.",
+    "full_explanation": "1) The correct word is Happiness. 2) Happiness is the noun representing the feeling. 3) 'Happy' is an adjective used to describe someone. 4) Example: Winning the game gave me pure happiness.",
+    "difficulty": 2,
+    "keywords": [
+      "noun forms",
+      "noun"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "happy",
+      "happiness",
+      "happily",
+      "happen"
+    ],
+    "correct_option": "happiness",
+    "voice_expected_keywords": [
+      "Happiness"
+    ],
+    "question_hash": "004dc138015268945d39368fba90a18b57c18b183e49635609133fad63861a60",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 5.88,
+    "thinking_time": 8.64,
+    "cluster_id": "forms_noun_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 76,
+    "coverage_weight": 0.125,
+    "metadata_score": 85,
+    "estimated_time": 15,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Easy - Remember - Mcq",
+    "question_purpose": "10.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Fill in the blank: The host gave clear ____ to find the house.",
+    "question_type": "FILL_BLANK",
+    "concept": "Noun forms",
+    "expected_answer": "Directions",
+    "acceptable_answers": [
+      "Direction",
+      "Directions is the answer",
+      "The Directions",
+      "It Is Directions"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "It refers to instructions or guidance.",
+    "hint_level_2": "Focus on the exact Fill Blank required to answer this.",
+    "full_explanation": "1) The word is Directions. 2) Directions are instructions for reaching a place. 3) The verb form is 'direct'. 4) Example: Follow the directions on the map.",
+    "difficulty": 2,
+    "keywords": [
+      "noun forms",
+      "noun"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Directions"
+    ],
+    "question_hash": "34cf4ab7fa5362941311804bd762346ec49bd8827c81fded27a551ef4faaf331",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 6.8,
+    "thinking_time": 9.24,
+    "cluster_id": "forms_noun_2_remember_fill_blank",
+    "session_tags": [
+      "fill_blank",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 63,
+    "coverage_weight": 0.094,
+    "metadata_score": 88,
+    "estimated_time": 17,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Easy - Remember - Fill Blank",
+    "question_purpose": "8.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Choose the correct noun form for the word 'direct'.",
+    "question_type": "MCQ",
+    "concept": "Noun forms",
+    "expected_answer": "Direction",
+    "acceptable_answers": [
+      "By Direcing",
+      "It Is Direction",
+      "Direcing Carefully",
+      "We Direc",
+      "Direction is the answer",
+      "The Direction"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "It ends with -tion.",
+    "hint_level_2": "The host gave me the right direction.",
+    "full_explanation": "1) Direction is the correct noun. 2) 'Direct' is usually a verb or adjective. 3) Use direction when talking about a path or guidance. 4) Example: Please show me the direction to the library.",
+    "difficulty": 2,
+    "keywords": [
+      "noun forms",
+      "noun"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Directing",
+      "Directed",
+      "Direction",
+      "Directly"
+    ],
+    "correct_option": "Direction",
+    "voice_expected_keywords": [
+      "Direction"
+    ],
+    "question_hash": "6d1bb4ac5381d52bd6376b4d26db91da98ab91fc5c108e246b1f1ef41773aa96",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.95,
+    "thinking_time": 8.03,
+    "cluster_id": "forms_noun_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 68,
+    "coverage_weight": 0.125,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Easy - Remember - Mcq",
+    "question_purpose": "9.1",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Sam says 'The loud music causes annoy.' Is he using the correct noun?",
+    "question_type": "REASONING",
+    "concept": "Noun forms",
+    "expected_answer": "No",
+    "acceptable_answers": [],
+    "evaluation_method": "SEMANTIC_MATCH",
+    "hint_level_1": "Annoy is a verb.",
+    "hint_level_2": "The noun form of annoy is annoyance.",
+    "full_explanation": "1) No, he is not. 2) 'Annoy' is a verb meaning to irritate. 3) 'Annoyance' is the noun form describing the feeling of being bothered. 4) Example: The buzzing fly was a big annoyance.",
+    "difficulty": 3,
+    "keywords": [
+      "noun forms"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 8,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_SENTENCE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No",
+      "Annoyance"
+    ],
+    "question_hash": "49d10fe207187946f7128fd250e5eacb5629ebc2e21ee7f7f679f5090c403464",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 98,
+    "speaking_time": 7.6,
+    "thinking_time": 13.74,
+    "cluster_id": "forms_noun_3_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.25,
+    "metadata_score": 89,
+    "estimated_time": 22,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Medium - Remember - Reasoning",
+    "question_purpose": "8.0",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Ali says 'I found the park without any difficult.' Fix the noun error.",
+    "question_type": "APPLICATION",
+    "concept": "Noun forms",
+    "expected_answer": "Difficulty",
+    "acceptable_answers": [
+      "The Difficulty",
+      "Difficulty is the answer",
+      "It Is Difficulty"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Recall the primary characteristics of Noun Forms.",
+    "hint_level_2": "Change the adjective 'difficult' into a noun.",
+    "full_explanation": "1) The correct noun is Difficulty. 2) Difficulty describes the state of being hard to do. 3) 'Difficult' is an adjective used to describe a task. 4) Example: I solved the puzzle without any difficulty.",
+    "difficulty": 3,
+    "keywords": [
+      "noun forms",
+      "noun"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 8,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Difficulty"
+    ],
+    "question_hash": "0175eb9265219b6a359770f3d1d646a0abd89d917eb09343e6f0f3fc3eee1bb3",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "APPLICATION",
+    "intent": "APPLICATION",
+    "voice_score": 98,
+    "speaking_time": 7.6,
+    "thinking_time": 13.74,
+    "cluster_id": "forms_noun_3_remember_application",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 65,
+    "coverage_weight": 0.094,
+    "metadata_score": 85,
+    "estimated_time": 22,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Medium - Remember - Application",
+    "question_purpose": "9.9",
+    "progression_level": 3,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Sara says 'The work is a great discover.' Is the noun form correct?",
+    "question_type": "REASONING",
+    "concept": "Noun forms",
+    "expected_answer": "No",
+    "acceptable_answers": [],
+    "evaluation_method": "SEMANTIC_MATCH",
+    "hint_level_1": "You need a noun, not a verb.",
+    "hint_level_2": "The noun form of discover is discovery.",
+    "full_explanation": "1) No, it is incorrect. 2) 'Discover' is a verb. 3) We need the noun 'discovery' to finish the sentence correctly. 4) Example: That was an amazing discovery.",
+    "difficulty": 3,
+    "keywords": [
+      "noun forms",
+      "discovery"
+    ],
+    "learning_unit_id": "dcedd718-7911-444f-8ae4-2b06ea59d8ab",
+    "learning_objective": "Apply noun knowledge",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 8,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_SENTENCE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No",
+      "Discovery"
+    ],
+    "question_hash": "1240723fd4caef201a1a24ea59cb6ca6438da652e9cc6420b2ea2d57d0978f5e",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 97,
+    "speaking_time": 7.6,
+    "thinking_time": 13.74,
+    "cluster_id": "forms_noun_3_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.25,
+    "metadata_score": 89,
+    "estimated_time": 22,
+    "normalized_concept": "forms_noun",
+    "cluster_name": "Noun Forms - Medium - Remember - Reasoning",
+    "question_purpose": "8.4",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Can you count individual silk threads?",
+    "question_type": "REASONING",
+    "concept": "Countable nouns",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "They are countable",
+      "Sure"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Think about whether you can label them as one, two, or three.",
+    "hint_level_2": "Because you can have one thread or ten threads, it is a countable noun.",
+    "full_explanation": "Yes, threads are countable. They are correct because we can quantify them individually as singular or plural. Unlike liquids or abstract concepts, physical objects like threads can be counted. For example, you can count the threads in a shirt.",
+    "difficulty": 1,
+    "keywords": [
+      "countable nouns",
+      "countable",
+      "threads"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Yes",
+      "countable"
+    ],
+    "question_hash": "3e176ac435c7cbc847c2eda3cba1e214f955e20140c38dce069bd45fa2451ecf",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 99,
+    "speaking_time": 3.57,
+    "thinking_time": 8.62,
+    "cluster_id": "countable_nouns_1_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "easy",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 89,
+    "coverage_weight": 0.138,
+    "metadata_score": 81,
+    "estimated_time": 13,
+    "normalized_concept": "countable_nouns",
+    "cluster_name": "Countable Nouns - Easy - Remember - Reasoning",
+    "question_purpose": "12.7",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Can countable nouns be plural?",
+    "question_type": "DEFINITION",
+    "concept": "Countable nouns",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "True",
+      "They can be"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Think about the word 'threads'. Is it plural?",
+    "hint_level_2": "Countable nouns change form to show if there is one or many.",
+    "full_explanation": "Yes, they can. It is correct because countables have singular and plural forms. It is incorrect to think they only stay singular. An example is 'thread' and 'threads'.",
+    "difficulty": 1,
+    "keywords": [
+      "countable nouns",
+      "countable",
+      "plural"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Yes"
+    ],
+    "question_hash": "ff14a616eaeedaec63f83ffc774ad2cdc50b6f1a410f4f9ae2f53a2d2882f2eb",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "DEFINITION",
+    "voice_score": 99,
+    "speaking_time": 3.11,
+    "thinking_time": 5.32,
+    "cluster_id": "countable_nouns_1_remember_definition",
+    "session_tags": [
+      "definition",
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.034,
+    "metadata_score": 95,
+    "estimated_time": 9,
+    "normalized_concept": "countable_nouns",
+    "cluster_name": "Countable Nouns - Easy - Remember - Definition",
+    "question_purpose": "10.1",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "If you have 5 threads, is 'threads' a countable noun?",
+    "question_type": "REASONING",
+    "concept": "Countable nouns",
+    "expected_answer": "Yes",
+    "acceptable_answers": [
+      "True",
+      "It is"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Can you count to five?",
+    "hint_level_2": "Anything you can give a number to is a countable noun.",
+    "full_explanation": "Yes, it is. It is correct because countable nouns represent objects that can be numbered. It is incorrect to think otherwise. An everyday example is having five pens.",
+    "difficulty": 1,
+    "keywords": [
+      "countable nouns",
+      "countable",
+      "threads"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Yes"
+    ],
+    "question_hash": "e6a069bbf314d480e337d0eebb35513cf8293c8ed32bab37922be633e53455fc",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 98,
+    "speaking_time": 5.82,
+    "thinking_time": 9.83,
+    "cluster_id": "countable_nouns_1_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "easy",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.138,
+    "metadata_score": 94,
+    "estimated_time": 16,
+    "normalized_concept": "countable_nouns",
+    "cluster_name": "Countable Nouns - Easy - Remember - Reasoning",
+    "question_purpose": "10.0",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Is fire considered a countable noun?",
+    "question_type": "TRUE_FALSE",
+    "concept": "Uncountable nouns",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "It is uncountable",
+      "Not countable",
+      "False"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Can you have 'one fire' and 'two fires' in the same way you have threads?",
+    "hint_level_2": "Fire is treated as a substance or mass, making it an uncountable noun.",
+    "full_explanation": "No, fire is uncountable. It is correct because we treat it as a mass noun rather than individual units. It is incorrect to think of it like books or apples. An everyday example is water, which is also an uncountable noun.",
+    "difficulty": 2,
+    "keywords": [
+      "uncountable nouns",
+      "uncountable",
+      "fire"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No",
+      "uncountable"
+    ],
+    "question_hash": "408d3c0f131c596a6e0f330bae49aea18e68ddf81cfb056fa0b21baf40aaf420",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 98,
+    "speaking_time": 3.57,
+    "thinking_time": 7.12,
+    "cluster_id": "nouns_uncountable_2_remember_true_false",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 81,
+    "coverage_weight": 0.052,
+    "metadata_score": 95,
+    "estimated_time": 11,
+    "normalized_concept": "nouns_uncountable",
+    "cluster_name": "Uncountable Nouns - Easy - Remember - True False",
+    "question_purpose": "9.0",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Choose the countable noun from this list: fire, thread, mathematics.",
+    "question_type": "MCQ",
+    "concept": "Countable nouns",
+    "expected_answer": "Thread",
+    "acceptable_answers": [
+      "The Thread",
+      "It Is Thread",
+      "Thread is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "Look for the item that you can count individually.",
+    "hint_level_2": "Mathematics is a subject and fire is an uncountable mass.",
+    "full_explanation": "The correct answer is thread. It is correct because threads exist as individual units you can count. Mathematics and fire are not countable items in this context. An everyday example is a needle and thread.",
+    "difficulty": 2,
+    "keywords": [
+      "countable nouns",
+      "countable"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT",
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "Fire",
+      "Thread",
+      "Mathematics",
+      "None"
+    ],
+    "correct_option": "Thread",
+    "voice_expected_keywords": [
+      "Thread"
+    ],
+    "question_hash": "b23c15dc81172cbc7a6d93fc5f04c23969e45f94d0221dd76980bf7c569fa6f6",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 6.22,
+    "thinking_time": 8.33,
+    "cluster_id": "countable_nouns_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 72,
+    "coverage_weight": 0.069,
+    "metadata_score": 91,
+    "estimated_time": 15,
+    "normalized_concept": "countable_nouns",
+    "cluster_name": "Countable Nouns - Easy - Remember - Mcq",
+    "question_purpose": "10.6",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "What is the noun in 'silk threads' that we can count?",
+    "question_type": "RECALL",
+    "concept": "Countable nouns",
+    "expected_answer": "Threads",
+    "acceptable_answers": [
+      "The threads",
+      "Threads is the answer",
+      "It Is Threads"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "It is the second word in the phrase.",
+    "hint_level_2": "The text says 'silk threads' and mentions they are countable.",
+    "full_explanation": "The answer is threads. It is correct because threads are items we can count individually. It is incorrect to count 'silk' because it describes the material. An everyday example is counting threads in a weave.",
+    "difficulty": 2,
+    "keywords": [
+      "countable nouns",
+      "countable"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Threads"
+    ],
+    "question_hash": "83f65dbadc15e3f3dc116020f48837ba71ef9a5819b3338e25501cbf98cf55a2",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "CONCEPT",
+    "voice_score": 99,
+    "speaking_time": 5.88,
+    "thinking_time": 8.64,
+    "cluster_id": "countable_nouns_2_remember_recall",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 76,
+    "coverage_weight": 0.052,
+    "metadata_score": 91,
+    "estimated_time": 15,
+    "normalized_concept": "countable_nouns",
+    "cluster_name": "Countable Nouns - Easy - Remember - Recall",
+    "question_purpose": "10.9",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Which of these is an uncountable noun: thread or fire?",
+    "question_type": "COMPARISON",
+    "concept": "Uncountable nouns",
+    "expected_answer": "Fire",
+    "acceptable_answers": [
+      "The fire",
+      "Fire is the answer",
+      "It Is Fire"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Threads can be counted one by one.",
+    "hint_level_2": "Fire is the noun that cannot be counted as individual pieces.",
+    "full_explanation": "The answer is fire. It is correct because fire is a substance that cannot be counted as individual items. It is incorrect to say thread is uncountable because it is distinct and countable. An everyday example of another uncountable item is air.",
+    "difficulty": 2,
+    "keywords": [
+      "uncountable nouns",
+      "uncountable"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Fire"
+    ],
+    "question_hash": "f88a1ba25ced0e6afdecc54f0d5bbe3c555a777cbd09da81b2bc91044ab2dfb6",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "COMPARISON",
+    "intent": "COMPARISON",
+    "voice_score": 99,
+    "speaking_time": 5.42,
+    "thinking_time": 8.33,
+    "cluster_id": "nouns_uncountable_2_remember_comparison",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.052,
+    "metadata_score": 91,
+    "estimated_time": 14,
+    "normalized_concept": "nouns_uncountable",
+    "cluster_name": "Uncountable Nouns - Easy - Remember - Comparison",
+    "question_purpose": "11.1",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Riya sees the word 'mathematics'. Is it a plural countable noun?",
+    "question_type": "APPLICATION",
+    "concept": "Nouns ending in s",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "It is singular",
+      "It is not"
+    ],
+    "evaluation_method": "KEYWORD_MATCH",
+    "hint_level_1": "Just because a word ends in the letter 's' does not mean it is plural.",
+    "hint_level_2": "Mathematics is a single school subject, not a group of countable items.",
+    "full_explanation": "No, it is not a plural countable noun. It is correct because mathematics is a singular academic field. It is incorrect to assume all words ending in 's' are plurals. Another example of this is the word 'measles', which is a single disease.",
+    "difficulty": 3,
+    "keywords": [
+      "nouns ending in s",
+      "mathematics",
+      "plural"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No",
+      "singular"
+    ],
+    "question_hash": "6b89727228179ec337d59189ec7fedd60538a08b6d093ad24c07401f05afa019",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "APPLICATION",
+    "intent": "APPLICATION",
+    "voice_score": 97,
+    "speaking_time": 6.68,
+    "thinking_time": 13.14,
+    "cluster_id": "ending_in_nouns_s_3_remember_application",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.052,
+    "metadata_score": 90,
+    "estimated_time": 20,
+    "normalized_concept": "ending_in_nouns_s",
+    "cluster_name": "Nouns Ending In S - Medium - Remember - Application",
+    "question_purpose": "10.0",
+    "progression_level": 3,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Is 'billiards' a countable noun just because it ends in an 's'?",
+    "question_type": "REASONING",
+    "concept": "Nouns ending in s",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "It is not",
+      "False"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Look at the Language Booster in the text.",
+    "hint_level_2": "Billiards is a single game, even though it ends in 's'.",
+    "full_explanation": "No, it is not. It is correct because billiards refers to one specific game. It is incorrect to assume the 's' makes it a plural. Another example of this rule is the word 'mathematics'.",
+    "difficulty": 3,
+    "keywords": [
+      "nouns ending in s",
+      "billiards",
+      "plural"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No"
+    ],
+    "question_hash": "fca41e362490a27b7c9aaa023cbb3b2622518c29ac3f1933cb2409e863b0b917",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "CAUSE_EFFECT",
+    "intent": "REASON",
+    "voice_score": 97,
+    "speaking_time": 6.34,
+    "thinking_time": 13.44,
+    "cluster_id": "ending_in_nouns_s_3_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.138,
+    "metadata_score": 89,
+    "estimated_time": 20,
+    "normalized_concept": "ending_in_nouns_s",
+    "cluster_name": "Nouns Ending In S - Medium - Remember - Reasoning",
+    "question_purpose": "8.2",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Ali says 'measles' are many things because of the 's'. Is he right?",
+    "question_type": "REASONING",
+    "concept": "Nouns ending in s",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "He is wrong",
+      "False"
+    ],
+    "evaluation_method": "SEMANTIC_MATCH",
+    "hint_level_1": "Is measles a single disease or many?",
+    "hint_level_2": "Measles is a single illness, like mathematics is a single subject.",
+    "full_explanation": "No, Ali is wrong. It is correct because measles is one specific disease. It is incorrect to count it as multiple items just because of the ending 's'. Similar to this, the word 'physics' also ends in 's' but is singular.",
+    "difficulty": 3,
+    "keywords": [
+      "nouns ending in s",
+      "measles",
+      "singular"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_SENTENCE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No"
+    ],
+    "question_hash": "bc4b35082df7cb45e10c233ae5acd1480cd2cbdb7b9a5a6bf06b193729ca883c",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "CAUSE_EFFECT",
+    "intent": "REASON",
+    "voice_score": 98,
+    "speaking_time": 7.6,
+    "thinking_time": 13.74,
+    "cluster_id": "ending_in_nouns_s_3_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.138,
+    "metadata_score": 89,
+    "estimated_time": 22,
+    "normalized_concept": "ending_in_nouns_s",
+    "cluster_name": "Nouns Ending In S - Medium - Remember - Reasoning",
+    "question_purpose": "8.9",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Sam needs a 'chunk of fire'. Is fire here treated as countable?",
+    "question_type": "REASONING",
+    "concept": "Uncountable nouns",
+    "expected_answer": "No",
+    "acceptable_answers": [
+      "It is uncountable",
+      "False"
+    ],
+    "evaluation_method": "KEYWORD_MATCH",
+    "hint_level_1": "Look at how fire is used in the text.",
+    "hint_level_2": "The text explicitly states fire is an uncountable noun.",
+    "full_explanation": "No, it is not. It is correct because fire is an uncountable noun. It is incorrect to treat it as countable just because we use a measurement word like 'chunk'. An example is 'a piece of bread', where 'bread' is uncountable.",
+    "difficulty": 3,
+    "keywords": [
+      "uncountable nouns",
+      "fire",
+      "uncountable"
+    ],
+    "learning_unit_id": "703c13f3-e1f4-4486-9484-b6a2714c3c1d",
+    "learning_objective": "Differentiate between countable and uncountable nouns",
+    "source_pages": [
+      9
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "No"
+    ],
+    "question_hash": "e5652f51ea8298364cb5b7c0f73cf3473826c7c4865412c3964c8bed8f0c5f85",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "REASONING",
+    "intent": "REASON",
+    "voice_score": 98,
+    "speaking_time": 7.14,
+    "thinking_time": 13.44,
+    "cluster_id": "nouns_uncountable_3_remember_reasoning",
+    "session_tags": [
+      "analyze",
+      "medium",
+      "reasoning",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 84,
+    "coverage_weight": 0.137,
+    "metadata_score": 89,
+    "estimated_time": 21,
+    "normalized_concept": "nouns_uncountable",
+    "cluster_name": "Uncountable Nouns - Medium - Remember - Reasoning",
+    "question_purpose": "9.2",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Which of these is a personal pronoun: mine, he, himself, theirs?",
+    "question_type": "MCQ",
+    "concept": "Personal Pronouns",
+    "expected_answer": "he",
+    "acceptable_answers": [
+      "He is the answer",
+      "It Is He",
+      "The He"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "Look for the word that just names a person.",
+    "hint_level_2": "The other options are for ownership or reflecting back.",
+    "full_explanation": "1) He. 2) It stands in for a specific person's name. 3) 'Mine' and 'theirs' show possession, and 'himself' is reflexive. 4) Use 'he' in sentences like 'He is running'.",
+    "difficulty": 1,
+    "keywords": [
+      "personal pronouns",
+      "personal",
+      "pronoun"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ",
+      "VOICE"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "mine",
+      "he",
+      "himself",
+      "theirs"
+    ],
+    "correct_option": "he",
+    "voice_expected_keywords": [
+      "He"
+    ],
+    "question_hash": "2ca10927f579c2a4dd19369df1d5652bf53ad1d1cae4cd16dda51381105b141d",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "CONCEPT",
+    "voice_score": 95,
+    "speaking_time": 7.08,
+    "thinking_time": 7.14,
+    "cluster_id": "personal_pronouns_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 80,
+    "coverage_weight": 0.136,
+    "metadata_score": 85,
+    "estimated_time": 15,
+    "normalized_concept": "personal_pronouns",
+    "cluster_name": "Personal Pronouns - Easy - Remember - Mcq",
+    "question_purpose": "8.5",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: 'Yours' is a possessive pronoun.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Possessive Pronouns",
+    "expected_answer": "True",
+    "acceptable_answers": [
+      "Yes",
+      "Correct"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Does it show that something belongs to someone else?",
+    "hint_level_2": "Words like 'mine', 'ours', and 'yours' are in the possessive group.",
+    "full_explanation": "1) True. 2) 'Yours' indicates that an object belongs to the person being spoken to. 3) 'You' is personal, while 'yours' expresses ownership. 4) If you ask 'Is this pen yours?', you are asking about ownership.",
+    "difficulty": 1,
+    "keywords": [
+      "possessive pronouns",
+      "possessive",
+      "yours"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "True",
+      "Correct"
+    ],
+    "question_hash": "00b7a874ab8a6a56612b900e6c30adad31fa7556e13edfcf4dc5cf89be271064",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 99,
+    "speaking_time": 4.49,
+    "thinking_time": 6.23,
+    "cluster_id": "possessive_pronouns_1_remember_true_false",
+    "session_tags": [
+      "easy",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 79,
+    "coverage_weight": 0.136,
+    "metadata_score": 89,
+    "estimated_time": 11,
+    "normalized_concept": "possessive_pronouns",
+    "cluster_name": "Possessive Pronouns - Easy - Remember - True False",
+    "question_purpose": "9.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "True or False: The word 'mine' is an example of a personal pronoun.",
+    "question_type": "TRUE_FALSE",
+    "concept": "Personal vs Possessive Pronouns",
+    "expected_answer": "False",
+    "acceptable_answers": [
+      "No",
+      "Incorrect"
+    ],
+    "evaluation_method": "BOOLEAN",
+    "hint_level_1": "Does 'mine' describe who owns something or who is doing an action?",
+    "hint_level_2": "Possession refers to things that belong to someone, like 'mine' or 'yours'.",
+    "full_explanation": "1) False. 2) 'Mine' shows ownership, so it is a possessive pronoun. 3) Personal pronouns like 'I' or 'me' identify the person, not the object's owner. 4) Saying 'That book is mine' shows the book belongs to me.",
+    "difficulty": 2,
+    "keywords": [
+      "personal vs possessive pronouns",
+      "possessive",
+      "pronoun",
+      "mine"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "False",
+      "Incorrect"
+    ],
+    "question_hash": "822956b2de0d39550d49c1bc33e07e6a2101551e4ec09b109aeee81884e178f6",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "TRUE_FALSE",
+    "voice_score": 98,
+    "speaking_time": 6.8,
+    "thinking_time": 9.24,
+    "cluster_id": "personal_possessive_pronouns_vs_2_remember_true_false",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.136,
+    "metadata_score": 91,
+    "estimated_time": 17,
+    "normalized_concept": "personal_possessive_pronouns_vs",
+    "cluster_name": "Personal Vs Possessive Pronouns - Easy - Remember - True False",
+    "question_purpose": "9.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Is 'we' a personal or a reflexive pronoun?",
+    "question_type": "COMPARISON",
+    "concept": "Personal Pronouns",
+    "expected_answer": "Personal",
+    "acceptable_answers": [
+      "Personal pronoun",
+      "It Is Personal",
+      "Personal is the answer",
+      "The Personal"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "Does 'we' refer back to an action or does it just name a group?",
+    "hint_level_2": "Reflexive pronouns usually end in -self or -selves.",
+    "full_explanation": "1) Personal. 2) 'We' simply names a group of people including the speaker. 3) Reflexive pronouns like 'ourselves' refer back to the group performing an action. 4) Use 'we' as in 'We are playing'.",
+    "difficulty": 2,
+    "keywords": [
+      "personal pronouns",
+      "pronoun"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Personal"
+    ],
+    "question_hash": "a100b62f94e077b535f9d4161e0df76698d6d4097f702906ba93e7ee8d2374a8",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "COMPARISON",
+    "intent": "COMPARISON",
+    "voice_score": 98,
+    "speaking_time": 4.49,
+    "thinking_time": 7.73,
+    "cluster_id": "personal_pronouns_2_remember_comparison",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 76,
+    "coverage_weight": 0.136,
+    "metadata_score": 89,
+    "estimated_time": 13,
+    "normalized_concept": "personal_pronouns",
+    "cluster_name": "Personal Pronouns - Easy - Remember - Comparison",
+    "question_purpose": "9.8",
+    "progression_level": 4,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "When Ali says, 'He hurt himself,' what type of pronoun is 'himself'?",
+    "question_type": "UNDERSTANDING",
+    "concept": "Reflexive Pronouns",
+    "expected_answer": "Reflexive",
+    "acceptable_answers": [
+      "Reflexive pronoun",
+      "Reflexive is the answer",
+      "It Is Reflexive",
+      "The Reflexive"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "It refers back to Ali, the subject.",
+    "hint_level_2": "Pronouns ending in 'self' are always this type.",
+    "full_explanation": "1) Reflexive. 2) It indicates the person performing the action and the one receiving it are the same. 3) 'He' is personal, while 'himself' connects back to him. 4) Use it when the subject does something to their own body or mind.",
+    "difficulty": 3,
+    "keywords": [
+      "reflexive pronouns",
+      "himself"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Reflexive"
+    ],
+    "question_hash": "0edda101c69d2cd49b3fd8b368d68f806dba3e2bb7e73a32380a6a96ec47cd2f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "UNDERSTANDING",
+    "intent": "CLASSIFICATION",
+    "voice_score": 97,
+    "speaking_time": 7.14,
+    "thinking_time": 10.44,
+    "cluster_id": "pronouns_reflexive_3_remember_understanding",
+    "session_tags": [
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 75,
+    "coverage_weight": 0.136,
+    "metadata_score": 87,
+    "estimated_time": 18,
+    "normalized_concept": "pronouns_reflexive",
+    "cluster_name": "Reflexive Pronouns - Medium - Remember - Understanding",
+    "question_purpose": "9.4",
+    "progression_level": 2,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Choose the correct pronoun: 'The book belongs to Sarah; it is _____.'",
+    "question_type": "MCQ",
+    "concept": "Possessive Pronouns",
+    "expected_answer": "hers",
+    "acceptable_answers": [
+      "Hers is the answer",
+      "The Hers",
+      "It Is Hers"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "We need to show the book belongs to a girl.",
+    "hint_level_2": "The possessive pronoun for her is 'hers'.",
+    "full_explanation": "1) Hers. 2) It shows ownership by Sarah. 3) 'Her' is used before a noun (her book), whereas 'hers' stands alone. 4) 'The house is hers' means she owns it.",
+    "difficulty": 3,
+    "keywords": [
+      "possessive pronouns",
+      "possessive"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "she",
+      "her",
+      "hers",
+      "himself"
+    ],
+    "correct_option": "hers",
+    "voice_expected_keywords": [
+      "Hers"
+    ],
+    "question_hash": "fb5593ba05560a09b4a2648d66860c37c706e7c5c9bd16c69cb023a23af71a07",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 6.34,
+    "thinking_time": 10.44,
+    "cluster_id": "possessive_pronouns_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 72,
+    "coverage_weight": 0.182,
+    "metadata_score": 87,
+    "estimated_time": 17,
+    "normalized_concept": "possessive_pronouns",
+    "cluster_name": "Possessive Pronouns - Medium - Remember - Mcq",
+    "question_purpose": "6.4",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "Riya and her friends made dinner _____. (Hint: they did it themselves).",
+    "question_type": "FILL_BLANK",
+    "concept": "Reflexive Pronouns",
+    "expected_answer": "Ourselves",
+    "acceptable_answers": [
+      "themselves",
+      "Ourselves is the answer",
+      "It Is Ourselves",
+      "The Ourselves"
+    ],
+    "evaluation_method": "WORD_MATCH",
+    "hint_level_1": "The pronoun needs to refer to Riya and her friends.",
+    "hint_level_2": "It must be plural because there are multiple people.",
+    "full_explanation": "1) Themselves. 2) It refers back to the group (Riya and her friends) who performed the action. 3) 'Them' would be a personal pronoun, not showing reflection. 4) Use 'themselves' when a group performs an action on their own.",
+    "difficulty": 4,
+    "keywords": [
+      "reflexive pronouns",
+      "reflexive",
+      "themselves"
+    ],
+    "learning_unit_id": "4990fe24-f643-46bb-ab33-e218744b250f",
+    "learning_objective": "Understand usage of different pronouns",
+    "source_pages": [
+      10
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "VOICE",
+      "TEXT"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [],
+    "correct_option": "",
+    "voice_expected_keywords": [
+      "Themselves"
+    ],
+    "question_hash": "18c56f6ce5d760a09e7ceabe8cd908b347940c66ddd9da9a19ab9f2182769eb2",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECALL",
+    "intent": "FILL_BLANK",
+    "voice_score": 95,
+    "speaking_time": 7.14,
+    "thinking_time": 11.94,
+    "cluster_id": "pronouns_reflexive_4_remember_fill_blank",
+    "session_tags": [
+      "fill_blank",
+      "hard",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 69,
+    "coverage_weight": 0.138,
+    "metadata_score": 90,
+    "estimated_time": 20,
+    "normalized_concept": "pronouns_reflexive",
+    "cluster_name": "Reflexive Pronouns - Hard - Remember - Fill Blank",
+    "question_purpose": "10.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  }
+]

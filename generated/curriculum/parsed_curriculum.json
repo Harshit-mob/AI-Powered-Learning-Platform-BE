@@ -1,47 +1,77 @@
 {
   "board": "CBSE",
   "grade": "6",
-  "subject": "Gujarati",
+  "subject": "English",
   "chapter": {
-    "title": "એક સંસ્કૃત ગામ",
+    "title": "The Incident of the Tooth",
     "topics": [
       {
-        "title": "પ્રસ્તાવના અને ગામનો પરિચય",
-        "summary": "ભારતીય સંસ્કૃતિના સંદર્ભમાં મટ્ટુર ગામનો પરિચય જે આજે પણ પ્રાચીન પરંપરાઓ જાળવી રાખે છે.",
+        "title": "Introduction to The Incident of the Tooth",
+        "summary": "An introduction to the story adapted from Mark Twain's The Adventures of Tom Sawyer, highlighting the themes of childhood mischief and school avoidance.",
         "learning_objectives": [
-          "ભારતીય સંસ્કૃતિની સમજ",
-          "કર્ણાટકના મટ્ટુર ગામ વિશે જાણકારી મેળવવી"
+          "Understand the context of the story",
+          "Identify the characters and setting"
         ],
         "keywords": [
-          "ભારતીય સંસ્કૃતિ",
-          "મટ્ટુર",
-          "સંસ્કૃત",
-          "દેવભાષા"
+          "Mark Twain",
+          "Tom Sawyer",
+          "Aunt Polly",
+          "St Petersberg"
         ],
         "source_pages": [
           1
         ],
         "subtopics": [
           {
-            "title": "ભારતીય સંસ્કૃતિ અને ગામડાં",
-            "summary": "ભારતની સમૃદ્ધિ અને ગામડાંઓના મહત્વ વિશેની પ્રસ્તાવના.",
-            "content": "ભારતીય સંસ્કૃતિ * ભારત ગામડાંનો બનેલો દેશ * દક્ષિણ ભારતનું એક વિશિષ્ટ ગામ * બોલચાલની ભાષા સંસ્કૃત * 'દેવભાષા' તરીકે આપણું ગૌરવ! સમાજ અને સંસ્કૃતિ * સંસ્કાર * સુસંસ્કૃત સમાજ આધ્યાત્મિકતા સાથે જોડાણ.",
+            "title": "Background and Context",
+            "summary": "Historical and literary context of the story.",
+            "content": "This story is based on an extract from the book, The Adventures of Tom Sawyer, set in the fictional town of St Petersberg in nineteenth century America. Tom is an orphan who lives with his Aunt Polly, his half-brother, Sid and his cousin Mary.",
             "learning_objectives": [
-              "ગામડાંનું મહત્વ સમજવું"
+              "Understand literary origin"
             ],
             "estimated_reading_time": 60,
             "source_pages": [
               1
             ]
+          }
+        ]
+      },
+      {
+        "title": "The Morning Misery",
+        "summary": "Tom Sawyer's reluctance to go to school on a Monday morning leads him to search for a reason to stay home.",
+        "learning_objectives": [
+          "Analyze character motivation",
+          "Understand the cause and effect of Tom's actions"
+        ],
+        "keywords": [
+          "Monday",
+          "school",
+          "sickness"
+        ],
+        "source_pages": [
+          1
+        ],
+        "subtopics": [
+          {
+            "title": "Tom's Dilemma",
+            "summary": "Tom's thoughts on Monday mornings.",
+            "content": "Monday morning found Tom Sawyer miserable. Monday morning always found him so - because it began another week's slow suffering in school. I wish there were no holidays in between ... it just makes going back to school so much more difficult.",
+            "learning_objectives": [
+              "Interpret character feelings"
+            ],
+            "estimated_reading_time": 45,
+            "source_pages": [
+              1
+            ]
           },
           {
-            "title": "મટ્ટુર ગામનું વર્ણન",
-            "summary": "મટ્ટુર ગામની ભૌગોલિક અને સાંસ્કૃતિક સ્થિતિ.",
-            "content": "બાળમિત્રો, આપણા ભારતમાં આવેલું કર્ણાટકમાં વસેલું એક એવું ગામ છે જેનું નામ મટ્ટુર છે. તે ગામ અતિ નિર્મળ, સ્વચ્છ અને સૌંદર્યથી ભરેલું છે, તેમજ સંસ્કૃતિપ્રધાન અને સાદગીભર્યું છે.",
+            "title": "Seeking Illness",
+            "summary": "Tom contemplates his physical state to skip school.",
+            "content": "Tom lay thinking. It occurred to him that he wished he were sick; then he could stay home. Hmm, am I ill? Is something wrong with me? Yes, I think my stomach is aching ... yes, it is certainly getting more painful!",
             "learning_objectives": [
-              "ગામની ભૌગોલિક વિશેષતા જાણવી"
+              "Identify the plot start"
             ],
-            "estimated_reading_time": 90,
+            "estimated_reading_time": 45,
             "source_pages": [
               1
             ]
@@ -49,44 +79,41 @@
         ]
       },
       {
-        "title": "ગામની સામાજિક જીવનશૈલી",
-        "summary": "મટ્ટુર ગામમાં વસતા લોકોની દિનચર્યા અને સંસ્કૃત ભાષાનું મહત્વ.",
+        "title": "The Search for Symptoms",
+        "summary": "Tom experiments with different potential ailments to convince Aunt Polly he is sick.",
         "learning_objectives": [
-          "ગામના લોકોની જીવનશૈલી સમજવી",
-          "સંસ્કૃત ભાષાનું મહત્વ જાણવું"
+          "Examine the development of the plot",
+          "Understand character behavior"
         ],
         "keywords": [
-          "સંસ્કૃત",
-          "ગુરુકુળ",
-          "વેદમંત્રો",
-          "પરંપરા"
+          "sore toe",
+          "tooth",
+          "groaning"
         ],
         "source_pages": [
-          1,
           2
         ],
         "subtopics": [
           {
-            "title": "સાંસ્કૃતિક વાતાવરણ",
-            "summary": "ગામમાં સંભળાતા વેદમંત્રો અને લોકોનો દેખાવ.",
-            "content": "તે શેરીઓમાંથી પસાર થતાં વેદમંત્રોના અવાજ સાંભળવા મળે છે. ગલીઓમાં રમત રમતાં બાળકો આપણને ધોતી પહેરેલા તેમજ માથા પર શિખા રાખેલા દેખાશે. ત્યાં આડોશી-પાડોશી તેમજ ત્યાંના બધાં જ લોકો એકબીજાની સાથે પરંપરાગત સંસ્કૃત ભાષામાં વાત કરતાં જોવા મળે છે.",
+            "title": "The Tooth and the Toe",
+            "summary": "Tom finds a loose tooth but decides to keep it as a backup.",
+            "content": "Then he remembered hearing the doctor speaking about a certain illness that laid up a patient for two or three weeks. One could even lose a finger from it. I do have a sore toe. But if Aunt Polly comes to know about the tooth, she will want to pull it out, and that will hurt a lot. Tom decided to hold the tooth in reserve for the present and seek further.",
             "learning_objectives": [
-              "ગામનું દ્રશ્યમાન વાતાવરણ સમજવું"
+              "Trace character decision-making"
             ],
-            "estimated_reading_time": 120,
+            "estimated_reading_time": 90,
             "source_pages": [
-              1,
               2
             ]
           },
           {
-            "title": "શિક્ષણ પદ્ધતિ",
-            "summary": "ગુરુકુળ વ્યવસ્થા અને સંસ્કૃત અધ્યાપન.",
-            "content": "તુંગા નદીના કિનારે આ મટ્ટુર ગામ આવેલ છે. અહીં નદી કિનારે ઝાડની નીચે બેસીને ગુરુ શિષ્યોને સંસ્કૃત ભણાવતા જોવા મળશે ! આમ હજારો સાલ પુરાણી ગુરુકુળ વ્યવસ્થા, જૂની પરંપરાના સ્વરૂપે અહીં જોવા મળે છે.",
+            "title": "The Act of Groaning",
+            "summary": "Tom tries to get Sid's attention through performative groaning.",
+            "content": "Tom began groaning with spirit, but Sid slept on unconscious. Tom groaned louder and fancied that he began to feel pain in the toe. Tom was panting with his exertions by this time. He rested a moment and then swelled himself up and fetched a succession of admirable groans.",
             "learning_objectives": [
-              "ગુરુકુળ પરંપરા સમજવી"
+              "Identify narrative techniques"
             ],
-            "estimated_reading_time": 150,
+            "estimated_reading_time": 60,
             "source_pages": [
               2
             ]
@@ -94,27 +121,58 @@
         ]
       },
       {
-        "title": "શબ્દાર્થ અને ભાષાંતર",
-        "summary": "પાઠમાં વપરાયેલા મહત્વના શબ્દોના અર્થ.",
+        "title": "Vocabulary and Definitions",
+        "summary": "Word meanings and glossary provided in the text.",
         "learning_objectives": [
-          "શબ્દભંડોળ વધારવું"
+          "Enhance vocabulary",
+          "Understand context-specific meanings"
         ],
         "keywords": [
-          "શબ્દાર્થ",
-          "અર્થ"
+          "colicky",
+          "feeble",
+          "fancied"
+        ],
+        "source_pages": [
+          2
+        ],
+        "subtopics": [
+          {
+            "title": "Glossary List",
+            "summary": "Key word meanings from the chapter.",
+            "content": "colicky: associated with a stomach ache. sore: painful and often, red. feeble: weak. fancied: imagined. reflected: thought. exertions: great efforts that make someone tired. hold in reserve: keep something available for later use. succession: (here) series.",
+            "learning_objectives": [
+              "Define new terms"
+            ],
+            "estimated_reading_time": 60,
+            "source_pages": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Interaction with Sid",
+        "summary": "Tom's attempts to wake Sid to witness his 'suffering'.",
+        "learning_objectives": [
+          "Analyze interpersonal dynamics",
+          "Identify character roles"
+        ],
+        "keywords": [
+          "Sid",
+          "awareness"
         ],
         "source_pages": [
           3
         ],
         "subtopics": [
           {
-            "title": "મહત્વના શબ્દાર્થો",
-            "summary": "પાઠના અઘરા શબ્દોના અર્થ.",
-            "content": "સંપન્ન = ભરપૂર, પુષ્કળ (Abundance) નિર્મળ = પવિત્ર (Pure) શીખા = ચોટલી ( A tuft of hair) મુસાફર = યાત્રી, વેટેમાર્ગુ (Traveler) ઉપલબ્ધ = અસ્તિત્વમાં હોવું. (Availability) પછાત = પાછળ પડેલું (અહીં જૂનું) (Backward) પરંપરા = પ્રથા (પેઢી દર પેઢી ચાલી આવતી કોઈ રીત) (Tradition) વૈદિક કાળ = વેદોનો કાળ, પૌરાણિક કાળ (જેમાં વેદશાસ્ત્ર દ્વારા શિક્ષણ આપવામાં આવતું તેવો કાળ) (Ancient time) ગુરુકુળ = શાળા (હમણાંની આપણી શાળા પણ પહેલા ગુરૂ શિષ્યને ગુરુકુળમાં રાખીને વેદ પઠન શીખવાડવાની જગ્યા) (A type of vedic school in India)",
+            "title": "Sid's Awakening",
+            "summary": "Sid wakes up and reacts to Tom's display.",
+            "content": "Tom was annoyed now. He called Sid loudly and shook him. What is the matter, Tom? Why, what's the matter, Tom? I must call auntie. Don't stir so, Sid, you'll kill me. OHHHHH!",
             "learning_objectives": [
-              "શબ્દાર્થ યાદ રાખવા"
+              "Understand plot progression"
             ],
-            "estimated_reading_time": 300,
+            "estimated_reading_time": 60,
             "source_pages": [
               3
             ]
@@ -122,88 +180,16 @@
         ]
       },
       {
-        "title": "વ્યાકરણ - સંજ્ઞા અને પ્રકાર",
-        "summary": "સંજ્ઞા એટલે શું અને તેના પાંચ પ્રકારોની સમજૂતી.",
+        "title": "The Climax and Exposure",
+        "summary": "The resolution of Tom's trickery when Aunt Polly enters.",
         "learning_objectives": [
-          "સંજ્ઞાની વ્યાખ્યા સમજવી",
-          "સંજ્ઞાના પ્રકારોનું વર્ગીકરણ શીખવું"
+          "Identify the climax of the story",
+          "Analyze the outcome of Tom's lies"
         ],
         "keywords": [
-          "સંજ્ઞા",
-          "વ્યક્તિવાચક",
-          "જાતિવાચક",
-          "સમૂહવાચક",
-          "દ્રવ્યવાચક",
-          "ભાવવાચક"
-        ],
-        "source_pages": [
-          6
-        ],
-        "subtopics": [
-          {
-            "title": "સંજ્ઞાની વ્યાખ્યા",
-            "summary": "સંજ્ઞાની મૂળભૂત વ્યાખ્યા.",
-            "content": "જે પદ પ્રાણી, પદાર્થ, લાગણી કે ક્રિયાના ભાવનું વાચક હોય, તેને ‘સંજ્ઞા’ કહે છે.",
-            "learning_objectives": [
-              "સંજ્ઞાનો અર્થ જાણવો"
-            ],
-            "estimated_reading_time": 60,
-            "source_pages": [
-              6
-            ]
-          },
-          {
-            "title": "સંજ્ઞાના પ્રકારો",
-            "summary": "સંજ્ઞાના પાંચ મુખ્ય પ્રકારોનું વિસ્તરણ.",
-            "content": "૧. વ્યક્તિવાચક સંજ્ઞા: અમુક જ પ્રાણી, પદાર્થ કે સ્થળનો, કે કોઈ એક વર્ગની ચોક્કસ વ્યક્તિ અથવા વસ્તુનો નિર્દેશ કરનારી સંજ્ઞાને વ્યક્તિવાચક સંજ્ઞા કહે છે. ૨. જાતિવાચક સંજ્ઞા: સમસ્ત જાતિને લાગુ પડતી સંજ્ઞા જાતિવાચક સંજ્ઞા કહેવાય છે. ૩. સમૂહવાચક સંજ્ઞા: સમૂહ કે જથ્થો બતાવતી સંજ્ઞાને સમૂહવાચક સંજ્ઞા કહે છે. ૪. દ્રવ્યવાચક સંજ્ઞા: જેમાંથી અન્ય ચીજવસ્તુ બને, જે જથ્થામાં દ્રવ્યરૂપે હોય તથા જેની ગણતરી પણ ન થઈ શકે પણ જેને તોલી કે માપી શકાય તેવી. ૫. ભાવવાચક સંજ્ઞા: મનથી અનુભવાય અને મનુષ્યના ઈન્દ્રિયગ્રાહ્ય નવરસના ગુણને સૂચવતા વિશેષણમાંથી બનાવેલું નામ ભાવવાચક સંજ્ઞા કહેવાય છે.",
-            "learning_objectives": [
-              "પાંચેય પ્રકારોના તફાવત સમજવા"
-            ],
-            "estimated_reading_time": 400,
-            "source_pages": [
-              6
-            ]
-          }
-        ]
-      },
-      {
-        "title": "શબ્દસંરચના - લિંગ",
-        "summary": "ગુજરાતી ભાષામાં લિંગના ત્રણ પ્રકારોની સમજૂતી.",
-        "learning_objectives": [
-          "પુલ્લિંગ, સ્ત્રીલિંગ અને નપુંસકલિંગની ઓળખ"
-        ],
-        "keywords": [
-          "પુલ્લિંગ",
-          "સ્ત્રીલિંગ",
-          "નપુંસકલિંગ"
-        ],
-        "source_pages": [
-          7
-        ],
-        "subtopics": [
-          {
-            "title": "લિંગના પ્રકારો",
-            "summary": "નરજાતિ, નારીજાતિ અને નાન્યતર જાતિ.",
-            "content": "નરજાતિ, નારીજાતિ અને નાન્યતર જાતિનો નિર્દેશ કરતી સંજ્ઞાઓને વ્યાકરણની પરિભાષામાં અનુક્રમે પુલ્લિંગ, સ્ત્રીલિંગ અને નપુંસકલિંગની સંજ્ઞાઓ કહે છે. સામાન્ય રીતે 'ઓ' પુલ્લિંગનું ચિહ્ન છે. 'ઈ' સ્ત્રીલિંગનું ચિહ્ન છે. 'ઉ' નપુંસકલિંગનું ચિહ્ન છે.",
-            "learning_objectives": [
-              "લિંગના ચિહ્નો સમજવા"
-            ],
-            "estimated_reading_time": 200,
-            "source_pages": [
-              7
-            ]
-          }
-        ]
-      },
-      {
-        "title": "સ્વાધ્યાય અને અભ્યાસ",
-        "summary": "પાઠના અંતે આપેલા અભ્યાસના પ્રશ્નો.",
-        "learning_objectives": [
-          "પાઠની સમજ તપાસવી"
-        ],
-        "keywords": [
-          "પ્રશ્નોત્તર",
-          "સ્વાધ્યાય"
+          "Aunt Polly",
+          "deathbed",
+          "exposure"
         ],
         "source_pages": [
           4,
@@ -211,98 +197,127 @@
         ],
         "subtopics": [
           {
-            "title": "સાચા ઉત્તર",
-            "summary": "પાઠ આધારિત સાચા વિકલ્પની પસંદગી.",
-            "content": "૧. આપેલી કૃતિમાં કયા ગામ વિશે માહિતી આપી છે? મટુર. ૨. આપેલ કૃતિનું ગામ કયા રાજ્યમાં આવેલું છે? કર્ણાટક. ૩. મટુર ગામમાં લોકો કઈ ભાષામાં વાતચીત કરતાં? સંસ્કૃત.",
+            "title": "The Dying Act",
+            "summary": "Tom tries to make his sickness look fatal.",
+            "content": "I forgive everybody, Sid. Uhhhh! Tell 'em so, Sid. And Sid, you give my window sash and my cat with one eye to that new girl that's come to town, and tell her – Oh, Tom, you ain't dying, are you?",
             "learning_objectives": [
-              "વિકલ્પ આધારિત પ્રશ્નો હલ કરવા"
+              "Examine character exaggeration"
             ],
-            "estimated_reading_time": 100,
+            "estimated_reading_time": 60,
             "source_pages": [
               4
             ]
           },
           {
-            "title": "એક વાક્યના પ્રશ્નો",
-            "summary": "પાઠમાંથી ટૂંકા પ્રશ્નો.",
-            "content": "૧. મટુર ગામ કઈ નદીના કિનારે આવેલું છે? ૨. મટુર ગામની શેરીઓમાંથી શેનો અવાજ સભળાય છે? ૩. મટુર ગામના બાળકો કેવાં જોવાં મળે છે?",
+            "title": "Aunt Polly's Intervention",
+            "summary": "Aunt Polly discovers Tom is not really dying.",
+            "content": "Dying! Rubbage! I don't believe it! You, Tom! Tom, what's the matter with you? Oh, auntie, my sore toe's mortified! She laughed a little, then cried a little, then did both together. This restored her somewhat. Tom, what a turn you did give me. Your tooth, indeed! Now you shut up that nonsense and climb out of this.",
             "learning_objectives": [
-              "ટૂંકા પ્રશ્નોના ઉત્તર લખવા"
+              "Understand the conclusion of the trick"
             ],
-            "estimated_reading_time": 100,
+            "estimated_reading_time": 60,
             "source_pages": [
-              4
+              4,
+              5
             ]
           }
         ]
       },
       {
-        "title": "કાર્યપત્રિકા",
-        "summary": "સંકલિત પ્રશ્ન અને મૂલ્યાંકન.",
+        "title": "Grammar and Language Study",
+        "summary": "Focused sections on nouns, pronouns, and abstract concepts.",
         "learning_objectives": [
-          "સમગ્ર એકમનું પુનરાવર્તન"
+          "Understand abstract nouns",
+          "Master personal, possessive, and reflexive pronouns",
+          "Differentiate countable and uncountable nouns"
         ],
         "keywords": [
-          "મૂલ્યાંકન",
-          "પુનરાવર્તન"
+          "abstract nouns",
+          "pronouns",
+          "countable nouns"
         ],
         "source_pages": [
           8,
           9,
-          10,
-          11
+          10
         ],
         "subtopics": [
           {
-            "title": "ફકરા આધારિત પ્રશ્નો",
-            "summary": "પ્રવાસ વિશેના ફકરાનું વાંચન અને પ્રશ્નોત્તરી.",
-            "content": "જીવનમાં ને શિક્ષણમાં પ્રવાસનું ખૂબ જ મહત્ત્વ છે. પ્રવાસમાં આપણે મોટેભાગે ધાર્મિક, ઐતિહાસિક અને પ્રાકૃતિક સ્થળોની મુલાકાત લઈએ છીએ. પ્રવાસે જઈએ ત્યારે આપણે જરૂરી ઓળખપત્રો, સામાન અને ચીજવસ્તુઓ તેમજ યોગ્ય પ્રકારના બુટ-ચંપલ કે કપડાં વગેરે સંભાળપૂર્વક સાથે રાખવાં જોઈએ.",
+            "title": "Abstract Nouns",
+            "summary": "Definitions and formation of abstract nouns.",
+            "content": "Abstract nouns refer to things which we cannot see or touch but only feel. They include feelings, experiences, states, qualities and ideas. Example: Tom was suffering in reality now, so handsomely was his imagination working. Abstract nouns can be formed from verbs or adjectives. Examples: behave -> behaviour, speak -> speech, happy -> happiness. They are often formed by adding a suffix to the verb or adjective. Examples: silly -> silliness, communicate -> communication.",
             "learning_objectives": [
-              "ગદ્યાર્થ ગ્રહણ"
+              "Define and identify abstract nouns"
             ],
-            "estimated_reading_time": 200,
+            "estimated_reading_time": 90,
             "source_pages": [
               8
             ]
           },
           {
-            "title": "જોડણી અને ખાલી જગ્યા",
-            "summary": "ભાષા શુદ્ધિ અને વ્યાકરણ કસોટી.",
-            "content": "૧. કૃષ્ણવર્મા નગરશેઠને ઘેર............................. કરતો બારણે ઊભો રહ્યો. ૨. મટુર ગામની શેરીઓમાંથી પસાર થતાં............................. ના અવાજ સાંભળવા મળે છે. ૩. મટુર ગામના બાળકોએ.......... પહેરેલી અને માથા પર.......... રાખેલી હોય છે.",
+            "title": "Noun Exercises",
+            "summary": "Practice exercises for identifying nouns.",
+            "content": "1. The scientist's work led to an important discovered. 2. I have the greatest admiration for those who help animals. 3. The doctor prescribed three types of medicines for her ill. 4. I share all my happiness, both happy and sad, with my best friend. 5. The loudspeakers are causing annoyance to everyone in the area. 6. We found the house without any difficulty because of the host's clear directions.",
             "learning_objectives": [
-              "ભાષા શુદ્ધિ અને જોડણી સુધારવી"
+              "Apply noun knowledge"
             ],
-            "estimated_reading_time": 150,
+            "estimated_reading_time": 90,
             "source_pages": [
-              11
+              9
+            ]
+          },
+          {
+            "title": "Countable and Uncountable Nouns",
+            "summary": "Distinguishing between countable and uncountable nouns.",
+            "content": "Read this sentence: Mary, get me some silk threads, and a chunk of fire out of the kitchen. Here, the noun threads is countable. You know that countable nouns can be singular or plural. The word fire is an uncountable noun. Language Booster: Not all nouns that end with s are plural countable nouns. Examples: measles, mathematics, billiards.",
+            "learning_objectives": [
+              "Differentiate between countable and uncountable nouns"
+            ],
+            "estimated_reading_time": 60,
+            "source_pages": [
+              9
+            ]
+          },
+          {
+            "title": "Types of Pronouns",
+            "summary": "Explaining various types of pronouns.",
+            "content": "Personal pronouns are used in place of the names of people and things. These are I, we, you, he, she, it, they, me, us, him, her and them. Example: It occurred to him that he wished he were sick. Possessive pronouns are used to show ownership and belonging. They are mine, yours, his, hers, ours, its and theirs. Example: The one-eyed cat is his. Reflexive pronouns are used when we want to refer back to the subject of the sentence. They are myself, yourself, himself, herself, oneself, itself, ourselves, yourselves, and themselves. Example: He swelled himself up and fetched a succession of admirable groans.",
+            "learning_objectives": [
+              "Understand usage of different pronouns"
+            ],
+            "estimated_reading_time": 120,
+            "source_pages": [
+              10
             ]
           }
         ]
       },
       {
-        "title": "શ્લોક પઠન",
-        "summary": "સંસ્કૃત શ્લોકોનું ગાન.",
+        "title": "Idioms and Figurative Language",
+        "summary": "Exploring idioms used in the chapter and common English expressions.",
         "learning_objectives": [
-          "સંસ્કૃત ઉચ્ચારણ અને ગાયન"
+          "Understand the meaning of idiomatic expressions",
+          "Identify idioms in context"
         ],
         "keywords": [
-          "શ્લોક",
-          "સંસ્કૃત"
+          "idiom",
+          "spill the beans",
+          "not see eye to eye"
         ],
         "source_pages": [
-          5
+          9
         ],
         "subtopics": [
           {
-            "title": "શ્લોક ૧ અને ૨",
-            "summary": "દીપ જ્યોતિ અને કર દર્શન શ્લોક.",
-            "content": "૧. दीपज्योतिः परब्रह्म दीपज्योतिर्जनार्दनः । दीपो हरतु मे पापं दीपज्योतिर्नमोऽस्तुते ॥ ૨. कराग्रे वसते लक्ष्मीः करमध्ये सरस्वती । करमूले तु गोविंदः प्रभाते करदर्शनम् ॥",
+            "title": "Idiom Practice",
+            "summary": "Matching idioms with meanings.",
+            "content": "1. spill the beans - e. tell a secret. 2. turn over a new leaf - a. change one's way of life to become a better, more responsible person. 3. cost an arm and a leg - d. very expensive. 4. the best of both worlds - c. receiving the benefits of two completely different situations at the same time. 5. not see eye to eye - b. not share the same views as somebody about something.",
             "learning_objectives": [
-              "શ્લોકનું શુદ્ધ ઉચ્ચારણ"
+              "Match idioms to definitions"
             ],
-            "estimated_reading_time": 120,
+            "estimated_reading_time": 90,
             "source_pages": [
-              5
+              9
             ]
           }
         ]
