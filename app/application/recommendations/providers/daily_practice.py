@@ -31,39 +31,59 @@ class DailyPracticeProvider(RecommendationProvider):
         if not all_learnings:
             return None
             
-        # Group topic IDs by subject, separating today's pending from past
-        subject_today_topics = defaultdict(list)
-        subject_past_topics = defaultdict(list)
+        # Group by subject and check daily status
+        completed_today_subjects = set()
+        pending_today_topics = defaultdict(list)
+        past_completed_topics = defaultdict(list)
         
         for dl, subject_name in all_learnings:
-            if dl.learning_date == today and dl.status == "PENDING":
-                subject_today_topics[subject_name].append(str(dl.topic_id))
+            if dl.learning_date == today:
+                if dl.status == "COMPLETED":
+                    completed_today_subjects.add(subject_name)
+                elif dl.status == "PENDING":
+                    pending_today_topics[subject_name].append(str(dl.topic_id))
             else:
-                subject_past_topics[subject_name].append(str(dl.topic_id))
-                
-        # Resolve which topic IDs to use for each subject
-        subject_topics = {}
-        all_subjects = set(subject_today_topics.keys()) | set(subject_past_topics.keys())
-        for subject_name in all_subjects:
-            today_list = subject_today_topics.get(subject_name, [])
-            past_list = subject_past_topics.get(subject_name, [])
-            
-            # De-duplicate while preserving order (today's check-ins first, then past ones)
-            combined = []
-            seen = set()
-            for tid in today_list + past_list:
-                if tid not in seen:
-                    combined.append(tid)
-                    seen.add(tid)
-            subject_topics[subject_name] = combined
-            
+                # Past topics: only use completed ones as fallback
+                if dl.status == "COMPLETED":
+                    past_completed_topics[subject_name].append(str(dl.topic_id))
+                    
         recs = []
-        for subject_name, topic_ids in subject_topics.items():
+        
+        # We can recommend daily practice for any subject that has active pending topics today,
+        # OR has no selections today but has past completed topics.
+        all_subjects = set(pending_today_topics.keys()) | set(past_completed_topics.keys())
+        
+        for subject_name in all_subjects:
+            # Rule 1: If any daily session for this subject is finished today, skip it
+            if subject_name in completed_today_subjects:
+                continue
+                
+            # Rule 2: If there are active pending topics today, use them.
+            # Otherwise, fall back to past completed check-in topics.
+            if subject_name in pending_today_topics:
+                topic_ids = pending_today_topics[subject_name]
+            else:
+                topic_ids = past_completed_topics[subject_name]
+                
+            if not topic_ids:
+                continue
+                
+            # De-duplicate topic_ids while preserving order
+            unique_topic_ids = []
+            seen = set()
+            for tid in topic_ids:
+                if tid not in seen:
+                    unique_topic_ids.append(tid)
+                    seen.add(tid)
+            
             total_lus = self.uow.session.query(func.count(LearningUnit.id))\
                 .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
-                .filter(Subtopic.topic_id.in_(topic_ids)).scalar() or 0
+                .filter(Subtopic.topic_id.in_(unique_topic_ids)).scalar() or 0
             
-            # Target 10-15 questions for daily practice to majorly cover the content
+            if total_lus == 0:
+                continue
+                
+            # Target 10-15 questions
             q_count = min(15, total_lus)
             if q_count < 10 and total_lus >= 10:
                 q_count = 10
@@ -82,7 +102,7 @@ class DailyPracticeProvider(RecommendationProvider):
                 "reason": f"Daily practice for {subject_name}",
                 "session_type": "DAILY_PRACTICE",
                 "content_type": "MULTI_TOPIC",
-                "content_ids": topic_ids
+                "content_ids": unique_topic_ids
             })
             
         return recs
