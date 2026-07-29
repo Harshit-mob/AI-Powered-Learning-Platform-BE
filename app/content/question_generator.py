@@ -311,45 +311,23 @@ class QuestionGenerationService:
         if subject.lower() in ("hindi", "gujarati"):
             lang_name = "Hindi" if subject.lower() == "hindi" else "Gujarati"
             system_prompt += (
-                f"\n\n--- {lang_name.upper()} MCQ & EXERCISE-ONLY RULE ---\n"
+                f"\n\n--- {lang_name.upper()} COMPREHENSIVE GENERATION RULE ---\n"
                 f"IMPORTANT: Since the subject is {lang_name}, you MUST generate ONLY MCQ (Multiple Choice Questions) type questions. "
                 "For every generated question, set 'question_type' to 'MCQ', 'evaluation_method' to 'MCQ', "
                 "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
-                f"For {lang_name}, you MUST generate two types of questions:\n"
+                f"For {lang_name}, you MUST generate three types of questions to provide a comprehensive pool of at least 8-12 questions per Learning Unit:\n"
                 "1. Exact textbook exercise questions: Generate questions using the exact sentences, terms, and options from the textbook exercises verbatim (do not alter them).\n"
                 "2. Parallel practice questions: Generate new, simple practice questions testing the same grammatical concepts (like noun types, case markers) or vocabulary terms using other simple, direct sentences and words from the story text. For example, if the textbook has a question about cases (कारक) for 'सलीम अली ने जीवनी लिखी', you should generate parallel practice questions for other story sentences like 'मामा ने भांजे को गन खरीद कर दी' (asking to identify the कर्ता/कर्म/करण कारक).\n"
-                "Make sure to generate 3-5 parallel practice questions for each textbook exercise question to provide enough practice material. Keep all parallel questions simple, direct, and matching the style of grade 6."
-                "The general target of 12-15 questions per Learning Unit is relaxed for this language subject; only generate "
-                "the questions that naturally correspond to the vocabulary terms or exercise items mapped to the current Learning Unit."
+                "3. Simple Story Recall (Reading Comprehension): For units covering the story text, generate simple, direct recall questions about the main events, characters, and settings (e.g., 'मामा ने भांजे को क्या सिखाया?', 'मटूर गांव किस नदी के किनारे स्थित है?'). All story recall questions MUST be simple, direct factual recall of the text, and must not use complex grammar, figures of speech, or abstract analysis. Keep them very simple and accessible for Grade 6 students.\n"
+                "To ensure a deep learning pool, generate at least 5-7 parallel practice variations or simple story recall questions for every concept. Ensure all answers are verified, accurate, and proper for Grade 6.\n"
+                "Aim to generate a total pool of at least 50 questions for this chapter."
             )
         
-        glossary_pages = []
-        assignment_pages = []
-        if subject.lower() in ("hindi", "gujarati"):
-            import glob
-            meta_paths = glob.glob("content/**/metadata.json", recursive=True)
-            for mp in meta_paths:
-                try:
-                    with open(mp, 'r', encoding='utf-8') as f:
-                        meta = json.load(f)
-                        if meta.get("chapter_title", "").strip().lower() == chapter.strip().lower():
-                            glossary_pages = meta.get("glossary_pages", [])
-                            assignment_pages = meta.get("assignment_pages", [])
-                            break
-                except Exception:
-                    pass
-
         all_validated = []
         total_fail = 0
         total_gen = 0
         
         for idx, unit in enumerate(learning_units, 1):
-            if subject.lower() in ("hindi", "gujarati"):
-                unit_pages = unit.get("source_pages", [])
-                target_pages = set(glossary_pages + assignment_pages)
-                if target_pages and not set(unit_pages).intersection(target_pages):
-                    logger.info(f"Skipping question generation for unit '{unit.get('title')}' (pages {unit_pages}) as it does not overlap with glossary/assignments ({target_pages})")
-                    continue
 
             payload_str = self.build_question_generation_payload(subject, grade, board, chapter, topic, sub_topic, [unit])
             validated, failures = self._process_single_unit(system_prompt, payload_str, unit)
