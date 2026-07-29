@@ -7,5 +7,7 @@
     "language": "Gujarati",
     "content_type": "chapter_pdf",
     "source_file": "chapter_3.pdf",
-    "version": "1.0"
+    "version": "1.0",
+    "glossary_pages": [3],
+    "assignment_pages": [4, 5, 6, 7, 8, 9, 10, 11]
 }

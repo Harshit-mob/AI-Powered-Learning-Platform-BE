@@ -1,0 +1,2113 @@
+[
+  {
+    "question": "\u2018\u0aa8\u0abf\u0ab0\u0acd\u0aae\u0ab3\u2019 \u0ab6\u0aac\u0acd\u0aa6\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0ab6\u0acb\u0aa7\u0acb.",
+    "question_type": "MCQ",
+    "concept": "Vocabulary - Nirmal",
+    "expected_answer": "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0",
+    "acceptable_answers": [
+      "\u0ab8\u0acd\u0ab5\u0a9a\u0acd\u0a9b",
+      "The \u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0",
+      "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0 is the answer",
+      "It Is \u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aa8\u0abf\u0ab0\u0acd\u0aae\u0ab3 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a9c\u0ac7\u0aae\u0abe\u0a82 \u0a95\u0acb\u0a88 \u0aae\u0ac7\u0ab2 \u0aa8 \u0ab9\u0acb\u0aaf.",
+    "hint_level_2": "\u0aa8\u0abf\u0ab0\u0acd\u0aae\u0ab3\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 '\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0' \u0a95\u0ac7 '\u0ab8\u0acd\u0ab5\u0a9a\u0acd\u0a9b' \u0aa5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "full_explanation": "1) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0' \u0a9b\u0ac7. 2) '\u0aa8\u0abf\u0ab0\u0acd\u0aae\u0ab3' \u0a8f\u0a9f\u0ab2\u0ac7 \u0a9c\u0ac7 \u0ab6\u0ac1\u0aa6\u0acd\u0aa7 \u0a85\u0aa8\u0ac7 \u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0 \u0ab9\u0acb\u0aaf. 3) \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0a96\u0acb\u0a9f\u0abe \u0a9b\u0ac7. 4) \u0a9c\u0ac7\u0aae \u0a95\u0ac7, \u0ab5\u0ab9\u0ac7\u0aa4\u0ac0 \u0aa8\u0aa6\u0ac0\u0aa8\u0ac1\u0a82 \u0aaa\u0abe\u0aa3\u0ac0 \u0a98\u0aa3\u0ac0\u0ab5\u0abe\u0ab0 \u0aa8\u0abf\u0ab0\u0acd\u0aae\u0ab3 \u0ab9\u0acb\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 1,
+    "keywords": [
+      "vocabulary - nirmal",
+      "\u0aa8\u0abf\u0ab0\u0acd\u0aae\u0ab3",
+      "\u0a85\u0ab0\u0acd\u0aa5"
+    ],
+    "learning_unit_id": "fee49d4f-1329-4f61-b08f-54d377184e20",
+    "learning_objective": "\u0ab6\u0aac\u0acd\u0aa6\u0aad\u0a82\u0aa1\u0acb\u0ab3 \u0ab5\u0aa7\u0abe\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0ac1\u0ab7\u0acd\u0a95\u0ab3",
+      "\u0a97\u0ab2\u0ac0",
+      "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0",
+      "\u0ab6\u0abe\u0ab3\u0abe"
+    ],
+    "correct_option": "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0",
+    "voice_expected_keywords": [
+      "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0",
+      "\u0ab8\u0acd\u0ab5\u0a9a\u0acd\u0a9b"
+    ],
+    "question_hash": "56d5beb0cd5f5122d96c347cd1d2c087f82e54feb36cd81ebfbc86fccbad7a44",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 2.65,
+    "thinking_time": 5.02,
+    "cluster_id": "nirmal_vocabulary_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 75,
+    "coverage_weight": 0.2,
+    "metadata_score": 85,
+    "estimated_time": 8,
+    "normalized_concept": "nirmal_vocabulary",
+    "cluster_name": "Vocabulary - Nirmal - Easy - Remember - Mcq",
+    "question_purpose": "6.1",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u2019\u0aa8\u0acb \u0ab8\u0abe\u0a9a\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0ab6\u0ac1\u0a82 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "Vocabulary - Gurukul",
+    "expected_answer": "\u0ab6\u0abe\u0ab3\u0abe",
+    "acceptable_answers": [
+      "\u0ab6\u0abe\u0ab3\u0abe is the answer",
+      "It Is \u0ab6\u0abe\u0ab3\u0abe",
+      "The \u0ab6\u0abe\u0ab3\u0abe"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0acd\u0aaf\u0abe\u0a82 \u0ab5\u0abf\u0aa6\u0acd\u0aaf\u0abe\u0ab0\u0acd\u0aa5\u0ac0\u0a93 \u0aad\u0aa3\u0ab5\u0abe \u0a9c\u0abe\u0aaf \u0a9b\u0ac7.",
+    "hint_level_2": "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a9c\u0ac2\u0aa8\u0abe \u0ab8\u0aae\u0aaf\u0aa8\u0ac0 '\u0ab6\u0abe\u0ab3\u0abe'.",
+    "full_explanation": "1) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0ab6\u0abe\u0ab3\u0abe' \u0a9b\u0ac7. 2) \u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a8f\u0ab5\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe \u0a9c\u0acd\u0aaf\u0abe\u0a82 \u0a97\u0ac1\u0ab0\u0ac1 \u0aa6\u0acd\u0ab5\u0abe\u0ab0\u0abe \u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3 \u0a86\u0aaa\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0ac7. 3) \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0a96\u0acb\u0a9f\u0abe \u0a9b\u0ac7. 4) \u0aaa\u0acd\u0ab0\u0abe\u0a9a\u0ac0\u0aa8 \u0aad\u0abe\u0ab0\u0aa4\u0aae\u0abe\u0a82 \u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3 \u0aae\u0ac7\u0ab3\u0ab5\u0ab5\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0aac\u0abe\u0ab3\u0a95\u0acb \u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82 \u0a9c\u0aa4\u0abe \u0ab9\u0aa4\u0abe.",
+    "difficulty": 1,
+    "keywords": [
+      "vocabulary - gurukul",
+      "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3",
+      "\u0a85\u0ab0\u0acd\u0aa5"
+    ],
+    "learning_unit_id": "fee49d4f-1329-4f61-b08f-54d377184e20",
+    "learning_objective": "\u0ab6\u0aac\u0acd\u0aa6\u0aad\u0a82\u0aa1\u0acb\u0ab3 \u0ab5\u0aa7\u0abe\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab6\u0abe\u0ab3\u0abe",
+      "\u0a97\u0ab2\u0ac0",
+      "\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0",
+      "\u0ab5\u0ac3\u0a95\u0acd\u0ab7"
+    ],
+    "correct_option": "\u0ab6\u0abe\u0ab3\u0abe",
+    "voice_expected_keywords": [
+      "\u0ab6\u0abe\u0ab3\u0abe"
+    ],
+    "question_hash": "526525030757c0903f0d414d549544bf0bdf1e462221e093392809794c063797",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 3.11,
+    "thinking_time": 5.32,
+    "cluster_id": "gurukul_vocabulary_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 72,
+    "coverage_weight": 0.2,
+    "metadata_score": 85,
+    "estimated_time": 9,
+    "normalized_concept": "gurukul_vocabulary",
+    "cluster_name": "Vocabulary - Gurukul - Easy - Remember - Mcq",
+    "question_purpose": "9.1",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0ab8\u0a82\u0aaa\u0aa8\u0acd\u0aa8\u2019 \u0ab6\u0aac\u0acd\u0aa6\u0aa8\u0acb \u0ab8\u0abe\u0a9a\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0ab6\u0ac1\u0a82 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "Vocabulary - Sampanna",
+    "expected_answer": "\u0aad\u0ab0\u0aaa\u0ac2\u0ab0",
+    "acceptable_answers": [
+      "\u0aaa\u0ac1\u0ab7\u0acd\u0a95\u0ab3",
+      "It Is \u0aad\u0ab0\u0aaa\u0ac2\u0ab0",
+      "The \u0aad\u0ab0\u0aaa\u0ac2\u0ab0",
+      "\u0aad\u0ab0\u0aaa\u0ac2\u0ab0 is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aa4\u0ac7\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0a95\u0acb\u0a88 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0aa8\u0ac1\u0a82 \u0ab5\u0aa7\u0ac1 \u0aaa\u0acd\u0ab0\u0aae\u0abe\u0aa3\u0aae\u0abe\u0a82 \u0ab9\u0acb\u0ab5\u0ac1\u0a82 \u0aa5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "hint_level_2": "\u0aa4\u0ac7\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 '\u0aaa\u0ac1\u0ab7\u0acd\u0a95\u0ab3' \u0a85\u0aa5\u0ab5\u0abe '\u0aad\u0ab0\u0aaa\u0ac2\u0ab0' \u0a9b\u0ac7.",
+    "full_explanation": "1) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aad\u0ab0\u0aaa\u0ac2\u0ab0' \u0a9b\u0ac7. 2) '\u0ab8\u0a82\u0aaa\u0aa8\u0acd\u0aa8' \u0a8f\u0a9f\u0ab2\u0ac7 \u0a9c\u0ac7\u0aa8\u0ac0 \u0aaa\u0abe\u0ab8\u0ac7 \u0aac\u0aa7\u0ac1\u0a82 \u0a9c \u0aaa\u0ac2\u0ab0\u0aa4\u0abe \u0aaa\u0acd\u0ab0\u0aae\u0abe\u0aa3\u0aae\u0abe\u0a82 \u0ab9\u0acb\u0aaf. 3) \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0a9c\u0ac7\u0aae \u0a95\u0ac7 '\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0' \u0a95\u0ac7 '\u0a97\u0ab2\u0ac0' \u0aa4\u0ac7\u0aa8\u0abe \u0a85\u0ab0\u0acd\u0aa5 \u0aa8\u0aa5\u0ac0. 4) \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7, \u0a9c\u0ac7 \u0a96\u0ac7\u0aa4\u0ab0 \u0aaa\u0abe\u0a95\u0aa5\u0ac0 \u0aad\u0ab0\u0ac7\u0ab2\u0ac1\u0a82 \u0ab9\u0acb\u0aaf \u0aa4\u0ac7\u0aa8\u0ac7 '\u0ab8\u0a82\u0aaa\u0aa8\u0acd\u0aa8' \u0a96\u0ac7\u0aa4\u0ab0 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf.",
+    "difficulty": 2,
+    "keywords": [
+      "vocabulary - sampanna",
+      "\u0ab8\u0a82\u0aaa\u0aa8\u0acd\u0aa8",
+      "\u0a85\u0ab0\u0acd\u0aa5"
+    ],
+    "learning_unit_id": "fee49d4f-1329-4f61-b08f-54d377184e20",
+    "learning_objective": "\u0ab6\u0aac\u0acd\u0aa6\u0aad\u0a82\u0aa1\u0acb\u0ab3 \u0ab5\u0aa7\u0abe\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0",
+      "\u0aad\u0ab0\u0aaa\u0ac2\u0ab0",
+      "\u0a97\u0ab2\u0ac0",
+      "\u0a9a\u0acb\u0a9f\u0ab2\u0ac0"
+    ],
+    "correct_option": "\u0aad\u0ab0\u0aaa\u0ac2\u0ab0",
+    "voice_expected_keywords": [
+      "\u0aad\u0ab0\u0aaa\u0ac2\u0ab0",
+      "\u0aaa\u0ac1\u0ab7\u0acd\u0a95\u0ab3"
+    ],
+    "question_hash": "54bc0f2d7809710be94d63e1c1910846a196d9c17c981b6aa291cdb6306d5c5f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 3.57,
+    "thinking_time": 7.12,
+    "cluster_id": "sampanna_vocabulary_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 81,
+    "coverage_weight": 0.2,
+    "metadata_score": 85,
+    "estimated_time": 11,
+    "normalized_concept": "sampanna_vocabulary",
+    "cluster_name": "Vocabulary - Sampanna - Easy - Remember - Mcq",
+    "question_purpose": "8.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0aae\u0ac1\u0ab8\u0abe\u0aab\u0abf\u0ab0\u2019 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a95\u0acb\u0aa3?",
+    "question_type": "MCQ",
+    "concept": "Vocabulary - Musafir",
+    "expected_answer": "\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0",
+    "acceptable_answers": [
+      "\u0ab5\u0a9f\u0ac7\u0aae\u0abe\u0ab0\u0acd\u0a97\u0ac1",
+      "It Is \u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0",
+      "\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0 is the answer",
+      "The \u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aae\u0ac1\u0ab8\u0abe\u0aab\u0abf\u0ab0 \u0a8f\u0a9f\u0ab2\u0ac7 \u0aae\u0ac1\u0ab8\u0abe\u0aab\u0ab0\u0ac0 \u0a95\u0ab0\u0aa8\u0abe\u0ab0.",
+    "hint_level_2": "\u0aa4\u0ac7\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 '\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0' \u0a85\u0aa5\u0ab5\u0abe '\u0ab5\u0a9f\u0ac7\u0aae\u0abe\u0ab0\u0acd\u0a97\u0ac1' \u0aa5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "full_explanation": "1) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0' \u0a9b\u0ac7. 2) \u0aae\u0ac1\u0ab8\u0abe\u0aab\u0abf\u0ab0 \u0a8f\u0a9f\u0ab2\u0ac7 \u0aae\u0ac1\u0ab8\u0abe\u0aab\u0ab0\u0ac0 \u0a95\u0ab0\u0aa8\u0abe\u0ab0 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf. 3) \u0ab6\u0abe\u0ab3\u0abe \u0a95\u0ac7 \u0ab5\u0ac3\u0a95\u0acd\u0ab7 \u0ab6\u0aac\u0acd\u0aa6\u0acb \u0aae\u0ac1\u0ab8\u0abe\u0aab\u0abf\u0ab0 \u0ab8\u0abe\u0aa5\u0ac7 \u0aac\u0a82\u0aa7 \u0aac\u0ac7\u0ab8\u0aa4\u0abe \u0aa8\u0aa5\u0ac0. 4) \u0a9f\u0acd\u0ab0\u0ac7\u0aa8\u0aae\u0abe\u0a82 \u0aae\u0ac1\u0ab8\u0abe\u0aab\u0ab0\u0ac0 \u0a95\u0ab0\u0aa8\u0abe\u0ab0 \u0aa6\u0ab0\u0ac7\u0a95 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0aa8\u0ac7 \u0aae\u0ac1\u0ab8\u0abe\u0aab\u0abf\u0ab0 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "vocabulary - musafir",
+      "\u0aae\u0ac1\u0ab8\u0abe\u0aab\u0abf\u0ab0",
+      "\u0a85\u0ab0\u0acd\u0aa5"
+    ],
+    "learning_unit_id": "fee49d4f-1329-4f61-b08f-54d377184e20",
+    "learning_objective": "\u0ab6\u0aac\u0acd\u0aa6\u0aad\u0a82\u0aa1\u0acb\u0ab3 \u0ab5\u0aa7\u0abe\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab6\u0abe\u0ab3\u0abe",
+      "\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0",
+      "\u0a9a\u0acb\u0a9f\u0ab2\u0ac0",
+      "\u0aaa\u0acd\u0ab0\u0aac\u0a82\u0aa7"
+    ],
+    "correct_option": "\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0",
+    "voice_expected_keywords": [
+      "\u0aaf\u0abe\u0aa4\u0acd\u0ab0\u0ac0",
+      "\u0ab5\u0a9f\u0ac7\u0aae\u0abe\u0ab0\u0acd\u0a97\u0ac1"
+    ],
+    "question_hash": "b91967a6a29068a0faccbe02b98609bbf71f00e4f393b812949d0b3d86e55d13",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 2.18,
+    "thinking_time": 6.21,
+    "cluster_id": "musafir_vocabulary_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 70,
+    "coverage_weight": 0.2,
+    "metadata_score": 85,
+    "estimated_time": 9,
+    "normalized_concept": "musafir_vocabulary",
+    "cluster_name": "Vocabulary - Musafir - Easy - Remember - Mcq",
+    "question_purpose": "9.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0aaa\u0ab0\u0a82\u0aaa\u0ab0\u0abe\u2019 \u0aae\u0abe\u0a9f\u0ac7 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 \u0ab5\u0aaa\u0ab0\u0abe\u0aaf \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "Vocabulary - Parampara",
+    "expected_answer": "\u0aaa\u0acd\u0ab0\u0aa5\u0abe",
+    "acceptable_answers": [
+      "\u0aaa\u0acd\u0ab0\u0aa5\u0abe is the answer",
+      "The \u0aaa\u0acd\u0ab0\u0aa5\u0abe",
+      "It Is \u0aaa\u0acd\u0ab0\u0aa5\u0abe"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aaa\u0ab0\u0a82\u0aaa\u0ab0\u0abe \u0a8f\u0a9f\u0ab2\u0ac7 \u0ab5\u0ab0\u0acd\u0ab7\u0acb\u0aa5\u0ac0 \u0a9a\u0abe\u0ab2\u0aa4\u0ac0 \u0a95\u0acb\u0a88 \u0aac\u0abe\u0aac\u0aa4.",
+    "hint_level_2": "\u0aa4\u0ac7\u0aa8\u0ac7 '\u0aaa\u0acd\u0ab0\u0aa5\u0abe' \u0aa4\u0ab0\u0ac0\u0a95\u0ac7 \u0a93\u0ab3\u0a96\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "full_explanation": "1) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aaa\u0acd\u0ab0\u0aa5\u0abe' \u0a9b\u0ac7. 2) \u0aaa\u0ab0\u0a82\u0aaa\u0ab0\u0abe \u0a8f\u0a9f\u0ab2\u0ac7 \u0aaa\u0ac7\u0aa2\u0ac0 \u0aa6\u0ab0 \u0aaa\u0ac7\u0aa2\u0ac0\u0aa5\u0ac0 \u0a9a\u0abe\u0ab2\u0ac0 \u0a86\u0ab5\u0aa4\u0ac0 \u0aaa\u0acd\u0ab0\u0aa5\u0abe. 3) \u0aac\u0abe\u0a95\u0ac0\u0aa8\u0abe \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0ab8\u0abe\u0a9a\u0abe \u0aa8\u0aa5\u0ac0. 4) \u0aa6\u0ac0\u0ab5\u0abe\u0ab3\u0ac0 \u0aaa\u0ab0 \u0aa6\u0ac0\u0ab5\u0abe \u0aaa\u0acd\u0ab0\u0a97\u0a9f\u0abe\u0ab5\u0ab5\u0abe\u0aa8\u0ac0 \u0a86\u0aaa\u0aa3\u0ac0 \u0a8f\u0a95 \u0aaa\u0ab0\u0a82\u0aaa\u0ab0\u0abe \u0a95\u0ac7 \u0aaa\u0acd\u0ab0\u0aa5\u0abe \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "vocabulary - parampara",
+      "\u0aaa\u0ab0\u0a82\u0aaa\u0ab0\u0abe",
+      "\u0a85\u0ab0\u0acd\u0aa5"
+    ],
+    "learning_unit_id": "fee49d4f-1329-4f61-b08f-54d377184e20",
+    "learning_objective": "\u0ab6\u0aac\u0acd\u0aa6\u0aad\u0a82\u0aa1\u0acb\u0ab3 \u0ab5\u0aa7\u0abe\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab5\u0ac3\u0a95\u0acd\u0ab7",
+      "\u0aaa\u0acd\u0ab0\u0aac\u0a82\u0aa7",
+      "\u0aaa\u0acd\u0ab0\u0aa5\u0abe",
+      "\u0ab6\u0abe\u0ab3\u0abe"
+    ],
+    "correct_option": "\u0aaa\u0acd\u0ab0\u0aa5\u0abe",
+    "voice_expected_keywords": [
+      "\u0aaa\u0acd\u0ab0\u0aa5\u0abe"
+    ],
+    "question_hash": "5c1303bfe0c16d2b2c71594c297ba12584ada282f64fd38a723aafd769e40e46",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 3.57,
+    "thinking_time": 7.12,
+    "cluster_id": "parampara_vocabulary_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 73,
+    "coverage_weight": 0.2,
+    "metadata_score": 85,
+    "estimated_time": 11,
+    "normalized_concept": "parampara_vocabulary",
+    "cluster_name": "Vocabulary - Parampara - Easy - Remember - Mcq",
+    "question_purpose": "6.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7 \u0a86\u0aaa\u0ac7\u0ab2\u0abe \u0ab6\u0aac\u0acd\u0aa6\u0acb\u0aae\u0abe\u0a82\u0aa5\u0ac0 '\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0a93\u0ab3\u0a96\u0acb: '\u0ab0\u0abe\u0aae'",
+    "question_type": "MCQ",
+    "concept": "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+    "expected_answer": "\u0ab0\u0abe\u0aae",
+    "acceptable_answers": [
+      "\u0ab0\u0abe\u0aae is the answer",
+      "The \u0ab0\u0abe\u0aae",
+      "It Is \u0ab0\u0abe\u0aae"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86 \u0ab6\u0aac\u0acd\u0aa6 \u0a95\u0acb\u0a88 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0ab8\u0ac2\u0a9a\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "hint_level_2": "\u0ab0\u0abe\u0aae\u0abe\u0aaf\u0aa3\u0aa8\u0abe \u0aaa\u0abe\u0aa4\u0acd\u0ab0\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0ab6\u0acb\u0aa7\u0acb.",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a89\u0aa4\u0acd\u0aa4\u0ab0 '\u0ab0\u0abe\u0aae' \u0a9b\u0ac7. \u0a95\u0abe\u0ab0\u0aa3 \u0a95\u0ac7 \u0aa4\u0ac7 \u0a8f\u0a95 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0a9b\u0ac7. \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0aa8\u0aa5\u0ac0. \u0a9c\u0ac7\u0aae \u0a95\u0ac7 '\u0a9b\u0acb\u0a95\u0ab0\u0acb' \u0a8f \u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 1,
+    "keywords": [
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "ac264adb-75a9-40b9-9a96-821601874896",
+    "learning_objective": "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab0\u0abe\u0aae",
+      "\u0a97\u0abe\u0aae",
+      "\u0aa8\u0aa6\u0ac0",
+      "\u0aaa\u0ab0\u0acd\u0ab5\u0aa4"
+    ],
+    "correct_option": "\u0ab0\u0abe\u0aae",
+    "voice_expected_keywords": [
+      "\u0ab0\u0abe\u0aae"
+    ],
+    "question_hash": "1e341c5a9243822b23ee1ae44bea9be00af69ec2b910c0984c9b61ff2b081650",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 3.23,
+    "thinking_time": 5.92,
+    "cluster_id": "_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 66,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 10,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 - Easy - Remember - Mcq",
+    "question_purpose": "8.2",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab0\u0ac0\u0aaf\u0abe \u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0abe \u0ab6\u0aac\u0acd\u0aa6\u0aa8\u0ac7 '\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0aa4\u0ab0\u0ac0\u0a95\u0ac7 \u0aaa\u0ab8\u0a82\u0aa6 \u0a95\u0ab0\u0ab6\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab8\u0acd\u0aa5\u0ab3 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "expected_answer": "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6",
+    "acceptable_answers": [
+      "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6 is the answer",
+      "The \u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6",
+      "It Is \u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6 \u0a8f\u0a95 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0ab6\u0ab9\u0ac7\u0ab0\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0a9b\u0ac7.",
+    "hint_level_2": "\u0a86\u0aaa\u0ac7\u0ab2 \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a8f\u0a95 \u0ab6\u0ab9\u0ac7\u0ab0\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0aaa\u0ab8\u0a82\u0aa6 \u0a95\u0ab0\u0acb.",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a89\u0aa4\u0acd\u0aa4\u0ab0 '\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6' \u0a9b\u0ac7. \u0a95\u0abe\u0ab0\u0aa3 \u0a95\u0ac7 \u0aa4\u0ac7 \u0a8f\u0a95 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0ab8\u0acd\u0aa5\u0ab3\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0ab9\u0acb\u0ab5\u0abe\u0aa5\u0ac0 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7. '\u0ab6\u0ab9\u0ac7\u0ab0' \u0a8f \u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7, \u0ab8\u0ac1\u0ab0\u0aa4 \u0aaa\u0aa3 \u0a8f\u0a95 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab8\u0acd\u0aa5\u0ab3 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab6\u0ab9\u0ac7\u0ab0",
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95"
+    ],
+    "learning_unit_id": "ac264adb-75a9-40b9-9a96-821601874896",
+    "learning_objective": "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab6\u0ab9\u0ac7\u0ab0",
+      "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6",
+      "\u0a97\u0abe\u0aae",
+      "\u0aa6\u0ac7\u0ab6"
+    ],
+    "correct_option": "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6",
+    "voice_expected_keywords": [
+      "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6"
+    ],
+    "question_hash": "f63aea6afa403e2fca72f8145caff7b2bd3f6794e6996f248a3645ec39e3f313",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.95,
+    "thinking_time": 8.03,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab8\u0acd\u0aa5\u0ab3 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe - Easy - Remember - Mcq",
+    "question_purpose": "9.6",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 \u0aa8\u0aa6\u0ac0 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aa8\u0aa6\u0ac0 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "expected_answer": "\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe",
+    "acceptable_answers": [
+      "\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe is the answer",
+      "The \u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe",
+      "It Is \u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86 \u0aa8\u0aa6\u0ac0 \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0aa8\u0ac0 \u0a9c\u0ac0\u0ab5\u0abe\u0aa6\u0acb\u0ab0\u0ac0 \u0a97\u0aa3\u0abe\u0aaf \u0a9b\u0ac7.",
+    "hint_level_2": "\u0ab6\u0aac\u0acd\u0aa6 '\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe' \u0aaa\u0ab8\u0a82\u0aa6 \u0a95\u0ab0\u0acb.",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a89\u0aa4\u0acd\u0aa4\u0ab0 '\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe' \u0a9b\u0ac7. \u0aa4\u0ac7 \u0a8f\u0a95 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0aa8\u0aa6\u0ac0\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0a9b\u0ac7 \u0aa4\u0ac7\u0aa5\u0ac0 \u0aa4\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0a9b\u0ac7. \u0a9c\u0acd\u0aaf\u0abe\u0ab0\u0ac7 '\u0aa8\u0aa6\u0ac0' \u0ab6\u0aac\u0acd\u0aa6 \u0a86\u0a96\u0ac0 \u0a9c\u0abe\u0aa4\u0abf \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0aaa\u0ab0\u0abe\u0aaf \u0a9b\u0ac7. \u0a9c\u0ac7\u0aae '\u0a97\u0a82\u0a97\u0abe' \u0aaa\u0aa3 \u0a8f\u0a95 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0aa8\u0abe\u0aae \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0aa8\u0aa6\u0ac0 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aa8\u0aa6\u0ac0",
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95"
+    ],
+    "learning_unit_id": "ac264adb-75a9-40b9-9a96-821601874896",
+    "learning_objective": "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aa8\u0aa6\u0ac0",
+      "\u0ab8\u0abe\u0a97\u0ab0",
+      "\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe",
+      "\u0aa4\u0ab3\u0abe\u0ab5"
+    ],
+    "correct_option": "\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe",
+    "voice_expected_keywords": [
+      "\u0aa8\u0ab0\u0acd\u0aae\u0aa6\u0abe"
+    ],
+    "question_hash": "d4c534aa09b6d4bbbdff9e627b8d9a56e023a7f96c8909f88cc03d39c9566994",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.49,
+    "thinking_time": 7.73,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 73,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0aa8\u0aa6\u0ac0 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe - Easy - Remember - Mcq",
+    "question_purpose": "7.0",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7 \u0a86\u0aaa\u0ac7\u0ab2\u0abe \u0ab6\u0aac\u0acd\u0aa6\u0acb\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 '\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+    "expected_answer": "\u0aa8\u0aa6\u0ac0",
+    "acceptable_answers": [
+      "\u0aa8\u0aa6\u0ac0 is the answer",
+      "It Is \u0aa8\u0aa6\u0ac0",
+      "The \u0aa8\u0aa6\u0ac0"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7 \u0ab6\u0aac\u0acd\u0aa6 \u0a86\u0a96\u0ac0 \u0a9c\u0abe\u0aa4\u0abf \u0a95\u0ac7 \u0ab5\u0ab0\u0acd\u0a97\u0aa8\u0acb \u0aac\u0acb\u0aa7 \u0a95\u0ab0\u0abe\u0ab5\u0ac7 \u0aa4\u0ac7 \u0aaa\u0ab8\u0a82\u0aa6 \u0a95\u0ab0\u0acb.",
+    "hint_level_2": "\u0a86\u0aaa\u0ac7\u0ab2\u0abe \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb\u0aae\u0abe\u0a82\u0aa5\u0ac0 '\u0aa8\u0aa6\u0ac0' \u0a8f \u0ab8\u0abe\u0aae\u0abe\u0aa8\u0acd\u0aaf \u0a9c\u0abe\u0aa4\u0abf \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7. \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aa8\u0aa6\u0ac0' \u0a9b\u0ac7. \u0ae8. \u0aa8\u0aa6\u0ac0 \u0ab6\u0aac\u0acd\u0aa6 \u0a86\u0a96\u0ac0 \u0aa8\u0aa6\u0ac0\u0a93\u0aa8\u0ac0 \u0a9c\u0abe\u0aa4\u0abf \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0aaa\u0ab0\u0abe\u0aaf \u0a9b\u0ac7, \u0a95\u0acb\u0a88 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0aa8\u0aa6\u0ac0\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0aa8\u0aa5\u0ac0. \u0ae9. \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0aa8\u0abe\u0aae \u0a95\u0ac7 \u0aad\u0abe\u0ab5 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: '\u0aaa\u0ab0\u0acd\u0ab5\u0aa4' \u0aaa\u0aa3 \u0a8f\u0a95 \u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+      "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "2294ca4a-0ff7-4971-a797-24045ffc4854",
+    "learning_objective": "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "SIMPLE",
+    "mcq_options": [
+      "\u0a97\u0a82\u0a97\u0abe",
+      "\u0aa8\u0aa6\u0ac0",
+      "\u0ab9\u0abf\u0aae\u0abe\u0ab2\u0aaf",
+      "\u0a85\u0aae\u0aa6\u0abe\u0ab5\u0abe\u0aa6"
+    ],
+    "correct_option": "\u0aa8\u0aa6\u0ac0",
+    "voice_expected_keywords": [
+      "\u0aa8\u0aa6\u0ac0"
+    ],
+    "question_hash": "dcfae1564732125aad29d45813cb679667159711195e52dfd463560cdc365162",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.49,
+    "thinking_time": 7.73,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.5,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 - Easy - Remember - Mcq",
+    "question_purpose": "4.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab0\u0ac0\u0aaf\u0abe \u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 \u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0aa4\u0ab0\u0ac0\u0a95\u0ac7 \u0a93\u0ab3\u0a96\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+    "expected_answer": "\u0aaa\u0a95\u0acd\u0ab7\u0ac0",
+    "acceptable_answers": [
+      "\u0aaa\u0a95\u0acd\u0ab7\u0ac0 is the answer",
+      "It Is \u0aaa\u0a95\u0acd\u0ab7\u0ac0",
+      "The \u0aaa\u0a95\u0acd\u0ab7\u0ac0"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7 \u0ab6\u0aac\u0acd\u0aa6 \u0a95\u0acb\u0a88 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0aa8\u0abe\u0aae \u0aa8\u0aa5\u0ac0 \u0aaa\u0aa3 \u0a86\u0a96\u0abe \u0ab5\u0ab0\u0acd\u0a97\u0aa8\u0ac7 \u0ab2\u0abe\u0a97\u0ac1 \u0aaa\u0aa1\u0ac7 \u0a9b\u0ac7.",
+    "hint_level_2": "\u0aaa\u0a95\u0acd\u0ab7\u0ac0 \u0ab6\u0aac\u0acd\u0aa6 \u0aac\u0aa7\u0abe \u0a9c \u0aaa\u0a95\u0acd\u0ab7\u0ac0\u0a93 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0aaa\u0ab0\u0abe\u0aa4\u0acb \u0ab8\u0abe\u0aae\u0abe\u0aa8\u0acd\u0aaf \u0ab6\u0aac\u0acd\u0aa6 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7. \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aaa\u0a95\u0acd\u0ab7\u0ac0' \u0a9b\u0ac7. \u0ae8. '\u0aaa\u0a95\u0acd\u0ab7\u0ac0' \u0ab6\u0aac\u0acd\u0aa6 \u0ab8\u0aae\u0a97\u0acd\u0ab0 \u0aaa\u0a95\u0acd\u0ab7\u0ac0 \u0ab8\u0aae\u0ac1\u0aa6\u0abe\u0aaf\u0aa8\u0ac7 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7. \u0ae9. \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0aa8\u0abe\u0aae\u0acb \u0a95\u0ac7 \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0ab6\u0ac7\u0ab7\u0aa3\u0acb \u0a86\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0aa4\u0abe \u0aa8\u0aa5\u0ac0. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0a9c\u0ac7\u0aae '\u0ab9\u0abe\u0aa5\u0ac0' \u0a8f\u0a95 \u0a9c\u0abe\u0aa4\u0abf \u0a9b\u0ac7, \u0aa4\u0ac7\u0aae '\u0aaa\u0a95\u0acd\u0ab7\u0ac0' \u0aaa\u0aa3 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+      "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "2294ca4a-0ff7-4971-a797-24045ffc4854",
+    "learning_objective": "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "SIMPLE",
+    "mcq_options": [
+      "\u0aae\u0acb\u0ab0",
+      "\u0aaa\u0a95\u0acd\u0ab7\u0ac0",
+      "\u0aaa\u0acb\u0aaa\u0a9f",
+      "\u0a95\u0abe\u0aac\u0ab0"
+    ],
+    "correct_option": "\u0aaa\u0a95\u0acd\u0ab7\u0ac0",
+    "voice_expected_keywords": [
+      "\u0aaa\u0a95\u0acd\u0ab7\u0ac0"
+    ],
+    "question_hash": "aaf4563ea069759b0c6603fd133419fc87c81b91a6d65c67e06fe5d0b8ba61b6",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.95,
+    "thinking_time": 8.03,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.5,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 - Easy - Remember - Mcq",
+    "question_purpose": "6.0",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 '\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+    "expected_answer": "\u0a9f\u0acb\u0ab3\u0ac1\u0a82",
+    "acceptable_answers": [
+      "\u0a9f\u0acb\u0ab3\u0ac1\u0a82 is the answer",
+      "It Is \u0a9f\u0acb\u0ab3\u0ac1\u0a82",
+      "The \u0a9f\u0acb\u0ab3\u0ac1\u0a82"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7 \u0ab6\u0aac\u0acd\u0aa6 \u0a86\u0a96\u0abe \u0ab8\u0aae\u0ac2\u0ab9 \u0a95\u0ac7 \u0a9c\u0ac2\u0aa5\u0aa8\u0acb \u0aa8\u0abf\u0ab0\u0acd\u0aa6\u0ac7\u0ab6 \u0a95\u0ab0\u0ac7 \u0aa4\u0ac7 \u0ab6\u0acb\u0aa7\u0acb.",
+    "hint_level_2": "\u0aaa\u0abe\u0aa0\u0aae\u0abe\u0a82 \u0a86\u0aaa\u0ac7\u0ab2\u0abe \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3\u0acb \u0aaf\u0abe\u0aa6 \u0a95\u0ab0\u0acb, \u0a9c\u0ac7\u0aae \u0a95\u0ac7 '\u0a9f\u0acb\u0ab3\u0ac1\u0a82' \u0a95\u0ac7 '\u0ab8\u0ac8\u0aa8\u0acd\u0aaf'.",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0a9f\u0acb\u0ab3\u0ac1\u0a82' \u0a9b\u0ac7. \u0a9c\u0ac7 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a95\u0acb\u0a88 \u0aaa\u0aa3 \u0aaa\u0acd\u0ab0\u0abe\u0aa3\u0ac0 \u0a95\u0ac7 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0aa8\u0abe \u0ab8\u0aae\u0ac2\u0ab9 \u0a95\u0ac7 \u0a9c\u0aa5\u0acd\u0aa5\u0abe\u0aa8\u0ac7 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0aa4\u0ac7\u0aa8\u0ac7 \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf \u0a9b\u0ac7. '\u0a9f\u0acb\u0ab3\u0ac1\u0a82' \u0a8f\u0a95 \u0a86\u0a96\u0abe \u0ab8\u0aae\u0ac2\u0ab9\u0aa8\u0ac1\u0a82 \u0ab8\u0ac2\u0a9a\u0aa8 \u0a95\u0ab0\u0ac7 \u0a9b\u0ac7. \u0a85\u0aa8\u0acd\u0aaf \u0ab6\u0aac\u0acd\u0aa6\u0acb \u0a95\u0acb\u0a88 \u0ab8\u0aae\u0ac2\u0ab9\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0aa8\u0aa5\u0ac0.",
+    "difficulty": 1,
+    "keywords": [
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "9a6a64cc-97a8-474d-b077-f997e3f57721",
+    "learning_objective": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0ac7\u0aa8",
+      "\u0a9f\u0acb\u0ab3\u0ac1\u0a82",
+      "\u0aa6\u0abf\u0ab2\u0acd\u0ab9\u0ac0",
+      "\u0a9a\u0acb\u0aaa\u0aa1\u0ac0"
+    ],
+    "correct_option": "\u0a9f\u0acb\u0ab3\u0ac1\u0a82",
+    "voice_expected_keywords": [
+      "\u0a9f\u0acb\u0ab3\u0ac1\u0a82"
+    ],
+    "question_hash": "cadc016d74950dca84b0d8ac92f1b2d68c696d32c1568a74bb757b5b7c9ffac2",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.03,
+    "thinking_time": 5.92,
+    "cluster_id": "_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 10,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 - Easy - Remember - Mcq",
+    "question_purpose": "8.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab0\u0abf\u0aaf\u0abe\u0a8f \u0aae\u0ac7\u0aa6\u0abe\u0aa8\u0aae\u0abe\u0a82 \u0ab8\u0ac8\u0aa8\u0abf\u0a95\u0acb\u0aa8\u0ac1\u0a82 \u0a8f\u0a95 \u0a9c\u0ac2\u0aa5 \u0a9c\u0acb\u0aaf\u0ac1\u0a82. \u0a85\u0ab9\u0ac0\u0a82 '\u0ab8\u0ac8\u0aa8\u0acd\u0aaf' \u0a95\u0aaf\u0abe \u0aaa\u0acd\u0ab0\u0a95\u0abe\u0ab0\u0aa8\u0ac0 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac1\u0a82 \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3",
+    "expected_answer": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "acceptable_answers": [
+      "It is \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "The \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0ab8\u0ac8\u0aa8\u0abf\u0a95\u0acb\u0aa8\u0ac1\u0a82 \u0a9c\u0ac2\u0aa5 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a86\u0a96\u0acb \u0ab8\u0aae\u0ac2\u0ab9.",
+    "hint_level_2": "\u0a9c\u0ac7 \u0ab6\u0aac\u0acd\u0aa6 \u0ab8\u0aae\u0ac2\u0ab9 \u0a95\u0ac7 \u0a9c\u0aa5\u0acd\u0aa5\u0acb \u0aac\u0aa4\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7 \u0aa4\u0ac7\u0aa8\u0ac7 \u0ab6\u0ac1\u0a82 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf?",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0a9b\u0ac7. \u0a9c\u0acd\u0aaf\u0abe\u0ab0\u0ac7 \u0ab8\u0ac8\u0aa8\u0abf\u0a95\u0acb \u0aad\u0ac7\u0a97\u0abe \u0aa5\u0abe\u0aaf \u0a9b\u0ac7 \u0aa4\u0acd\u0aaf\u0abe\u0ab0\u0ac7 \u0aa4\u0ac7\u0aa8\u0ac7 '\u0ab8\u0ac8\u0aa8\u0acd\u0aaf' \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf \u0a9b\u0ac7, \u0a9c\u0ac7 \u0a8f\u0a95 \u0a86\u0a96\u0abe \u0ab8\u0aae\u0ac2\u0ab9\u0aa8\u0acb \u0aa8\u0abf\u0ab0\u0acd\u0aa6\u0ac7\u0ab6 \u0a95\u0ab0\u0ac7 \u0a9b\u0ac7. \u0aa4\u0ac7 \u0a95\u0acb\u0a88 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0a97\u0aa4 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0aa8\u0aa5\u0ac0 \u0aaa\u0aa3 \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7. \u0ab0\u0acb\u0a9c\u0abf\u0a82\u0aa6\u0abe \u0a9c\u0ac0\u0ab5\u0aa8\u0aae\u0abe\u0a82 \u0a86\u0aaa\u0aa3\u0ac7 '\u0aae\u0abf\u0aa4\u0acd\u0ab0\u0acb\u0aa8\u0ac1\u0a82 \u0aae\u0a82\u0aa1\u0ab3' \u0a95\u0ab9\u0ac0\u0a8f \u0a9b\u0ac0\u0a8f, \u0a9c\u0ac7 \u0aaa\u0aa3 \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac1\u0a82 \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3",
+      "\u0ab8\u0ac8\u0aa8\u0acd\u0aaf",
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "9a6a64cc-97a8-474d-b077-f997e3f57721",
+    "learning_objective": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "correct_option": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "voice_expected_keywords": [
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "question_hash": "515c49f76f45022116111675a52dcf018da94ca1f0ddb6fd4755e154fc2e0cea",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 85,
+    "speaking_time": 7.14,
+    "thinking_time": 9.24,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 72,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 17,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac1\u0a82 \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 - Easy - Remember - Mcq",
+    "question_purpose": "10.8",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0a9c\u0ac7 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0ab8\u0aae\u0ac2\u0ab9 \u0a95\u0ac7 \u0a9c\u0aa5\u0acd\u0aa5\u0acb \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0aa4\u0ac0 \u0ab9\u0acb\u0aaf, \u0aa4\u0ac7\u0aa8\u0ac7 \u0ab6\u0ac1\u0a82 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf?",
+    "question_type": "MCQ",
+    "concept": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0ab5\u0acd\u0aaf\u0abe\u0a96\u0acd\u0aaf\u0abe",
+    "expected_answer": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "acceptable_answers": [
+      "It is \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "The \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86 \u0aa8\u0abe\u0aae\u0aae\u0abe\u0a82 \u0a9c '\u0ab8\u0aae\u0ac2\u0ab9' \u0ab6\u0aac\u0acd\u0aa6 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "hint_level_2": "\u0a9c\u0ac7 \u0a9c\u0aa5\u0acd\u0aa5\u0acb \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7 \u0aa4\u0ac7 \u0ab8\u0aae\u0ac2\u0ab9____ \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7.",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0a9b\u0ac7. \u0a9c\u0ac7 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a95\u0acb\u0a88 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf \u0a95\u0ac7 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0aa8\u0abe \u0a86\u0a96\u0abe \u0ab8\u0aae\u0ac2\u0ab9 \u0a95\u0ac7 \u0a9c\u0aa5\u0acd\u0aa5\u0abe\u0aa8\u0ac7 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7 \u0aa4\u0ac7\u0aa8\u0ac7 \u0ab5\u0acd\u0aaf\u0abe\u0a95\u0ab0\u0aa3\u0aa8\u0ac0 \u0aa6\u0acd\u0ab0\u0ab7\u0acd\u0a9f\u0abf\u0a8f \u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7. \u0aac\u0ac0\u0a9c\u0abe \u0aaa\u0acd\u0ab0\u0a95\u0abe\u0ab0\u0acb \u0a85\u0ab2\u0a97 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0a93 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7, '\u0ab8\u0aad\u0abe' \u0ab6\u0aac\u0acd\u0aa6\u0aae\u0abe\u0a82 \u0a98\u0aa3\u0abe \u0ab2\u0acb\u0a95\u0acb\u0aa8\u0acb \u0ab8\u0aae\u0ac2\u0ab9 \u0ab9\u0acb\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0ab5\u0acd\u0aaf\u0abe\u0a96\u0acd\u0aaf\u0abe",
+      "\u0ab8\u0aae\u0ac2\u0ab9",
+      "\u0a9c\u0aa5\u0acd\u0aa5\u0acb",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "9a6a64cc-97a8-474d-b077-f997e3f57721",
+    "learning_objective": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "correct_option": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "voice_expected_keywords": [
+      "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "question_hash": "7d5e1d5fa08d62674580ca6171de19e69d5649afb259cdeab1c18ebc045a5f59",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 85,
+    "speaking_time": 5.82,
+    "thinking_time": 8.64,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 15,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab8\u0aae\u0ac2\u0ab9\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac0 \u0ab5\u0acd\u0aaf\u0abe\u0a96\u0acd\u0aaf\u0abe - Easy - Remember - Mcq",
+    "question_purpose": "11.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 '\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "expected_answer": "\u0ab8\u0acb\u0aa8\u0ac1\u0a82",
+    "acceptable_answers": [
+      "The \u0ab8\u0acb\u0aa8\u0ac1\u0a82",
+      "It Is \u0ab8\u0acb\u0aa8\u0ac1\u0a82",
+      "\u0ab8\u0acb\u0aa8\u0ac1\u0a82 is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7\u0aa8\u0ac7 \u0a97\u0aa3\u0ac0 \u0aa8 \u0ab6\u0a95\u0abe\u0aaf \u0aaa\u0aa3 \u0aae\u0abe\u0aaa\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0aa4\u0ac7 \u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0a9b\u0ac7.",
+    "hint_level_2": "\u0a86 \u0a8f\u0a95 \u0a95\u0abf\u0a82\u0aae\u0aa4\u0ac0 \u0aa7\u0abe\u0aa4\u0ac1 \u0a9b\u0ac7 \u0a9c\u0ac7\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb\u0aae\u0abe\u0a82 \u0a86\u0aaa\u0ac7\u0ab2 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7) \u0ab8\u0acb\u0aa8\u0ac1\u0a82. \u0ae8) \u0ab8\u0acb\u0aa8\u0ac1\u0a82 \u0a8f\u0a95 \u0aaa\u0aa6\u0abe\u0ab0\u0acd\u0aa5 \u0a9b\u0ac7 \u0a9c\u0ac7\u0aa8\u0ac7 \u0aa4\u0acb\u0ab2\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0a9b\u0ac7 \u0a85\u0aa8\u0ac7 \u0aa4\u0ac7\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a98\u0ab0\u0ac7\u0aa3\u0abe\u0a82 \u0aac\u0aa8\u0ac7 \u0a9b\u0ac7. \u0ae9) \u0a85\u0aa8\u0acd\u0aaf \u0ab6\u0aac\u0acd\u0aa6\u0acb (\u0a9c\u0ac7\u0aae \u0a95\u0ac7 \u0ab0\u0aae\u0a95\u0aa1\u0ac1\u0a82 \u0a95\u0ac7 \u0ab6\u0ab9\u0ac7\u0ab0) \u0a97\u0aa3\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0aa4\u0ac7\u0ab5\u0ac0 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0a93 \u0a9b\u0ac7. \u0aea) \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0ab8\u0acb\u0aa8\u0ac0 \u0ab8\u0acb\u0aa8\u0abe\u0aa8\u0abe \u0a98\u0ab0\u0ac7\u0aa3\u0abe\u0a82 \u0aac\u0aa8\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95"
+    ],
+    "learning_unit_id": "ae914b30-a391-4142-aa08-bd491f04093f",
+    "learning_objective": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab8\u0acb\u0aa8\u0ac1\u0a82",
+      "\u0ab6\u0abf\u0a95\u0acd\u0ab7\u0a95",
+      "\u0a97\u0abe\u0aae",
+      "\u0aaa\u0ac1\u0ab8\u0acd\u0aa4\u0a95"
+    ],
+    "correct_option": "\u0ab8\u0acb\u0aa8\u0ac1\u0a82",
+    "voice_expected_keywords": [
+      "\u0ab8\u0acb\u0aa8\u0ac1\u0a82"
+    ],
+    "question_hash": "9f378bea5b8b6148a95b15000ac21efcb3161325c47838569eec926588f22dda",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.03,
+    "thinking_time": 7.42,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 12,
+    "normalized_concept": "",
+    "cluster_name": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0 - Easy - Remember - Mcq",
+    "question_purpose": "6.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab0\u0ac0\u0aaf\u0abe \u0aac\u0a9c\u0abe\u0ab0\u0aae\u0abe\u0a82\u0aa5\u0ac0 '\u0aa4\u0ac7\u0ab2' \u0a96\u0ab0\u0ac0\u0aa6\u0ac7 \u0a9b\u0ac7. \u0a85\u0ab9\u0ac0\u0a82 '\u0aa4\u0ac7\u0ab2' \u0a95\u0a88 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "expected_answer": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "acceptable_answers": [
+      "It is \u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe is the answer",
+      "The \u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7\u0aa8\u0ac7 \u0aae\u0abe\u0aaa\u0ac0 \u0a95\u0ac7 \u0aa4\u0acb\u0ab2\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0aa4\u0ac7 \u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf.",
+    "hint_level_2": "\u0aa4\u0ac7\u0ab2\u0aa8\u0ac7 \u0aae\u0abe\u0aaa\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7 \u0a95\u0ac7 \u0a97\u0aa3\u0ab5\u0abe\u0aae\u0abe\u0a82?",
+    "full_explanation": "\u0ae7) \u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe. \u0ae8) \u0aa4\u0ac7\u0ab2 \u0a8f\u0a95 \u0aaa\u0acd\u0ab0\u0ab5\u0abe\u0ab9\u0ac0 \u0a9b\u0ac7 \u0a9c\u0ac7\u0aa8\u0ac7 \u0aae\u0abe\u0aaa\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0a9b\u0ac7, \u0a97\u0aa3\u0ac0 \u0ab6\u0a95\u0abe\u0aa4\u0ac1\u0a82 \u0aa8\u0aa5\u0ac0. \u0ae9) \u0aa4\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0a95\u0ac7 \u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0aa8\u0aa5\u0ac0 \u0a95\u0abe\u0ab0\u0aa3 \u0a95\u0ac7 \u0aa4\u0ac7 \u0a95\u0acb\u0a88 \u0a9a\u0acb\u0a95\u0acd\u0a95\u0ab8 \u0aaa\u0aa6\u0abe\u0ab0\u0acd\u0aa5\u0aa8\u0acb \u0a9c\u0aa5\u0acd\u0aa5\u0acb \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7. \u0aea) \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0ab0\u0ab8\u0acb\u0a88 \u0aac\u0aa8\u0abe\u0ab5\u0ab5\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0aa4\u0ac7\u0ab2 \u0ab5\u0aaa\u0ab0\u0abe\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 3,
+    "keywords": [
+      "\u0aa4\u0ac7\u0ab2",
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95"
+    ],
+    "learning_unit_id": "ae914b30-a391-4142-aa08-bd491f04093f",
+    "learning_objective": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab8\u0acd\u0aa5\u0ab3\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "correct_option": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "voice_expected_keywords": [
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95"
+    ],
+    "question_hash": "f2dabbbed63215e68aab08f7ec2afcc3c92973b4c4057fc0c74b19659d0451c0",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 85,
+    "speaking_time": 6.22,
+    "thinking_time": 10.14,
+    "cluster_id": "_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.333,
+    "metadata_score": 88,
+    "estimated_time": 17,
+    "normalized_concept": "",
+    "cluster_name": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe - Medium - Remember - Mcq",
+    "question_purpose": "8.8",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0a88 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0aa8\u0ac7 \u0aa4\u0acb\u0ab2\u0ac0 \u0a95\u0ac7 \u0aae\u0abe\u0aaa\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0abe \u0a97\u0ac1\u0aa3\u0aa7\u0ab0\u0acd\u0aae",
+    "expected_answer": "\u0aa6\u0ac2\u0aa7",
+    "acceptable_answers": [
+      "It Is \u0aa6\u0ac2\u0aa7",
+      "\u0aa6\u0ac2\u0aa7 is the answer",
+      "The \u0aa6\u0ac2\u0aa7"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7 \u0aaa\u0acd\u0ab0\u0ab5\u0abe\u0ab9\u0ac0 \u0ab9\u0acb\u0aaf \u0a85\u0aa5\u0ab5\u0abe \u0a9c\u0aa5\u0acd\u0aa5\u0abe\u0aae\u0abe\u0a82 \u0ab9\u0acb\u0aaf \u0aa4\u0ac7\u0aa8\u0ac7 \u0aae\u0abe\u0aaa\u0ac0 \u0ab6\u0a95\u0abe\u0aaf.",
+    "hint_level_2": "\u0a86\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0a88 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1 \u0ab2\u0abf\u0a9f\u0ab0 \u0a95\u0ac7 \u0a95\u0abf\u0ab2\u0acb\u0a97\u0acd\u0ab0\u0abe\u0aae\u0aae\u0abe\u0a82 \u0aae\u0aaa\u0abe\u0aaf \u0a9b\u0ac7?",
+    "full_explanation": "\u0ae7) \u0aa6\u0ac2\u0aa7. \u0ae8) \u0aa6\u0ac2\u0aa7\u0aa8\u0ac7 \u0aae\u0abe\u0aaa\u0aaa\u0aa4\u0acd\u0ab0\u0aa5\u0ac0 \u0aae\u0abe\u0aaa\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0a9b\u0ac7, \u0aa4\u0ac7\u0aa8\u0ac7 \u0a8f\u0a95, \u0aac\u0ac7 \u0a8f\u0aae \u0a97\u0aa3\u0ac0 \u0ab6\u0a95\u0abe\u0aa4\u0ac1\u0a82 \u0aa8\u0aa5\u0ac0. \u0ae9) \u0aaa\u0ac7\u0aa8\u0acd\u0ab8\u0abf\u0ab2 \u0a95\u0ac7 \u0a9a\u0acb\u0aaa\u0aa1\u0ac0\u0aa8\u0ac7 \u0a86\u0aaa\u0aa3\u0ac7 \u0a97\u0aa3\u0ac0 \u0ab6\u0a95\u0ac0\u0a8f \u0a9b\u0ac0\u0a8f, \u0aa4\u0ac7\u0aa5\u0ac0 \u0aa4\u0ac7 \u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0aa8\u0aa5\u0ac0. \u0aea) \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0a86\u0aaa\u0aa3\u0ac7 \u0a97\u0abe\u0aaf\u0aa8\u0ac1\u0a82 \u0aa6\u0ac2\u0aa7 \u0aaa\u0ac0\u0a8f \u0a9b\u0ac0\u0a8f.",
+    "difficulty": 3,
+    "keywords": [
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0abe \u0a97\u0ac1\u0aa3\u0aa7\u0ab0\u0acd\u0aae",
+      "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0aae\u0abe\u0aaa"
+    ],
+    "learning_unit_id": "ae914b30-a391-4142-aa08-bd491f04093f",
+    "learning_objective": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aa6\u0ac2\u0aa7",
+      "\u0aaa\u0ac7\u0aa8\u0acd\u0ab8\u0abf\u0ab2",
+      "\u0a9a\u0acb\u0aaa\u0aa1\u0ac0",
+      "\u0a9b\u0acb\u0a95\u0ab0\u0acb"
+    ],
+    "correct_option": "\u0aa6\u0ac2\u0aa7",
+    "voice_expected_keywords": [
+      "\u0aa6\u0ac2\u0aa7"
+    ],
+    "question_hash": "fb306acf862b5d3172dd6335e395f66f8975c88b79e120f3a969be00b9678448",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.49,
+    "thinking_time": 9.23,
+    "cluster_id": "_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 14,
+    "normalized_concept": "",
+    "cluster_name": "\u0aa6\u0acd\u0ab0\u0ab5\u0acd\u0aaf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0abe \u0a97\u0ac1\u0aa3\u0aa7\u0ab0\u0acd\u0aae - Medium - Remember - Mcq",
+    "question_purpose": "6.8",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa8\u0ac0\u0a9a\u0ac7\u0aa8\u0abe\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 '\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "expected_answer": "\u0aad\u0ab2\u0abe\u0a88",
+    "acceptable_answers": [
+      "\u0aad\u0ab2\u0abe\u0a88 is the answer",
+      "The \u0aad\u0ab2\u0abe\u0a88",
+      "It Is \u0aad\u0ab2\u0abe\u0a88"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a85\u0aa8\u0ac1\u0aad\u0ab5 \u0a95\u0ac7 \u0ab2\u0abe\u0a97\u0aa3\u0ac0 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "hint_level_2": "\u0aad\u0ab2\u0abe\u0a88 \u0a8f \u0aae\u0abe\u0aa3\u0ab8\u0aa8\u0acb \u0a8f\u0a95 \u0a97\u0ac1\u0aa3 \u0a95\u0ac7 \u0a85\u0aa8\u0ac1\u0aad\u0ab5 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aad\u0ab2\u0abe\u0a88' \u0a9b\u0ac7. \u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0aae\u0aa8\u0aa8\u0abe \u0a85\u0aa8\u0ac1\u0aad\u0ab5\u0acb \u0a95\u0ac7 \u0a97\u0ac1\u0aa3\u0acb \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7, \u0a9c\u0ac7 \u0a9c\u0acb\u0a88 \u0ab6\u0a95\u0abe\u0aa4\u0abe \u0aa8\u0aa5\u0ac0 \u0aaa\u0aa3 \u0a85\u0aa8\u0ac1\u0aad\u0ab5\u0ac0 \u0ab6\u0a95\u0abe\u0aaf \u0a9b\u0ac7. '\u0a97\u0abe\u0aae' \u0a95\u0ac7 '\u0aaa\u0ac1\u0ab8\u0acd\u0aa4\u0a95' \u0a8f \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf \u0a95\u0ac7 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0aa8\u0abe \u0aa8\u0abe\u0aae \u0a9b\u0ac7, \u0aad\u0abe\u0ab5 \u0aa8\u0aa5\u0ac0. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7, \u0a95\u0acb\u0a88\u0aa8\u0ac0 \u0aae\u0aa6\u0aa6 \u0a95\u0ab0\u0ab5\u0ac0 \u0a8f \u0aad\u0ab2\u0abe\u0a88 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "learning_unit_id": "100c18a7-c005-4714-b3a1-cd7d95f3a112",
+    "learning_objective": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0a97\u0abe\u0aae",
+      "\u0aad\u0ab2\u0abe\u0a88",
+      "\u0a98\u0ab0",
+      "\u0aaa\u0ac1\u0ab8\u0acd\u0aa4\u0a95"
+    ],
+    "correct_option": "\u0aad\u0ab2\u0abe\u0a88",
+    "voice_expected_keywords": [
+      "\u0aad\u0ab2\u0abe\u0a88"
+    ],
+    "question_hash": "0953dc54a850b635e302e24b28a01c9dc45e0cb463e810f60b7b287214900bd3",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.03,
+    "thinking_time": 7.42,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 12,
+    "normalized_concept": "",
+    "cluster_name": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0 - Easy - Remember - Mcq",
+    "question_purpose": "7.4",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0a86\u0aa8\u0a82\u0aa6, \u0aaa\u0acd\u0ab0\u0ac7\u0aae \u0a85\u0aa8\u0ac7 \u0a97\u0ac1\u0ab8\u0acd\u0ab8\u0acb \u0a8f \u0a95\u0aaf\u0abe \u0aaa\u0acd\u0ab0\u0a95\u0abe\u0ab0\u0aa8\u0ac0 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac1\u0a82 \u0ab5\u0ab0\u0acd\u0a97\u0ac0\u0a95\u0ab0\u0aa3",
+    "expected_answer": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "acceptable_answers": [
+      "It is \u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "The \u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86 \u0ab6\u0aac\u0acd\u0aa6\u0acb \u0aae\u0aa8\u0aa8\u0abe \u0a85\u0aa8\u0ac1\u0aad\u0ab5\u0acb \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "hint_level_2": "\u0a9c\u0ac7 \u0ab6\u0aac\u0acd\u0aa6\u0acb \u0aae\u0aa8\u0aa8\u0abe \u0a97\u0ac1\u0aa3 \u0a95\u0ac7 \u0ab8\u0acd\u0aa5\u0abf\u0aa4\u0abf \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7 \u0aa4\u0ac7\u0aa8\u0ac7 \u0ab6\u0ac1\u0a82 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf?",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe' \u0a9b\u0ac7. \u0a86\u0aa8\u0a82\u0aa6, \u0aaa\u0acd\u0ab0\u0ac7\u0aae \u0a85\u0aa8\u0ac7 \u0a97\u0ac1\u0ab8\u0acd\u0ab8\u0acb \u0a8f \u0aae\u0aa8\u0aa8\u0ac0 \u0a85\u0aa8\u0ac1\u0aad\u0ac2\u0aa4\u0abf \u0a9b\u0ac7, \u0a9c\u0ac7\u0aa8\u0ac7 \u0a86\u0aaa\u0aa3\u0ac7 \u0ab8\u0acd\u0aaa\u0ab0\u0acd\u0ab6\u0ac0 \u0ab6\u0a95\u0aa4\u0abe \u0aa8\u0aa5\u0ac0. \u0a85\u0aa8\u0acd\u0aaf \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0a93 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1 \u0a95\u0ac7 \u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0aa8\u0ac1\u0a82 \u0aa8\u0abe\u0aae \u0ab9\u0acb\u0aaf \u0a9b\u0ac7, \u0a9c\u0acd\u0aaf\u0abe\u0ab0\u0ac7 \u0a86 \u0ab2\u0abe\u0a97\u0aa3\u0ac0 \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7. \u0ab0\u0acb\u0a9c\u0abf\u0a82\u0aa6\u0abe \u0a9c\u0ac0\u0ab5\u0aa8\u0aae\u0abe\u0a82, \u0a95\u0acb\u0a88\u0aa8\u0ac7 \u0a9c\u0acb\u0a88\u0aa8\u0ac7 \u0aa5\u0aa4\u0acb \u0a86\u0aa8\u0a82\u0aa6 \u0a8f \u0aad\u0abe\u0ab5 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac1\u0a82 \u0ab5\u0ab0\u0acd\u0a97\u0ac0\u0a95\u0ab0\u0aa3",
+      "\u0a86\u0aa8\u0a82\u0aa6",
+      "\u0aaa\u0acd\u0ab0\u0ac7\u0aae",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95"
+    ],
+    "learning_unit_id": "100c18a7-c005-4714-b3a1-cd7d95f3a112",
+    "learning_objective": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "SHORT_PHRASE",
+    "mcq_options": [
+      "\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0a9c\u0abe\u0aa4\u0abf\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+      "\u0ab8\u0acd\u0aa5\u0ab3\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "correct_option": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe",
+    "voice_expected_keywords": [
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95",
+      "\u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe"
+    ],
+    "question_hash": "3fe6a943028c072aec4a8bc470591780806e4e793ddf33edd34d23ca2e258231",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 85,
+    "speaking_time": 5.35,
+    "thinking_time": 8.33,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 14,
+    "normalized_concept": "",
+    "cluster_name": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0ac1\u0a82 \u0ab5\u0ab0\u0acd\u0a97\u0ac0\u0a95\u0ab0\u0aa3 - Easy - Remember - Mcq",
+    "question_purpose": "9.4",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0a95\u0aaf\u0abe \u0ab6\u0aac\u0acd\u0aa6\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0aae\u0aa8\u0aa8\u0abe \u0a85\u0aa8\u0ac1\u0aad\u0ab5 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7 \u0aa5\u0abe\u0aaf \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5",
+    "expected_answer": "\u0a95\u0acd\u0ab0\u0acb\u0aa7",
+    "acceptable_answers": [
+      "It Is \u0a95\u0acd\u0ab0\u0acb\u0aa7",
+      "The \u0a95\u0acd\u0ab0\u0acb\u0aa7",
+      "\u0a95\u0acd\u0ab0\u0acb\u0aa7 is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0a95\u0aaf\u0acb \u0ab6\u0aac\u0acd\u0aa6 \u0a8f\u0a95 \u0ab2\u0abe\u0a97\u0aa3\u0ac0 \u0a9b\u0ac7?",
+    "hint_level_2": "\u0a97\u0ac1\u0ab8\u0acd\u0ab8\u0abe\u0aa8\u0acb \u0ab8\u0aae\u0abe\u0aa8\u0abe\u0ab0\u0acd\u0aa5\u0ac0 \u0ab6\u0aac\u0acd\u0aa6 \u0ab6\u0ac1\u0a82 \u0a9b\u0ac7?",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0a95\u0acd\u0ab0\u0acb\u0aa7' \u0a9b\u0ac7. \u0a95\u0acd\u0ab0\u0acb\u0aa7 \u0a8f \u0aae\u0aa8\u0aa8\u0ac0 \u0a8f\u0a95 \u0aa4\u0ac0\u0ab5\u0acd\u0ab0 \u0a85\u0aa8\u0ac1\u0aad\u0ac2\u0aa4\u0abf \u0a9b\u0ac7, \u0a9c\u0ac7 \u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a9b\u0ac7. '\u0a9f\u0ac7\u0aac\u0ab2' \u0a95\u0ac7 '\u0a96\u0ac1\u0ab0\u0ab6\u0ac0' \u0a9c\u0ac7\u0ab5\u0ac0 \u0ab5\u0ab8\u0acd\u0aa4\u0ac1\u0a93 \u0a9c\u0acb\u0a88 \u0ab6\u0a95\u0abe\u0aaf \u0a9b\u0ac7, \u0a9c\u0acd\u0aaf\u0abe\u0ab0\u0ac7 \u0a95\u0acd\u0ab0\u0acb\u0aa7 \u0aab\u0a95\u0acd\u0aa4 \u0a85\u0aa8\u0ac1\u0aad\u0ab5\u0abe\u0aaf \u0a9b\u0ac7. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7, \u0a95\u0acb\u0a88 \u0aad\u0ac2\u0ab2 \u0a95\u0ab0\u0ac7 \u0aa4\u0acd\u0aaf\u0abe\u0ab0\u0ac7 \u0a86\u0ab5\u0aa4\u0acb \u0a95\u0acd\u0ab0\u0acb\u0aa7 \u0a8f\u0a95 \u0ab8\u0a82\u0ab5\u0ac7\u0aa6\u0aa8\u0abe \u0a9b\u0ac7.",
+    "difficulty": 3,
+    "keywords": [
+      "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5",
+      "\u0ab2\u0abe\u0a97\u0aa3\u0ac0"
+    ],
+    "learning_unit_id": "100c18a7-c005-4714-b3a1-cd7d95f3a112",
+    "learning_objective": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe \u0a93\u0ab3\u0a96\u0ab5\u0ac0",
+    "source_pages": [
+      6
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0a9f\u0ac7\u0aac\u0ab2",
+      "\u0a95\u0acd\u0ab0\u0acb\u0aa7",
+      "\u0aa6\u0aab\u0aa4\u0ab0",
+      "\u0aaa\u0ac7\u0aa8"
+    ],
+    "correct_option": "\u0a95\u0acd\u0ab0\u0acb\u0aa7",
+    "voice_expected_keywords": [
+      "\u0a95\u0acd\u0ab0\u0acb\u0aa7"
+    ],
+    "question_hash": "7a714a775fbafe6e2efd41be601b821206c1d49e967b6eea650e0bff003f2dff",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.49,
+    "thinking_time": 9.23,
+    "cluster_id": "_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 73,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 14,
+    "normalized_concept": "",
+    "cluster_name": "\u0aad\u0abe\u0ab5\u0ab5\u0abe\u0a9a\u0a95 \u0ab8\u0a82\u0a9c\u0acd\u0a9e\u0abe\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 - Medium - Remember - Mcq",
+    "question_purpose": "8.6",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab0\u0abf\u0aaf\u0abe\u0a8f \u0a9c\u0acb\u0aaf\u0ac1\u0a82 \u0a95\u0ac7 '\u0a95\u0ac1\u0aa4\u0ab0\u0acb' \u0ab6\u0aac\u0acd\u0aa6\u0aae\u0abe\u0a82 \u0a85\u0a82\u0aa4\u0ac7 '\u0a93' \u0a9b\u0ac7, \u0aa4\u0acb \u0a86 \u0a95\u0aaf\u0ac1\u0a82 \u0ab2\u0abf\u0a82\u0a97 \u0a97\u0aa3\u0abe\u0aaf?",
+    "question_type": "MCQ",
+    "concept": "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 \u0a93\u0ab3\u0a96 (scenario)",
+    "expected_answer": "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97",
+    "acceptable_answers": [
+      "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 is the answer",
+      "The \u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97",
+      "It Is \u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7\u0aa8\u0abe \u0a85\u0a82\u0aa4\u0ac7 '\u0a93' \u0ab9\u0acb\u0aaf \u0aa4\u0ac7 \u0a95\u0aaf\u0ac1\u0a82 \u0ab2\u0abf\u0a82\u0a97 \u0a9b\u0ac7?",
+    "hint_level_2": "\u0aaa\u0abe\u0aa0\u0aae\u0abe\u0a82 '\u0a95\u0ac1\u0aa4\u0ab0\u0acb' \u0aa8\u0ac7 \u0a95\u0aaf\u0ac1\u0a82 \u0ab2\u0abf\u0a82\u0a97 \u0a95\u0ab9\u0acd\u0aaf\u0ac1\u0a82 \u0a9b\u0ac7?",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97' \u0a9b\u0ac7. \u0a86\u0aaa\u0ac7\u0ab2\u0abe \u0aa8\u0abf\u0aaf\u0aae \u0aae\u0ac1\u0a9c\u0aac, \u0a9c\u0ac7 \u0ab6\u0aac\u0acd\u0aa6\u0aa8\u0abe \u0a85\u0a82\u0aa4\u0ac7 '\u0a93' \u0a86\u0ab5\u0ac7 \u0aa4\u0ac7 \u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 \u0a97\u0aa3\u0abe\u0aaf \u0a9b\u0ac7. \u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97\u0aae\u0abe\u0a82 '\u0a88' \u0a85\u0aa8\u0ac7 \u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97\u0aae\u0abe\u0a82 '\u0a89' \u0ab5\u0aaa\u0ab0\u0abe\u0aaf \u0a9b\u0ac7. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0a98\u0acb\u0aa1\u0acb.",
+    "difficulty": 3,
+    "keywords": [
+      "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 \u0a93\u0ab3\u0a96 (scenario)",
+      "\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "learning_unit_id": "711ddea6-37c1-456a-bf19-9139f7ab7916",
+    "learning_objective": "\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 \u0a95\u0ab0\u0ab5\u0ac0",
+    "source_pages": [
+      7
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97",
+      "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97",
+      "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97",
+      "\u0a95\u0acb\u0a88 \u0aa8\u0ab9\u0ac0\u0a82"
+    ],
+    "correct_option": "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97",
+    "voice_expected_keywords": [
+      "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "question_hash": "fb9eb16f3e8268b290a9837f701a874c623b7362e71a548e66537dec05ebce62",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 7.2,
+    "thinking_time": 10.74,
+    "cluster_id": "scenario_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 18,
+    "normalized_concept": "scenario",
+    "cluster_name": "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 \u0a93\u0ab3\u0a96 (Scenario) - Medium - Remember - Mcq",
+    "question_purpose": "9.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0a9c\u0acb \u0a8f\u0a95 \u0ab6\u0aac\u0acd\u0aa6\u0aa8\u0abe \u0a85\u0a82\u0aa4\u0ac7 '\u0a88' \u0a9a\u0abf\u0ab9\u0acd\u0aa8 \u0ab9\u0acb\u0aaf, \u0aa4\u0acb \u0aa4\u0ac7 \u0a95\u0a88 \u0a9c\u0abe\u0aa4\u0abf \u0aa6\u0ab0\u0acd\u0ab6\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+    "expected_answer": "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97",
+    "acceptable_answers": [
+      "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97 is the answer",
+      "It Is \u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97",
+      "The \u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aaa\u0abe\u0aa0 \u0aae\u0ac1\u0a9c\u0aac '\u0ab0\u0abe\u0aa3\u0ac0' \u0a95\u0aaf\u0abe \u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac1\u0a82 \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0a9b\u0ac7?",
+    "hint_level_2": "\u0ab6\u0ac1\u0a82 '\u0a88' \u0a8f \u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0aaa\u0ab0\u0abe\u0aaf \u0a9b\u0ac7?",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97' \u0a9b\u0ac7. '\u0a88' \u0a85\u0a82\u0aa4 \u0aa7\u0ab0\u0abe\u0ab5\u0aa4\u0abe \u0ab6\u0aac\u0acd\u0aa6\u0acb \u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97 \u0a9c\u0abe\u0aa4\u0abf\u0aa8\u0ac1\u0a82 \u0ab8\u0ac2\u0a9a\u0aa8 \u0a95\u0ab0\u0ac7 \u0a9b\u0ac7. \u0a85\u0aa8\u0acd\u0aaf \u0ab2\u0abf\u0a82\u0a97\u0acb \u0aae\u0abe\u0a9f\u0ac7 \u0a85\u0ab2\u0a97 \u0a9a\u0abf\u0ab9\u0acd\u0aa8\u0acb \u0a9b\u0ac7. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0aae\u0aae\u0acd\u0aae\u0ac0.",
+    "difficulty": 3,
+    "keywords": [
+      "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac0 \u0a93\u0ab3\u0a96",
+      "\u0a9c\u0abe\u0aa4\u0abf"
+    ],
+    "learning_unit_id": "711ddea6-37c1-456a-bf19-9139f7ab7916",
+    "learning_objective": "\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 \u0a95\u0ab0\u0ab5\u0ac0",
+    "source_pages": [
+      7
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97",
+      "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97",
+      "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97",
+      "\u0a89\u0aad\u0aaf\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "correct_option": "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97",
+    "voice_expected_keywords": [
+      "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "question_hash": "7e412f9da5d0c2ab6484d8b02fdb8542dda4a8c6ca0035f7762685e738f358ba",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 7.2,
+    "thinking_time": 10.74,
+    "cluster_id": "_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 18,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 - Medium - Remember - Mcq",
+    "question_purpose": "9.4",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0a95\u0ab5\u0abf\u0a8f '\u0a98\u0ac7\u0a9f\u0ac1\u0a82' \u0ab6\u0aac\u0acd\u0aa6 \u0ab5\u0abe\u0a82\u0a9a\u0acd\u0aaf\u0acb, \u0a86 \u0ab6\u0aac\u0acd\u0aa6 \u0a95\u0aaf\u0abe \u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac1\u0a82 \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97 \u0a93\u0ab3\u0a96 (scenario)",
+    "expected_answer": "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97",
+    "acceptable_answers": [
+      "It Is \u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97",
+      "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97 is the answer",
+      "The \u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0ac7\u0aa8\u0abe \u0a85\u0a82\u0aa4\u0ac7 '\u0a89' \u0a85\u0aa5\u0ab5\u0abe '\u0a9f\u0ac1\u0a82' \u0a9c\u0ac7\u0ab5\u0ac1\u0a82 \u0ab8\u0a82\u0aad\u0ab3\u0abe\u0aaf \u0aa4\u0ac7 \u0a95\u0ac7\u0ab5\u0ac1\u0a82 \u0ab2\u0abf\u0a82\u0a97 \u0a9b\u0ac7?",
+    "hint_level_2": "\u0ab6\u0ac1\u0a82 \u0a86 \u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97 \u0a9b\u0ac7 \u0a95\u0ac7 \u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97?",
+    "full_explanation": "\u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac '\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97' \u0a9b\u0ac7. '\u0a98\u0ac7\u0a9f\u0ac1\u0a82' \u0aae\u0abe\u0a82 \u0a85\u0a82\u0aa4\u0ac7 '\u0a89' \u0a9c\u0ac7\u0ab5\u0acb \u0ab8\u0acd\u0ab5\u0ab0 \u0ab8\u0a82\u0aad\u0ab3\u0abe\u0aaf \u0a9b\u0ac7, \u0a9c\u0ac7 \u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac1\u0a82 \u0a9a\u0abf\u0ab9\u0acd\u0aa8 \u0a9b\u0ac7. \u0a85\u0aa8\u0acd\u0aaf \u0ab2\u0abf\u0a82\u0a97 \u0a86\u0aae\u0abe\u0a82 \u0aac\u0a82\u0aa7\u0aac\u0ac7\u0ab8\u0aa4\u0abe \u0aa8\u0aa5\u0ac0. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0aac\u0abe\u0ab0\u0aa3\u0ac1\u0a82.",
+    "difficulty": 3,
+    "keywords": [
+      "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97 \u0a93\u0ab3\u0a96 (scenario)",
+      "\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "learning_unit_id": "711ddea6-37c1-456a-bf19-9139f7ab7916",
+    "learning_objective": "\u0ab2\u0abf\u0a82\u0a97\u0aa8\u0ac0 \u0a93\u0ab3\u0a96 \u0a95\u0ab0\u0ab5\u0ac0",
+    "source_pages": [
+      7
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0ac1\u0ab2\u0acd\u0ab2\u0abf\u0a82\u0a97",
+      "\u0ab8\u0acd\u0aa4\u0acd\u0ab0\u0ac0\u0ab2\u0abf\u0a82\u0a97",
+      "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97",
+      "\u0a95\u0acb\u0a88 \u0aa8\u0ab9\u0ac0\u0a82"
+    ],
+    "correct_option": "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97",
+    "voice_expected_keywords": [
+      "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97"
+    ],
+    "question_hash": "722ef6867acad77daf2b7f2ea5c7ffac98d3e8059f521f769d9e790dae8f0996",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 5.82,
+    "thinking_time": 9.83,
+    "cluster_id": "scenario_3_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 78,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 16,
+    "normalized_concept": "scenario",
+    "cluster_name": "\u0aa8\u0aaa\u0ac1\u0a82\u0ab8\u0a95\u0ab2\u0abf\u0a82\u0a97 \u0a93\u0ab3\u0a96 (Scenario) - Medium - Remember - Mcq",
+    "question_purpose": "10.2",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aa4\u0aae\u0abe\u0ab0\u0ac0 \u0aae\u0abe\u0aa4\u0ac3\u0aad\u0abe\u0ab7\u0abe \u0a95\u0a88 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0aae\u0abe\u0aa4\u0ac3\u0aad\u0abe\u0ab7\u0abe",
+    "expected_answer": "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0",
+    "acceptable_answers": [
+      "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0 is the answer",
+      "It Is \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0",
+      "The \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86\u0aaa\u0aa3\u0ac7 \u0a9c\u0ac7 \u0aad\u0abe\u0ab7\u0abe\u0aae\u0abe\u0a82 \u0a86 \u0aaa\u0abe\u0aa0 \u0aad\u0aa3\u0ac0 \u0ab0\u0ab9\u0acd\u0aaf\u0abe \u0a9b\u0ac0\u0a8f \u0aa4\u0ac7 \u0a95\u0a88 \u0a9b\u0ac7?",
+    "hint_level_2": "\u0a86\u0aaa\u0aa3\u0ac7 \u0a85\u0aa4\u0acd\u0aaf\u0abe\u0ab0\u0ac7 \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0 \u0ab5\u0abf\u0ab7\u0aaf\u0aa8\u0acb \u0a85\u0aad\u0acd\u0aaf\u0abe\u0ab8 \u0a95\u0ab0\u0ac0 \u0ab0\u0ab9\u0acd\u0aaf\u0abe \u0a9b\u0ac0\u0a8f.",
+    "full_explanation": "\u0ae7. \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac: \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0. \u0ae8. \u0aae\u0abe\u0aa4\u0ac3\u0aad\u0abe\u0ab7\u0abe \u0a8f\u0a9f\u0ab2\u0ac7 \u0a9c\u0ac7 \u0aad\u0abe\u0ab7\u0abe \u0a86\u0aaa\u0aa3\u0ac7 \u0a9c\u0aa8\u0acd\u0aae\u0aa5\u0ac0 \u0ab6\u0ac0\u0a96\u0ac0\u0a8f \u0a9b\u0ac0\u0a8f. \u0ae9. \u0a85\u0a82\u0a97\u0acd\u0ab0\u0ac7\u0a9c\u0ac0 \u0a95\u0ac7 \u0ab9\u0abf\u0aa8\u0acd\u0aa6\u0ac0 \u0aa4\u0ac7 \u0a85\u0aa8\u0acd\u0aaf \u0aad\u0abe\u0ab7\u0abe\u0a93 \u0a9b\u0ac7, \u0aae\u0abe\u0aa4\u0ac3\u0aad\u0abe\u0ab7\u0abe \u0aa8\u0aa5\u0ac0. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3: \u0a98\u0ab0\u0aae\u0abe\u0a82 \u0aae\u0abe\u0aa4\u0abe-\u0aaa\u0abf\u0aa4\u0abe \u0ab8\u0abe\u0aa5\u0ac7 \u0ab5\u0abe\u0aa4 \u0a95\u0ab0\u0ab5\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0ab5\u0aaa\u0ab0\u0abe\u0aa4\u0ac0 \u0aad\u0abe\u0ab7\u0abe.",
+    "difficulty": 1,
+    "keywords": [
+      "\u0aae\u0abe\u0aa4\u0ac3\u0aad\u0abe\u0ab7\u0abe"
+    ],
+    "learning_unit_id": "b302546a-caea-42eb-9cf4-cb382669af15",
+    "learning_objective": "\u0aae\u0acc\u0a96\u0abf\u0a95 \u0a85\u0aad\u0abf\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab9\u0abf\u0aa8\u0acd\u0aa6\u0ac0",
+      "\u0a85\u0a82\u0a97\u0acd\u0ab0\u0ac7\u0a9c\u0ac0",
+      "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0",
+      "\u0aae\u0ab0\u0abe\u0aa0\u0ac0"
+    ],
+    "correct_option": "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0",
+    "voice_expected_keywords": [
+      "\u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0"
+    ],
+    "question_hash": "a145dbf927cea7a1b51a4769344802ee782ea3cad89cff88b06cec25aef9fb78",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 2.65,
+    "thinking_time": 5.02,
+    "cluster_id": "_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 77,
+    "coverage_weight": 0.5,
+    "metadata_score": 88,
+    "estimated_time": 8,
+    "normalized_concept": "",
+    "cluster_name": "\u0aae\u0abe\u0aa4\u0ac3\u0aad\u0abe\u0ab7\u0abe - Easy - Remember - Mcq",
+    "question_purpose": "6.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab5\u0abf\u0aa6\u0acd\u0aaf\u0abe\u0ab0\u0acd\u0aa5\u0ac0\u0a93\u0a8f (\u0ab6\u0abf\u0ab7\u0acd\u0aaf\u0acb\u0aa8\u0ac7) \u0aa4\u0ac7 \u0aae\u0abe\u0a9f\u0ac7 \u0a95\u0acd\u0aaf\u0abe\u0a82 \u0a9c\u0a88\u0aa8\u0ac7 \u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3 \u0aae\u0ac7\u0ab3\u0ab5\u0ab5\u0ac1\u0a82 \u0aaa\u0aa1\u0aa4\u0ac1\u0a82 \u0ab9\u0aa4\u0ac1\u0a82?",
+    "question_type": "MCQ",
+    "concept": "\u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3\u0aa8\u0ac1\u0a82 \u0ab8\u0acd\u0aa5\u0abe\u0aa8",
+    "expected_answer": "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82",
+    "acceptable_answers": [
+      "\u0a97\u0ac1\u0ab0\u0ac1\u0aa8\u0abe \u0a86\u0ab6\u0acd\u0ab0\u0aae\u0aae\u0abe\u0a82",
+      "It Is \u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82",
+      "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82 is the answer",
+      "The \u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0ab5\u0ac8\u0aa6\u0abf\u0a95 \u0ab8\u0aae\u0aaf\u0aae\u0abe\u0a82 \u0ab6\u0abe\u0ab3\u0abe\u0aa8\u0ac7 \u0ab6\u0ac1\u0a82 \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aa4\u0ac1\u0a82 \u0ab9\u0aa4\u0ac1\u0a82?",
+    "hint_level_2": "\u0aa4\u0ac7 \u0a9c\u0a97\u0acd\u0aaf\u0abe\u0aa8\u0ac7 '\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3' \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aae\u0abe\u0a82 \u0a86\u0ab5\u0aa4\u0ac1\u0a82 \u0ab9\u0aa4\u0ac1\u0a82.",
+    "full_explanation": "\u0ae7. \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac: \u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82. \u0ae8. \u0ab5\u0ac8\u0aa6\u0abf\u0a95 \u0a95\u0abe\u0ab3\u0aae\u0abe\u0a82 \u0ab6\u0abf\u0ab7\u0acd\u0aaf\u0acb \u0a85\u0aad\u0acd\u0aaf\u0abe\u0ab8 \u0aae\u0abe\u0a9f\u0ac7 \u0a97\u0ac1\u0ab0\u0ac1\u0aa8\u0abe \u0aa8\u0abf\u0ab5\u0abe\u0ab8\u0ab8\u0acd\u0aa5\u0abe\u0aa8 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a95\u0ac7 \u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82 \u0a9c\u0aa4\u0abe. \u0ae9. \u0a85\u0aa8\u0acd\u0aaf \u0a9c\u0a97\u0acd\u0aaf\u0abe\u0a93 \u0a9c\u0ac7\u0aae \u0a95\u0ac7 \u0aac\u0a9c\u0abe\u0ab0 \u0a95\u0ac7 \u0aae\u0a82\u0aa6\u0abf\u0ab0 \u0aa4\u0ac7 \u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3\u0aa8\u0ac1\u0a82 \u0aae\u0ac1\u0a96\u0acd\u0aaf \u0a95\u0ac7\u0aa8\u0acd\u0aa6\u0acd\u0ab0 \u0aa8 \u0ab9\u0aa4\u0abe. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3: \u0a9c\u0ac7\u0aae \u0a86\u0a9c\u0ac7 \u0aa4\u0aae\u0ac7 \u0a85\u0aad\u0acd\u0aaf\u0abe\u0ab8 \u0aae\u0abe\u0a9f\u0ac7 \u0ab8\u0acd\u0a95\u0ac2\u0ab2\u0aae\u0abe\u0a82 \u0a9c\u0abe\u0a93 \u0a9b\u0acb.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3\u0aa8\u0ac1\u0a82 \u0ab8\u0acd\u0aa5\u0abe\u0aa8",
+      "\u0ab5\u0abf\u0aa6\u0acd\u0aaf\u0abe\u0ab0\u0acd\u0aa5\u0ac0",
+      "\u0ab6\u0abf\u0ab7\u0acd\u0aaf",
+      "\u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3"
+    ],
+    "learning_unit_id": "b302546a-caea-42eb-9cf4-cb382669af15",
+    "learning_objective": "\u0aae\u0acc\u0a96\u0abf\u0a95 \u0a85\u0aad\u0abf\u0ab5\u0acd\u0aaf\u0a95\u0acd\u0aa4\u0abf",
+    "source_pages": [
+      3
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab6\u0ab9\u0ac7\u0ab0\u0aae\u0abe\u0a82",
+      "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82",
+      "\u0ab5\u0abf\u0aa6\u0ac7\u0ab6\u0aae\u0abe\u0a82",
+      "\u0a93\u0aa8\u0ab2\u0abe\u0a87\u0aa8"
+    ],
+    "correct_option": "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3\u0aae\u0abe\u0a82",
+    "voice_expected_keywords": [
+      "\u0a97\u0ac1\u0ab0\u0ac1\u0a95\u0ac1\u0ab3"
+    ],
+    "question_hash": "89355b3378775c346a6f21440d9d3887b1fc0b11f2171d4bf662cdba6dd2c46a",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 5.42,
+    "thinking_time": 8.33,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 81,
+    "coverage_weight": 0.5,
+    "metadata_score": 85,
+    "estimated_time": 14,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab6\u0abf\u0a95\u0acd\u0ab7\u0aa3\u0aa8\u0ac1\u0a82 \u0ab8\u0acd\u0aa5\u0abe\u0aa8 - Easy - Remember - Mcq",
+    "question_purpose": "7.4",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab8\u0abe\u0a9a\u0ac0 \u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0a95\u0a88 \u0a9b\u0ac7? : \u0a93\u0aa2\u0aa3\u0ac0, \u0a93\u0aa2\u0aa3\u0ac0, \u0a93\u0aa2\u0aa8\u0abf",
+    "question_type": "MCQ",
+    "concept": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+    "expected_answer": "\u0a93\u0aa2\u0aa3\u0ac0",
+    "acceptable_answers": [
+      "It Is \u0a93\u0aa2\u0aa3\u0ac0",
+      "\u0a93\u0aa2\u0aa3\u0ac0 is the answer",
+      "The \u0a93\u0aa2\u0aa3\u0ac0"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aaa\u0ab9\u0ac7\u0ab2\u0acb \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa \u0a9c\u0ac1\u0a93.",
+    "hint_level_2": "\u0ab6\u0aac\u0acd\u0aa6\u0aae\u0abe\u0a82 '\u0aa3\u0ac0' \u0aa6\u0ac0\u0ab0\u0acd\u0a98 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7. \u0a93\u0aa2\u0aa3\u0ac0. \u0ae8. \u0a97\u0ac1\u0a9c\u0ab0\u0abe\u0aa4\u0ac0\u0aae\u0abe\u0a82 '\u0aa3\u0ac0' \u0aa6\u0ac0\u0ab0\u0acd\u0a98 \u0ab2\u0a96\u0abe\u0aaf \u0a9b\u0ac7. \u0ae9. \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb\u0aae\u0abe\u0a82 \u0a9c\u0acb\u0aa1\u0aa3\u0ac0\u0aa8\u0ac0 \u0aad\u0ac2\u0ab2 \u0a9b\u0ac7. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0aae\u0abe\u0a8f \u0a93\u0aa2\u0aa3\u0ac0 \u0a93\u0aa2\u0ac0 \u0a9b\u0ac7.",
+    "difficulty": 1,
+    "keywords": [
+      "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+      "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0"
+    ],
+    "learning_unit_id": "2d8cbc90-da08-456e-9488-07954547a687",
+    "learning_objective": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0ab5\u0ac0",
+    "source_pages": [
+      11
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0a93\u0aa2\u0aa3\u0ac0",
+      "\u0a93\u0aa2\u0aa3\u0ac0",
+      "\u0a93\u0aa2\u0aa8\u0abf",
+      "\u0a93\u0aa7\u0aa3\u0ac0"
+    ],
+    "correct_option": "\u0a93\u0aa2\u0aa3\u0ac0",
+    "voice_expected_keywords": [
+      "\u0a93\u0aa2\u0aa3\u0ac0"
+    ],
+    "question_hash": "24c821f1db725df596a3157da503363259e0b1d51118fc635a6b2502e7a15308",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.83,
+    "thinking_time": 5.92,
+    "cluster_id": "_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 66,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 11,
+    "normalized_concept": "",
+    "cluster_name": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb - Easy - Remember - Mcq",
+    "question_purpose": "4.8",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab8\u0abe\u0a9a\u0ac0 \u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0a95\u0a88 \u0a9b\u0ac7? : \u0a95\u0acb\u0a88\u0ab2, \u0a95\u0acb\u0aaf\u0ab2, \u0a95\u0acb\u0aaf\u0ab2",
+    "question_type": "MCQ",
+    "concept": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+    "expected_answer": "\u0a95\u0acb\u0aaf\u0ab2",
+    "acceptable_answers": [
+      "\u0a95\u0acb\u0aaf\u0ab2 is the answer",
+      "The \u0a95\u0acb\u0aaf\u0ab2",
+      "It Is \u0a95\u0acb\u0aaf\u0ab2"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aac\u0ac0\u0a9c\u0acb \u0a85\u0aa5\u0ab5\u0abe \u0aa4\u0acd\u0ab0\u0ac0\u0a9c\u0acb \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa \u0ab8\u0abe\u0a9a\u0acb \u0a9b\u0ac7.",
+    "hint_level_2": "\u0a95\u0acb\u0aaf\u0ab2 \u0ab2\u0a96\u0aa4\u0ac0 \u0ab5\u0a96\u0aa4\u0ac7 '\u0aaf' \u0ab2\u0a96\u0abe\u0aaf \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7. \u0a95\u0acb\u0aaf\u0ab2. \u0ae8. \u0a86 \u0ab6\u0aac\u0acd\u0aa6\u0aae\u0abe\u0a82 '\u0aaf' \u0aa8\u0acb \u0a89\u0aaa\u0aaf\u0acb\u0a97 \u0aa5\u0abe\u0aaf \u0a9b\u0ac7. \u0ae9. '\u0a95\u0acb\u0a88\u0ab2' \u0a8f \u0a96\u0acb\u0a9f\u0ac1\u0a82 \u0ab2\u0a96\u0abe\u0aa3 \u0a9b\u0ac7. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0ab5\u0ab8\u0a82\u0aa4\u0aae\u0abe\u0a82 \u0a95\u0acb\u0aaf\u0ab2 \u0a97\u0abe\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 1,
+    "keywords": [
+      "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+      "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0"
+    ],
+    "learning_unit_id": "2d8cbc90-da08-456e-9488-07954547a687",
+    "learning_objective": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0ab5\u0ac0",
+    "source_pages": [
+      11
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0a95\u0acb\u0a88\u0ab2",
+      "\u0a95\u0acb\u0aaf\u0ab2",
+      "\u0a95\u0acb\u0aaf\u0ab2",
+      "\u0a95\u0acc\u0aaf\u0ab2"
+    ],
+    "correct_option": "\u0a95\u0acb\u0aaf\u0ab2",
+    "voice_expected_keywords": [
+      "\u0a95\u0acb\u0aaf\u0ab2"
+    ],
+    "question_hash": "bea58dc082657b08bc2517b28f78bb91236f9f4a911536ff19c0c56405034f4f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.83,
+    "thinking_time": 5.92,
+    "cluster_id": "_1_remember_mcq",
+    "session_tags": [
+      "easy",
+      "mcq",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 71,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 11,
+    "normalized_concept": "",
+    "cluster_name": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb - Easy - Remember - Mcq",
+    "question_purpose": "1.9",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0ab8\u0abe\u0a9a\u0ac0 \u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0a95\u0a88 \u0a9b\u0ac7? : \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8, \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8, \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0a85\u0aa8\u0acd\u0aa8",
+    "question_type": "MCQ",
+    "concept": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+    "expected_answer": "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8",
+    "acceptable_answers": [
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8 is the answer",
+      "It Is \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8",
+      "The \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a9c\u0acb\u0aa1\u0abe\u0aaf\u0ac7\u0ab2\u0abe \u0a85\u0a95\u0acd\u0ab7\u0ab0 \u0aaa\u0ab0 \u0aa7\u0acd\u0aaf\u0abe\u0aa8 \u0a86\u0aaa\u0acb.",
+    "hint_level_2": "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe \u0ab5\u0aa4\u0acd\u0aa4\u0abe \u0a85\u0aa8\u0acd\u0aa8 \u0a8f\u0a9f\u0ab2\u0ac7 \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8.",
+    "full_explanation": "\u0ae7. \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8. \u0ae8. \u0a86 \u0ab8\u0a82\u0aa7\u0abf \u0ab6\u0aac\u0acd\u0aa6 \u0a9b\u0ac7 \u0a9c\u0ac7\u0aae\u0abe\u0a82 '\u0aa8\u0acd\u0aa8' \u0a9c\u0acb\u0aa1\u0abe\u0aaf\u0ac7\u0ab2\u0ac1\u0a82 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7. \u0ae9. \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb\u0aae\u0abe\u0a82 \u0a85\u0a95\u0acd\u0ab7\u0ab0\u0acb\u0aa8\u0ac0 \u0aad\u0ac2\u0ab2 \u0a9b\u0ac7. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0ab8\u0abe\u0aa7\u0ac1 \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8 \u0aae\u0abe\u0a82\u0a97\u0ac7 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb",
+      "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0"
+    ],
+    "learning_unit_id": "2d8cbc90-da08-456e-9488-07954547a687",
+    "learning_objective": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0ab5\u0ac0",
+    "source_pages": [
+      11
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0a85\u0aa8\u0acd\u0aa8",
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8",
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8",
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa4"
+    ],
+    "correct_option": "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8",
+    "voice_expected_keywords": [
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe\u0aa8\u0acd\u0aa8"
+    ],
+    "question_hash": "500994efe013db9e9ef66f298069cf30f0fe3dee1b636c0d392c474b88a38a9f",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.83,
+    "thinking_time": 7.42,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 66,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0a9c\u0acb\u0aa1\u0aa3\u0ac0 \u0ab8\u0ac1\u0aa7\u0abe\u0ab0\u0acb - Easy - Remember - Mcq",
+    "question_purpose": "6.3",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0a95\u0ac3\u0ab7\u0acd\u0aa3\u0ab5\u0ab0\u0acd\u0aae\u0abe \u0aa8\u0a97\u0ab0\u0ab6\u0ac7\u0aa0\u0aa8\u0ac7 \u0a98\u0ac7\u0ab0 ..................... \u0a95\u0ab0\u0aa4\u0acb \u0aac\u0abe\u0ab0\u0aa3\u0ac7 \u0a8a\u0aad\u0acb \u0ab0\u0ab9\u0acd\u0aaf\u0acb. (\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe \u0aaa\u0ac2\u0ab0\u0acb)",
+    "question_type": "MCQ",
+    "concept": "\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe",
+    "expected_answer": "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe",
+    "acceptable_answers": [
+      "The \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe",
+      "It Is \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe",
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0aaa\u0abe\u0aa0\u0aae\u0abe\u0a82 \u0ab8\u0abe\u0aa7\u0ac1 \u0ab6\u0ac1\u0a82 \u0aae\u0abe\u0a82\u0a97\u0ac7 \u0a9b\u0ac7?",
+    "hint_level_2": "\u0ab6\u0aac\u0acd\u0aa6 '\u0aad\u0abf' \u0aa5\u0ac0 \u0ab6\u0ab0\u0ac2 \u0aa5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7. \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe. \u0ae8. \u0aa8\u0a97\u0ab0\u0ab6\u0ac7\u0aa0\u0aa8\u0ac7 \u0aa4\u0acd\u0aaf\u0abe\u0a82 \u0ab8\u0abe\u0aa7\u0ac1 \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe \u0aae\u0abe\u0a82\u0a97\u0ab5\u0abe \u0a97\u0aaf\u0abe \u0ab9\u0aa4\u0abe. \u0ae9. \u0a85\u0aa8\u0acd\u0aaf \u0ab6\u0aac\u0acd\u0aa6\u0acb \u0ab5\u0abe\u0a95\u0acd\u0aaf\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0aac\u0aa6\u0ab2\u0ac0 \u0aa8\u0abe\u0a96\u0ac7 \u0a9b\u0ac7. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0aae\u0a82\u0aa6\u0abf\u0ab0\u0ac7 \u0ab8\u0abe\u0aa7\u0ac1 \u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe \u0aae\u0abe\u0a9f\u0ac7 \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe",
+      "\u0a95\u0ac3\u0ab7\u0acd\u0aa3\u0ab5\u0ab0\u0acd\u0aae\u0abe"
+    ],
+    "learning_unit_id": "2d8cbc90-da08-456e-9488-07954547a687",
+    "learning_objective": "\u0ab5\u0abe\u0a95\u0acd\u0aaf \u0aaa\u0ac2\u0ab0\u0acd\u0aa3 \u0a95\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      11
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0abe\u0aa3\u0ac0",
+      "\u0aad\u0acb\u0a9c\u0aa8",
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe",
+      "\u0aab\u0ab3"
+    ],
+    "correct_option": "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe",
+    "voice_expected_keywords": [
+      "\u0aad\u0abf\u0a95\u0acd\u0ab7\u0abe"
+    ],
+    "question_hash": "9f3597e7c8a823b2d280bf1d9e219c03fe0bc28df011cfe7308d78b5c9b807f5",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 22.22,
+    "thinking_time": 8.33,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 63,
+    "coverage_weight": 0.5,
+    "metadata_score": 85,
+    "estimated_time": 31,
+    "normalized_concept": "",
+    "cluster_name": "\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe - Easy - Remember - Mcq",
+    "question_purpose": "5.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u0aae\u0a9f\u0acd\u0a9f\u0ac2\u0ab0 \u0a97\u0abe\u0aae\u0aa8\u0ac0 \u0ab6\u0ac7\u0ab0\u0ac0\u0a93\u0aae\u0abe\u0a82\u0aa5\u0ac0 \u0aaa\u0ab8\u0abe\u0ab0 \u0aa5\u0aa4\u0abe\u0a82 ....................\u0aa8\u0abe \u0a85\u0ab5\u0abe\u0a9c \u0ab8\u0abe\u0a82\u0aad\u0ab3\u0ab5\u0abe \u0aae\u0ab3\u0ac7 \u0a9b\u0ac7. (\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe \u0aaa\u0ac2\u0ab0\u0acb)",
+    "question_type": "MCQ",
+    "concept": "\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe",
+    "expected_answer": "\u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb",
+    "acceptable_answers": [
+      "\u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb is the answer",
+      "The \u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb",
+      "It Is \u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0a86 \u0a97\u0abe\u0aae \u0ab8\u0a82\u0ab8\u0acd\u0a95\u0ac3\u0aa4 \u0a97\u0abe\u0aae \u0aa4\u0ab0\u0ac0\u0a95\u0ac7 \u0a93\u0ab3\u0a96\u0abe\u0aaf \u0a9b\u0ac7.",
+    "hint_level_2": "\u0aaa\u0ab5\u0abf\u0aa4\u0acd\u0ab0 \u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb\u0aa8\u0acb \u0a85\u0ab5\u0abe\u0a9c \u0a86\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7. \u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb. \u0ae8. \u0aae\u0a9f\u0acd\u0a9f\u0ac2\u0ab0 \u0a97\u0abe\u0aae\u0aae\u0abe\u0a82 \u0ab8\u0a82\u0ab8\u0acd\u0a95\u0ac3\u0aa4 \u0aad\u0abe\u0ab7\u0abe \u0a85\u0aa8\u0ac7 \u0ab5\u0ac7\u0aa6\u0acb\u0aa8\u0ac1\u0a82 \u0a9c\u0acd\u0a9e\u0abe\u0aa8 \u0a9b\u0ac7. \u0ae9. \u0ab8\u0a82\u0a97\u0ac0\u0aa4 \u0a95\u0ac7 \u0ab5\u0abe\u0ab9\u0aa8\u0acb\u0aa8\u0abe \u0a85\u0ab5\u0abe\u0a9c \u0a95\u0ab0\u0aa4\u0abe\u0a82 \u0a86 \u0ab5\u0abe\u0a95\u0acd\u0aaf\u0aae\u0abe\u0a82 \u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb \u0aaf\u0acb\u0a97\u0acd\u0aaf \u0a9b\u0ac7. \u0aea. \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7: \u0ab8\u0ab5\u0abe\u0ab0\u0ac7 \u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb\u0aa8\u0abe \u0a89\u0a9a\u0acd\u0a9a\u0abe\u0ab0\u0aa3 \u0ab8\u0abe\u0a82\u0aad\u0ab3\u0ab5\u0abe \u0aae\u0ab3\u0ac7 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe",
+      "\u0aae\u0a9f\u0acd\u0a9f\u0ac2\u0ab0 \u0a97\u0abe\u0aae"
+    ],
+    "learning_unit_id": "2d8cbc90-da08-456e-9488-07954547a687",
+    "learning_objective": "\u0ab5\u0abe\u0a95\u0acd\u0aaf \u0aaa\u0ac2\u0ab0\u0acd\u0aa3 \u0a95\u0ab0\u0ab5\u0ac1\u0a82",
+    "source_pages": [
+      11
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0a95\u0acd\u0ab7\u0ac0\u0a93",
+      "\u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb",
+      "\u0ab5\u0abe\u0ab9\u0aa8\u0acb",
+      "\u0ab2\u0acb\u0a95\u0acb"
+    ],
+    "correct_option": "\u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb",
+    "voice_expected_keywords": [
+      "\u0ab5\u0ac7\u0aa6\u0aae\u0a82\u0aa4\u0acd\u0ab0\u0acb"
+    ],
+    "question_hash": "b89950d61c5b1edac5b76e37171987b29e4d7f14a2b923e1d08264a8e632dc2b",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 22.8,
+    "thinking_time": 9.24,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 62,
+    "coverage_weight": 0.5,
+    "metadata_score": 85,
+    "estimated_time": 33,
+    "normalized_concept": "",
+    "cluster_name": "\u0a96\u0abe\u0ab2\u0ac0 \u0a9c\u0a97\u0acd\u0aaf\u0abe - Easy - Remember - Mcq",
+    "question_purpose": "8.7",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0a95\u0ab0\u0abe\u0a97\u0acd\u0ab0\u0ac7 \u0ab5\u0ab8\u0aa4\u0ac7 \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0:\u2019 \u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aae\u0abe\u0a82 \u0a95\u0ab0\u0aa8\u0abe \u0a85\u0a97\u0acd\u0ab0\u0aad\u0abe\u0a97\u0aae\u0abe\u0a82 \u0a95\u0acb\u0aa8\u0acb \u0ab5\u0abe\u0ab8 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0",
+    "expected_answer": "\u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0",
+    "acceptable_answers": [
+      "\u0aae\u0abe\u0aa4\u0abe \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0",
+      "It Is \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0",
+      "The \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0",
+      "\u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0 is the answer"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aa8\u0ac0 \u0aaa\u0acd\u0ab0\u0aa5\u0aae \u0aaa\u0a82\u0a95\u0acd\u0aa4\u0abf \u0aa7\u0acd\u0aaf\u0abe\u0aa8\u0aa5\u0ac0 \u0ab5\u0abe\u0a82\u0a9a\u0acb.",
+    "hint_level_2": "\u0a95\u0ab0\u0aa8\u0abe \u0a85\u0a97\u0acd\u0ab0\u0aad\u0abe\u0a97\u0aae\u0abe\u0a82 \u0a8f\u0a9f\u0ab2\u0ac7 \u0a95\u0ac7 \u0ab9\u0abe\u0aa5\u0aa8\u0abe \u0a9f\u0ac7\u0ab0\u0ab5\u0ac7 \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0\u0a9c\u0ac0\u0aa8\u0acb \u0ab5\u0abe\u0ab8 \u0a9b\u0ac7.",
+    "full_explanation": "\u0ae7) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0 \u0a9b\u0ac7. \u0ae8) \u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aa8\u0ac0 \u0aaa\u0acd\u0ab0\u0aa5\u0aae \u0aaa\u0a82\u0a95\u0acd\u0aa4\u0abf '\u0a95\u0ab0\u0abe\u0a97\u0acd\u0ab0\u0ac7 \u0ab5\u0ab8\u0aa4\u0ac7 \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0:' \u0aae\u0abe\u0a82 \u0ab8\u0acd\u0aaa\u0ab7\u0acd\u0a9f \u0a89\u0ab2\u0acd\u0ab2\u0ac7\u0a96 \u0a9b\u0ac7 \u0a95\u0ac7 \u0ab9\u0abe\u0aa5\u0aa8\u0abe \u0a86\u0a97\u0ab3\u0aa8\u0abe \u0aad\u0abe\u0a97\u0aae\u0abe\u0a82 \u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0\u0a9c\u0ac0\u0aa8\u0acb \u0ab5\u0abe\u0ab8 \u0a9b\u0ac7. \u0ae9) \u0ab8\u0ab0\u0ab8\u0acd\u0ab5\u0aa4\u0ac0 \u0a95\u0ac7 \u0a97\u0acb\u0ab5\u0abf\u0a82\u0aa6 \u0a85\u0ab9\u0ac0\u0a82 \u0aaf\u0acb\u0a97\u0acd\u0aaf \u0aa8\u0aa5\u0ac0 \u0a95\u0abe\u0ab0\u0aa3 \u0a95\u0ac7 \u0aa4\u0ac7\u0a93 \u0ab9\u0abe\u0aa5\u0aa8\u0abe \u0aae\u0aa7\u0acd\u0aaf \u0a85\u0aa8\u0ac7 \u0aae\u0ac2\u0ab3\u0aae\u0abe\u0a82 \u0a9b\u0ac7. \u0aea) \u0ab0\u0acb\u0a9c \u0ab8\u0ab5\u0abe\u0ab0\u0ac7 \u0a89\u0aa0\u0ac0\u0aa8\u0ac7 \u0ab9\u0abe\u0aa5 \u0a9c\u0acb\u0ab5\u0abe\u0aa8\u0ac0 \u0aad\u0abe\u0ab0\u0aa4\u0ac0\u0aaf \u0aaa\u0ab0\u0a82\u0aaa\u0ab0\u0abe\u0aae\u0abe\u0a82 \u0a86 \u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aac\u0acb\u0ab2\u0abe\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0",
+      "\u0a95\u0ab0\u0abe\u0a97\u0acd\u0ab0\u0ac7"
+    ],
+    "learning_unit_id": "f01a2f1c-e996-4ea4-8d52-a60cc357109d",
+    "learning_objective": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0aa0\u0aa8",
+    "source_pages": [
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0ab8\u0ab0\u0ab8\u0acd\u0ab5\u0aa4\u0ac0",
+      "\u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0",
+      "\u0a97\u0acb\u0ab5\u0abf\u0a82\u0aa6",
+      "\u0aac\u0acd\u0ab0\u0ab9\u0acd\u0aae\u0abe"
+    ],
+    "correct_option": "\u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0",
+    "voice_expected_keywords": [
+      "\u0ab2\u0a95\u0acd\u0ab7\u0acd\u0aae\u0ac0"
+    ],
+    "question_hash": "7ac439124f810d12c01f8002cce2b31509c5e3bf95a59575e021c63a543c20e0",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.95,
+    "thinking_time": 8.03,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0 - Easy - Remember - Mcq",
+    "question_purpose": "10.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7 \u0aa4\u0ac1 \u0a97\u0acb\u0ab5\u0abf\u0aa8\u0acd\u0aa6:\u2019 \u0a86 \u0aaa\u0a82\u0a95\u0acd\u0aa4\u0abf\u0aae\u0abe\u0a82 \u0a97\u0acb\u0ab5\u0abf\u0a82\u0aa6 \u0a95\u0acd\u0aaf\u0abe\u0a82 \u0ab5\u0ab8\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0",
+    "expected_answer": "\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7",
+    "acceptable_answers": [
+      "\u0ab9\u0abe\u0aa5\u0aa8\u0abe \u0aae\u0ac2\u0ab3\u0aae\u0abe\u0a82",
+      "\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7 is the answer",
+      "The \u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7",
+      "It Is \u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0aaf\u0abe\u0aa6 \u0a95\u0ab0\u0acb: \u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7 \u0a8f\u0a9f\u0ab2\u0ac7 \u0ab6\u0ac1\u0a82?",
+    "hint_level_2": "\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7 \u0a8f\u0a9f\u0ab2\u0ac7 \u0ab9\u0abe\u0aa5\u0aa8\u0abe \u0aae\u0ac2\u0ab3 \u0aad\u0abe\u0a97\u0aae\u0abe\u0a82.",
+    "full_explanation": "\u0ae7) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac \u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7 \u0a9b\u0ac7. \u0ae8) \u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aae\u0abe\u0a82 '\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7 \u0aa4\u0ac1 \u0a97\u0acb\u0ab5\u0abf\u0aa8\u0acd\u0aa6:' \u0ab8\u0acd\u0aaa\u0ab7\u0acd\u0a9f \u0a95\u0ab9\u0ac7\u0ab5\u0abe\u0aaf\u0ac1\u0a82 \u0a9b\u0ac7. \u0ae9) \u0a95\u0ab0\u0abe\u0a97\u0acd\u0ab0\u0ac7 \u0a95\u0ac7 \u0a95\u0ab0\u0aae\u0aa7\u0acd\u0aaf\u0ac7 \u0a96\u0acb\u0a9f\u0abe \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0a9b\u0ac7 \u0a95\u0abe\u0ab0\u0aa3 \u0a95\u0ac7 \u0aa4\u0acd\u0aaf\u0abe\u0a82 \u0a85\u0aa8\u0acd\u0aaf \u0aa6\u0ac7\u0ab5\u0ac0\u0a93\u0aa8\u0acb \u0ab5\u0abe\u0ab8 \u0a9b\u0ac7. \u0aea) \u0a89\u0aa6\u0abe\u0ab9\u0ab0\u0aa3 \u0aa4\u0ab0\u0ac0\u0a95\u0ac7, \u0a9c\u0ac7\u0aae \u0a86\u0aaa\u0aa3\u0ac7 \u0aad\u0a97\u0ab5\u0abe\u0aa8\u0aa8\u0abe \u0a9a\u0ab0\u0aa3\u0acb\u0aae\u0abe\u0a82 \u0aa8\u0aae\u0aa8 \u0a95\u0ab0\u0ac0\u0a8f, \u0aa4\u0ac7\u0aae \u0a86 \u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0ab9\u0abe\u0aa5\u0aa8\u0abe \u0aae\u0ac2\u0ab3\u0aae\u0abe\u0a82 \u0aad\u0a97\u0ab5\u0abe\u0aa8\u0aa8\u0ac0 \u0a85\u0aa8\u0ac1\u0aad\u0ac2\u0aa4\u0abf \u0a95\u0ab0\u0abe\u0ab5\u0ac7 \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0",
+      "\u0a97\u0acb\u0ab5\u0abf\u0aa8\u0acd\u0aa6"
+    ],
+    "learning_unit_id": "f01a2f1c-e996-4ea4-8d52-a60cc357109d",
+    "learning_objective": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0aa0\u0aa8",
+    "source_pages": [
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7",
+      "\u0a95\u0ab0\u0abe\u0a97\u0acd\u0ab0\u0ac7",
+      "\u0a95\u0ab0\u0aae\u0aa7\u0acd\u0aaf\u0ac7",
+      "\u0a95\u0a82\u0aa0\u0aae\u0abe\u0a82"
+    ],
+    "correct_option": "\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7",
+    "voice_expected_keywords": [
+      "\u0a95\u0ab0\u0aae\u0ac2\u0ab2\u0ac7"
+    ],
+    "question_hash": "bb212b3c9d0a64807923bc73a8dd7e6d1cef9bd910359caaea9d88c15a09bcd8",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.95,
+    "thinking_time": 8.03,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.333,
+    "metadata_score": 85,
+    "estimated_time": 13,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0 - Easy - Remember - Mcq",
+    "question_purpose": "10.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  },
+  {
+    "question": "\u2018\u0aa6\u0ac0\u0aaa\u0a9c\u0acd\u0aaf\u0acb\u0aa4\u0abf: \u0aaa\u0ab0\u0aac\u0acd\u0ab0\u0ab9\u0acd\u0aae\u2019 \u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aae\u0abe\u0a82 \u0aa6\u0ac0\u0ab5\u0acb \u0ab6\u0ac1\u0a82 \u0ab9\u0ab0\u0ac7 \u0a9b\u0ac7?",
+    "question_type": "MCQ",
+    "concept": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0",
+    "expected_answer": "\u0aaa\u0abe\u0aaa",
+    "acceptable_answers": [
+      "\u0aae\u0abe\u0ab0\u0abe \u0aaa\u0abe\u0aaa",
+      "The \u0aaa\u0abe\u0aaa",
+      "\u0aaa\u0abe\u0aaa is the answer",
+      "It Is \u0aaa\u0abe\u0aaa"
+    ],
+    "evaluation_method": "MCQ",
+    "hint_level_1": "\u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aa8\u0ac0 \u0aac\u0ac0\u0a9c\u0ac0 \u0aaa\u0a82\u0a95\u0acd\u0aa4\u0abf \u0a9c\u0ac1\u0a93.",
+    "hint_level_2": "\u2018\u0aa6\u0ac0\u0aaa\u0acb \u0ab9\u0ab0\u0aa4\u0ac1 \u0aae\u0ac7 \u0aaa\u0abe\u0aaa\u0aae\u2019 \u0aa8\u0acb \u0a85\u0ab0\u0acd\u0aa5 \u0ab6\u0ac1\u0a82 \u0aa5\u0abe\u0aaf?",
+    "full_explanation": "\u0ae7) \u0ab8\u0abe\u0a9a\u0acb \u0a9c\u0ab5\u0abe\u0aac \u0aaa\u0abe\u0aaa \u0a9b\u0ac7. \u0ae8) \u0ab6\u0acd\u0ab2\u0acb\u0a95\u0aae\u0abe\u0a82 \u0ab8\u0acd\u0aaa\u0ab7\u0acd\u0a9f \u0ab2\u0a96\u0acd\u0aaf\u0ac1\u0a82 \u0a9b\u0ac7 \u0a95\u0ac7 \u0aa6\u0ac0\u0ab5\u0acb \u0aae\u0abe\u0ab0\u0abe \u0aaa\u0abe\u0aaa\u0aa8\u0ac7 \u0ab9\u0ab0\u0ac7 \u0a9b\u0ac7. \u0ae9) \u0a85\u0aa8\u0acd\u0aaf \u0ab5\u0abf\u0a95\u0ab2\u0acd\u0aaa\u0acb \u0a9c\u0ac7\u0aae \u0a95\u0ac7 \u0a85\u0a9c\u0acd\u0a9e\u0abe\u0aa8 \u0a95\u0ac7 \u0aad\u0aaf \u0a85\u0ab9\u0ac0\u0a82 \u0aaa\u0abe\u0aa0\u0aae\u0abe\u0a82 \u0aa8\u0aa5\u0ac0. \u0aea) \u0a9c\u0ac7\u0ab5\u0ac0 \u0ab0\u0ac0\u0aa4\u0ac7 \u0aa6\u0ac0\u0ab5\u0acb \u0a85\u0a82\u0aa7\u0a95\u0abe\u0ab0 \u0aa6\u0ac2\u0ab0 \u0a95\u0ab0\u0ac7 \u0a9b\u0ac7, \u0aa4\u0ac7\u0aae \u0aae\u0aa8\u0aa8\u0acb \u0aae\u0ac7\u0ab2 \u0aaa\u0aa3 \u0aa6\u0ac2\u0ab0 \u0aa5\u0abe\u0aaf \u0a9b\u0ac7.",
+    "difficulty": 2,
+    "keywords": [
+      "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0",
+      "\u0aa6\u0ac0\u0aaa\u0a9c\u0acd\u0aaf\u0acb\u0aa4\u0abf"
+    ],
+    "learning_unit_id": "f01a2f1c-e996-4ea4-8d52-a60cc357109d",
+    "learning_objective": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0aa0\u0aa8",
+    "source_pages": [
+      5
+    ],
+    "estimated_answer_time": 5,
+    "supported_answer_modes": [
+      "MCQ"
+    ],
+    "answer_complexity": "WORD",
+    "mcq_options": [
+      "\u0aaa\u0ac1\u0aa3\u0acd\u0aaf",
+      "\u0aaa\u0abe\u0aaa",
+      "\u0a85\u0a82\u0aa7\u0a95\u0abe\u0ab0",
+      "\u0aa7\u0aa8"
+    ],
+    "correct_option": "\u0aaa\u0abe\u0aaa",
+    "voice_expected_keywords": [
+      "\u0aaa\u0abe\u0aaa"
+    ],
+    "question_hash": "3d31f88fd6396be8d2754d2f856ce54f3dc3e64b10e1d8e2a67f5c0e98b8f414",
+    "bloom_level": "REMEMBER",
+    "cognitive_level": "RECOGNITION",
+    "intent": "MCQ",
+    "voice_score": 95,
+    "speaking_time": 4.03,
+    "thinking_time": 7.42,
+    "cluster_id": "_2_remember_mcq",
+    "session_tags": [
+      "mcq",
+      "medium",
+      "remember",
+      "voice_friendly",
+      "STATUS: Rejected"
+    ],
+    "production_score": 74,
+    "coverage_weight": 0.334,
+    "metadata_score": 85,
+    "estimated_time": 12,
+    "normalized_concept": "",
+    "cluster_name": "\u0ab6\u0acd\u0ab2\u0acb\u0a95 \u0aaa\u0abe\u0aa0 - Easy - Remember - Mcq",
+    "question_purpose": "5.5",
+    "progression_level": 1,
+    "prerequisite_concepts": [],
+    "misconception_tags": []
+  }
+]
