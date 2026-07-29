@@ -146,49 +146,72 @@ class StudentService:
                 "recent_sessions": recent_sessions
             }
             
+            
     def set_daily_learning(self, student_id: uuid.UUID, learning_date: Any, topic_ids: list[uuid.UUID], source: str) -> None:
         from app.models.learning.student_daily_learning import StudentDailyLearning
         from app.models.course import Topic, Chapter
-        from collections import defaultdict
         
         with self.uow:
-            # Group topic_ids by subject_id
-            topics = self.uow.session.query(Topic, Chapter.subject_id).join(
-                Chapter, Chapter.id == Topic.chapter_id
-            ).filter(Topic.id.in_(topic_ids)).all()
+            # 1. Delete ALL PENDING entries for this student that are NOT in the newly selected topic_ids
+            # This handles unselecting a topic (both for today or previous dates)
+            pending_query = self.uow.session.query(StudentDailyLearning).filter(
+                StudentDailyLearning.student_id == student_id,
+                StudentDailyLearning.status == "PENDING"
+            )
+            if topic_ids:
+                pending_query = pending_query.filter(~StudentDailyLearning.topic_id.in_(topic_ids))
             
-            subject_topics = defaultdict(list)
-            for t, subject_id in topics:
-                subject_topics[subject_id].append(t.id)
+            pending_query.delete(synchronize_session='fetch')
+            
+            # 2. Delete any existing entries for today for the subjects of the newly selected topics
+            # so we can insert the new active selections cleanly
+            if topic_ids:
+                subjects_query = self.uow.session.query(Chapter.subject_id).join(
+                    Topic, Topic.chapter_id == Chapter.id
+                ).filter(Topic.id.in_(topic_ids)).distinct()
+                subject_ids = [row[0] for row in subjects_query.all()]
                 
-            # For each subject, delete existing entries for this date and insert new ones
-            for subject_id, t_ids in subject_topics.items():
-                ids_to_delete = self.uow.session.query(StudentDailyLearning.id).join(
-                    Topic, Topic.id == StudentDailyLearning.topic_id
-                ).join(
-                    Chapter, Chapter.id == Topic.chapter_id
-                ).filter(
-                    StudentDailyLearning.student_id == student_id,
-                    StudentDailyLearning.learning_date == learning_date,
-                    Chapter.subject_id == subject_id
-                ).all()
-                
-                id_list = [row[0] for row in ids_to_delete]
-                if id_list:
-                    self.uow.session.query(StudentDailyLearning).filter(
-                        StudentDailyLearning.id.in_(id_list)
-                    ).delete(synchronize_session='fetch')
-                
-                for topic_id in t_ids:
-                    daily_learning = StudentDailyLearning(
-                        student_id=student_id,
-                        topic_id=topic_id,
-                        learning_date=learning_date,
-                        source=source,
-                        status="PENDING"
-                    )
-                    self.uow.session.add(daily_learning)
+                if subject_ids:
+                    ids_to_delete = self.uow.session.query(StudentDailyLearning.id).join(
+                        Topic, Topic.id == StudentDailyLearning.topic_id
+                    ).join(
+                        Chapter, Chapter.id == Topic.chapter_id
+                    ).filter(
+                        StudentDailyLearning.student_id == student_id,
+                        StudentDailyLearning.learning_date == learning_date,
+                        Chapter.subject_id.in_(subject_ids)
+                    ).all()
                     
+                    id_list = [row[0] for row in ids_to_delete]
+                    if id_list:
+                        self.uow.session.query(StudentDailyLearning).filter(
+                            StudentDailyLearning.id.in_(id_list)
+                        ).delete(synchronize_session='fetch')
+
+                # 3. Add the selected topics for today if they are not already present
+                for topic_id in topic_ids:
+                    exists = self.uow.session.query(StudentDailyLearning).filter(
+                        StudentDailyLearning.student_id == student_id,
+                        StudentDailyLearning.topic_id == topic_id,
+                        StudentDailyLearning.learning_date == learning_date
+                    ).first()
+                    
+                    if not exists:
+                        daily_learning = StudentDailyLearning(
+                            student_id=student_id,
+                            topic_id=topic_id,
+                            learning_date=learning_date,
+                            source=source,
+                            status="PENDING"
+                        )
+                        self.uow.session.add(daily_learning)
+            else:
+                # If topic_ids is empty, delete any remaining entries for today.
+                self.uow.session.query(StudentDailyLearning).filter(
+                    StudentDailyLearning.student_id == student_id,
+                    StudentDailyLearning.learning_date == learning_date
+                ).delete(synchronize_session='fetch')
+                
             self.uow.commit()
 
     def check_daily_status(self, student_id: uuid.UUID) -> Dict[str, Any]:
