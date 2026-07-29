@@ -34,6 +34,7 @@ class DailyPracticeProvider(RecommendationProvider):
         # Group by subject and check daily status
         completed_today_subjects = set()
         pending_today_topics = defaultdict(list)
+        past_pending_topics = defaultdict(list)
         past_completed_topics = defaultdict(list)
         
         for dl, subject_name in all_learnings:
@@ -43,15 +44,16 @@ class DailyPracticeProvider(RecommendationProvider):
                 elif dl.status == "PENDING":
                     pending_today_topics[subject_name].append(str(dl.topic_id))
             else:
-                # Past topics: only use completed ones as fallback
-                if dl.status == "COMPLETED":
+                if dl.status == "PENDING":
+                    past_pending_topics[subject_name].append(str(dl.topic_id))
+                elif dl.status == "COMPLETED":
                     past_completed_topics[subject_name].append(str(dl.topic_id))
                     
         recs = []
         
         # We can recommend daily practice for any subject that has active pending topics today,
-        # OR has no selections today but has past completed topics.
-        all_subjects = set(pending_today_topics.keys()) | set(past_completed_topics.keys())
+        # OR has past pending/completed topics.
+        all_subjects = set(pending_today_topics.keys()) | set(past_pending_topics.keys()) | set(past_completed_topics.keys())
         
         for subject_name in all_subjects:
             # Rule 1: If any daily session for this subject is finished today, skip it
@@ -59,9 +61,12 @@ class DailyPracticeProvider(RecommendationProvider):
                 continue
                 
             # Rule 2: If there are active pending topics today, use them.
-            # Otherwise, fall back to past completed check-in topics.
             if subject_name in pending_today_topics:
                 topic_ids = pending_today_topics[subject_name]
+            # Priority 1 fallback: Past check-ins but not completed
+            elif subject_name in past_pending_topics:
+                topic_ids = past_pending_topics[subject_name]
+            # Priority 2 fallback: All past check-in topics
             else:
                 topic_ids = past_completed_topics[subject_name]
                 
