@@ -21,5 +21,11 @@ class StudentContext:
     # Question ID -> number of times attempted
     question_attempts: Dict[uuid.UUID, int] = field(default_factory=dict)
     
+    # Concept String -> is_correct boolean (whether student has correctly answered any variation of this concept)
+    correct_concepts: Dict[str, bool] = field(default_factory=dict)
+    
+    # Concept String -> number of times attempted across any variation
+    concept_attempts: Dict[str, int] = field(default_factory=dict)
+    
     # LU ID -> List of recent responses to determine if they frequently fail this LU
     recent_incorrect_by_lu: Dict[uuid.UUID, int] = field(default_factory=dict)

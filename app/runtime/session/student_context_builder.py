@@ -43,6 +43,16 @@ class StudentContextBuilder:
             )
             response_records = self.uow.session.execute(response_stmt).scalars().all()
             
+            # Pre-load question concept mapping to avoid N+1 queries
+            q_ids = list({r.question_id for r in response_records})
+            q_concept_map = {}
+            if q_ids:
+                from app.models.quiz import Question
+                qs = self.uow.session.execute(
+                    select(Question.id, Question.normalized_concept).where(Question.id.in_(q_ids))
+                ).all()
+                q_concept_map = {q[0]: q[1] for q in qs if q[1]}
+
             for r in response_records:
                 q_id = r.question_id
                 # Track attempts
@@ -52,7 +62,11 @@ class StudentContextBuilder:
                 if r.is_correct:
                     context.correct_questions[q_id] = True
                     
-                # Track recent incorrect by LU (assuming we have LU info, wait - we need LU on response or we map from question)
-                # For Phase 1, we will just track question correctness. The QuestionVariantSelector handles the rest.
+                # Track concept-level history
+                concept = q_concept_map.get(q_id)
+                if concept:
+                    context.concept_attempts[concept] = context.concept_attempts.get(concept, 0) + 1
+                    if r.is_correct:
+                        context.correct_concepts[concept] = True
 
         return context

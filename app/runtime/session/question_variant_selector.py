@@ -42,6 +42,11 @@ class QuestionVariantSelector:
             attempts = context.question_attempts.get(q_id, 0)
             is_correct = context.correct_questions.get(q_id, False)
             
+            # Check concept-level correctness
+            concept = getattr(q, "normalized_concept", None)
+            concept_correct = context.correct_concepts.get(concept, False) if concept else False
+            concept_attempts = context.concept_attempts.get(concept, 0) if concept else 0
+            
             reasons = []
             score = 0.0
             
@@ -57,17 +62,20 @@ class QuestionVariantSelector:
             elif bloom_val in ["EVALUATE", "EVALUATION"]: bloom_val = "EVALUATION"
             elif bloom_val in ["CREATE", "CREATION"]: bloom_val = "CREATION"
 
-            if is_correct and session_type != SessionType.REVISION:
+            # If the student answered ANY variant of this concept correctly, exhaust it (unless revision)
+            if (is_correct or concept_correct) and session_type != SessionType.REVISION:
                 score = -1000.0
                 reasons.append("exhausted_variant")
-            elif attempts == 0:
+            elif attempts == 0 and concept_attempts == 0:
                 score = 100.0
                 reasons.append("unseen_variant")
-            elif is_correct and session_type == SessionType.REVISION:
+            elif (is_correct or concept_correct) and session_type == SessionType.REVISION:
                 score = 10.0
                 reasons.append("correct_variant")
             else:
-                score = 50.0 - attempts
+                # Use total attempts on this concept to decay priority
+                actual_attempts = max(attempts, concept_attempts)
+                score = 50.0 - actual_attempts
                 reasons.append("incorrect_variant")
                 
             # Seeded Randomization for tie-breaking
