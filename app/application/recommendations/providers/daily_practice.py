@@ -81,19 +81,11 @@ class DailyPracticeProvider(RecommendationProvider):
                     unique_topic_ids.append(tid)
                     seen.add(tid)
             
-            total_lus = self.uow.session.query(func.count(LearningUnit.id))\
-                .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id)\
-                .filter(Subtopic.topic_id.in_(unique_topic_ids)).scalar() or 0
-            
-            if total_lus == 0:
-                continue
-                
-            # Target 10-15 questions
-            q_count = min(15, total_lus)
-            if q_count < 10 and total_lus >= 10:
+            # Target 10 questions per unique topic
+            q_count = len(unique_topic_ids) * 10
+            # Ensure it fits minimum boundaries
+            if q_count < 10:
                 q_count = 10
-            elif q_count < 3:
-                q_count = 3
                 
             xp = q_count * 5 + 20 + 15
             

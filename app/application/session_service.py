@@ -343,7 +343,7 @@ class SessionApplicationService:
                     if topic_obj:
                         subject_id = topic_obj.chapter.subject_id
                         
-                        # Find all pending check-ins of this subject for this student and mark them COMPLETED
+                        # Find all pending check-ins of this subject for this student
                         pending_checkins = self.uow.session.query(StudentDailyLearning).join(
                             Topic, Topic.id == StudentDailyLearning.topic_id
                         ).join(
@@ -354,8 +354,39 @@ class SessionApplicationService:
                             StudentDailyLearning.status == "PENDING"
                         ).all()
                         
+                        from app.models.course import LearningUnit, Subtopic
+                        from app.models.learning.student_mastery import StudentMastery
+                        
                         for dl in pending_checkins:
-                            dl.status = "COMPLETED"
+                            # Fetch all LUs in this topic
+                            topic_lus = self.uow.session.query(LearningUnit.id).join(
+                                Subtopic, Subtopic.id == LearningUnit.subtopic_id
+                            ).filter(Subtopic.topic_id == dl.topic_id).all()
+                            
+                            lu_ids = [lu[0] for lu in topic_lus]
+                            if not lu_ids:
+                                dl.status = "COMPLETED" # No units to learn, complete by default
+                                continue
+                                
+                            # Fetch mastery records for these LUs
+                            mastery_records = self.uow.session.query(StudentMastery).filter(
+                                StudentMastery.student_id == student_id,
+                                StudentMastery.concept_id.in_(lu_ids)
+                            ).all()
+                            
+                            # Build mapped percentage map
+                            mastery_map = {m.concept_id: m.mastery_percentage for m in mastery_records}
+                            
+                            # Verify if all units are at 100% (1.0) mastery
+                            all_mastered = True
+                            for lu_id in lu_ids:
+                                pct = float(mastery_map.get(lu_id, 0.0))
+                                if pct < 1.0:
+                                    all_mastered = False
+                                    break
+                                    
+                            if all_mastered:
+                                dl.status = "COMPLETED"
 
                 # session_duration_seconds: actual wall-clock time of the session
                 if session.start_time:
