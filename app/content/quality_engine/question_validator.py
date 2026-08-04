@@ -53,13 +53,6 @@ class QuestionValidator:
             issues.append(ValidationIssue("NO_ACCEPTABLE_ANSWERS", ValidationSeverity.CRITICAL, "No acceptable answers provided."))
             is_valid = False
         else:
-            min_required = 1 if q_type == "MCQ" else 2
-            if len(acc_answers) < min_required:
-                issues.append(ValidationIssue("FEW_ANSWERS", ValidationSeverity.CRITICAL, f"Minimum {min_required} acceptable answers required."))
-                is_valid = False
-            elif len(acc_answers) < 5 and q_type != "MCQ":
-                issues.append(ValidationIssue("FEW_ANSWERS_RECOMMENDATION", ValidationSeverity.INFO, "Recommend 5-10 acceptable answers for voice friendliness."))
-                
             norm_acc_ans = [a.strip().lower() for a in acc_answers]
             if len(norm_acc_ans) != len(set(norm_acc_ans)):
                 issues.append(ValidationIssue("DUPLICATE_ANSWERS", ValidationSeverity.CRITICAL, "Duplicate acceptable answers detected."))
@@ -67,7 +60,7 @@ class QuestionValidator:
             if expected_ans.strip().lower() not in norm_acc_ans:
                 issues.append(ValidationIssue("MISSING_EXPECTED", ValidationSeverity.CRITICAL, "Expected answer not found in acceptable answers."))
                 is_valid = False
-                
+
         # Length check
         wc = len(q_text.split())
         if wc > self.config.max_question_words:

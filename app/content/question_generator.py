@@ -308,6 +308,7 @@ class QuestionGenerationService:
     ) -> Dict[str, Any]:
         start_time = time.time()
         system_prompt = self.prompt_builder.build("question_generator.md")
+        
         if subject.lower() in ("hindi", "gujarati"):
             lang_name = "Hindi" if subject.lower() == "hindi" else "Gujarati"
             system_prompt += (
@@ -317,10 +318,28 @@ class QuestionGenerationService:
                 "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
                 f"For {lang_name}, you MUST generate three types of questions to provide a comprehensive pool of at least 8-12 questions per Learning Unit:\n"
                 "1. Exact textbook exercise questions: Generate questions using the exact sentences, terms, and options from the textbook exercises verbatim (do not alter them).\n"
-                "2. Parallel practice questions: Generate new, simple practice questions testing the same grammatical concepts (like noun types, case markers) or vocabulary terms using other simple, direct sentences and words from the story text. For example, if the textbook has a question about cases (कारक) for 'सलीम अली ने जीवनी लिखी', you should generate parallel practice questions for other story sentences like 'मामा ने भांजे को गन खरीद कर दी' (asking to identify the कर्ता/कर्म/करण कारक).\n"
-                "3. Simple Story Recall (Reading Comprehension): For units covering the story text, generate simple, direct recall questions about the main events, characters, and settings (e.g., 'मामा ने भांजे को क्या सिखाया?', 'मटूर गांव किस नदी के किनारे स्थित है?'). All story recall questions MUST be simple, direct factual recall of the text, and must not use complex grammar, figures of speech, or abstract analysis. Keep them very simple and accessible for Grade 6 students.\n"
+                "2. Parallel practice questions: Generate new, simple practice questions testing the same grammatical concepts (like noun types, case markers) or vocabulary terms using other simple, direct sentences and words from the story text.\n"
+                "3. Simple Story Recall (Reading Comprehension): For units covering the story text, generate simple, direct recall questions about the main events, characters, and settings. All story recall questions MUST be simple, direct factual recall of the text, and must not use complex grammar, figures of speech, or abstract analysis. Keep them very simple and accessible for Grade 6 students.\n"
                 "To ensure a deep learning pool, generate at least 5-7 parallel practice variations or simple story recall questions for every concept. Ensure all answers are verified, accurate, and proper for Grade 6.\n"
                 "Aim to generate a total pool of at least 50 questions for this chapter."
+            )
+        elif subject.lower() == "english":
+            system_prompt += (
+                "\n\n--- ENGLISH COMPREHENSIVE GENERATION RULE ---\n"
+                "IMPORTANT: Since this is an English chapter, you MUST generate a comprehensive mix of different question types "
+                "covering the ENTIRE chapter content — story comprehension, grammar, vocabulary, idioms, and language exercises.\n"
+                "Generate ALL of the following question types for each Learning Unit:\n"
+                "1. Story Comprehension (RECALL / UNDERSTANDING): Simple, direct factual recall about characters, events, and settings from the story. "
+                "   e.g., 'Who is Tom's aunt?', 'Why did Tom dislike Monday mornings?'\n"
+                "2. Vocabulary / Word Meaning (MCQ or FILL_BLANK): Questions about word meanings, synonyms, antonyms from the chapter glossary.\n"
+                "3. Idiom Questions (MCQ): Questions asking students to identify the meaning of idioms used in the chapter.\n"
+                "4. Grammar Questions (MCQ / APPLICATION): Questions based on grammar exercises at the end of the chapter "
+                "   (e.g., noun types, pronoun usage, countable/uncountable nouns).\n"
+                "5. Parallel Practice (MCQ): For every grammar concept, generate 3-4 additional MCQ practice questions using new simple sentences. "
+                "   This ensures broad coverage and a large question pool.\n"
+                "You MUST include 'mcq_options' (exactly 4 options) and 'correct_option' for every MCQ question.\n"
+                "Generate at least 8-12 questions per Learning Unit to ensure full chapter coverage.\n"
+                "Aim to generate a total pool of at least 50 questions for the chapter."
             )
         
         all_validated = []

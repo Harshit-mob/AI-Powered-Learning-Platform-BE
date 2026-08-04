@@ -65,6 +65,7 @@ class AuthService:
             
             return {
                 "student_id": student.id,
+                "name": student.name,
                 "access_token": access_token,
                 "refresh_token": refresh_token
             }

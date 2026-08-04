@@ -30,3 +30,4 @@ class Student(Base):
 
     mastery_records = relationship("StudentMastery", back_populates="student", cascade="all, delete-orphan")
     sessions = relationship("LearningSession", back_populates="student", cascade="all, delete-orphan")
+    device_tokens = relationship("StudentDeviceToken", back_populates="student", cascade="all, delete-orphan")

@@ -20,3 +20,6 @@ class SocialLoginRequest(CamelBaseModel):
 
 class RefreshTokenRequest(CamelBaseModel):
     refresh_token: str
+
+class LogoutRequest(CamelBaseModel):
+    device_id: Optional[str] = None  # If provided, only deactivate that device's token

@@ -11,6 +11,7 @@ from app.repositories.learning.mastery_repository import MasteryRepository
 from app.repositories.assessment.session_repository import SessionRepository
 from app.repositories.assessment.response_repository import ResponseRepository
 from app.repositories.content.question_repository import QuestionRepository
+from app.repositories.core.device_token_repository import DeviceTokenRepository
 
 class UnitOfWork:
     def __init__(self, session_factory=SessionLocal):
@@ -25,6 +26,7 @@ class UnitOfWork:
         self.sessions = SessionRepository(self.session)
         self.responses = ResponseRepository(self.session)
         self.questions = QuestionRepository(self.session)
+        self.device_tokens = DeviceTokenRepository(self.session)
 
         return self
 

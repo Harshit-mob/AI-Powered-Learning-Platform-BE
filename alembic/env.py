@@ -25,6 +25,7 @@ from app.database.session import Base
 
 # Import all models here so Alembic can discover them
 from app.models.core.student import Student
+from app.models.core.device_token import StudentDeviceToken
 from app.models.course import Topic, Chapter, LearningUnit
 from app.models.learning.student_mastery import StudentMastery
 from app.models.learning.student_daily_learning import StudentDailyLearning
