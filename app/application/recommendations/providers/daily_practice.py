@@ -27,21 +27,33 @@ class DailyPracticeProvider(RecommendationProvider):
         ).order_by(
             StudentDailyLearning.learning_date.desc()
         ).all()
+        from app.models.assessment.learning_session import LearningSession
         
-        if not all_learnings:
-            return None
-            
-        # Group by subject and check daily status
-        completed_today_subjects = set()
+        # Get subjects with completed daily sessions today
+        completed_today_sessions = self.uow.session.query(
+            Subject.name
+        ).join(
+            Topic, Topic.id == LearningSession.content_id
+        ).join(
+            Chapter, Chapter.id == Topic.chapter_id
+        ).join(
+            Subject, Subject.id == Chapter.subject_id
+        ).filter(
+            LearningSession.student_id == student_id,
+            LearningSession.session_type == "DAILY_PRACTICE",
+            func.date(LearningSession.end_time) == today,
+            LearningSession.completion_reason == "COMPLETED"
+        ).all()
+        
+        completed_today_subjects = {s[0] for s in completed_today_sessions}
+        
         pending_today_topics = defaultdict(list)
         past_pending_topics = defaultdict(list)
         past_completed_topics = defaultdict(list)
         
         for dl, subject_name in all_learnings:
             if dl.learning_date == today:
-                if dl.status == "COMPLETED":
-                    completed_today_subjects.add(subject_name)
-                elif dl.status == "PENDING":
+                if dl.status == "PENDING":
                     pending_today_topics[subject_name].append(str(dl.topic_id))
             else:
                 if dl.status == "PENDING":
