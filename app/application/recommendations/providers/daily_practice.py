@@ -49,11 +49,38 @@ class DailyPracticeProvider(RecommendationProvider):
         
         completed_today_subjects = {s[0] for s in completed_today_sessions}
         
+        from app.models.learning.student_mastery import StudentMastery
+        from app.models.course import LearningUnit, Subtopic
+        
         pending_today_topics = defaultdict(list)
         past_pending_topics = defaultdict(list)
         past_completed_topics = defaultdict(list)
         
         for dl, subject_name in all_learnings:
+            # Check if this topic has any unmastered LUs (mastery < 1.0)
+            topic_lus = self.uow.session.query(LearningUnit.id).join(
+                Subtopic, Subtopic.id == LearningUnit.subtopic_id
+            ).filter(Subtopic.topic_id == dl.topic_id).all()
+            
+            lu_ids = [lu[0] for lu in topic_lus]
+            if lu_ids:
+                mastery_records = self.uow.session.query(StudentMastery).filter(
+                    StudentMastery.student_id == student_id,
+                    StudentMastery.concept_id.in_(lu_ids)
+                ).all()
+                mastery_map = {m.concept_id: m.mastery_percentage for m in mastery_records}
+                
+                # Check if all LUs are 100% mastered
+                all_mastered = True
+                for lu_id in lu_ids:
+                    if float(mastery_map.get(lu_id, 0.0)) < 1.0:
+                        all_mastered = False
+                        break
+                
+                if all_mastered:
+                    # Topic is 100% mastered, do not recommend it again
+                    continue
+            
             if dl.learning_date == today:
                 if dl.status == "PENDING":
                     pending_today_topics[subject_name].append(str(dl.topic_id))
