@@ -140,33 +140,62 @@ def get_qbank_draft_questions(
         if qbank.status == "PROCESSING":
             return create_response(None, "Question bank is still processing", status_code=400)
             
-        drafts = uow.session.query(DraftQuestion).filter(DraftQuestion.question_bank_id == qbank_id).all()
-        
-        data = [
-            {
-                "draft_id": str(d.id),
-                "learning_unit_id": str(d.learning_unit_id),
-                "question_type": d.question_type,
-                "concept": d.concept,
-                "text": d.text,
-                "mcq_options": d.mcq_options,
-                "correct_option": d.correct_option,
-                "expected_answer": d.expected_answer,
-                "acceptable_answers": d.acceptable_answers,
-                "difficulty": d.difficulty,
-                "bloom_level": d.bloom_level,
-                "cognitive_level": d.cognitive_level,
-                "hint_level_1": d.hint_level_1,
-                "hint_level_2": d.hint_level_2,
-                "full_explanation": d.full_explanation,
-                "source_pages": d.source_pages,
-                "keywords": d.keywords,
-                "question_purpose": d.question_purpose,
-                "status": d.status
-            }
-            for d in drafts
-        ]
-        return create_response(data, "Draft questions retrieved successfully")
+        if qbank.status in ("APPROVED", "REJECTED"):
+            # Fetch from main questions table
+            questions = uow.session.query(Question).filter(Question.question_bank_id == qbank_id).all()
+            data = [
+                {
+                    "draft_id": str(q.id),
+                    "learning_unit_id": str(q.learning_unit_id),
+                    "question_type": q.question_type,
+                    "concept": q.concept,
+                    "text": q.text,
+                    "mcq_options": q.mcq_options or [],
+                    "correct_option": q.correct_option or "",
+                    "expected_answer": q.expected_answer or "",
+                    "acceptable_answers": q.acceptable_answers or [],
+                    "difficulty": q.difficulty or 2,
+                    "bloom_level": q.bloom_level or "",
+                    "cognitive_level": q.cognitive_level or "",
+                    "hint_level_1": q.hint_level_1 or "",
+                    "hint_level_2": q.hint_level_2 or "",
+                    "full_explanation": q.full_explanation or "",
+                    "source_pages": q.source_pages or [],
+                    "keywords": q.keywords or [],
+                    "question_purpose": q.question_purpose or "Practice",
+                    "status": "APPROVED" if qbank.status == "APPROVED" else "REJECTED"
+                }
+                for q in questions
+            ]
+            return create_response(data, "Approved/Rejected active questions retrieved successfully")
+        else:
+            # Fetch from draft_questions table
+            drafts = uow.session.query(DraftQuestion).filter(DraftQuestion.question_bank_id == qbank_id).all()
+            data = [
+                {
+                    "draft_id": str(d.id),
+                    "learning_unit_id": str(d.learning_unit_id),
+                    "question_type": d.question_type,
+                    "concept": d.concept,
+                    "text": d.text,
+                    "mcq_options": d.mcq_options,
+                    "correct_option": d.correct_option,
+                    "expected_answer": d.expected_answer,
+                    "acceptable_answers": d.acceptable_answers,
+                    "difficulty": d.difficulty,
+                    "bloom_level": d.bloom_level,
+                    "cognitive_level": d.cognitive_level,
+                    "hint_level_1": d.hint_level_1,
+                    "hint_level_2": d.hint_level_2,
+                    "full_explanation": d.full_explanation,
+                    "source_pages": d.source_pages,
+                    "keywords": d.keywords,
+                    "question_purpose": d.question_purpose,
+                    "status": d.status
+                }
+                for d in drafts
+            ]
+            return create_response(data, "Draft questions retrieved successfully")
 
 @router.post("/curriculum/qbank/{qbank_id}/review", response_model=SuccessResponse)
 def review_qbank_draft_questions(
