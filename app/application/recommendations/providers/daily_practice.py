@@ -32,6 +32,8 @@ class DailyPracticeProvider(RecommendationProvider):
         # Get subjects with completed daily sessions today
         completed_today_sessions = self.uow.session.query(
             Subject.name
+        ).select_from(
+            LearningSession
         ).join(
             Topic, Topic.id == LearningSession.content_id
         ).join(
