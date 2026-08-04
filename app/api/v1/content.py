@@ -150,16 +150,13 @@ def get_qbank_draft_questions(
             # Fetch from main questions table with curriculum contexts
             rows = uow.session.query(
                 Question,
-                LearningUnit.title.label("lu_title"),
-                Subtopic.id.label("subtopic_id"),
-                Subtopic.title.label("subtopic_title"),
                 Topic.id.label("topic_id"),
                 Topic.title.label("topic_title")
             ).join(LearningUnit, LearningUnit.id == Question.learning_unit_id) \
              .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id) \
              .join(Topic, Topic.id == Subtopic.topic_id) \
              .filter(Question.question_bank_id == qbank_id) \
-             .order_by(Topic.created_at, Subtopic.created_at, LearningUnit.created_at).all()
+             .order_by(Topic.created_at, Question.created_at).all()
              
             for row in rows:
                 q = row.Question
@@ -186,43 +183,25 @@ def get_qbank_draft_questions(
                 }
                 
                 t_id = str(row.topic_id)
-                st_id = str(row.subtopic_id)
-                lu_id = str(q.learning_unit_id)
-                
                 if t_id not in hierarchy:
                     hierarchy[t_id] = {
                         "topic_id": t_id,
                         "topic_title": row.topic_title,
-                        "subtopics": OrderedDict()
-                    }
-                if st_id not in hierarchy[t_id]["subtopics"]:
-                    hierarchy[t_id]["subtopics"][st_id] = {
-                        "subtopic_id": st_id,
-                        "subtopic_title": row.subtopic_title,
-                        "learning_units": OrderedDict()
-                    }
-                if lu_id not in hierarchy[t_id]["subtopics"][st_id]["learning_units"]:
-                    hierarchy[t_id]["subtopics"][st_id]["learning_units"][lu_id] = {
-                        "learning_unit_id": lu_id,
-                        "learning_unit_title": row.lu_title,
                         "questions": []
                     }
-                hierarchy[t_id]["subtopics"][st_id]["learning_units"][lu_id]["questions"].append(q_dict)
+                hierarchy[t_id]["questions"].append(q_dict)
                 
         else:
             # Fetch from draft_questions table with curriculum contexts
             rows = uow.session.query(
                 DraftQuestion,
-                LearningUnit.title.label("lu_title"),
-                Subtopic.id.label("subtopic_id"),
-                Subtopic.title.label("subtopic_title"),
                 Topic.id.label("topic_id"),
                 Topic.title.label("topic_title")
             ).join(LearningUnit, LearningUnit.id == DraftQuestion.learning_unit_id) \
              .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id) \
              .join(Topic, Topic.id == Subtopic.topic_id) \
              .filter(DraftQuestion.question_bank_id == qbank_id) \
-             .order_by(Topic.created_at, Subtopic.created_at, LearningUnit.created_at).all()
+             .order_by(Topic.created_at, DraftQuestion.created_at).all()
              
             for row in rows:
                 d = row.DraftQuestion
@@ -249,47 +228,15 @@ def get_qbank_draft_questions(
                 }
                 
                 t_id = str(row.topic_id)
-                st_id = str(row.subtopic_id)
-                lu_id = str(d.learning_unit_id)
-                
                 if t_id not in hierarchy:
                     hierarchy[t_id] = {
                         "topic_id": t_id,
                         "topic_title": row.topic_title,
-                        "subtopics": OrderedDict()
-                    }
-                if st_id not in hierarchy[t_id]["subtopics"]:
-                    hierarchy[t_id]["subtopics"][st_id] = {
-                        "subtopic_id": st_id,
-                        "subtopic_title": row.subtopic_title,
-                        "learning_units": OrderedDict()
-                    }
-                if lu_id not in hierarchy[t_id]["subtopics"][st_id]["learning_units"]:
-                    hierarchy[t_id]["subtopics"][st_id]["learning_units"][lu_id] = {
-                        "learning_unit_id": lu_id,
-                        "learning_unit_title": row.lu_title,
                         "questions": []
                     }
-                hierarchy[t_id]["subtopics"][st_id]["learning_units"][lu_id]["questions"].append(q_dict)
+                hierarchy[t_id]["questions"].append(q_dict)
                 
-        # Consolidate OrderedDict hierarchy into nested lists for clean JSON response
-        result_data = []
-        for t_val in hierarchy.values():
-            topic_node = {
-                "topic_id": t_val["topic_id"],
-                "topic_title": t_val["topic_title"],
-                "subtopics": []
-            }
-            for st_val in t_val["subtopics"].values():
-                subtopic_node = {
-                    "subtopic_id": st_val["subtopic_id"],
-                    "subtopic_title": st_val["subtopic_title"],
-                    "learning_units": []
-                }
-                for lu_val in st_val["learning_units"].values():
-                    subtopic_node["learning_units"].append(lu_val)
-                topic_node["subtopics"].append(subtopic_node)
-            result_data.append(topic_node)
+        result_data = list(hierarchy.values())
             
         return create_response(result_data, "Questions retrieved and grouped topic-wise successfully")
 
