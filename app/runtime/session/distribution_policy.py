@@ -143,10 +143,10 @@ class RevisionDistributionPolicy(DistributionPolicy):
 
 class PolicyFactory:
     @staticmethod
-    def get_policy(session_type: SessionType) -> DistributionPolicy:
+    def get_policy(session_type: SessionType, target_count: int = 10) -> DistributionPolicy:
         if session_type == SessionType.DAILY_PRACTICE:
             return QuotaDistributionPolicy(
-                target_count=10,
+                target_count=target_count,
                 difficulty_distribution=SessionConfig.DAILY_POLICY["difficulty_distribution"],
                 bloom_distribution=SessionConfig.DAILY_POLICY["bloom_distribution"],
                 allow_partial=True   # generate with however many are available

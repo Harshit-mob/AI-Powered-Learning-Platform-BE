@@ -68,7 +68,18 @@ class SessionGenerator:
                     variants_by_lu[lu_id] = eligible
                     
             # 7. Distribution Policy Strategy
-            policy = PolicyFactory.get_policy(session_type)
+            target_count = 10
+            if session_type == SessionType.DAILY_PRACTICE:
+                if content_type == "MULTI_TOPIC" and isinstance(content_id, list):
+                    target_count = len(content_id) * 10
+                else:
+                    target_count = 10
+            elif session_type == SessionType.CHAPTER_REVISION:
+                target_count = 20
+            elif session_type == SessionType.WEAK_POINT:
+                target_count = 8
+                
+            policy = PolicyFactory.get_policy(session_type, target_count)
             final_scored_variants = policy.apply(ranked_lus, variants_by_lu)
             
             # Extract underlying questions for sequencer
