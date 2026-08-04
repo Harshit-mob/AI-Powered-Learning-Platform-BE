@@ -95,11 +95,8 @@ class DailyPracticeProvider(RecommendationProvider):
                     unique_topic_ids.append(tid)
                     seen.add(tid)
             
-            # Target 10 questions per unique topic
-            q_count = len(unique_topic_ids) * 10
-            # Ensure it fits minimum boundaries
-            if q_count < 10:
-                q_count = 10
+            # Capped question counts: 15 for multi-topic, 10 for single-topic
+            q_count = 15 if len(unique_topic_ids) > 1 else 10
                 
             xp = q_count * 5 + 20 + 15
             

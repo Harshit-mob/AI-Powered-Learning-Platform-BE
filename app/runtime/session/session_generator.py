@@ -70,8 +70,8 @@ class SessionGenerator:
             # 7. Distribution Policy Strategy
             target_count = 10
             if session_type == SessionType.DAILY_PRACTICE:
-                if content_type == "MULTI_TOPIC" and isinstance(content_id, list):
-                    target_count = len(content_id) * 10
+                if content_type == "MULTI_TOPIC" and isinstance(content_id, list) and len(content_id) > 1:
+                    target_count = 15
                 else:
                     target_count = 10
             elif session_type == SessionType.CHAPTER_REVISION:
