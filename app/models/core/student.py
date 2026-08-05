@@ -15,6 +15,7 @@ class Student(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     hashed_password = Column(String, nullable=False)
     name = Column(String, nullable=False)
+    role = Column(String, nullable=False, default="STUDENT", server_default="STUDENT")
     
     streak_days = Column(Integer, nullable=False, default=0)
     total_study_minutes = Column(Integer, nullable=False, default=0)

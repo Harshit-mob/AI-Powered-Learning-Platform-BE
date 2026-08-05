@@ -42,3 +42,10 @@ def get_current_student(
             
         # Optional: check if user is active, etc.
         return student
+
+def get_current_admin(
+    student = Depends(get_current_student)
+):
+    if getattr(student, "role", "STUDENT") != "ADMIN":
+        raise APIException("FORBIDDEN", "Admin access required", 403)
+    return student

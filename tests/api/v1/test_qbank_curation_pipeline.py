@@ -4,22 +4,23 @@ import json
 from unittest.mock import MagicMock, patch
 from fastapi.testclient import TestClient
 from app.main import app
-from app.api.v1.dependencies import get_current_student, get_uow
+from app.api.v1.dependencies import get_current_student, get_current_admin, get_uow
 from app.models.quiz import QuestionBank, DraftQuestion, Question
 from app.models.core.student import Student
 
 client = TestClient(app)
 
-# Create a mock student to bypass authentication
+# Create a mock student with ADMIN role to bypass authorization checks
 mock_student = Student(
     id=uuid.uuid4(),
     name="Test User",
     grade_id=uuid.uuid4(),
     email="test@curation.com",
-    hashed_password="mocked_password"
+    hashed_password="mocked_password",
+    role="ADMIN"
 )
 
-def override_get_current_student():
+def override_get_current_user():
     return mock_student
 
 @pytest.fixture
@@ -32,7 +33,8 @@ def mock_uow():
 
 @pytest.fixture(autouse=True)
 def setup_dependencies(mock_uow):
-    app.dependency_overrides[get_current_student] = override_get_current_student
+    app.dependency_overrides[get_current_student] = override_get_current_user
+    app.dependency_overrides[get_current_admin] = override_get_current_user
     app.dependency_overrides[get_uow] = lambda: mock_uow
     yield
     app.dependency_overrides.clear()

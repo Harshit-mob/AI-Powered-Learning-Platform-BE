@@ -7,7 +7,7 @@ from pydantic import BaseModel
 
 from app.api.v1.responses import SuccessResponse, create_response
 from app.application.content_service import ContentService
-from app.api.v1.dependencies import get_uow, get_current_student
+from app.api.v1.dependencies import get_uow, get_current_student, get_current_admin
 from app.repositories.base.unit_of_work import UnitOfWork
 from app.models.quiz import QuestionBank, DraftQuestion, Question
 
@@ -48,7 +48,7 @@ def upload_qbank_pdf(
     chapter_id: uuid.UUID = Form(...),
     source_type: str = Form(...), # 'TEXTBOOK_EXERCISE', 'STUDENT_NOTEBOOK'
     file: UploadFile = File(...),
-    student = Depends(get_current_student),
+    admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
     # 1. Create a staging directories for temp files
@@ -92,7 +92,7 @@ def upload_qbank_pdf(
 
 @router.get("/curriculum/qbank", response_model=SuccessResponse)
 def get_qbanks_list(
-    student = Depends(get_current_student),
+    admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
     from app.models.course import Subject, Chapter
@@ -129,7 +129,7 @@ def get_qbanks_list(
 @router.get("/curriculum/qbank/{qbank_id}/questions", response_model=SuccessResponse)
 def get_qbank_draft_questions(
     qbank_id: uuid.UUID,
-    student = Depends(get_current_student),
+    admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
     with uow:
@@ -244,7 +244,7 @@ def get_qbank_draft_questions(
 def review_qbank_draft_questions(
     qbank_id: uuid.UUID,
     payload: QBankReviewRequest,
-    student = Depends(get_current_student),
+    admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
     with uow:
@@ -337,7 +337,7 @@ def review_qbank_draft_questions(
 def toggle_qbank_active_status(
     qbank_id: uuid.UUID,
     payload: QBankToggleActiveRequest,
-    student = Depends(get_current_student),
+    admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
     with uow:
