@@ -7,18 +7,24 @@ class ContentService:
         self.uow = uow
 
     def get_subjects(self, student_id: uuid.UUID) -> List[Dict[str, Any]]:
-        from app.models.course import Subject, Chapter
+        from app.models.course import Subject, Chapter, Topic, Subtopic, LearningUnit
+        from app.models.quiz import Question
         from sqlalchemy import func
         with self.uow:
             student = self.uow.students.find_by_id(student_id)
             if not student or not student.grade_id:
                 return []
                 
+            # Only return subjects that have active approved questions
             subjects = self.uow.session.query(
                 Subject, 
-                func.count(Chapter.id).label('total_chapters')
-            ).outerjoin(Chapter, Chapter.subject_id == Subject.id) \
-             .filter(Subject.grade_id == student.grade_id) \
+                func.count(func.distinct(Chapter.id)).label('total_chapters')
+            ).join(Chapter, Chapter.subject_id == Subject.id) \
+             .join(Topic, Topic.chapter_id == Chapter.id) \
+             .join(Subtopic, Subtopic.topic_id == Topic.id) \
+             .join(LearningUnit, LearningUnit.subtopic_id == Subtopic.id) \
+             .join(Question, Question.learning_unit_id == LearningUnit.id) \
+             .filter(Subject.grade_id == student.grade_id, Question.is_active == True) \
              .group_by(Subject.id).all()
             
             return [
@@ -33,12 +39,20 @@ class ContentService:
 
     def get_chapters(self, student_id: uuid.UUID, subject_id: uuid.UUID) -> List[Dict[str, Any]]:
         from app.models.course import Chapter, Topic, Subtopic, LearningUnit
+        from app.models.quiz import Question
         from sqlalchemy import func
         
         with self.uow:
             from app.models.learning.student_daily_learning import StudentDailyLearning
             
-            chapters = self.uow.session.query(Chapter).filter(Chapter.subject_id == subject_id).all()
+            # Only fetch chapters that contain active approved questions
+            chapters = self.uow.session.query(Chapter) \
+             .join(Topic, Topic.chapter_id == Chapter.id) \
+             .join(Subtopic, Subtopic.topic_id == Topic.id) \
+             .join(LearningUnit, LearningUnit.subtopic_id == Subtopic.id) \
+             .join(Question, Question.learning_unit_id == LearningUnit.id) \
+             .filter(Chapter.subject_id == subject_id, Question.is_active == True) \
+             .group_by(Chapter.id).all()
             
             masteries = self.uow.mastery.get_by_student(student_id)
             mastery_by_concept = {m.concept_id: m for m in masteries}
@@ -51,7 +65,7 @@ class ContentService:
                 LearningSession.completion_reason == "COMPLETED"
             ).all()
             completed_session_topic_ids = {str(s[0]) for s in completed_sessions}
-
+ 
             daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
                 StudentDailyLearning.student_id == student_id,
                 StudentDailyLearning.status == "COMPLETED"
@@ -68,12 +82,14 @@ class ContentService:
             
             result = []
             for chapter in chapters:
+                # Only return topics that have active approved questions
                 topics = self.uow.session.query(
                     Topic,
-                    func.count(LearningUnit.id).label('lu_count')
-                ).outerjoin(Subtopic, Subtopic.topic_id == Topic.id) \
-                 .outerjoin(LearningUnit, LearningUnit.subtopic_id == Subtopic.id) \
-                 .filter(Topic.chapter_id == chapter.id) \
+                    func.count(func.distinct(LearningUnit.id)).label('lu_count')
+                ).join(Subtopic, Subtopic.topic_id == Topic.id) \
+                 .join(LearningUnit, LearningUnit.subtopic_id == Subtopic.id) \
+                 .join(Question, Question.learning_unit_id == LearningUnit.id) \
+                 .filter(Topic.chapter_id == chapter.id, Question.is_active == True) \
                  .group_by(Topic.id).all()
                 
                 lus = self.uow.session.query(LearningUnit.id).join(Subtopic).join(Topic).filter(Topic.chapter_id == chapter.id).all()
