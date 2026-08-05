@@ -73,7 +73,76 @@ class QBankPipelineService:
                  .filter(Topic.chapter_id == chapter.id).all()
                  
                 if not db_lus:
-                    raise ValueError(f"No learning units found under Chapter {chapter.title}.")
+                    logger.info(f"No learning units found under Chapter {chapter.title}. Generating curriculum & learning units on the fly from PDF...")
+                    
+                    from app.content.curriculum_parser import CurriculumParser
+                    from app.content.importer import ContentImporter
+                    from app.content.learning_unit_builder import LearningUnitBuilder
+                    
+                    # A. Parse the curriculum from the PDF full text
+                    parser = CurriculumParser(ai_provider=self.question_generator.ai_provider)
+                    parsed_curr = parser.parse(cleaned_text=full_text, metadata_hints={
+                        "board": "CBSE",
+                        "grade": "Grade 6",
+                        "subject": subject_name,
+                        "chapter": chapter.title
+                    })
+                    
+                    # B. Import the Board/Grade/Subject/Chapter/Topic/Subtopic hierarchy
+                    importer = ContentImporter()
+                    # ContentImporter expects to create its own Chapter. 
+                    # To avoid creating duplicate chapters, we override/mock it or update the importer.
+                    # Or we can just import the topics/subtopics under our existing chapter manually.
+                    # Let's import manually or let the importer run and then link if it creates a new chapter.
+                    # Let's link the subtopics and topics directly under our existing chapter ID to be clean and simple.
+                    for p_topic in parsed_curr.chapter.topics:
+                        topic = Topic(
+                            title=p_topic.title,
+                            chapter_id=chapter.id
+                        )
+                        self.uow.session.add(topic)
+                        self.uow.session.flush()
+                        
+                        for p_subtopic in p_topic.subtopics:
+                            subtopic = Subtopic(
+                                title=p_subtopic.title.replace('\x00', '') if p_subtopic.title else "",
+                                content=p_subtopic.content.replace('\x00', '') if p_subtopic.content else "",
+                                topic_id=topic.id
+                            )
+                            self.uow.session.add(subtopic)
+                            self.uow.session.flush()
+                            
+                            # C. Build learning units for this subtopic
+                            # Serialise the subtopic as json to slice
+                            import json
+                            subtopic_payload = json.dumps({
+                                "subtopics": [{
+                                    "title": p_subtopic.title,
+                                    "content": p_subtopic.content,
+                                    "learning_objectives": p_subtopic.learning_objectives
+                                }]
+                            })
+                            lu_builder = LearningUnitBuilder(ai_provider=self.question_generator.ai_provider)
+                            parsed_lus = lu_builder.build_from_curriculum(subtopic_payload)
+                            
+                            # D. Persist learning units linked to subtopic
+                            importer.import_learning_units(self.uow.session, subtopic.id, parsed_lus)
+                            
+                    self.uow.commit()
+                    
+                    # Re-query learning units
+                    db_lus = self.uow.session.query(
+                        LearningUnit.id,
+                        LearningUnit.title,
+                        LearningUnit.learning_objective,
+                        Topic.title.label("topic_title"),
+                        Subtopic.title.label("subtopic_title")
+                    ).join(Subtopic, Subtopic.id == LearningUnit.subtopic_id) \
+                     .join(Topic, Topic.id == Subtopic.topic_id) \
+                     .filter(Topic.chapter_id == chapter.id).all()
+                     
+                    if not db_lus:
+                        raise ValueError(f"Failed to generate learning units for Chapter {chapter.title}.")
 
             # Map DB query results to payload format expected by question generator
             learning_units_payload = [

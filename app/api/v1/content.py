@@ -44,14 +44,14 @@ def get_full_curriculum(student = Depends(get_current_student), uow: UnitOfWork 
 @router.post("/curriculum/qbank/upload", response_model=SuccessResponse)
 def upload_qbank_pdf(
     background_tasks: BackgroundTasks,
-    subject_id: uuid.UUID = Form(...),
-    chapter_id: uuid.UUID = Form(...),
+    subject_name: str = Form(...),
+    chapter_name: str = Form(...),
     source_type: str = Form(...), # 'TEXTBOOK_EXERCISE', 'STUDENT_NOTEBOOK'
     file: UploadFile = File(...),
     admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
-    # 1. Create a staging directories for temp files
+    # 1. Create a staging directory for temp files
     temp_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../temp_uploads"))
     os.makedirs(temp_dir, exist_ok=True)
     
@@ -61,12 +61,49 @@ def upload_qbank_pdf(
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
         
-    # 2. Register QuestionBank record as PROCESSING
+    # 2. Dynamically Resolve or Create Subject & Chapter
+    from app.models.course import Board, Grade, Subject, Chapter
     with uow:
+        # Get board & grade IDs from admin student profile or fall back to system defaults
+        board_id = admin.board_id
+        grade_id = admin.grade_id
+        
+        if not board_id or not grade_id:
+            db_board = uow.session.query(Board).first()
+            db_grade = uow.session.query(Grade).first()
+            board_id = db_board.id if db_board else None
+            grade_id = db_grade.id if db_grade else None
+            
+        if not board_id or not grade_id:
+            return create_response(None, "No Board or Grade configured in the system.", status_code=500)
+            
+        # Find or create Subject
+        subj_norm = subject_name.strip()
+        subject = uow.session.query(Subject).filter(
+            Subject.name == subj_norm,
+            Subject.grade_id == grade_id
+        ).first()
+        if not subject:
+            subject = Subject(name=subj_norm, grade_id=grade_id)
+            uow.session.add(subject)
+            uow.session.flush()
+            
+        # Find or create Chapter
+        chap_norm = chapter_name.strip()
+        chapter = uow.session.query(Chapter).filter(
+            Chapter.title == chap_norm,
+            Chapter.subject_id == subject.id
+        ).first()
+        if not chapter:
+            chapter = Chapter(title=chap_norm, subject_id=subject.id)
+            uow.session.add(chapter)
+            uow.session.flush()
+            
+        # 3. Register QuestionBank record as PROCESSING
         qbank = QuestionBank(
             id=qbank_id,
-            subject_id=subject_id,
-            chapter_id=chapter_id,
+            subject_id=subject.id,
+            chapter_id=chapter.id,
             file_name=file.filename,
             source_type=source_type,
             status="PROCESSING",
@@ -75,7 +112,7 @@ def upload_qbank_pdf(
         uow.session.add(qbank)
         uow.commit()
 
-    # 3. Trigger asynchronous background parsing and LLM generation
+    # 4. Trigger asynchronous background parsing and LLM generation
     from app.application.qbank_pipeline_service import QBankPipelineService
     pipeline_service = QBankPipelineService(uow)
     
