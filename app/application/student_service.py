@@ -26,7 +26,8 @@ class StudentService:
                 "target_xp": getattr(student, "current_level", 1) * 100,
                 "daily_goal_minutes": 30, # default placeholder
                 "total_mastery_percentage": int(student.overall_mastery_percentage * 100) if student.overall_mastery_percentage <= 1.0 else int(student.overall_mastery_percentage),
-                "completed_sessions": completed_count
+                "completed_sessions": completed_count,
+                "role": getattr(student, "role", "STUDENT")
             }
 
     def get_progress(self, student_id: uuid.UUID) -> Dict[str, Any]:

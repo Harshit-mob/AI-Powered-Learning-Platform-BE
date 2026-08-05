@@ -50,7 +50,8 @@ class AuthService:
             return {
                 "student_id": student_id,
                 "access_token": access_token,
-                "refresh_token": refresh_token
+                "refresh_token": refresh_token,
+                "role": getattr(student, "role", "STUDENT")
             }
 
     def login_student(self, data: Dict[str, Any]) -> Dict[str, Any]:
@@ -67,7 +68,8 @@ class AuthService:
                 "student_id": student.id,
                 "name": student.name,
                 "access_token": access_token,
-                "refresh_token": refresh_token
+                "refresh_token": refresh_token,
+                "role": getattr(student, "role", "STUDENT")
             }
 
     def social_login(self, provider: str, provider_token: str) -> Dict[str, Any]:
@@ -136,7 +138,8 @@ class AuthService:
             return {
                 "student_id": student.id,
                 "access_token": create_access_token(student.id),
-                "refresh_token": create_refresh_token(student.id)
+                "refresh_token": create_refresh_token(student.id),
+                "role": getattr(student, "role", "STUDENT")
             }
 
     def refresh_access_token(self, refresh_token: str) -> Dict[str, Any]:

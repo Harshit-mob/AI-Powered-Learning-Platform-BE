@@ -49,4 +49,4 @@ def logout(
 
 @router.get("/me", response_model=SuccessResponse)
 def get_me(student = Depends(get_current_student)):
-    return create_response({"student_id": str(student.id), "email": student.email, "name": student.name})
+    return create_response({"student_id": str(student.id), "email": student.email, "name": student.name, "role": getattr(student, "role", "STUDENT")})
