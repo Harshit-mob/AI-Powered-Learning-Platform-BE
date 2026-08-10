@@ -135,6 +135,19 @@ class PedagogicalSequencer:
                     
             return final_list
 
-        # Sort entirely by pedagogical score ascending.
-        # This forces the progression Warm-up -> Recall -> Understand -> Apply -> Challenge
-        return sorted(questions, key=self._get_pedagogical_score)
+        # Group by pedagogical score, shuffle each group, and concatenate to mix topics/questions
+        import random
+        groups = {}
+        for q in questions:
+            score = self._get_pedagogical_score(q)
+            if score not in groups:
+                groups[score] = []
+            groups[score].append(q)
+            
+        final_list = []
+        for score in sorted(groups.keys()):
+            grp = groups[score]
+            random.shuffle(grp)
+            final_list.extend(grp)
+            
+        return final_list

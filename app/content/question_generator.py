@@ -116,7 +116,7 @@ class QuestionGenerationService:
             "STRICT_PIPELINE_CONSTRAINTS": {
                 "scenario_questions": "AT LEAST 30% of non-definition questions MUST be scenario-based involving a person (e.g. 'Riya notices that...').",
                 "child_friendly_language": "Target audience is CBSE Grade 6. Remove unnecessary academic wording. Prefer 'look carefully' instead of 'systematically observe'.",
-                "explanation_format": "Explanations MUST follow this EXACT 4-part structure: 1) Correct answer. 2) Why it is correct. 3) Why common wrong answers are incorrect (if applicable). 4) One everyday example. MAXIMUM 70 words.",
+                "explanation_format": "Explanations MUST be written as a single child-friendly, natural conversational paragraph of max 70 words. It should state what the correct answer is, why it is correct (using 'because' or 'since'), briefly mention why other answers are wrong, and include one everyday example. DO NOT use lists or numbered parts (like 1), 2), etc.).",
                 "acceptable_answers": "Generate natural spoken variants (e.g. 'The science', 'It is science') rather than substituting concepts.",
                 "hint_generation": "Hints must progressively reveal the answer structurally. NEVER generate generic hints like 'Think carefully', 'Consider the concept', or 'Practical scenario'.",
                 "adaptive_generation": "For EVERY concept tested, generate exactly 3 variants as a Concept Cluster: 1 Easier, 1 Standard, 1 Harder variant. Ensure they target the exact same concept."
@@ -135,6 +135,32 @@ class QuestionGenerationService:
         if not isinstance(raw_list, list): return []
         
         for item in raw_list:
+            # Clean up unclosed parentheses in TRUE_FALSE questions
+            if item.get("question_type") == "TRUE_FALSE":
+                correct = item.get("correct_option")
+                if isinstance(correct, str):
+                    c_lower = correct.lower()
+                    if "हाँ" in correct or "true" in c_lower:
+                        if "नहीं" not in correct and "false" not in c_lower:
+                            item["correct_option"] = "हाँ (True)"
+                    elif "नहीं" in correct or "false" in c_lower:
+                        if "हाँ" not in correct and "true" not in c_lower:
+                            item["correct_option"] = "नहीं (False)"
+                            
+                # expected_answer must exactly match correct_option
+                item["expected_answer"] = item["correct_option"]
+
+                acc_ans = item.get("acceptable_answers")
+                if isinstance(acc_ans, list):
+                    cleaned_acc = []
+                    for val in acc_ans:
+                        if isinstance(val, str):
+                            # Replace (true or (false with closed brackets
+                            val = re.sub(r'\(true\b(?!\))', '(true)', val, flags=re.IGNORECASE)
+                            val = re.sub(r'\(false\b(?!\))', '(false)', val, flags=re.IGNORECASE)
+                        cleaned_acc.append(val)
+                    item["acceptable_answers"] = cleaned_acc
+
             try:
                 pq = ParsedQuestion(**item)
                 parsed_questions.append(pq)
@@ -311,35 +337,50 @@ class QuestionGenerationService:
         
         if subject.lower() in ("hindi", "gujarati"):
             lang_name = "Hindi" if subject.lower() == "hindi" else "Gujarati"
+            tf_options = '["हाँ (True)", "नहीं (False)"]' if subject.lower() == "hindi" else '["સાચું (True)", "ખોટું (False)"]'
             system_prompt += (
                 f"\n\n--- {lang_name.upper()} COMPREHENSIVE GENERATION RULE ---\n"
-                f"IMPORTANT: Since the subject is {lang_name}, you MUST generate ONLY MCQ (Multiple Choice Questions) type questions. "
-                "For every generated question, set 'question_type' to 'MCQ', 'evaluation_method' to 'MCQ', "
-                "'supported_answer_modes' to ['MCQ'], and include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
-                f"For {lang_name}, you MUST generate three types of questions to provide a comprehensive pool of at least 8-12 questions per Learning Unit:\n"
+                f"IMPORTANT: Since the subject is {lang_name}, you MUST generate ONLY MCQ and TRUE_FALSE question types. "
+                "No other question types are allowed. "
+                "For MCQ questions, include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
+                f"For TRUE_FALSE questions, you MUST include 'mcq_options' with exactly 2 options: {tf_options}, and set both 'correct_option' and 'expected_answer' to exactly match one of these two options.\n"
+                f"GRAMMAR PRIORITY: Because this is a language subject ({lang_name}), GRAMMAR IS CRITICAL. "
+                "Ensure at least 40% of the generated questions directly test grammar, vocabulary, case markers (कारक/विभक्ति), synonyms/antonyms (समानार्थी/विरोधी), prefixes/suffixes, and sentence correction from the chapter text and chapter-end exercises.\n"
+                f"For {lang_name}, you MUST generate three types of content questions:\n"
                 "1. Exact textbook exercise questions: Generate questions using the exact sentences, terms, and options from the textbook exercises verbatim (do not alter them).\n"
                 "2. Parallel practice questions: Generate new, simple practice questions testing the same grammatical concepts (like noun types, case markers) or vocabulary terms using other simple, direct sentences and words from the story text.\n"
                 "3. Simple Story Recall (Reading Comprehension): For units covering the story text, generate simple, direct recall questions about the main events, characters, and settings. All story recall questions MUST be simple, direct factual recall of the text, and must not use complex grammar, figures of speech, or abstract analysis. Keep them very simple and accessible for Grade 6 students.\n"
-                "To ensure a deep learning pool, generate at least 5-7 parallel practice variations or simple story recall questions for every concept. Ensure all answers are verified, accurate, and proper for Grade 6.\n"
-                "Aim to generate a total pool of at least 50 questions for this chapter."
+                "CRITICAL: NEVER alter or hallucinate the name of the chapter, story, characters, or key concepts in the questions, options, or explanations (e.g., do NOT change 'सोनकंठी गौरैया' to 'सोनकंठ कबूतर' or similar). Always use the exact terminology from the chapter content verbatim.\n"
+                "QUANTITY & COVERAGE: Generate exactly 15-20 questions in total for this learning unit. Ensure full coverage of all sub-topics. Focus heavily on textbook end-of-chapter exercises (verbatim) and grammar practice (synonyms, antonyms, noun types, case markers/कारक, suffixes/प्रत्यय) using simple story sentences."
             )
-        elif subject.lower() == "english":
+        else:
+            # English, Science, Social Science
+            grammar_note = ""
+            if subject.lower() == "english":
+                grammar_note = (
+                    "GRAMMAR PRIORITY: Since this is English, GRAMMAR IS CRITICAL. "
+                    "Ensure at least 50% of the generated questions test English grammar and vocabulary. "
+                    "For EACH learning unit, you MUST generate grammar-focused questions (MCQ, FILL_BLANK, TRUE_FALSE, or RECALL) "
+                    "testing the following 6 core topics using the sentences, phrases, and vocabulary from the current learning unit:\n"
+                    "1. Countable and Uncountable Nouns\n"
+                    "2. Pronouns (Personal, Possessive, and Reflexive)\n"
+                    "3. Vocabulary\n"
+                    "4. Antonyms and Synonyms\n"
+                    "5. Subject and Predicate\n"
+                    "6. Simple and Continuous tenses\n"
+                    "Even if the learning unit is about story comprehension, extract sentences from it and generate questions asking the student to identify pronouns, tenses, subject/predicate, countable/uncountable nouns, or synonyms/antonyms in those sentences.\n"
+                )
             system_prompt += (
-                "\n\n--- ENGLISH COMPREHENSIVE GENERATION RULE ---\n"
-                "IMPORTANT: Since this is an English chapter, you MUST generate a comprehensive mix of different question types "
-                "covering the ENTIRE chapter content — story comprehension, grammar, vocabulary, idioms, and language exercises.\n"
+                f"\n\n--- {subject.upper()} COMPREHENSIVE GENERATION RULE ---\n"
+                "IMPORTANT: You MUST generate a comprehensive mix of different question types: MCQ, TRUE_FALSE, FILL_BLANK, and RECALL (Short Answer) "
+                "covering the ENTIRE chapter content (prioritizing the exercises, questions, and assignments at the end of the textbook chapter).\n"
+                f"{grammar_note}"
                 "Generate ALL of the following question types for each Learning Unit:\n"
-                "1. Story Comprehension (RECALL / UNDERSTANDING): Simple, direct factual recall about characters, events, and settings from the story. "
-                "   e.g., 'Who is Tom's aunt?', 'Why did Tom dislike Monday mornings?'\n"
-                "2. Vocabulary / Word Meaning (MCQ or FILL_BLANK): Questions about word meanings, synonyms, antonyms from the chapter glossary.\n"
-                "3. Idiom Questions (MCQ): Questions asking students to identify the meaning of idioms used in the chapter.\n"
-                "4. Grammar Questions (MCQ / APPLICATION): Questions based on grammar exercises at the end of the chapter "
-                "   (e.g., noun types, pronoun usage, countable/uncountable nouns).\n"
-                "5. Parallel Practice (MCQ): For every grammar concept, generate 3-4 additional MCQ practice questions using new simple sentences. "
-                "   This ensures broad coverage and a large question pool.\n"
-                "You MUST include 'mcq_options' (exactly 4 options) and 'correct_option' for every MCQ question.\n"
-                "Generate at least 8-12 questions per Learning Unit to ensure full chapter coverage.\n"
-                "Aim to generate a total pool of at least 50 questions for the chapter."
+                "1. Textbook Exercises (MCQ / TRUE_FALSE / FILL_BLANK / RECALL): Verbatim representation of questions from the chapter-end exercises.\n"
+                "2. Parallel Practice (MCQ / TRUE_FALSE / FILL_BLANK): For every concept, generate 4-6 additional practice questions using new simple sentences.\n"
+                "For MCQ questions, you MUST include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
+                "For TRUE_FALSE questions, you MUST include 'mcq_options' with exactly 2 options: [\"True\", \"False\"], and set both 'correct_option' and 'expected_answer' to match one of these two options exactly.\n"
+                "Aim to generate a total pool of at least 100 questions for the chapter."
             )
         
         all_validated = []
@@ -399,7 +440,7 @@ class QuestionGenerationService:
             "quality_report": chapter_summary
         }
 
-    def save_question_bank(self, validated_questions: List[ParsedQuestion], db_session) -> int:
+    def save_question_bank(self, validated_questions: List[ParsedQuestion], db_session, question_bank_id: str = None) -> int:
         saved_count = 0
         for pq in validated_questions:
             try:
@@ -442,7 +483,8 @@ class QuestionGenerationService:
                     "question_purpose": pq.question_purpose,
                     "progression_level": pq.progression_level,
                     "prerequisite_concepts": pq.prerequisite_concepts,
-                    "misconception_tags": pq.misconception_tags
+                    "misconception_tags": pq.misconception_tags,
+                    "question_bank_id": question_bank_id
                 }
                 
                 stmt = insert(Question).values(**values)

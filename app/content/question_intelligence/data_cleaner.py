@@ -6,12 +6,24 @@ class DataCleaner:
     """
     
     def clean(self, question: Dict[str, Any]):
+        self._clean_expected_answer(question)
         self._clean_hints(question)
         self._clean_acceptable_answers(question)
         self._clean_evaluation_method(question)
         self._clean_keywords(question)
         self._simplify_language(question)
         return question
+
+    def _clean_expected_answer(self, question: Dict[str, Any]):
+        import re
+        expected = question.get("expected_answer")
+        if isinstance(expected, str) and expected:
+            # Strip leading/trailing spaces and punctuation
+            cleaned = re.sub(r'^[.,?!;:"\'\-\s]+', '', expected)
+            cleaned = re.sub(r'[.,?!;:"\'\-\s]+$', '', cleaned)
+            question["expected_answer"] = cleaned.strip()
+        elif expected is not None:
+            question["expected_answer"] = str(expected).strip()
         
     def _simplify_language(self, question: Dict[str, Any]):
         replacements = {
@@ -66,7 +78,7 @@ class DataCleaner:
                 break
                 
         question["keywords"] = cleaned[:5]
-
+ 
     def _clean_hints(self, question: Dict[str, Any]):
         bad_phrases = ["starts with letter", "starts with the letter", "think carefully", "the answer is"]
         
@@ -82,6 +94,7 @@ class DataCleaner:
                     question[level] = "Consider how this concept applies in a practical scenario."
                     
     def _clean_acceptable_answers(self, question: Dict[str, Any]):
+        import re
         acc = question.get("acceptable_answers", [])
         expected = str(question.get("expected_answer", "")).strip()
         
@@ -90,14 +103,22 @@ class DataCleaner:
             
         clean_acc = []
         for a in acc:
-            a_lower = str(a).lower().strip()
+            if not isinstance(a, str) or not a.strip():
+                continue
+            # Strip leading/trailing spaces and punctuation
+            cleaned_a = re.sub(r'^[.,?!;:"\'\-\s]+', '', a)
+            cleaned_a = re.sub(r'[.,?!;:"\'\-\s]+$', '', cleaned_a)
+            cleaned_a = cleaned_a.strip()
+            
+            a_lower = cleaned_a.lower()
             expected_lower = expected.lower()
             
             # Remove redundant long definitions if expected is short
             if len(a_lower.split()) > len(expected_lower.split()) + 2:
                 continue
                 
-            clean_acc.append(str(a).strip())
+            if cleaned_a and a_lower not in [c.lower() for c in clean_acc]:
+                clean_acc.append(cleaned_a)
             
         if expected and expected.lower() not in [c.lower() for c in clean_acc]:
             clean_acc.insert(0, expected)

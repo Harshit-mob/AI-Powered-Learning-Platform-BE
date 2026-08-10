@@ -159,9 +159,9 @@ class MetadataValidationPipeline:
             # Ensure it is at least roughly recorded.
             intel.question_purpose = str(round(reading_age, 1)) # We can store reading_age here temporarily if we want, or just check it.
             
-            if reading_age > 12.5:
+            if reading_age > 13.5:
                 score -= 10
-                messages.append(f"Language too complex (Reading Age: {reading_age:.1f}, Max: 12)")
+                messages.append(f"Language too complex (Reading Age: {reading_age:.1f}, Max: 13)")
                 
         # 9. Concept Alignment & Diversity
         concept = str(question.get("concept", "")).lower()

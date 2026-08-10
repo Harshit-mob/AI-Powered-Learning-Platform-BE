@@ -87,8 +87,26 @@ def generate_questions_for_chapter(chapter_title):
 
         # 3. Save Questions to Database
         print("\n[3/3] Saving Questions to Database...")
-        saved_count = generator.save_question_bank(all_questions, db)
-        print(f"Successfully saved {saved_count} questions to the database.")
+        from app.models.quiz import QuestionBank
+        qbank = db.query(QuestionBank).filter(QuestionBank.chapter_id == chapter.id).first()
+        if not qbank:
+            qbank = QuestionBank(
+                subject_id=subject.id,
+                chapter_id=chapter.id,
+                file_name=f"Textbook_Exercises_{chapter.title.replace(' ', '_')}.pdf",
+                source_type="TEXTBOOK_EXERCISE",
+                status="APPROVED",
+                total_questions=len(all_questions)
+            )
+            db.add(qbank)
+            db.flush()
+        else:
+            qbank.status = "APPROVED"
+            qbank.total_questions = len(all_questions)
+            db.flush()
+            
+        saved_count = generator.save_question_bank(all_questions, db, question_bank_id=qbank.id)
+        print(f"Successfully saved {saved_count} questions to the database (linked to QBank ID: {qbank.id}).")
         
         # Cleanup Learning Units, Subtopics, and Topics with 0 questions under this chapter
         print("\n[Cleanup] Removing learning units, subtopics, and topics with 0 questions...")

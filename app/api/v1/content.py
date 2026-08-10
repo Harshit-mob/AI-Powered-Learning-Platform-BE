@@ -75,7 +75,8 @@ def upload_qbank_pdf(
             grade_id = db_grade.id if db_grade else None
             
         if not board_id or not grade_id:
-            return create_response(None, "No Board or Grade configured in the system.", status_code=500)
+            from app.api.v1.errors import error_response
+            return error_response("CONFIG_ERROR", "No Board or Grade configured in the system.", status_code=500)
             
         # Find or create Subject
         subj_norm = subject_name.strip()
@@ -152,9 +153,11 @@ def get_qbanks_list(
             {
                 "qbank_id": str(r.id),
                 "display_name": f"{r.subject_name}_{r.chapter_title}_{r.created_at.strftime('%Y%m%d_%H%M')}",
+                "subject_name": r.subject_name,
+                "chapter_title": r.chapter_title,
                 "file_name": r.file_name,
                 "source_type": r.source_type,
-                "status": r.status,
+                "status": "REMOVED" if r.status == "PROCESSING" else r.status,
                 "total_questions": r.total_questions,
                 "error_message": r.error_message,
                 "created_at": r.created_at.isoformat()
@@ -173,9 +176,11 @@ def get_qbank_draft_questions(
         # Check QBank status
         qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
         if not qbank:
-            return create_response(None, "Question bank not found", status_code=404)
+            from app.api.v1.errors import error_response
+            return error_response("NOT_FOUND", "Question bank not found", status_code=404)
         if qbank.status == "PROCESSING":
-            return create_response(None, "Question bank is still processing", status_code=400)
+            from app.api.v1.errors import error_response
+            return error_response("PROCESSING", "Question bank is still processing", status_code=400)
             
         from app.models.course import Topic, Subtopic, LearningUnit
         from collections import OrderedDict
@@ -287,7 +292,8 @@ def review_qbank_draft_questions(
     with uow:
         qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
         if not qbank:
-            return create_response(None, "Question bank not found", status_code=404)
+            from app.api.v1.errors import error_response
+            return error_response("NOT_FOUND", "Question bank not found", status_code=404)
             
         # 1. Reject questions
         if payload.rejected_ids:
@@ -380,7 +386,8 @@ def toggle_qbank_active_status(
     with uow:
         qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
         if not qbank:
-            return create_response(None, "Question bank not found", status_code=404)
+            from app.api.v1.errors import error_response
+            return error_response("NOT_FOUND", "Question bank not found", status_code=404)
             
         uow.session.query(Question).filter(
             Question.question_bank_id == qbank_id

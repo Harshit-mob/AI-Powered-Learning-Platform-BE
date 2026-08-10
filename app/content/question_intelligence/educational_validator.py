@@ -30,16 +30,48 @@ class EducationalValidator:
             if len(concept.split()) > 3: # E.g. "Scientific method and variables"
                 return False, f"Mixed concepts detected in non-Level 5 question: {concept}. Questions must measure exactly one primary concept."
                 
-        # 1.5 Distractor Quality Engine
+        # 1.5 Distractor & Format Quality Engine
         mcq_options = question.get("mcq_options", [])
+        modes = question.get("supported_answer_modes", [])
+        
+        # Enforce supported modes for MCQ/TRUE_FALSE
+        if q_type in ["MCQ", "MULTIPLE_CHOICE", "TRUE_FALSE"]:
+            if modes != ["MCQ"] and modes != ["mcq"]:
+                return False, f"MCQ or TRUE_FALSE questions must have exactly ['MCQ'] as supported_answer_modes. Found: {modes}"
+                
+        # Enforce that options are not leaked in the question text
+        q_text = str(question.get("text", ""))
+        q_text_lower = q_text.lower()
+        
+        # Check for option letter patterns like 'a.', 'b.', 'a)', 'b)' in question text
+        option_patterns = [r'\b[a-d]\.\s', r'\b[a-d]\)\s', r'\b[1-4]\.\s', r'\b[1-4]\)\s']
+        for pat in option_patterns:
+            if re.search(pat, q_text_lower):
+                return False, f"Question text must not contain option lists or letters (e.g., 'a.', 'b.'). Found pattern match in: {q_text}"
+                
         if q_type in ["MCQ", "MULTIPLE_CHOICE"] and mcq_options:
             expected = str(question.get("expected_answer", "")).lower()
+            correct_opt = str(question.get("correct_option", "")).lower()
+            
+            # Check if any mcq option string is embedded in the question text as a list
+            for opt in mcq_options:
+                opt_str = str(opt).strip()
+                if len(opt_str) > 3 and f"\n{opt_str}" in q_text:
+                    return False, f"MCQ options must not be appended to the question text: '{opt_str}' found in question text."
+            
+            # Check if expected_answer or correct_option matches one of the options
+            has_expected_match = any(str(opt).lower() == expected for opt in mcq_options)
+            has_correct_match = any(str(opt).lower() == correct_opt for opt in mcq_options)
+            
+            if not has_expected_match and not has_correct_match:
+                return False, f"MCQ expected_answer or correct_option must exactly match one of the options in mcq_options: {mcq_options}"
+                
             distractors = [opt for opt in mcq_options if str(opt).lower() != expected]
             obvious_distractors = ["apple", "car", "sleeping", "nothing", "magic", "pizza", "ghost"]
             for dist in distractors:
                 if str(dist).lower() in obvious_distractors or len(str(dist)) < 2:
                     return False, f"Obvious or invalid distractor detected: {dist}"
-        text = str(question.get("text", "")).lower()
+        text = q_text_lower
         concept = str(question.get("concept", "")).lower()
         learning_objective = str(unit.get("learning_objective", "")).lower() if unit else ""
         
@@ -67,6 +99,11 @@ class EducationalValidator:
             for char in text + concept + learning_objective
         )
         if is_indic_content:
+            return True, ""
+            
+        # Relax check for English grammar and vocabulary questions
+        grammar_keywords = {"pronoun", "noun", "tense", "subject", "predicate", "verb", "grammar", "adjective", "preposition", "synonym", "antonym", "vocabulary", "word", "singular", "plural"}
+        if any(gk in concept or gk in text for gk in grammar_keywords):
             return True, ""
 
         overlap_with_text = lo_tokens.intersection(text_tokens)
