@@ -66,6 +66,16 @@ class WeakPointProvider(RecommendationProvider):
                     q_count = 3
                 xp = q_count * 8 + 20 + 25
                 
+                # Fetch topic IDs corresponding to the weak learning units of this subject
+                weak_lu_ids = [item[1].concept_id for item in scored_masteries[:q_count]]
+                topic_ids = [
+                    row[0] for row in self.uow.session.query(Subtopic.topic_id)
+                    .join(LearningUnit, LearningUnit.subtopic_id == Subtopic.id)
+                    .filter(LearningUnit.id.in_(weak_lu_ids))
+                    .distinct()
+                    .all()
+                ]
+                
                 recs.append({
                     "title": f"Weak point booster ({subject_name.lower()})",
                     "priority": 2,
@@ -75,8 +85,8 @@ class WeakPointProvider(RecommendationProvider):
                     "status": "NEEDS_ATTENTION",
                     "reason": f"Targeted practice on {subject_name} concepts you struggled with recently",
                     "session_type": "WEAK_POINT",
-                    "content_type": "STUDENT",
-                    "content_ids": [str(student_id)]
+                    "content_type": "MULTI_TOPIC",
+                    "content_ids": [str(tid) for tid in topic_ids]
                 })
                 
         return recs if recs else None

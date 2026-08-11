@@ -43,7 +43,19 @@ class CandidateLoader:
             elif content_type == "LEARNING_UNIT":
                 stmt = stmt.where(Question.learning_unit_id == content_id)
             elif content_type == "MULTI_TOPIC":
-                stmt = stmt.join(LearningUnit.subtopic).where(Subtopic.topic_id.in_(content_id))
+                # Find the subject of the first topic, and filter content_id to only include topics from that same subject
+                first_topic = self.uow.session.query(Topic).join(Chapter).filter(Topic.id == content_id[0]).first()
+                if first_topic:
+                    subject_id = first_topic.chapter.subject_id
+                    filtered_topic_ids = [
+                        row[0] for row in self.uow.session.query(Topic.id)
+                        .join(Chapter)
+                        .filter(Topic.id.in_(content_id), Chapter.subject_id == subject_id)
+                        .all()
+                    ]
+                    stmt = stmt.join(LearningUnit.subtopic).where(Subtopic.topic_id.in_(filtered_topic_ids))
+                else:
+                    stmt = stmt.join(LearningUnit.subtopic).where(Subtopic.topic_id.in_(content_id))
             elif content_type == "STUDENT":
                 # Find the weakest Learning Units for the student
                 from app.models.learning.student_mastery import StudentMastery
