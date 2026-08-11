@@ -28,7 +28,8 @@ ch_titles = [
     "संज्ञा के विकारिक तत्व",
     "Exploring Magnets",
     "Measurement of Length and Motion",
-    "Timeline and Sources of History India"
+    "Timeline and Sources of History India",
+    "Grassroots Democracy"
 ]
 
 def sync_chapter_questions(ch_title):
