@@ -123,10 +123,22 @@ class SessionGenerator:
                 elif bloom_str in ["EVALUATE", "EVALUATION"]: bloom_str = "EVALUATION"
                 elif bloom_str in ["CREATE", "CREATION"]: bloom_str = "CREATION"
                 
-                modes = getattr(q, "supported_answer_modes", None) or ["TEXT"]
-                if "VOICE" in modes:
-                    modes.remove("VOICE")
-                modes.insert(0, "VOICE")
+                # Check the subject name to avoid forcing VOICE on Hindi and Gujarati
+                subj_name = ""
+                try:
+                    if q.learning_unit and q.learning_unit.subtopic and q.learning_unit.subtopic.topic and q.learning_unit.subtopic.topic.chapter and q.learning_unit.subtopic.topic.chapter.subject:
+                        subj_name = q.learning_unit.subtopic.topic.chapter.subject.name
+                except Exception:
+                    pass
+
+                modes = list(getattr(q, "supported_answer_modes", None) or ["TEXT"])
+                if subj_name not in ["Hindi", "Gujarati"]:
+                    if "VOICE" in modes:
+                        modes.remove("VOICE")
+                    modes.insert(0, "VOICE")
+                else:
+                    if "VOICE" in modes:
+                        modes.remove("VOICE")
                 
                 dtos.append(QuestionDTO(
                     question_id=getattr(q, "id", uuid.uuid4()),
