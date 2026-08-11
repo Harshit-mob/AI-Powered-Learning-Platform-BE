@@ -25,7 +25,8 @@ def link_qbank(db_url, db_name):
         "संज्ञा",
         "संज्ञा के विकारिक तत्व",
         "Exploring Magnets",
-        "Measurement of Length and Motion"
+        "Measurement of Length and Motion",
+        "Timeline and Sources of History India"
     ]
     
     with engine.connect() as conn:
