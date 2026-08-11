@@ -20,7 +20,7 @@ class CandidateLoader:
         """
         with self.uow:
             from sqlalchemy.orm import joinedload
-            stmt = select(Question).options(
+            stmt = select(Question).join(Question.learning_unit).options(
                 joinedload(Question.learning_unit)
                 .joinedload(LearningUnit.subtopic)
                 .joinedload(Subtopic.topic)
