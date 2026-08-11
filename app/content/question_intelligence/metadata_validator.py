@@ -36,9 +36,14 @@ class MetadataValidationPipeline:
         Returns (is_valid, intel, messages).
         If is_valid is False, the question MUST be rejected entirely.
         """
+        # Check if subject is Science
+        is_science = False
+        if unit and unit.get("subject", "").lower() == "science":
+            is_science = True
+
         score = 100
         messages = []
-        
+
         # 0. Educational Validator (Consistency)
         bloom_val = intel.bloom_level.value if intel.bloom_level else ""
         edu_valid, edu_msg = self.educational_validator.validate(question, unit or {}, bloom_val)
@@ -159,9 +164,10 @@ class MetadataValidationPipeline:
             # Ensure it is at least roughly recorded.
             intel.question_purpose = str(round(reading_age, 1)) # We can store reading_age here temporarily if we want, or just check it.
             
-            if reading_age > 13.5:
+            max_age = 16.0 if is_science else 13.5
+            if reading_age > max_age:
                 score -= 10
-                messages.append(f"Language too complex (Reading Age: {reading_age:.1f}, Max: 13)")
+                messages.append(f"Language too complex (Reading Age: {reading_age:.1f}, Max: {max_age:.1f})")
                 
         # 9. Concept Alignment & Diversity
         concept = str(question.get("concept", "")).lower()
@@ -175,7 +181,9 @@ class MetadataValidationPipeline:
             "रिया", "रोहन", "आयशा", "छात्र", "कल्पना", "ध्यान", "अवलोकन", "प्रयोग", "परीक्षण", "सोचिए", "मान लीजिए"
         ]
         is_scenario = any(name in str(question.get("text", "")) for name in scenario_keywords)
-        if not is_scenario and q_type not in ["DEFINITION", "FILL_BLANK", "TRUE_FALSE"]:
+        if is_science:
+            pass
+        elif not is_scenario and q_type not in ["DEFINITION", "FILL_BLANK", "TRUE_FALSE"]:
             score -= 3
             messages.append("Not a scenario-based question")
             
@@ -203,7 +211,8 @@ class MetadataValidationPipeline:
         # Final Score Assignment (Educational Quality Score)
         intel.metadata_score = max(0, min(100, int(score)))
         
-        if intel.metadata_score < 80:
-            return False, intel, f"Educational Quality Score ({intel.metadata_score}) fell below strict educational threshold of 80. Issues: {'; '.join(messages)}"
+        min_threshold = 70 if is_science else 80
+        if intel.metadata_score < min_threshold:
+            return False, intel, f"Educational Quality Score ({intel.metadata_score}) fell below strict educational threshold of {min_threshold}. Issues: {'; '.join(messages)}"
             
         return True, intel, "; ".join(messages)

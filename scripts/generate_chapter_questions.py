@@ -63,7 +63,8 @@ def generate_questions_for_chapter(chapter_title):
                          "content": lu.content,
                          "keywords": lu.keywords,
                          "difficulty": lu.difficulty,
-                         "source_pages": lu.source_pages
+                         "source_pages": lu.source_pages,
+                         "subject": subject.name
                      } for lu in db_units
                 ]
                 

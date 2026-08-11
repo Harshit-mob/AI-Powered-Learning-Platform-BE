@@ -354,7 +354,6 @@ class QuestionGenerationService:
                 "QUANTITY & COVERAGE: Generate exactly 15-20 questions in total for this learning unit. Ensure full coverage of all sub-topics. Focus heavily on textbook end-of-chapter exercises (verbatim) and grammar practice (synonyms, antonyms, noun types, case markers/कारक, suffixes/प्रत्यय) using simple story sentences."
             )
         else:
-            # English, Science, Social Science
             grammar_note = ""
             if subject.lower() == "english":
                 grammar_note = (
@@ -370,11 +369,24 @@ class QuestionGenerationService:
                     "6. Simple and Continuous tenses\n"
                     "Even if the learning unit is about story comprehension, extract sentences from it and generate questions asking the student to identify pronouns, tenses, subject/predicate, countable/uncountable nouns, or synonyms/antonyms in those sentences.\n"
                 )
+            
+            science_note = ""
+            if subject.lower() == "science":
+                science_note = (
+                    "SCIENCE GENERATION RULES:\n"
+                    "1. ONLY CONTENT-BASED QUESTIONS: Do NOT generate any grammar, vocabulary, or language-based questions. All questions must test core scientific concepts, observations, processes, or experiments from the text.\n"
+                    "2. STRICT QUESTION TYPE RESTRICTION: You MUST generate ONLY the following question types: MCQ, TRUE_FALSE, FILL_BLANK, and RECALL (Short Answer). Avoid any other question types. Do NOT generate long answer questions. For RECALL (Short Answer) and FILL_BLANK, the 'expected_answer' MUST be extremely concise, consisting of exactly 1 to 2 words (maximum 3 words). Never use full sentences or long phrases as answers. Keep them highly voice-friendly.\n"
+                    "3. NO REPETITION / DUPLICATE TYPES: Do NOT generate the same question statement across multiple types (e.g. do not ask the same question statement as both True/False and MCQ). Each question must be completely distinct.\n"
+                    "4. TEXTBOOK EXERCISE FOCUS: Ensure all textbook chapter-end exercises and questions are represented verbatim.\n"
+                    "5. COMPREHENSIVE ACCEPTABLE ANSWERS: Ensure 'acceptable_answers' includes all likely 1-to-2 word correct variations, natural language short phrases, synonyms, and key terminology combinations that a student might say to answer the question correctly.\n"
+                )
+            
             system_prompt += (
                 f"\n\n--- {subject.upper()} COMPREHENSIVE GENERATION RULE ---\n"
                 "IMPORTANT: You MUST generate a comprehensive mix of different question types: MCQ, TRUE_FALSE, FILL_BLANK, and RECALL (Short Answer) "
                 "covering the ENTIRE chapter content (prioritizing the exercises, questions, and assignments at the end of the textbook chapter).\n"
                 f"{grammar_note}"
+                f"{science_note}"
                 "Generate ALL of the following question types for each Learning Unit:\n"
                 "1. Textbook Exercises (MCQ / TRUE_FALSE / FILL_BLANK / RECALL): Verbatim representation of questions from the chapter-end exercises.\n"
                 "2. Parallel Practice (MCQ / TRUE_FALSE / FILL_BLANK): For every concept, generate 4-6 additional practice questions using new simple sentences.\n"
