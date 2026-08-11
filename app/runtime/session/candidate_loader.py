@@ -4,7 +4,7 @@ from sqlalchemy import select
 
 from app.repositories.base.unit_of_work import UnitOfWork
 from app.models.quiz import Question
-from app.models.course import LearningUnit, Subtopic, Topic
+from app.models.course import LearningUnit, Subtopic, Topic, Chapter
 
 class CandidateLoader:
     """
