@@ -46,6 +46,43 @@ class SessionGenerator:
             from app.runtime.session.exceptions import NoEligibleQuestionsError
             raise NoEligibleQuestionsError(f"No active questions found for content {content_id}.")
             
+        # Permanent Fail-Safe: Ensure ALL candidates belong strictly to a single dominant subject
+        from collections import defaultdict
+        lus_by_subject = defaultdict(list)
+        
+        for lu_id, questions in list(lu_map.items()):
+            subj_name = ""
+            for q in questions:
+                try:
+                    if q.learning_unit and q.learning_unit.subtopic and q.learning_unit.subtopic.topic and q.learning_unit.subtopic.topic.chapter and q.learning_unit.subtopic.topic.chapter.subject:
+                        subj_name = q.learning_unit.subtopic.topic.chapter.subject.name
+                        break
+                except Exception:
+                    pass
+            
+            # Devanagari script fallback
+            if not subj_name:
+                for q in questions:
+                    q_text = getattr(q, "text", "")
+                    if q_text and any(ord(char) in range(0x0900, 0x097F) for char in q_text):
+                        subj_name = "Hindi"
+                        break
+            
+            if not subj_name:
+                subj_name = "Unknown"
+                
+            lus_by_subject[subj_name].append((lu_id, questions))
+            
+        if len(lus_by_subject) > 1:
+            sorted_subjects = sorted(lus_by_subject.items(), key=lambda x: len(x[1]), reverse=True)
+            dominant_subject = sorted_subjects[0][0]
+            import logging
+            logging.getLogger(__name__).warning(
+                f"Subject mix detected in candidate loader! Subjects found: {list(lus_by_subject.keys())}. "
+                f"Filtering strictly to dominant subject: '{dominant_subject}'."
+            )
+            lu_map = {lu_id: questions for lu_id, questions in lus_by_subject[dominant_subject]}
+            
         # 3. Build single runtime context
         context = self.context_builder.build(student_id)
         
