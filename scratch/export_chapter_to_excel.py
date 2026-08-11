@@ -224,7 +224,8 @@ if __name__ == "__main__":
         "ननिहाल": "Chapter_4_Hindi_Question_Bank_Review.xlsx",
         "संज्ञा": "Chapter_8_Hindi_Question_Bank_Review.xlsx",
         "संज्ञा के विकारिक तत्व": "Chapter_9_Hindi_Question_Bank_Review.xlsx",
-        "Exploring Magnets": "Chapter_4_Science_Question_Bank_Review.xlsx"
+        "Exploring Magnets": "Chapter_4_Science_Question_Bank_Review.xlsx",
+        "Measurement of Length and Motion": "Chapter_5_Science_Question_Bank_Review.xlsx"
     }
     for ch_title, filename in ch_map.items():
         export_chapter_to_excel(

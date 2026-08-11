@@ -26,7 +26,8 @@ ch_titles = [
     "ननिहाल",
     "संज्ञा",
     "संज्ञा के विकारिक तत्व",
-    "Exploring Magnets"
+    "Exploring Magnets",
+    "Measurement of Length and Motion"
 ]
 
 def sync_chapter_questions(ch_title):
