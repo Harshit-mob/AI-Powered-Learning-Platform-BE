@@ -130,6 +130,12 @@ class SessionGenerator:
                         subj_name = q.learning_unit.subtopic.topic.chapter.subject.name
                 except Exception:
                     pass
+                
+                # Foolproof fallback: detect Devanagari script (Hindi characters) in question text
+                q_text = getattr(q, "text", "")
+                is_hindi = any(ord(char) in range(0x0900, 0x097F) for char in q_text) if q_text else False
+                if is_hindi:
+                    subj_name = "Hindi"
 
                 modes = list(getattr(q, "supported_answer_modes", None) or ["TEXT"])
                 if subj_name not in ["Hindi", "Gujarati"]:

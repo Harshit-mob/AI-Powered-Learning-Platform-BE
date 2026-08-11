@@ -19,7 +19,14 @@ class CandidateLoader:
         Returns a dict mapping Learning Unit ID to a list of Candidate Questions.
         """
         with self.uow:
-            stmt = select(Question).join(Question.learning_unit)
+            from sqlalchemy.orm import joinedload
+            stmt = select(Question).options(
+                joinedload(Question.learning_unit)
+                .joinedload(LearningUnit.subtopic)
+                .joinedload(Subtopic.topic)
+                .joinedload(Topic.chapter)
+                .joinedload(Chapter.subject)
+            )
             
             if content_type == "TOPIC":
                 # Check how many questions this topic has
