@@ -134,5 +134,142 @@ def sync_chapter_questions(ch_title):
         l_conn.commit()
         print(f"Successfully synced {inserted_count} questions for '{ch_title}' to Local DB.")
 
+def sync_chapter_structure(ch_title):
+    import json
+    print(f"Syncing curriculum structure for '{ch_title}' from Render DB to Local DB...")
+    with render_engine.connect() as r_conn:
+        # Fetch Chapter
+        ch_res = r_conn.execute(text("SELECT id, subject_id, title, description, created_at, updated_at FROM chapters WHERE title = :title"), {"title": ch_title}).first()
+        if not ch_res:
+            print(f"Chapter '{ch_title}' not found on Render.")
+            return
+        
+        ch_id = ch_res[0]
+        
+        # Fetch Topics
+        topics = r_conn.execute(text("SELECT id, chapter_id, title, created_at, updated_at FROM topics WHERE chapter_id = :ch_id"), {"ch_id": ch_id}).fetchall()
+        
+        # Fetch Subtopics
+        topic_ids = [t[0] for t in topics]
+        subtopics = []
+        if topic_ids:
+            subtopics = r_conn.execute(text("SELECT id, topic_id, title, content, created_at, updated_at FROM subtopics WHERE topic_id IN :t_ids"), {"t_ids": tuple(topic_ids)}).fetchall()
+            
+        # Fetch Learning Units
+        subtopic_ids = [s[0] for s in subtopics]
+        learning_units = []
+        if subtopic_ids:
+            learning_units = r_conn.execute(text("SELECT id, subtopic_id, title, content, learning_objective, keywords, difficulty, estimated_reading_time, source_pages, summary, created_at, updated_at FROM learning_units WHERE subtopic_id IN :st_ids"), {"st_ids": tuple(subtopic_ids)}).fetchall()
+
+    with local_engine.connect() as l_conn:
+        # Delete any local chapters with the same title but different ID (cascade delete)
+        stale_chapters = l_conn.execute(text("SELECT id FROM chapters WHERE title = :title AND id != :id"), {"title": ch_title, "id": ch_id}).fetchall()
+        for stale in stale_chapters:
+            stale_id = stale[0]
+            print(f"  Removing stale local chapter with ID: {stale_id}")
+            
+            # Delete student responses
+            l_conn.execute(text("""
+                DELETE FROM student_responses 
+                WHERE question_id IN (
+                    SELECT q.id FROM questions q
+                    JOIN learning_units lu ON lu.id = q.learning_unit_id
+                    JOIN subtopics st ON st.id = lu.subtopic_id
+                    JOIN topics tp ON tp.id = st.topic_id
+                    WHERE tp.chapter_id = :ch_id
+                )
+            """), {"ch_id": stale_id})
+            
+            # Delete questions
+            l_conn.execute(text("""
+                DELETE FROM questions 
+                WHERE learning_unit_id IN (
+                    SELECT lu.id FROM learning_units lu
+                    JOIN subtopics st ON st.id = lu.subtopic_id
+                    JOIN topics tp ON tp.id = st.topic_id
+                    WHERE tp.chapter_id = :ch_id
+                )
+            """), {"ch_id": stale_id})
+            
+            # Delete learning units
+            l_conn.execute(text("""
+                DELETE FROM learning_units 
+                WHERE subtopic_id IN (
+                    SELECT st.id FROM subtopics st
+                    JOIN topics tp ON tp.id = st.topic_id
+                    WHERE tp.chapter_id = :ch_id
+                )
+            """), {"ch_id": stale_id})
+            
+            # Delete subtopics
+            l_conn.execute(text("""
+                DELETE FROM subtopics 
+                WHERE topic_id IN (
+                    SELECT tp.id FROM topics tp
+                    WHERE tp.chapter_id = :ch_id
+                )
+            """), {"ch_id": stale_id})
+            
+            # Delete topics
+            l_conn.execute(text("DELETE FROM topics WHERE chapter_id = :ch_id"), {"ch_id": stale_id})
+            
+            # Delete question banks
+            l_conn.execute(text("DELETE FROM question_banks WHERE chapter_id = :ch_id"), {"ch_id": stale_id})
+            
+            # Delete chapter
+            l_conn.execute(text("DELETE FROM chapters WHERE id = :ch_id"), {"ch_id": stale_id})
+        
+        # 1. Sync Chapter
+        l_conn.execute(text("""
+            INSERT INTO chapters (id, subject_id, title, description, created_at, updated_at)
+            VALUES (:id, :subject_id, :title, :description, :created_at, :updated_at)
+            ON CONFLICT (id) DO NOTHING
+        """), {
+            "id": ch_res[0], "subject_id": ch_res[1], "title": ch_res[2], "description": ch_res[3],
+            "created_at": ch_res[4], "updated_at": ch_res[5]
+        })
+        
+        # 2. Sync Topics
+        for t in topics:
+            l_conn.execute(text("""
+                INSERT INTO topics (id, chapter_id, title, created_at, updated_at)
+                VALUES (:id, :chapter_id, :title, :created_at, :updated_at)
+                ON CONFLICT (id) DO NOTHING
+            """), {
+                "id": t[0], "chapter_id": t[1], "title": t[2], "created_at": t[3], "updated_at": t[4]
+            })
+            
+        # 3. Sync Subtopics
+        for s in subtopics:
+            l_conn.execute(text("""
+                INSERT INTO subtopics (id, topic_id, title, content, created_at, updated_at)
+                VALUES (:id, :topic_id, :title, :content, :created_at, :updated_at)
+                ON CONFLICT (id) DO NOTHING
+            """), {
+                "id": s[0], "topic_id": s[1], "title": s[2], "content": s[3], "created_at": s[4], "updated_at": s[5]
+            })
+            
+        # 4. Sync Learning Units
+        for lu in learning_units:
+            l_conn.execute(text("""
+                INSERT INTO learning_units (
+                    id, subtopic_id, title, content, learning_objective, keywords, 
+                    difficulty, estimated_reading_time, source_pages, summary, created_at, updated_at
+                ) VALUES (
+                    :id, :subtopic_id, :title, :content, :learning_objective, :keywords, 
+                    :difficulty, :estimated_reading_time, :source_pages, :summary, :created_at, :updated_at
+                ) ON CONFLICT (id) DO NOTHING
+            """), {
+                "id": lu[0], "subtopic_id": lu[1], "title": lu[2], "content": lu[3], "learning_objective": lu[4],
+                "keywords": json.dumps(lu[5]) if lu[5] is not None else None,
+                "difficulty": lu[6], "estimated_reading_time": lu[7],
+                "source_pages": json.dumps(lu[8]) if lu[8] is not None else None,
+                "summary": lu[9], "created_at": lu[10], "updated_at": lu[11]
+            })
+            
+        l_conn.commit()
+    print(f"Curriculum structure synced locally for '{ch_title}'.")
+
 for ch in ch_titles:
+    sync_chapter_structure(ch)
     sync_chapter_questions(ch)

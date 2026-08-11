@@ -77,7 +77,7 @@ Before generating questions:
 
 1. Identify every unique assessable concept in the Learning Unit.
 2. Ensure every concept is covered.
-3. To reach the 12-15 question target, you MUST test the SAME concept from DIFFERENT cognitive levels.
+3. To reach the 15-20 question target, you MUST test the SAME concept from DIFFERENT cognitive levels.
 For example, for the concept 'Science':
 - Ask a Definition question.
 - Ask a True/False question.
@@ -85,7 +85,7 @@ For example, for the concept 'Science':
 
 Target:
 
-Exactly 12–15 questions per Learning Unit.
+Exactly 15–20 questions per Learning Unit.
 Do everything possible to hit this target using different question formats and cognitive levels.
 
 ---
@@ -103,7 +103,7 @@ These are NOT duplicates because they use different formats to test the concept:
 ✅ True/False: The Sun is powered by burning coal. (Boolean)
 ✅ The Sun's energy is created through a process called ______. (Fill Blank)
 
-You MUST use this strategy to reach the 12-15 question target.
+You MUST use this strategy to reach the 15-20 question target.
 
 ---
 
@@ -207,22 +207,25 @@ Avoid long paragraph answers.
 
 # ACCEPTABLE ANSWERS
 
-Students may answer naturally.
+Students may answer naturally using voice. 
 
-Generate richer alternative answers, synonyms, and variations.
+- **NO TRAILING PUNCTUATION**: `expected_answer` and items in `acceptable_answers` MUST NOT have trailing periods, commas, question marks, or exclamation marks (e.g., use "He goes to school" instead of "He goes to school.").
+- **RICH VARIATIONS & SYNONYMS**: Generate a comprehensive list of 5-8 alternative answers, synonyms, short forms, colloquial expressions, and different wording with the same meaning in `acceptable_answers` so that correct answers are never marked wrong due to word-for-word mismatch.
+- **THINK LIKE A CHILD**: Think about how a child might phrase the answer using different words (e.g., if expected is "poor family", children might say "they don't have money", "needy family", "poverty", "low income").
 
-Example:
+Examples:
 
-Expected: Science
-Acceptable: Science, Scientific study, Study of nature, Learning about nature
+Expected: "science"
+Acceptable: ["science", "scientific study", "study of nature", "learning about nature", "it is science", "the science", "scientific learning"]
+
+Expected: "poor family"
+Acceptable: ["poor family", "they don't have money", "they have no money", "needy family", "low income family", "poverty"]
 
 For BOOLEAN types:
-Generate variations like Yes, Yeah, Correct, True OR No, False, Incorrect, Nope.
+Generate variations like Yes, Yeah, Correct, True, Yup, OR No, False, Incorrect, Nope, Nah.
 
 For FILL_BLANK types:
-Allow capitalization variations.
-
-Do NOT require exact textbook wording.
+Allow capitalization and spelling variations, short answers, and natural conversational phrasing. Do NOT require exact textbook wording.
 
 ---
 
@@ -276,8 +279,11 @@ Write a child-friendly explanation.
 
 Explain WHY, not just WHAT.
 
-Maximum: 50 words
-Use simple English and Grade 6 vocabulary.
+- Explanations MUST be written as a single, child-friendly, natural conversational paragraph of max 50-70 words.
+- State what the correct answer is, why it is correct (using 'because' or 'since'), briefly mention why other answers are wrong, and include one everyday example.
+- **CRITICAL**: DO NOT use lists or numbered parts (like 1), 2), 3), etc.) inside the explanation.
+
+Use simple English/vocabulary appropriate for Grade 6.
 
 ---
 
@@ -306,17 +312,11 @@ Difficulty MUST be consistent with the question type:
 
 # ANSWER MODES
 
-Choose one or more:
+Choose answer modes based on question type:
 
-VOICE
-TEXT
-MCQ
-
-Most questions should support:
-
-VOICE
-TEXT
-MCQ
+- For MCQ and TRUE_FALSE: `supported_answer_modes` MUST be exactly `["MCQ"]`.
+- For RECALL, DEFINITION, UNDERSTANDING, REASONING: `supported_answer_modes` MUST be `["VOICE", "TEXT"]`.
+- For FILL_BLANK: `supported_answer_modes` MUST be `["TEXT"]`.
 
 ---
 
@@ -324,12 +324,31 @@ MCQ
 
 If MCQ is included:
 
-Exactly 4 options.
-Only ONE correct answer.
-Distractors should be believable.
-Never use: All of the above, None of the above
+- Exactly 4 options in `mcq_options`.
+- Only ONE correct answer.
+- **CRITICAL**: The `correct_option` and `expected_answer` MUST be exactly identical (character-for-character) to one of the options listed in `mcq_options`.
+- **NO OPTIONS IN QUESTION TEXT**: The `question` string MUST contain ONLY the question query. Do NOT append options, letters (like a, b, c, d, A, B, C, D), or bullet points to the `question` string.
+- Distractors should be believable.
+- Never use: All of the above, None of the above
 
 ---
+
+# TRUE_FALSE RULES
+
+For every `TRUE_FALSE` question type:
+
+- Include exactly 2 options in `mcq_options`:
+  - English: `["True", "False"]`
+  - Hindi: `["हाँ (True)", "नहीं (False)"]`
+  - Gujarati: `["સાચું (True)", "ખોટું (False)"]`
+- Set both `correct_option` and `expected_answer` to exactly match one of these 2 options (character-for-character, case-sensitive).
+- Set `evaluation_method` to `MCQ` and include `MCQ` in `supported_answer_modes`.
+
+---
+
+# QUALITY RULES
+
+Questions must:
 
 # QUALITY RULES
 
@@ -338,6 +357,7 @@ Questions must:
 ✔ Cover the entire Learning Unit
 ✔ Avoid duplicates
 ✔ Avoid repetition
+- **NO REPETITIVE TYPES**: Do NOT generate the same question statement under different types (e.g. asking the same statement as both True/False and MCQ). Each question in a batch or learning unit must be distinct in its structure, scenario, and wording.
 ✔ Avoid ambiguity
 ✔ Use simple language
 ✔ Match Grade 6 vocabulary

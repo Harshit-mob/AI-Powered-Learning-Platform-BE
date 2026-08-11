@@ -119,7 +119,7 @@ class QuestionGenerationService:
                 "explanation_format": "Explanations MUST be written as a single child-friendly, natural conversational paragraph of max 70 words. It should state what the correct answer is, why it is correct (using 'because' or 'since'), briefly mention why other answers are wrong, and include one everyday example. DO NOT use lists or numbered parts (like 1), 2), etc.).",
                 "acceptable_answers": "Generate natural spoken variants (e.g. 'The science', 'It is science') rather than substituting concepts.",
                 "hint_generation": "Hints must progressively reveal the answer structurally. NEVER generate generic hints like 'Think carefully', 'Consider the concept', or 'Practical scenario'.",
-                "adaptive_generation": "For EVERY concept tested, generate exactly 3 variants as a Concept Cluster: 1 Easier, 1 Standard, 1 Harder variant. Ensure they target the exact same concept."
+                "adaptive_generation": "For EVERY concept tested, generate exactly 8 variants as a Concept Cluster: 2 Easier, 4 Standard, 2 Harder variants. Ensure they target the exact same concept but use distinct sentences, phrasing, and scenarios."
             }
         }
         return json.dumps(payload, indent=2)
@@ -371,10 +371,10 @@ class QuestionGenerationService:
                 )
             
             science_note = ""
-            if subject.lower() == "science":
+            if subject.lower() in ["science", "social science"]:
                 science_note = (
-                    "SCIENCE GENERATION RULES:\n"
-                    "1. ONLY CONTENT-BASED QUESTIONS: Do NOT generate any grammar, vocabulary, or language-based questions. All questions must test core scientific concepts, observations, processes, or experiments from the text.\n"
+                    f"{subject.upper()} GENERATION RULES:\n"
+                    f"1. ONLY CONTENT-BASED QUESTIONS: Do NOT generate any grammar, vocabulary, or language-based questions. All questions must test core {subject} concepts, terms, facts, timelines, or observations from the text.\n"
                     "2. STRICT QUESTION TYPE RESTRICTION: You MUST generate ONLY the following question types: MCQ, TRUE_FALSE, FILL_BLANK, and RECALL (Short Answer). Avoid any other question types. Do NOT generate long answer questions. For RECALL (Short Answer) and FILL_BLANK, the 'expected_answer' MUST be extremely concise, consisting of exactly 1 to 2 words (maximum 3 words). Never use full sentences or long phrases as answers. Keep them highly voice-friendly.\n"
                     "3. NO REPETITION / DUPLICATE TYPES: Do NOT generate the same question statement across multiple types (e.g. do not ask the same question statement as both True/False and MCQ). Each question must be completely distinct.\n"
                     "4. TEXTBOOK EXERCISE FOCUS: Ensure all textbook chapter-end exercises and questions are represented verbatim.\n"
@@ -392,7 +392,7 @@ class QuestionGenerationService:
                 "2. Parallel Practice (MCQ / TRUE_FALSE / FILL_BLANK): For every concept, generate 4-6 additional practice questions using new simple sentences.\n"
                 "For MCQ questions, you MUST include 'mcq_options' (exactly 4 options) and 'correct_option'.\n"
                 "For TRUE_FALSE questions, you MUST include 'mcq_options' with exactly 2 options: [\"True\", \"False\"], and set both 'correct_option' and 'expected_answer' to match one of these two options exactly.\n"
-                "Aim to generate a total pool of at least 100 questions for the chapter."
+                "QUANTITY & COVERAGE: Generate exactly 15-20 questions in total for this learning unit. Ensure full coverage of all concepts. Focus heavily on textbook exercises (verbatim) and content practice."
             )
         
         all_validated = []

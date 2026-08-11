@@ -49,42 +49,51 @@ def generate_questions_for_chapter(chapter_title):
         
         print("\n[2/3] Generating & Validating Questions for all Learning Units...")
         
-        for topic in chapter.topics:
-            for subtopic in topic.subtopics:
-                if not subtopic.learning_units:
-                    continue
-                
-                db_units = subtopic.learning_units
-                subset = [
-                     {
-                         "id": str(lu.id),
-                         "title": lu.title,
-                         "learning_objective": lu.learning_objective,
-                         "content": lu.content,
-                         "keywords": lu.keywords,
-                         "difficulty": lu.difficulty,
-                         "source_pages": lu.source_pages,
-                         "subject": subject.name
-                     } for lu in db_units
-                ]
-                
-                print(f"\nProcessing Subtopic: '{subtopic.title}' with {len(subset)} units...")
-                stats = generator.generate_question_bank(
-                    subject=subject.name,
-                    grade=int(grade.name) if grade.name.isdigit() else 6,
-                    board=board.name,
-                    chapter=chapter.title,
-                    topic=topic.title,
-                    sub_topic=subtopic.title,
-                    learning_units=subset
-                )
-                
-                all_questions.extend(stats["questions"])
-                total_generated += stats["total_generated"]
-                total_validated += stats["total_validated"]
-                total_failures += stats["total_failures_or_dupes"]
-                total_time += stats["execution_time_seconds"]
-                quality_reports.append(stats.get("quality_report", ""))
+        # Count total learning units in the chapter to decide generation rounds
+        total_units = sum(len(st.learning_units) for t in chapter.topics for st in t.subtopics)
+        rounds = 2 if total_units < 10 else 1
+        if rounds > 1:
+            print(f"Chapter has few learning units ({total_units}). Running {rounds} rounds of generation to boost density...")
+
+        for r in range(rounds):
+            if rounds > 1:
+                print(f"\n--- Round {r+1} of {rounds} ---")
+            for topic in chapter.topics:
+                for subtopic in topic.subtopics:
+                    if not subtopic.learning_units:
+                        continue
+                    
+                    db_units = subtopic.learning_units
+                    subset = [
+                         {
+                             "id": str(lu.id),
+                             "title": lu.title,
+                             "learning_objective": lu.learning_objective,
+                             "content": lu.content,
+                             "keywords": lu.keywords,
+                             "difficulty": lu.difficulty,
+                             "source_pages": lu.source_pages,
+                             "subject": subject.name
+                         } for lu in db_units
+                    ]
+                    
+                    print(f"\nProcessing Subtopic: '{subtopic.title}' with {len(subset)} units...")
+                    stats = generator.generate_question_bank(
+                        subject=subject.name,
+                        grade=int(grade.name) if grade.name.isdigit() else 6,
+                        board=board.name,
+                        chapter=chapter.title,
+                        topic=topic.title,
+                        sub_topic=subtopic.title,
+                        learning_units=subset
+                    )
+                    
+                    all_questions.extend(stats["questions"])
+                    total_generated += stats["total_generated"]
+                    total_validated += stats["total_validated"]
+                    total_failures += stats["total_failures_or_dupes"]
+                    total_time += stats["execution_time_seconds"]
+                    quality_reports.append(stats.get("quality_report", ""))
 
         # 3. Save Questions to Database
         print("\n[3/3] Saving Questions to Database...")
