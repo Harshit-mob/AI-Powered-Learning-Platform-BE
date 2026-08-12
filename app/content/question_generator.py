@@ -135,6 +135,74 @@ class QuestionGenerationService:
         if not isinstance(raw_list, list): return []
         
         for item in raw_list:
+            # Self-healing for English questions
+            is_indic = any(ord(char) in range(0x0900, 0x0AF0) for char in item.get("question", "")) if item.get("question") else False
+            if not is_indic:
+                q_text = item.get("question", "")
+                q_type = item.get("question_type", "")
+                exp_ans = item.get("expected_answer", "")
+
+                # 1. Fill-in-the-blank choice cleaning
+                if q_type == "FILL_BLANK" and q_text and exp_ans:
+                    if "(born)" in q_text and exp_ans == "was born":
+                        item["question"] = q_text.replace("(born)", "(was/is) born")
+                        item["expected_answer"] = "was"
+                        item["acceptable_answers"] = ["was", "was born"]
+                        if "correct_option" in item:
+                            item["correct_option"] = "was"
+                    elif "correct form of 'big'" in q_text:
+                        item["question"] = re.sub(r'\(Fill in with the correct form of \'big\'\)', '(bigger/smaller)', q_text)
+                    elif "Fill in with 'large'" in q_text:
+                        item["question"] = re.sub(r'\(Fill in with \'large\'\)', '(largest/larger)', q_text)
+
+                # 2. Auto-convert choice-implying questions to MCQ
+                choice_words = ["which word", "which pronoun", "which noun", "which suffix", "which is the", "which adjective", "which degree"]
+                is_choice_question = any(w in q_text.lower() for w in choice_words) if q_text else False
+                
+                if is_choice_question and q_type not in ["MCQ", "TRUE_FALSE"]:
+                    item["question_type"] = "MCQ"
+                    item["supported_answer_modes"] = ["MCQ"]
+                    item["evaluation_method"] = "MCQ"
+                    
+                    # Generate options if missing or incomplete
+                    if not item.get("mcq_options") or len(item["mcq_options"]) < 4:
+                        correct = exp_ans or item.get("correct_option", "")
+                        options = [correct]
+                        
+                        # Case A: Pronouns
+                        pronouns = ["She", "He", "They", "It", "We", "I", "You", "himself", "herself", "none"]
+                        if correct in pronouns:
+                            for p in pronouns:
+                                if p != correct and p not in options:
+                                    options.append(p)
+                                if len(options) == 4:
+                                    break
+                        # Case B: Degrees of comparison
+                        elif correct in ["positive", "comparative", "superlative", "adverb"]:
+                            options = ["positive", "comparative", "superlative", "adverb"]
+                        # Case C: Words from quotes
+                        else:
+                            quotes = re.findall(r"'([^']+)'", q_text)
+                            if quotes:
+                                words = [w.strip(",.?! ") for w in quotes[0].split()]
+                                for w in words:
+                                    if w and w != correct and w not in options:
+                                        options.append(w)
+                                    if len(options) == 4:
+                                        break
+                            fallbacks = ["noun", "verb", "adjective", "pronoun", "always", "maybe", "never"]
+                            for f in fallbacks:
+                                if len(options) == 4:
+                                    break
+                                if f != correct and f not in options:
+                                    options.append(f)
+                                    
+                        while len(options) < 4:
+                            options.append("none")
+                            
+                        item["mcq_options"] = options
+                        item["correct_option"] = correct
+                        item["expected_answer"] = correct
             # Clean up unclosed parentheses in TRUE_FALSE questions
             if item.get("question_type") == "TRUE_FALSE":
                 correct = item.get("correct_option")
