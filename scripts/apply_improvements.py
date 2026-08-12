@@ -37,6 +37,7 @@ def apply_updates(db_url, db_name, json_data):
             res = conn.execute(text("""
                 UPDATE questions
                 SET text = :text,
+                    question_type = :q_type,
                     expected_answer = :expected_answer,
                     mcq_options = CAST(:mcq_options AS jsonb),
                     correct_option = :correct_option,
@@ -49,6 +50,7 @@ def apply_updates(db_url, db_name, json_data):
                 WHERE id = :q_id
             """), {
                 "text": item.get("question"),
+                "q_type": q_type,
                 "expected_answer": item.get("expected_answer"),
                 "mcq_options": json.dumps(mcq_options),
                 "correct_option": item.get("correct_option"),
