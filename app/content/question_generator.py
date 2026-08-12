@@ -135,8 +135,13 @@ class QuestionGenerationService:
         if not isinstance(raw_list, list): return []
         
         for item in raw_list:
+            # Force TRUE_FALSE type for any question starting with "True or False" or "True/False"
+            q_text = item.get("question", "")
+            if isinstance(q_text, str) and (q_text.strip().lower().startswith("true or false:") or q_text.strip().lower().startswith("true/false:")):
+                item["question_type"] = "TRUE_FALSE"
+
             # Self-healing for English questions
-            is_indic = any(ord(char) in range(0x0900, 0x0AF0) for char in item.get("question", "")) if item.get("question") else False
+            is_indic = any(ord(char) in range(0x0900, 0x0AF0) for char in q_text) if q_text else False
             if not is_indic:
                 q_text = item.get("question", "")
                 q_type = item.get("question_type", "")
