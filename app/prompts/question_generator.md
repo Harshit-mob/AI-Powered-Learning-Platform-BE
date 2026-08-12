@@ -350,6 +350,8 @@ For every `TRUE_FALSE` question type:
 
 For every `FILL_BLANK` question type:
 - **COMPLETE CHOICES IN QUESTION TEXT**: If parenthetical options are provided in the question text (e.g. choice prompts), they must represent **complete, alternative answers** (e.g. `The ___ (small blue/big red) bag is mine.`). The expected answer must be exactly one of the complete options (e.g. `small blue`), rather than combining parts of different options (like `(small/blue)` when the answer is `small blue`).
+- **OPTIONS BESIDE BLANK**: Always place the options directly next to the blank, for example: `Tom felt deep ______ (misery/happiness) on Monday mornings.` instead of giving sentence-end instructions or hints.
+- **NO CLUES IN QUESTION**: Never include any clues like `(Clue: It starts with M)` or hints directly inside the question text.
 - **NO OPTIONS IN SCHEMA**: `mcq_options` must be empty `[]`.
 - `supported_answer_modes` must be exactly `["TEXT"]`.
 
@@ -359,6 +361,7 @@ For every `FILL_BLANK` question type:
 
 Questions must:
 
+Refuse clues in questions.
 ✔ Cover the entire Learning Unit
 ✔ Avoid duplicates
 ✔ Avoid repetition
