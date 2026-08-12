@@ -205,15 +205,27 @@ class QuestionGenerationService:
                         item["expected_answer"] = correct
             # Clean up unclosed parentheses in TRUE_FALSE questions
             if item.get("question_type") == "TRUE_FALSE":
+                # Ensure exactly 2 language-appropriate options
+                q_text = item.get("question", "")
+                is_hindi = any(ord(c) in range(0x0900, 0x097F) for c in q_text) if q_text else False
+                is_gujarati = any(ord(c) in range(0x0A80, 0x0AFF) for c in q_text) if q_text else False
+                
+                if is_hindi:
+                    item["mcq_options"] = ["हाँ (True)", "नहीं (False)"]
+                elif is_gujarati:
+                    item["mcq_options"] = ["સાચું (True)", "ખોટું (False)"]
+                else:
+                    item["mcq_options"] = ["True", "False"]
+
                 correct = item.get("correct_option")
                 if isinstance(correct, str):
                     c_lower = correct.lower()
                     if "हाँ" in correct or "true" in c_lower:
                         if "नहीं" not in correct and "false" not in c_lower:
-                            item["correct_option"] = "हाँ (True)"
+                            item["correct_option"] = item["mcq_options"][0]
                     elif "नहीं" in correct or "false" in c_lower:
                         if "हाँ" not in correct and "true" not in c_lower:
-                            item["correct_option"] = "नहीं (False)"
+                            item["correct_option"] = item["mcq_options"][1]
                             
                 # expected_answer must exactly match correct_option
                 item["expected_answer"] = item["correct_option"]
