@@ -349,7 +349,7 @@ For every `TRUE_FALSE` question type:
 # FILL_BLANK RULES
 
 For every `FILL_BLANK` question type:
-- **NO CHOOSE-OPTIONS IN QUESTION TEXT**: Do NOT include options or choice guides in parentheses (e.g. `(small/blue)` or `(is/are)`) inside the question text. The blank must represent a single, clear, unambiguous word or short phrase that the student can naturally deduce from the context.
+- **COMPLETE CHOICES IN QUESTION TEXT**: If parenthetical options are provided in the question text (e.g. choice prompts), they must represent **complete, alternative answers** (e.g. `The ___ (small blue/big red) bag is mine.`). The expected answer must be exactly one of the complete options (e.g. `small blue`), rather than combining parts of different options (like `(small/blue)` when the answer is `small blue`).
 - **NO OPTIONS IN SCHEMA**: `mcq_options` must be empty `[]`.
 - `supported_answer_modes` must be exactly `["TEXT"]`.
 
