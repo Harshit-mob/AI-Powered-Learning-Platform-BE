@@ -346,9 +346,14 @@ For every `TRUE_FALSE` question type:
 
 ---
 
-# QUALITY RULES
+# FILL_BLANK RULES
 
-Questions must:
+For every `FILL_BLANK` question type:
+- **NO CHOOSE-OPTIONS IN QUESTION TEXT**: Do NOT include options or choice guides in parentheses (e.g. `(small/blue)` or `(is/are)`) inside the question text. The blank must represent a single, clear, unambiguous word or short phrase that the student can naturally deduce from the context.
+- **NO OPTIONS IN SCHEMA**: `mcq_options` must be empty `[]`.
+- `supported_answer_modes` must be exactly `["TEXT"]`.
+
+---
 
 # QUALITY RULES
 
@@ -358,6 +363,7 @@ Questions must:
 ✔ Avoid duplicates
 ✔ Avoid repetition
 - **NO REPETITIVE TYPES**: Do NOT generate the same question statement under different types (e.g. asking the same statement as both True/False and MCQ). Each question in a batch or learning unit must be distinct in its structure, scenario, and wording.
+- **NO "WHICH OF THESE" IN NON-MCQ**: Do NOT start non-MCQ questions (such as `RECALL`, `DEFINITION`, `UNDERSTANDING`, `FILL_BLANK`, etc.) with phrasing like `"Which of these"`, `"Which of the following"`, or `"Which one of"`. Phrasing that implies a selection from choices must be reserved strictly for the `MCQ` question type.
 ✔ Avoid ambiguity
 ✔ Use simple language
 ✔ Match Grade 6 vocabulary
