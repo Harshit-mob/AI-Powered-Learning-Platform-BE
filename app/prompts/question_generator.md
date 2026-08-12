@@ -314,15 +314,15 @@ Difficulty MUST be consistent with the question type:
 
 Choose answer modes based on question type:
 
-- For MCQ and TRUE_FALSE: `supported_answer_modes` MUST be exactly `["MCQ"]`.
-- For RECALL, DEFINITION, UNDERSTANDING, REASONING: `supported_answer_modes` MUST be `["VOICE", "TEXT"]`.
+- For MCQ, TRUE_FALSE, DEFINITION, and RECALL: `supported_answer_modes` MUST be exactly `["MCQ"]`, and they must have options in `mcq_options`.
+- For UNDERSTANDING, REASONING: `supported_answer_modes` MUST be `["VOICE", "TEXT"]`.
 - For FILL_BLANK: `supported_answer_modes` MUST be `["TEXT"]`.
 
 ---
 
-# MCQ RULES
+# MCQ, DEFINITION, AND RECALL RULES
 
-If MCQ is included:
+For MCQ, DEFINITION, and RECALL question types:
 
 - Exactly 4 options in `mcq_options`.
 - Only ONE correct answer.
