@@ -6,18 +6,10 @@ services:
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: DATABASE_URL
-        fromDatabase:
-          name: ai-learning-db
-          property: connectionString
+        sync: false
       - key: DEBUG
         value: "False"
       - key: GEMINI_API_KEY
         sync: false
       - key: SECRET_KEY
         sync: false
-
-databases:
-  - name: ai-learning-db
-    databaseName: ai_learning
-    user: ai_learning_user
-    plan: free
