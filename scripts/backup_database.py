@@ -87,6 +87,19 @@ def restore(database_url, input_path):
         if use_replica_role:
             conn.execute(text("SET session_replication_role = 'replica';"))
             
+        # First, delete existing data in reverse topological order to avoid FK violations
+        print("Cleaning existing data from target tables in reverse topological order...")
+        for table in reversed(metadata.sorted_tables):
+            table_name = table.name
+            if table_name not in backup_data:
+                continue
+            data = backup_data[table_name]
+            if not data["rows"]:
+                continue
+            conn.execute(table.delete())
+
+        # Next, insert data in forward topological order
+        print("Inserting restored data in forward topological order...")
         for table in metadata.sorted_tables:
             table_name = table.name
             if table_name not in backup_data:
@@ -100,11 +113,6 @@ def restore(database_url, input_path):
                 continue
                 
             print(f"Restoring {len(rows)} rows to table {table_name}...")
-            
-            # Clean existing data to avoid duplicates
-            conn.execute(table.delete())
-            
-            # Insert rows
             conn.execute(table.insert(), rows)
             
             # Reset postgres sequences if the table has an serial/identity primary key
