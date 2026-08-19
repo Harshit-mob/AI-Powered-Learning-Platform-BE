@@ -1,0 +1,38 @@
+name: Send Scheduled Notifications
+
+on:
+  schedule:
+    # Run every day at 12:00 PM UTC (5:30 PM IST)
+    - cron: '0 12 * * *'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  send-notifications:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Create Firebase Credentials File
+        run: |
+          echo '${{ secrets.FIREBASE_CREDENTIALS_JSON }}' > firebase-credentials.json
+
+      - name: Run Notification Scheduler
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          FIREBASE_CREDENTIALS_PATH: firebase-credentials.json
+          ENABLE_MOCK_NOTIFICATIONS: False
+        run: |
+          python scripts/send_scheduled_notifications.py
