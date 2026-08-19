@@ -233,6 +233,67 @@ class StudentService:
                 "learning_date": today.isoformat()
             }
 
+    def get_weekly_streak(self, student_id: uuid.UUID) -> list[dict[str, Any]]:
+        from datetime import datetime, timezone, timedelta
+        from app.models.assessment.learning_session import LearningSession
+        from sqlalchemy import func
+        
+        with self.uow:
+            now = datetime.now(timezone.utc)
+            today_date = now.date()
+            
+            # Find the Monday of the current week
+            monday_date = today_date - timedelta(days=today_date.weekday())
+            
+            # Generate the 7 days of the week starting from Monday
+            week_days = []
+            for i in range(7):
+                day_date = monday_date + timedelta(days=i)
+                week_days.append(day_date)
+                
+            # Query all completed learning sessions for the student during this week
+            start_datetime = datetime(monday_date.year, monday_date.month, monday_date.day, tzinfo=timezone.utc)
+            end_datetime = start_datetime + timedelta(days=7)
+            
+            completed_sessions = self.uow.session.query(
+                func.date(LearningSession.end_time)
+            ).filter(
+                LearningSession.student_id == student_id,
+                LearningSession.completion_reason == "COMPLETED",
+                LearningSession.end_time >= start_datetime,
+                LearningSession.end_time < end_datetime
+            ).all()
+            
+            completed_dates = {s[0] for s in completed_sessions if s[0] is not None}
+            
+            # Form response
+            day_names = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+            result = []
+            for i, d in enumerate(week_days):
+                is_completed = False
+                for c_date in completed_dates:
+                    if isinstance(c_date, str):
+                        # Handle potential string return from SQLite/Postgres func.date
+                        # e.g., "2026-08-13" or "2026-08-13 00:00:00"
+                        date_part = c_date.split()[0]
+                        if date_part == d.isoformat():
+                            is_completed = True
+                            break
+                    elif c_date == d:
+                        is_completed = True
+                        break
+                        
+                result.append({
+                    "day_name": day_names[i],
+                    "date": d.strftime("%d"), # "03", "04", etc.
+                    "full_date": d.isoformat(), # "2026-08-03"
+                    "completed": is_completed,
+                    "is_today": d == today_date
+                })
+                
+            return result
+
+
 
 def check_and_update_student_streak(uow: UnitOfWork, student_id: uuid.UUID) -> int:
     from datetime import datetime, timezone, timedelta

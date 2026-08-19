@@ -9,6 +9,11 @@ class Settings(BaseSettings):
     # Database Settings
     DATABASE_URL: str
 
+    # Firebase Push Notification Settings
+    FIREBASE_CREDENTIALS_PATH: str = "firebase-credentials.json"
+    ENABLE_MOCK_NOTIFICATIONS: bool = False
+
+
     @property
     def database_url_fixed(self) -> str:
         """

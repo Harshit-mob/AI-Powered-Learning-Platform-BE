@@ -16,3 +16,23 @@ class RegisterDeviceTokenRequest(CamelBaseModel):
             }
         }
     }
+
+
+class SendTestNotificationRequest(CamelBaseModel):
+    title: str
+    body: str
+    data: Optional[dict] = None
+
+    model_config = {
+        "json_schema_extra": {
+            "example": {
+                "title": "Hello Study Buddy!",
+                "body": "This is a test push notification.",
+                "data": {
+                    "type": "test",
+                    "action": "open"
+                }
+            }
+        }
+    }
+

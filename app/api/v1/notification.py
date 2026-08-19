@@ -3,7 +3,8 @@ from fastapi import APIRouter, Depends
 from app.api.v1.responses import SuccessResponse, create_response
 from app.api.v1.dependencies import get_uow, get_current_student
 from app.repositories.base.unit_of_work import UnitOfWork
-from app.schemas.notification.notification_schema import RegisterDeviceTokenRequest
+from app.schemas.notification.notification_schema import RegisterDeviceTokenRequest, SendTestNotificationRequest
+from app.application.notification_service import NotificationService
 
 router = APIRouter(prefix="/notifications", tags=["Notifications"])
 
@@ -28,3 +29,29 @@ def register_device_token(
         uow.commit()
 
     return create_response({}, "Device token registered successfully")
+
+
+@router.post("/send-test", response_model=SuccessResponse)
+def send_test_notification(
+    request: SendTestNotificationRequest,
+    student=Depends(get_current_student),
+    uow: UnitOfWork = Depends(get_uow),
+):
+    """
+    Send a test push notification to all active device tokens of the currently logged-in student.
+    """
+    notification_service = NotificationService(uow)
+    successful_sends, sent_tokens = notification_service.send_push_to_student(
+        student_id=student.id,
+        title=request.title,
+        body=request.body,
+        data=request.data,
+    )
+    return create_response(
+        {
+            "successful_sends": successful_sends,
+            "sent_tokens": sent_tokens
+        },
+        f"Test notification sent to {successful_sends} device(s)"
+    )
+

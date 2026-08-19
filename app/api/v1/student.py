@@ -31,3 +31,10 @@ def check_daily_status(student = Depends(get_current_student), uow: UnitOfWork =
     service = StudentService(uow)
     data = service.check_daily_status(student.id)
     return create_response(data, "Daily check-in status retrieved successfully")
+
+@router.get("/weekly-streak", response_model=SuccessResponse)
+def get_weekly_streak(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
+    service = StudentService(uow)
+    data = service.get_weekly_streak(student.id)
+    return create_response(data, "Weekly streak progress retrieved successfully")
+
