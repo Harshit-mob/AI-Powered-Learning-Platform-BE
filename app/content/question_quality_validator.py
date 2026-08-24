@@ -177,8 +177,8 @@ class QuestionQualityValidator:
         if norm_exp_ans and norm_exp_ans in norm_h1: return self._reject("Hint 1 contains the answer")
         if norm_exp and norm_exp in norm_h2: return self._reject("Hint 2 contains the complete explanation")
 
-        # 8. MCQ Validation
-        if "MCQ" in q.get("supported_answer_modes", []) or q_type == "MCQ":
+        # 8. MCQ / TRUE_FALSE Validation
+        if q_type == "MCQ":
             options = q.get("mcq_options", [])
             if len(options) != 4: return self._reject("MCQ does not contain exactly four options")
             norm_opts = [self._normalize_text(opt) for opt in options]
@@ -187,6 +187,16 @@ class QuestionQualityValidator:
             correct_opt = str(q.get("correct_option", "")).strip()
             if not correct_opt or self._normalize_text(correct_opt) not in norm_opts:
                 return self._reject("Correct option not found in options")
+        elif q_type == "TRUE_FALSE":
+            options = q.get("mcq_options", [])
+            if options:
+                if len(options) != 2: return self._reject("True/False must contain exactly two options")
+                norm_opts = [self._normalize_text(opt) for opt in options]
+                if len(set(norm_opts)) != 2: return self._reject("Duplicate True/False options")
+                if "" in norm_opts: return self._reject("Empty True/False option")
+                correct_opt = str(q.get("correct_option", "")).strip()
+                if not correct_opt or self._normalize_text(correct_opt) not in norm_opts:
+                    return self._reject("Correct option not found in options")
 
         # 9. Duplicate Detection (Type + Concept + Question Text + Answer + Method)
         concept = self._normalize_text(str(q.get("concept", "")))

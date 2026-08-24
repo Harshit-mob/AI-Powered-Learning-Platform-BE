@@ -1,4 +1,5 @@
 from typing import Optional
+from pydantic import BaseModel
 from app.schemas.common.base import CamelBaseModel
 
 
@@ -35,4 +36,8 @@ class SendTestNotificationRequest(CamelBaseModel):
             }
         }
     }
+
+class SendTestNotificationResponse(BaseModel):
+    successful_sends: int
+    sent_tokens: list[str]
 

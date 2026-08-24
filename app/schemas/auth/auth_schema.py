@@ -1,4 +1,4 @@
-from pydantic import EmailStr, Field
+from pydantic import EmailStr, Field, BaseModel
 from typing import Optional
 import uuid
 from app.schemas.common.base import CamelBaseModel
@@ -23,3 +23,27 @@ class RefreshTokenRequest(CamelBaseModel):
 
 class LogoutRequest(CamelBaseModel):
     device_id: Optional[str] = None  # If provided, only deactivate that device's token
+
+class AuthResponse(BaseModel):
+    student_id: uuid.UUID
+    access_token: str
+    refresh_token: str
+    role: str
+
+class LoginResponse(BaseModel):
+    student_id: uuid.UUID
+    name: str
+    access_token: str
+    refresh_token: str
+    role: str
+
+class RefreshTokenResponse(BaseModel):
+    student_id: uuid.UUID
+    access_token: str
+    refresh_token: str
+
+class UserMeResponse(BaseModel):
+    student_id: uuid.UUID
+    email: EmailStr
+    name: str
+    role: str

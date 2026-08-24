@@ -36,9 +36,9 @@ class MetadataValidationPipeline:
         Returns (is_valid, intel, messages).
         If is_valid is False, the question MUST be rejected entirely.
         """
-        # Check if subject is Science
+        # Check if subject is Science or Social Science
         is_science = False
-        if unit and unit.get("subject", "").lower() == "science":
+        if unit and unit.get("subject", "").lower() in ["science", "social science"]:
             is_science = True
 
         score = 100

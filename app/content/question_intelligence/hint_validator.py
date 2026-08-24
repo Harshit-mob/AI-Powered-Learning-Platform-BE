@@ -46,6 +46,22 @@ class HintValidator:
                 # but the Metadata Score Engine will deduct points for missing hints.
                 continue
                 
+            import re
+            expected = str(question.get("expected_answer", "")).lower().strip()
+            correct_opt = str(question.get("correct_option", "")).lower().strip()
+            is_trivial = expected in ["yes", "no", "true", "false", "y", "n"] or len(expected) <= 2
+            
+            gives_away = False
+            if not is_trivial:
+                escaped_expected = re.escape(expected)
+                gives_away = bool(re.search(rf"\b{escaped_expected}\b", hint))
+                if correct_opt and len(correct_opt) > 2 and correct_opt not in ["yes", "no", "true", "false", "y", "n"]:
+                    escaped_correct = re.escape(correct_opt)
+                    gives_away = gives_away or bool(re.search(rf"\b{escaped_correct}\b", hint))
+            
+            if gives_away:
+                return False, f"Hint gives away the answer directly: '{expected}' in '{question.get(level)}'"
+                
             if any(bad_phrase in hint for bad_phrase in self.BAD_PHRASES):
                 original = question.get(level, "")
                 if level == "hint_level_1":

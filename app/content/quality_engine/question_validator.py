@@ -73,10 +73,15 @@ class QuestionValidator:
         if exp_wc > 60:
             issues.append(ValidationIssue("EXPLANATION_LONG", ValidationSeverity.WARNING, f"Explanation is long ({exp_wc} words)."))
             
-        if "MCQ" in q.get("supported_answer_modes", []) or q_type == "MCQ":
+        if q_type == "MCQ":
             options = q.get("mcq_options", [])
             if len(options) != 4:
                 issues.append(ValidationIssue("INVALID_MCQ", ValidationSeverity.CRITICAL, "MCQ must have exactly 4 options."))
+                is_valid = False
+        elif q_type == "TRUE_FALSE":
+            options = q.get("mcq_options", [])
+            if options and len(options) != 2:
+                issues.append(ValidationIssue("INVALID_TRUE_FALSE", ValidationSeverity.CRITICAL, "True/False must have exactly 2 options."))
                 is_valid = False
                 
         quality_score = self.quality_analyzer.analyze(q, unit_diversity_count)

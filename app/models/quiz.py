@@ -1,8 +1,9 @@
 import uuid
-from sqlalchemy import Column, String, Text, DateTime, ForeignKey, Integer, Boolean, Float
+from sqlalchemy import Column, String, Text, DateTime, ForeignKey, Integer, Boolean, Float, case
 from sqlalchemy.dialects.postgresql import UUID, JSONB, ARRAY
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
+from sqlalchemy.ext.hybrid import hybrid_property
 from app.database.session import Base
 
 class Question(Base):
@@ -62,6 +63,44 @@ class Question(Base):
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
+    @hybrid_property
+    def difficulty_level(self) -> str:
+        mapping = {1: "VERY_EASY", 2: "EASY", 3: "MEDIUM", 4: "HARD", 5: "VERY_HARD"}
+        return mapping.get(self.difficulty or 2, "MEDIUM")
+
+    @difficulty_level.setter
+    def difficulty_level(self, val: str):
+        mapping = {"VERY_EASY": 1, "EASY": 2, "MEDIUM": 3, "HARD": 4, "VERY_HARD": 5}
+        self.difficulty = mapping.get(val, 2)
+
+    @difficulty_level.expression
+    def difficulty_level(cls):
+        return case(
+            (cls.difficulty == 1, "VERY_EASY"),
+            (cls.difficulty == 2, "EASY"),
+            (cls.difficulty == 3, "MEDIUM"),
+            (cls.difficulty == 4, "HARD"),
+            (cls.difficulty == 5, "VERY_HARD"),
+            else_="MEDIUM"
+        )
+
+    @property
+    def question_text(self) -> str:
+        return self.text
+
+    @property
+    def options(self) -> list:
+        return self.mcq_options or []
+
+    @property
+    def hints(self) -> list:
+        h = []
+        if self.hint_level_1:
+            h.append(self.hint_level_1)
+        if self.hint_level_2:
+            h.append(self.hint_level_2)
+        return h
+
     # Relationship
     learning_unit = relationship("LearningUnit", back_populates="questions")
     
@@ -120,6 +159,44 @@ class DraftQuestion(Base):
     status = Column(String(50), nullable=False, default="PENDING", server_default="PENDING") # 'PENDING', 'APPROVED', 'REJECTED'
     
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+
+    @hybrid_property
+    def difficulty_level(self) -> str:
+        mapping = {1: "VERY_EASY", 2: "EASY", 3: "MEDIUM", 4: "HARD", 5: "VERY_HARD"}
+        return mapping.get(self.difficulty or 2, "MEDIUM")
+
+    @difficulty_level.setter
+    def difficulty_level(self, val: str):
+        mapping = {"VERY_EASY": 1, "EASY": 2, "MEDIUM": 3, "HARD": 4, "VERY_HARD": 5}
+        self.difficulty = mapping.get(val, 2)
+
+    @difficulty_level.expression
+    def difficulty_level(cls):
+        return case(
+            (cls.difficulty == 1, "VERY_EASY"),
+            (cls.difficulty == 2, "EASY"),
+            (cls.difficulty == 3, "MEDIUM"),
+            (cls.difficulty == 4, "HARD"),
+            (cls.difficulty == 5, "VERY_HARD"),
+            else_="MEDIUM"
+        )
+
+    @property
+    def question_text(self) -> str:
+        return self.text
+
+    @property
+    def options(self) -> list:
+        return self.mcq_options or []
+
+    @property
+    def hints(self) -> list:
+        h = []
+        if self.hint_level_1:
+            h.append(self.hint_level_1)
+        if self.hint_level_2:
+            h.append(self.hint_level_2)
+        return h
 
     # Relationships
     question_bank = relationship("QuestionBank", back_populates="draft_questions")

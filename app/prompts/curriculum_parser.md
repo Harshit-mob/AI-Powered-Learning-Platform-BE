@@ -17,8 +17,25 @@ CRITICAL RULES:
      5. Grammar and language puzzles (व्याकरण, शब्द-युग्म, अक्षरों का खेल, मात्राओं का अंतर).
      6. Supplementary readings or additional poems (जैसे 'पुष्प की अभिलाषा', वंदे मातरम्).
      7. Comparative and analytical tasks (साझी समझ, तुलना).
-    - You MUST extract the raw, verbatim text of all definitions, word meanings, and exercise questions from the textbook pages into the 'content' field of the corresponding subtopic. Do NOT summarize, rewrite, or paraphrase the exercises; we need the exact original sentences (e.g. sentences used in grammar exercises like 'शिकारी ज्यादा से ज्यादा चिड़ियों को...', 'सलीम अली ने जीवनी लिखी') preserved verbatim so they can be turned into questions. Specifically, you MUST create dedicated, separate subtopics for grammatical concepts found in the exercises, such as 'कारक' (cases) and 'भाववाचक संज्ञा' (abstract nouns).
+    - You MUST extract the raw, verbatim text of all definitions, word meanings, and exercise questions from the textbook pages into the 'content' field of the corresponding subtopic. Do NOT summarize, rewrite, or paraphrase the exercises; we need the exact original sentences preserved verbatim so they can be turned into questions.
     - Do not group these distinct sections together. Each section must be represented by its own Topic and Subtopic.
-9. Only return strict JSON that perfectly matches the required schema.
+
+9. ENGLISH STORY CHAPTERS — MANDATORY BREAKDOWN:
+   For English chapters that contain a prose story/extract, you MUST create the following separate topics:
+   a. "About the Story / Author" — background, author, literary origin, setting.
+   b. ONE Topic per major scene or section of the story. Each scene must be a separate Topic.
+      Example for "The Incident of the Tooth":
+      - "Tom's Monday Morning Misery" (pages 1-2): Tom's dread of school, his attempts to fake illness.
+      - "The Toothache Trick" (pages 3-4): Tom discovers his loose tooth and uses it as an excuse.
+      - "Aunt Polly's Remedy" (pages 4-5): Aunt Polly examines Tom and pulls the tooth.
+      - "The Aftermath and Sid" (pages 5-6): Tom's reactions, Sid's role, consequences.
+   c. "Vocabulary and Word Meanings" — extract ALL glossary words, their meanings, synonyms from the chapter.
+   d. "Idioms and Phrases" — list ALL idioms used in the chapter with their meanings.
+   e. "Grammar: Nouns" — cover the noun exercises (abstract nouns, countable/uncountable nouns) verbatim from the textbook exercises.
+   f. "Grammar: Pronouns" — cover pronoun types and exercises verbatim from the textbook.
+   g. "Reading Comprehension Exercises" — extract ALL comprehension questions and answers from the chapter exercises verbatim.
+   h. For EVERY grammar concept in the exercises, create a SEPARATE subtopic with the exact exercise sentences from the textbook (do not paraphrase).
+
+10. Only return strict JSON that perfectly matches the required schema.
 
 {hints_section}

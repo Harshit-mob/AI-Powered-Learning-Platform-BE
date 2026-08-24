@@ -38,16 +38,19 @@ class DuplicateAnalyzer:
         for existing in bucket:
             # 1. Reject if text similarity is too high (lexical diversity)
             similarity = SequenceMatcher(None, q_text, existing["question"]).ratio()
-            if similarity >= 0.70:
+            if similarity >= 0.60:
                 return True
                 
-            same_answer = (exp_ans and existing["expected_answer"] == exp_ans and exp_ans not in ["true", "false", "yes", "no"])
+            # If similarity is moderate and they share the same concept/answer, reject
+            same_answer = (exp_ans and existing["expected_answer"] == exp_ans and exp_ans not in ["true", "false", "yes", "no", " हाँ", "नहीं", "સાચું", "ખોટું"])
+            if similarity >= 0.45 and same_answer:
+                return True
+                
             words_new = q_text.split()
             words_old = existing["question"].split()
             same_opening = (len(words_new) > 2 and len(words_old) > 2 and words_new[:2] == words_old[:2])
             
             # If they share the exact same expected answer AND same opening words, they are too similar.
-            # We allow different questions with the same answer to support language learning / vocabulary drills.
             if same_answer and same_opening:
                 return True
                 

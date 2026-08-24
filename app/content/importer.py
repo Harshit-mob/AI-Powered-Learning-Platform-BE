@@ -55,16 +55,19 @@ class ContentImporter:
             
             # 5. Insert Topics & Subtopics
             for p_topic in parsed.chapter.topics:
+                # Strip numeric prefixes like "4.1 ", "4.2 ", "10.1 " from topic titles
+                cleaned_topic_title = re.sub(r'^\s*[\d\.\-\s]+[:\-]?\s*', '', p_topic.title).strip() if p_topic.title else ""
                 topic = Topic(
-                    title=p_topic.title,
+                    title=cleaned_topic_title,
                     chapter_id=chapter.id
                 )
                 db.add(topic)
                 db.flush()
                 
                 for p_subtopic in p_topic.subtopics:
+                    cleaned_subtopic_title = re.sub(r'^\s*[\d\.\-\s]+[:\-]?\s*', '', p_subtopic.title).strip() if p_subtopic.title else ""
                     subtopic = Subtopic(
-                        title=p_subtopic.title.replace('\x00', '') if p_subtopic.title else "",
+                        title=cleaned_subtopic_title.replace('\x00', '') if cleaned_subtopic_title else "",
                         content=p_subtopic.content.replace('\x00', '') if p_subtopic.content else "",
                         topic_id=topic.id
                     )

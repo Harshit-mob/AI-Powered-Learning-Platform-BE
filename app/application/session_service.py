@@ -271,6 +271,8 @@ class SessionApplicationService:
                 sum(a.voice_score for a in voiced_answers) / len(voiced_answers), 2
             ) if voiced_answers else 0.0
 
+            total_time_taken = round(sum(a.time_taken_seconds for a in answers), 2) if answers else 0.0
+
             # mastery_gain: scales +0.05 (100% correct) → -0.05 (0% correct)
             # Formula: (accuracy - 0.5) * 0.1 was wrong — gave -0.028 for 22%
             # New: simply proportional to accuracy, clipped to [-0.05, +0.05]
@@ -444,7 +446,13 @@ class SessionApplicationService:
                "streak_maintained": True
             },
             "streak": streak,
-            "session_summary": "Great job! Keep practicing." if accuracy >= 0.8 else "Keep practicing to improve!"
+            "session_summary": "Great job! Keep practicing." if accuracy >= 0.8 else "Keep practicing to improve!",
+            "result": {
+                "corrected": correct,
+                "wrong": wrong,
+                "skipped": skipped
+            },
+            "total_time_taken": total_time_taken
         }
 
     def resume_session(self, student_id: uuid.UUID, session_id: uuid.UUID) -> Dict[str, Any]:
