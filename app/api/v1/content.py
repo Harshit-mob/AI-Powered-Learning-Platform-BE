@@ -5,7 +5,15 @@ import shutil
 from typing import List
 from pydantic import BaseModel
 
-from app.api.v1.responses import SuccessResponse, create_response
+from app.api.v1.responses import SuccessResponse, GenericSuccessResponse, create_response
+from app.schemas.content_schema import (
+    SubjectResponse,
+    ChapterResponse,
+    CurriculumResponse,
+    QBankUploadResponse,
+    QBankItemResponse,
+    QBankTopicQuestionsResponse
+)
 from app.application.content_service import ContentService
 from app.api.v1.dependencies import get_uow, get_current_student, get_current_admin
 from app.repositories.base.unit_of_work import UnitOfWork
@@ -21,19 +29,19 @@ class QBankReviewRequest(BaseModel):
 class QBankToggleActiveRequest(BaseModel):
     is_active: bool
 
-@router.get("/subjects", response_model=SuccessResponse)
+@router.get("/subjects", response_model=GenericSuccessResponse[List[SubjectResponse]])
 def get_subjects(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
     service = ContentService(uow)
     data = service.get_subjects(student.id)
     return create_response(data, "Subjects retrieved successfully")
 
-@router.get("/chapters", response_model=SuccessResponse)
+@router.get("/chapters", response_model=GenericSuccessResponse[List[ChapterResponse]])
 def get_chapters(subject_id: uuid.UUID, student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
     service = ContentService(uow)
     data = service.get_chapters(student.id, subject_id)
     return create_response(data, "Chapters retrieved successfully")
 
-@router.get("/curriculum", response_model=SuccessResponse)
+@router.get("/curriculum", response_model=GenericSuccessResponse[List[CurriculumResponse]])
 def get_full_curriculum(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
     service = ContentService(uow)
     data = service.get_full_curriculum(student.id)
@@ -41,12 +49,13 @@ def get_full_curriculum(student = Depends(get_current_student), uow: UnitOfWork 
 
 # --- QBank Curation Pipeline APIs ---
 
-@router.post("/curriculum/qbank/upload", response_model=SuccessResponse)
+@router.post("/curriculum/qbank/upload", response_model=GenericSuccessResponse[QBankUploadResponse])
 def upload_qbank_pdf(
     background_tasks: BackgroundTasks,
-    subject_name: str = Form(...),
+    board_id: uuid.UUID = Form(...),
+    grade_id: uuid.UUID = Form(...),
+    subject_id: uuid.UUID = Form(...),
     chapter_name: str = Form(...),
-    source_type: str = Form(...), # 'TEXTBOOK_EXERCISE', 'STUDENT_NOTEBOOK'
     file: UploadFile = File(...),
     admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
@@ -63,31 +72,25 @@ def upload_qbank_pdf(
         
     # 2. Dynamically Resolve or Create Subject & Chapter
     from app.models.course import Board, Grade, Subject, Chapter
+    from app.api.v1.errors import error_response
     with uow:
-        # Get board & grade IDs from admin student profile or fall back to system defaults
-        board_id = admin.board_id
-        grade_id = admin.grade_id
+        # Resolve Board, Grade, and Subject
+        board = uow.session.query(Board).filter(Board.id == board_id).first()
+        grade = uow.session.query(Grade).filter(Grade.id == grade_id).first()
+        subject = uow.session.query(Subject).filter(Subject.id == subject_id).first()
         
-        if not board_id or not grade_id:
-            db_board = uow.session.query(Board).first()
-            db_grade = uow.session.query(Grade).first()
-            board_id = db_board.id if db_board else None
-            grade_id = db_grade.id if db_grade else None
-            
-        if not board_id or not grade_id:
-            from app.api.v1.errors import error_response
-            return error_response("CONFIG_ERROR", "No Board or Grade configured in the system.", status_code=500)
-            
-        # Find or create Subject
-        subj_norm = subject_name.strip()
-        subject = uow.session.query(Subject).filter(
-            Subject.name == subj_norm,
-            Subject.grade_id == grade_id
-        ).first()
+        if not board:
+            return error_response("NOT_FOUND", f"Board with ID {board_id} not found.", status_code=404)
+        if not grade:
+            return error_response("NOT_FOUND", f"Grade with ID {grade_id} not found.", status_code=404)
         if not subject:
-            subject = Subject(name=subj_norm, grade_id=grade_id)
-            uow.session.add(subject)
-            uow.session.flush()
+            return error_response("NOT_FOUND", f"Subject with ID {subject_id} not found.", status_code=404)
+            
+        # Verify consistent scoping
+        if grade.board_id != board_id:
+            return error_response("BAD_REQUEST", f"Grade {grade.name} does not belong to Board {board.name}.", status_code=400)
+        if subject.grade_id != grade_id:
+            return error_response("BAD_REQUEST", f"Subject {subject.name} does not belong to Grade {grade.name}.", status_code=400)
             
         # Find or create Chapter
         chap_norm = chapter_name.strip()
@@ -106,7 +109,7 @@ def upload_qbank_pdf(
             subject_id=subject.id,
             chapter_id=chapter.id,
             file_name=file.filename,
-            source_type=source_type,
+            source_type="TEXTBOOK_EXERCISE",
             status="PROCESSING",
             total_questions=0
         )
@@ -128,7 +131,7 @@ def upload_qbank_pdf(
         "Question bank generation in progress."
     )
 
-@router.get("/curriculum/qbank", response_model=SuccessResponse)
+@router.get("/curriculum/qbank", response_model=GenericSuccessResponse[List[QBankItemResponse]])
 def get_qbanks_list(
     admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
@@ -157,7 +160,7 @@ def get_qbanks_list(
                 "chapter_title": r.chapter_title,
                 "file_name": r.file_name,
                 "source_type": r.source_type,
-                "status": "REMOVED" if r.status == "PROCESSING" else r.status,
+                "status": r.status,
                 "total_questions": r.total_questions,
                 "error_message": r.error_message,
                 "created_at": r.created_at.isoformat()
@@ -166,7 +169,7 @@ def get_qbanks_list(
         ]
         return create_response(data, "Question banks retrieved successfully")
 
-@router.get("/curriculum/qbank/{qbank_id}/questions", response_model=SuccessResponse)
+@router.get("/curriculum/qbank/{qbank_id}/questions", response_model=GenericSuccessResponse[List[QBankTopicQuestionsResponse]])
 def get_qbank_draft_questions(
     qbank_id: uuid.UUID,
     admin = Depends(get_current_admin),

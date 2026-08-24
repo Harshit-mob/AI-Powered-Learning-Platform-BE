@@ -40,6 +40,8 @@ class QBankPipelineService:
                 return
                 
             qbank.status = "PROCESSING"
+            chapter_id = qbank.chapter_id
+            subject_id = qbank.subject_id
             self.uow.commit()
 
         try:
@@ -50,16 +52,26 @@ class QBankPipelineService:
             
             if not full_text.strip():
                 raise ValueError("PDF text extraction resulted in empty content.")
-
+ 
             # 2. Get Chapter context from DB
-            from app.models.course import Chapter, Subject, Topic, Subtopic, LearningUnit
+            from app.models.course import Board, Grade, Chapter, Subject, Topic, Subtopic, LearningUnit
             with self.uow:
-                chapter = self.uow.session.query(Chapter).filter(Chapter.id == qbank.chapter_id).first()
+                chapter = self.uow.session.query(Chapter).filter(Chapter.id == chapter_id).first()
                 if not chapter:
-                    raise ValueError(f"Chapter with ID {qbank.chapter_id} not found.")
+                    raise ValueError(f"Chapter with ID {chapter_id} not found.")
                 
-                subject = self.uow.session.query(Subject).filter(Subject.id == qbank.subject_id).first()
+                subject = self.uow.session.query(Subject).filter(Subject.id == subject_id).first()
                 subject_name = subject.name if subject else "General"
+                
+                board_name = "CBSE"
+                grade_name = "Grade 6"
+                if subject:
+                    grade_obj = self.uow.session.query(Grade).filter(Grade.id == subject.grade_id).first()
+                    if grade_obj:
+                        grade_name = grade_obj.name
+                        board_obj = self.uow.session.query(Board).filter(Board.id == grade_obj.board_id).first()
+                        if board_obj:
+                            board_name = board_obj.name
                 
                 # Fetch all Learning Units under this chapter
                 db_lus = self.uow.session.query(
@@ -82,8 +94,8 @@ class QBankPipelineService:
                     # A. Parse the curriculum from the PDF full text
                     parser = CurriculumParser(ai_provider=self.question_generator.ai_provider)
                     parsed_curr = parser.parse(cleaned_text=full_text, metadata_hints={
-                        "board": "CBSE",
-                        "grade": "Grade 6",
+                        "board": board_name,
+                        "grade": grade_name,
                         "subject": subject_name,
                         "chapter": chapter.title
                     })
