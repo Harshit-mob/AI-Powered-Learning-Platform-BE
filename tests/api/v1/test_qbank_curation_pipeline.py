@@ -111,3 +111,35 @@ def test_toggle_active_status(mock_uow):
     
     # Verify UPDATE query called on Question model
     mock_uow.session.query().filter().update.assert_called_once_with({"is_active": False}, synchronize_session=False)
+
+def test_review_updates_draft_status_only(mock_uow):
+    qbank_id = uuid.uuid4()
+    mock_qbank = QuestionBank(id=qbank_id)
+    
+    # Mock finding QBank
+    mock_uow.session.query().filter().first.return_value = mock_qbank
+    
+    payload = {
+        "approved_ids": [str(uuid.uuid4())],
+        "rejected_ids": [str(uuid.uuid4())]
+    }
+    
+    response = client.post(f"/api/v1/content/curriculum/qbank/{qbank_id}/review", json=payload)
+    assert response.status_code == 200
+    
+    # Ensure draft statuses are updated in DB
+    assert mock_uow.session.query().filter().update.call_count > 0
+
+def test_toggle_active_fails_under_10_approved(mock_uow):
+    qbank_id = uuid.uuid4()
+    mock_qbank = QuestionBank(id=qbank_id)
+    
+    # Mock finding QBank, and count returning 5
+    mock_uow.session.query().filter().first.return_value = mock_qbank
+    mock_uow.session.query().filter().count.return_value = 5
+    
+    payload = {"is_active": True}
+    response = client.post(f"/api/v1/content/curriculum/qbank/{qbank_id}/toggle-active", json=payload)
+    assert response.status_code == 400
+    assert "at least 10 approved questions" in response.json()["message"]
+

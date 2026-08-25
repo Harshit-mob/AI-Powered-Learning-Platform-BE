@@ -77,7 +77,8 @@ class WeakPointProvider(RecommendationProvider):
                 ]
                 
                 recs.append({
-                    "title": f"Weak point booster ({subject_name.lower()})",
+                    "title": "Weak point booster",
+                    "subject": subject_name,
                     "priority": 2,
                     "estimated_duration": q_count,
                     "question_count": q_count,

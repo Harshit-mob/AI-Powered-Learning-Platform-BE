@@ -214,7 +214,7 @@ class QBankPipelineService:
                         keywords=merged_keywords,
                         question_purpose=pq.question_purpose or "Practice",
                         progression_level=pq.progression_level or 3,
-                        status="PENDING"
+                        status="APPROVED"
                     )
                     drafts.append(draft_q)
                     self.uow.session.add(draft_q)

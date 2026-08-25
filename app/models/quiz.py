@@ -156,7 +156,7 @@ class DraftQuestion(Base):
     keywords = Column(JSONB, nullable=False, default=list, server_default="[]")
     question_purpose = Column(String(50), nullable=False, default="Practice", server_default="Practice")
     progression_level = Column(Integer, nullable=False, default=3, server_default="3")
-    status = Column(String(50), nullable=False, default="PENDING", server_default="PENDING") # 'PENDING', 'APPROVED', 'REJECTED'
+    status = Column(String(50), nullable=False, default="APPROVED", server_default="APPROVED") # 'PENDING', 'APPROVED', 'REJECTED'
     
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 

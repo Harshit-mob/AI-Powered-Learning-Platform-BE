@@ -16,7 +16,8 @@ class QuestionRepository(BaseRepository[Question]):
     def find_by_learning_unit(self, learning_unit_id: uuid.UUID, limit: int = 50) -> List[Question]:
         try:
             stmt = select(self.model).where(
-                self.model.learning_unit_id == learning_unit_id
+                self.model.learning_unit_id == learning_unit_id,
+                self.model.is_active == True
             ).limit(limit)
             return list(self.session.scalars(stmt).all())
         except SQLAlchemyError as e:
@@ -25,7 +26,8 @@ class QuestionRepository(BaseRepository[Question]):
     def find_by_topic_id(self, topic_id: uuid.UUID, limit: int = 500) -> List[Question]:
         try:
             stmt = select(self.model).join(LearningUnit).join(Subtopic).where(
-                Subtopic.topic_id == topic_id
+                Subtopic.topic_id == topic_id,
+                self.model.is_active == True
             ).options(joinedload(self.model.learning_unit)).limit(limit)
             return list(self.session.scalars(stmt).all())
         except SQLAlchemyError as e:
@@ -34,7 +36,8 @@ class QuestionRepository(BaseRepository[Question]):
     def find_by_chapter_id(self, chapter_id: uuid.UUID, limit: int = 500) -> List[Question]:
         try:
             stmt = select(self.model).join(LearningUnit).join(Subtopic).join(Topic).where(
-                Topic.chapter_id == chapter_id
+                Topic.chapter_id == chapter_id,
+                self.model.is_active == True
             ).options(joinedload(self.model.learning_unit)).limit(limit)
             return list(self.session.scalars(stmt).all())
         except SQLAlchemyError as e:
@@ -48,7 +51,8 @@ class QuestionRepository(BaseRepository[Question]):
     def find_by_difficulty(self, difficulty: str, limit: int = 50) -> List[Question]:
         try:
             stmt = select(self.model).where(
-                self.model.difficulty_level == difficulty
+                self.model.difficulty_level == difficulty,
+                self.model.is_active == True
             ).limit(limit)
             return list(self.session.scalars(stmt).all())
         except SQLAlchemyError as e:
@@ -66,7 +70,8 @@ class QuestionRepository(BaseRepository[Question]):
     def random_candidates(self, learning_unit_id: uuid.UUID, limit: int = 10) -> List[Question]:
         try:
             stmt = select(self.model).where(
-                self.model.learning_unit_id == learning_unit_id
+                self.model.learning_unit_id == learning_unit_id,
+                self.model.is_active == True
             ).order_by(func.random()).limit(limit)
             return list(self.session.scalars(stmt).all())
         except SQLAlchemyError as e:

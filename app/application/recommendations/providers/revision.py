@@ -62,7 +62,8 @@ class RevisionProvider(RecommendationProvider):
             max_xp = (total_questions * 6) + 20 + 20
             
             results.append({
-                "title": f"Revision ({subject_name.lower()})",
+                "title": "Revision",
+                "subject": subject_name,
                 "priority": 2, # Sits between Daily Practice (1) and Chapter Revision (3)
                 "estimated_duration": total_questions,
                 "question_count": total_questions,

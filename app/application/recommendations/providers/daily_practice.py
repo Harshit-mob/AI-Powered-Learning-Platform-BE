@@ -128,7 +128,8 @@ class DailyPracticeProvider(RecommendationProvider):
             xp = q_count * 5 + 20 + 15
             
             recs.append({
-                "title": f"Daily session ({subject_name.lower()})",
+                "title": "Daily session",
+                "subject": subject_name,
                 "priority": 1,
                 "estimated_duration": q_count,
                 "question_count": q_count,

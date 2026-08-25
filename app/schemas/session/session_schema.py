@@ -83,6 +83,7 @@ class AnswerResponse(BaseModel):
 
 class RecommendationCard(BaseModel):
     title: str
+    subject: Optional[str] = None
     priority: int
     estimated_duration: int
     question_count: int

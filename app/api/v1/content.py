@@ -169,7 +169,7 @@ def get_qbanks_list(
         ]
         return create_response(data, "Question banks retrieved successfully")
 
-@router.get("/curriculum/qbank/{qbank_id}/questions", response_model=GenericSuccessResponse[List[QBankTopicQuestionsResponse]])
+@router.get("/curriculum/qbank/{qbank_id}/questions")
 def get_qbank_draft_questions(
     qbank_id: uuid.UUID,
     admin = Depends(get_current_admin),
@@ -185,58 +185,15 @@ def get_qbank_draft_questions(
             from app.api.v1.errors import error_response
             return error_response("PROCESSING", "Question bank is still processing", status_code=400)
             
-        from app.models.course import Topic, Subtopic, LearningUnit
+        from app.models.course import Topic, Subtopic, LearningUnit, Subject, Chapter
         from collections import OrderedDict
         
         # We will build a structured hierarchy of the questions grouped by Topic -> Subtopic -> Learning Unit
         hierarchy = OrderedDict()
         
-        if qbank.status in ("APPROVED", "REJECTED"):
-            # Fetch from main questions table with curriculum contexts
-            rows = uow.session.query(
-                Question,
-                Topic.id.label("topic_id"),
-                Topic.title.label("topic_title")
-            ).join(LearningUnit, LearningUnit.id == Question.learning_unit_id) \
-             .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id) \
-             .join(Topic, Topic.id == Subtopic.topic_id) \
-             .filter(Question.question_bank_id == qbank_id) \
-             .order_by(Topic.created_at, Question.created_at).all()
-             
-            for row in rows:
-                q = row.Question
-                q_dict = {
-                    "draft_id": str(q.id),
-                    "learning_unit_id": str(q.learning_unit_id),
-                    "question_type": q.question_type,
-                    "concept": q.concept,
-                    "text": q.text,
-                    "mcq_options": q.mcq_options or [],
-                    "correct_option": q.correct_option or "",
-                    "expected_answer": q.expected_answer or "",
-                    "acceptable_answers": q.acceptable_answers or [],
-                    "difficulty": q.difficulty or 2,
-                    "bloom_level": q.bloom_level or "",
-                    "cognitive_level": q.cognitive_level or "",
-                    "hint_level_1": q.hint_level_1 or "",
-                    "hint_level_2": q.hint_level_2 or "",
-                    "full_explanation": q.full_explanation or "",
-                    "source_pages": q.source_pages or [],
-                    "keywords": q.keywords or [],
-                    "question_purpose": q.question_purpose or "Practice",
-                    "status": "APPROVED" if qbank.status == "APPROVED" else "REJECTED"
-                }
-                
-                t_id = str(row.topic_id)
-                if t_id not in hierarchy:
-                    hierarchy[t_id] = {
-                        "topic_id": t_id,
-                        "topic_title": row.topic_title,
-                        "questions": []
-                    }
-                hierarchy[t_id]["questions"].append(q_dict)
-                
-        else:
+        draft_count = uow.session.query(DraftQuestion).filter(DraftQuestion.question_bank_id == qbank_id).count()
+        
+        if draft_count > 0:
             # Fetch from draft_questions table with curriculum contexts
             rows = uow.session.query(
                 DraftQuestion,
@@ -280,9 +237,64 @@ def get_qbank_draft_questions(
                         "questions": []
                     }
                 hierarchy[t_id]["questions"].append(q_dict)
+        else:
+            # Fetch from main questions table with curriculum contexts
+            rows = uow.session.query(
+                Question,
+                Topic.id.label("topic_id"),
+                Topic.title.label("topic_title")
+            ).join(LearningUnit, LearningUnit.id == Question.learning_unit_id) \
+             .join(Subtopic, Subtopic.id == LearningUnit.subtopic_id) \
+             .join(Topic, Topic.id == Subtopic.topic_id) \
+             .filter(Question.question_bank_id == qbank_id) \
+             .order_by(Topic.created_at, Question.created_at).all()
+             
+            for row in rows:
+                q = row.Question
+                q_dict = {
+                    "draft_id": str(q.id),
+                    "learning_unit_id": str(q.learning_unit_id),
+                    "question_type": q.question_type,
+                    "concept": q.concept,
+                    "text": q.text,
+                    "mcq_options": q.mcq_options or [],
+                    "correct_option": q.correct_option or "",
+                    "expected_answer": q.expected_answer or "",
+                    "acceptable_answers": q.acceptable_answers or [],
+                    "difficulty": q.difficulty or 2,
+                    "bloom_level": q.bloom_level or "",
+                    "cognitive_level": q.cognitive_level or "",
+                    "hint_level_1": q.hint_level_1 or "",
+                    "hint_level_2": q.hint_level_2 or "",
+                    "full_explanation": q.full_explanation or "",
+                    "source_pages": q.source_pages or [],
+                    "keywords": q.keywords or [],
+                    "question_purpose": q.question_purpose or "Practice",
+                    "status": "APPROVED" if q.is_active else "REJECTED"
+                }
                 
-        result_data = list(hierarchy.values())
-            
+                t_id = str(row.topic_id)
+                if t_id not in hierarchy:
+                    hierarchy[t_id] = {
+                        "topic_id": t_id,
+                        "topic_title": row.topic_title,
+                        "questions": []
+                    }
+                hierarchy[t_id]["questions"].append(q_dict)
+                
+        # Fetch subject & chapter names
+        subject = uow.session.query(Subject).filter(Subject.id == qbank.subject_id).first()
+        chapter = uow.session.query(Chapter).filter(Chapter.id == qbank.chapter_id).first()
+        
+        total_questions = sum(len(t["questions"]) for t in hierarchy.values())
+        
+        result_data = {
+            "subject_name": subject.name if subject else None,
+            "chapter_title": chapter.title if chapter else None,
+            "total_questions": total_questions,
+            "status": qbank.status,
+            "topics": list(hierarchy.values())
+        }
         return create_response(result_data, "Questions retrieved and grouped topic-wise successfully")
 
 @router.post("/curriculum/qbank/{qbank_id}/review", response_model=SuccessResponse)
@@ -305,15 +317,53 @@ def review_qbank_draft_questions(
                 DraftQuestion.question_bank_id == qbank_id
             ).update({"status": "REJECTED"}, synchronize_session=False)
             
-        # 2. Approve questions & Transfer to main questions table
+        # 2. Approve questions (simply update draft status)
         if payload.approved_ids:
-            approved_drafts = uow.session.query(DraftQuestion).filter(
+            uow.session.query(DraftQuestion).filter(
                 DraftQuestion.id.in_(payload.approved_ids),
                 DraftQuestion.question_bank_id == qbank_id
+            ).update({"status": "APPROVED"}, synchronize_session=False)
+            
+        uow.commit()
+        return create_response(None, "Draft questions reviewed and applied successfully")
+
+@router.post("/curriculum/qbank/{qbank_id}/toggle-active", response_model=SuccessResponse)
+def toggle_qbank_active_status(
+    qbank_id: uuid.UUID,
+    payload: QBankToggleActiveRequest,
+    admin = Depends(get_current_admin),
+    uow: UnitOfWork = Depends(get_uow)
+):
+    with uow:
+        qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
+        if not qbank:
+            from app.api.v1.errors import error_response
+            return error_response("NOT_FOUND", "Question bank not found", status_code=404)
+            
+        if payload.is_active:
+            # Check number of approved questions
+            approved_count = uow.session.query(DraftQuestion).filter(
+                DraftQuestion.question_bank_id == qbank_id,
+                DraftQuestion.status == "APPROVED"
+            ).count()
+            
+            if approved_count < 10:
+                from app.api.v1.errors import error_response
+                return error_response(
+                    "INSUFFICIENT_APPROVED_QUESTIONS",
+                    f"Cannot publish. The question bank must have at least 10 approved questions. (Currently approved: {approved_count})",
+                    status_code=400
+                )
+                
+            # Copy/Update approved draft questions to main questions table
+            approved_drafts = uow.session.query(DraftQuestion).filter(
+                DraftQuestion.question_bank_id == qbank_id,
+                DraftQuestion.status == "APPROVED"
             ).all()
             
+            active_ids = []
             for d in approved_drafts:
-                d.status = "APPROVED"
+                active_ids.append(d.id)
                 
                 # Check duplicate
                 import hashlib
@@ -347,7 +397,7 @@ def review_qbank_draft_questions(
                 else:
                     # Insert new
                     new_q = Question(
-                        id=d.id, # Keep same ID or let it generate
+                        id=d.id,
                         question_bank_id=qbank_id,
                         learning_unit_id=d.learning_unit_id,
                         question_type=d.question_type,
@@ -373,29 +423,21 @@ def review_qbank_draft_questions(
                         is_active=True
                     )
                     uow.session.add(new_q)
-                    
-        # Update overall QBank status to APPROVED
-        qbank.status = "APPROVED"
-        uow.commit()
-        return create_response(None, "Draft questions reviewed and applied successfully")
-
-@router.post("/curriculum/qbank/{qbank_id}/toggle-active", response_model=SuccessResponse)
-def toggle_qbank_active_status(
-    qbank_id: uuid.UUID,
-    payload: QBankToggleActiveRequest,
-    admin = Depends(get_current_admin),
-    uow: UnitOfWork = Depends(get_uow)
-):
-    with uow:
-        qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
-        if not qbank:
-            from app.api.v1.errors import error_response
-            return error_response("NOT_FOUND", "Question bank not found", status_code=404)
             
-        uow.session.query(Question).filter(
-            Question.question_bank_id == qbank_id
-        ).update({"is_active": payload.is_active}, synchronize_session=False)
-        
+            # Deactivate any questions in main table for this qbank that are not approved anymore
+            uow.session.query(Question).filter(
+                Question.question_bank_id == qbank_id,
+                Question.id.not_in(active_ids)
+            ).update({"is_active": False}, synchronize_session=False)
+            
+            qbank.status = "APPROVED"
+        else:
+            uow.session.query(Question).filter(
+                Question.question_bank_id == qbank_id
+            ).update({"is_active": False}, synchronize_session=False)
+            
+            qbank.status = "PENDING_REVIEW"
+            
         uow.commit()
         status_str = "activated" if payload.is_active else "deactivated"
         return create_response(None, f"All questions in this question bank have been {status_str}")
