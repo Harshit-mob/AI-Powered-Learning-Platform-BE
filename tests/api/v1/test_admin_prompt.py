@@ -43,7 +43,7 @@ def test_list_prompts(mock_uow):
     assert response.status_code == 200
     res_json = response.json()
     assert res_json["success"] is True
-    assert len(res_json["data"]) == 3
+    assert len(res_json["data"]) == 2
     
 def test_get_prompt(mock_uow):
     mock_prompt = SystemPrompt(name="question_generator", content="Mocked content" * 10)

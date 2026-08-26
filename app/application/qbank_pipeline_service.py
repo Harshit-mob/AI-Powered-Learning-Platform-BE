@@ -108,7 +108,7 @@ class QBankPipelineService:
                         "grade": grade_name,
                         "subject": subject_name,
                         "chapter": chapter.title
-                    }, db_session=self.uow.session)
+                    })
                     
                     # B. Import the Board/Grade/Subject/Chapter/Topic/Subtopic hierarchy
                     importer = ContentImporter()

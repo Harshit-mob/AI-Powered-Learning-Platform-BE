@@ -44,14 +44,14 @@ class CurriculumParser:
         self.ai_provider = ai_provider
         self.prompt_builder = PromptBuilder()
 
-    def parse(self, cleaned_text: str, metadata_hints: Optional[Dict[str, Any]] = None, db_session = None) -> ParsedCurriculum:
+    def parse(self, cleaned_text: str, metadata_hints: Optional[Dict[str, Any]] = None) -> ParsedCurriculum:
         """
         Analyzes the cleaned text document and extracts the structural hierarchy.
         """
         logger.info("Starting Curriculum Parsing via AI Provider...")
         
         hints_str = f"Hints: {metadata_hints}" if metadata_hints else ""
-        system_prompt = self.prompt_builder.build("curriculum_parser.md", db_session=db_session, hints_section=hints_str)
+        system_prompt = self.prompt_builder.build("curriculum_parser.md", hints_section=hints_str)
 
         try:
             # We rely entirely on the AI Provider Interface to guarantee structured JSON output

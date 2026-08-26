@@ -15,7 +15,6 @@ router = APIRouter(prefix="/admin/prompts", tags=["Admin System Prompts"])
 DEFAULT_PROMPTS_DIR = Path(__file__).parent.parent.parent / "prompts"
 PROMPT_FILES_MAP = {
     "question_generator": "question_generator.md",
-    "curriculum_parser": "curriculum_parser.md",
     "learning_unit_builder": "learning_unit_builder.md"
 }
 
