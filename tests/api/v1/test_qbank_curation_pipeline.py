@@ -44,7 +44,7 @@ def test_upload_endpoint_triggers_background_task(mock_uow):
     
     # Mocking board, grade, subject, chapter objects
     mock_board = Board(id=uuid.uuid4(), name="CBSE")
-    mock_grade = Grade(id=uuid.uuid4(), name="6")
+    mock_grade = Grade(id=uuid.uuid4(), name="6", board_id=mock_board.id)
     mock_subject = Subject(id=uuid.uuid4(), name="Science", grade_id=mock_grade.id)
     mock_chapter = Chapter(id=uuid.uuid4(), title="Exploring Magnets", subject_id=mock_subject.id)
     
@@ -57,9 +57,10 @@ def test_upload_endpoint_triggers_background_task(mock_uow):
     file_content = b"%PDF-1.4 mock pdf content"
     files = {"file": ("test_chapter.pdf", file_content, "application/pdf")}
     data = {
-        "subject_name": "Science",
-        "chapter_name": "Exploring Magnets",
-        "source_type": "TEXTBOOK_EXERCISE"
+        "board_id": str(mock_board.id),
+        "grade_id": str(mock_grade.id),
+        "subject_id": str(mock_subject.id),
+        "chapter_name": "Exploring Magnets"
     }
     
     with patch("fastapi.BackgroundTasks.add_task") as mock_add_task:
@@ -142,4 +143,17 @@ def test_toggle_active_fails_under_10_approved(mock_uow):
     response = client.post(f"/api/v1/content/curriculum/qbank/{qbank_id}/toggle-active", json=payload)
     assert response.status_code == 400
     assert "at least 10 approved questions" in response.json()["message"]
+
+def test_delete_qbank(mock_uow):
+    qbank_id = uuid.uuid4()
+    mock_qbank = QuestionBank(id=qbank_id)
+    mock_uow.session.query().filter().first.return_value = mock_qbank
+    
+    response = client.delete(f"/api/v1/content/curriculum/qbank/{qbank_id}")
+    assert response.status_code == 200
+    res_json = response.json()
+    assert res_json["success"] is True
+    assert "removed successfully" in res_json["message"]
+    
+    mock_uow.session.delete.assert_called_once_with(mock_qbank)
 

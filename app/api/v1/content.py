@@ -61,7 +61,7 @@ def upload_qbank_pdf(
     uow: UnitOfWork = Depends(get_uow)
 ):
     # 1. Create a staging directory for temp files
-    temp_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../../temp_uploads"))
+    temp_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../temp_uploads"))
     os.makedirs(temp_dir, exist_ok=True)
     
     qbank_id = uuid.uuid4()
@@ -441,4 +441,21 @@ def toggle_qbank_active_status(
         uow.commit()
         status_str = "activated" if payload.is_active else "deactivated"
         return create_response(None, f"All questions in this question bank have been {status_str}")
+
+@router.delete("/curriculum/qbank/{qbank_id}", response_model=SuccessResponse)
+def delete_qbank(
+    qbank_id: uuid.UUID,
+    admin = Depends(get_current_admin),
+    uow: UnitOfWork = Depends(get_uow)
+):
+    from app.api.v1.errors import error_response
+    with uow:
+        qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
+        if not qbank:
+            return error_response("NOT_FOUND", f"Question bank with ID {qbank_id} not found.", status_code=404)
+        
+        uow.session.delete(qbank)
+        uow.commit()
+        
+    return create_response(None, "Question bank removed successfully.")
 

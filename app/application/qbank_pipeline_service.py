@@ -23,6 +23,11 @@ class QBankPipelineService:
         ai_provider = GoogleGeminiProvider()
         self.question_generator = QuestionGenerationService(ai_provider=ai_provider)
 
+    def _is_cancelled(self, qbank_id: uuid.UUID) -> bool:
+        with self.uow:
+            qbank = self.uow.session.query(QuestionBank).filter(QuestionBank.id == qbank_id).first()
+            return qbank is None
+
     def process_qbank_pdf(self, qbank_id: uuid.UUID, file_path: str):
         """
         Runs asynchronously in a background thread/process.
@@ -48,6 +53,11 @@ class QBankPipelineService:
             # 1. Parse PDF pages using PDFExtractor
             logger.info(f"Extracting pages from PDF file: {file_path}")
             pages = self.pdf_extractor.extract(file_path)
+            
+            if self._is_cancelled(qbank_id):
+                logger.info(f"QBank pipeline cancelled for ID: {qbank_id}")
+                return
+                
             full_text = "\n".join([p.text for p in pages])
             
             if not full_text.strip():
@@ -167,6 +177,11 @@ class QBankPipelineService:
                 for lu in db_lus
             ]
 
+            # Check cancellation before AI generation
+            if self._is_cancelled(qbank_id):
+                logger.info(f"QBank pipeline cancelled for ID: {qbank_id}")
+                return
+
             # 3. Call AI Question Generator
             logger.info(f"Generating questions for {len(learning_units_payload)} Learning Units in {subject_name}...")
             # We treat the entire PDF as the context for each LU in the chapter
@@ -182,6 +197,11 @@ class QBankPipelineService:
 
             generated_questions = generation_result.get("questions", [])
             logger.info(f"AI generated {len(generated_questions)} questions successfully.")
+
+            # Check cancellation before saving draft questions
+            if self._is_cancelled(qbank_id):
+                logger.info(f"QBank pipeline cancelled for ID: {qbank_id}")
+                return
 
             # 4. Insert Draft Questions to draft_questions table
             with self.uow:
