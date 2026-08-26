@@ -23,6 +23,11 @@ PROMPT_LABELS = {
 }
 
 def strip_schema_from_question_generator(content: str) -> str:
+    # 1. Remove technical rules block
+    if "# CRITICAL FORMATTING AND TECHNICAL RULES" in content:
+        content = content.split("# CRITICAL FORMATTING AND TECHNICAL RULES")[0].rstrip()
+        
+    # 2. Remove schema block
     if "Each object MUST follow this schema." in content:
         parts = content.split("Each object MUST follow this schema.")
         if "Return an array." in parts[0]:
@@ -35,6 +40,12 @@ def strip_schema_from_question_generator(content: str) -> str:
             content = before + "\n\n---\n" + after_parts[1]
         else:
             content = before
+            
+    # Clean up trailing dashes/whitespace
+    content = content.rstrip()
+    if content.endswith("---"):
+        content = content.rsplit("---", 1)[0].rstrip()
+        
     return content
 
 def load_default_prompt_file(name: str) -> str:
