@@ -52,22 +52,7 @@ def list_prompts(
             
         return create_response(results, "Prompts retrieved successfully")
 
-@router.get("/{name}", response_model=GenericSuccessResponse[PromptResponse])
-def get_prompt(
-    name: str,
-    admin = Depends(get_current_admin),
-    uow: UnitOfWork = Depends(get_uow)
-):
-    """Retrieve a specific prompt's current content."""
-    if name not in PROMPT_FILES_MAP:
-        return error_response("NOT_FOUND", f"System prompt key '{name}' is invalid.", status_code=404)
-        
-    with uow:
-        db_prompt = uow.session.query(SystemPrompt).filter(SystemPrompt.name == name).first()
-        content = db_prompt.content if db_prompt else load_default_prompt_file(name)
-        label = PROMPT_LABELS.get(name, name)
-        
-        return create_response(PromptResponse(id=name, name=name, label=label, content=content), "Prompt retrieved successfully")
+
 
 @router.put("/{name}", response_model=SuccessResponse)
 def update_prompt(

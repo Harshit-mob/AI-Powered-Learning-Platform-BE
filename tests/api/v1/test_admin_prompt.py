@@ -47,17 +47,7 @@ def test_list_prompts(mock_uow):
     assert res_json["data"][0]["id"] == "question_generator"
     assert res_json["data"][0]["label"] == "Question Generator"
     
-def test_get_prompt(mock_uow):
-    mock_prompt = SystemPrompt(name="question_generator", content="Mocked content" * 10)
-    mock_uow.session.query().filter().first.return_value = mock_prompt
-    
-    response = client.get("/api/v1/admin/prompts/question_generator")
-    assert response.status_code == 200
-    res_json = response.json()
-    assert res_json["data"]["id"] == "question_generator"
-    assert res_json["data"]["name"] == "question_generator"
-    assert res_json["data"]["label"] == "Question Generator"
-    assert res_json["data"]["content"] == "Mocked content" * 10
+
 
 def test_update_prompt(mock_uow):
     mock_prompt = SystemPrompt(name="question_generator", content="Old content" * 10)
