@@ -51,12 +51,17 @@ class OCRService:
             Tuple[str, float]: Extracted text and the confidence score (0.0 to 1.0).
             
         """
-        if self.lang in ('gu', 'hi'):
+        if not PADDLE_AVAILABLE or self.lang in ('gu', 'hi', 'en'):
             try:
                 from app.content.ai_provider import default_ai_provider
                 from google.genai import types
                 
-                lang_name = "Hindi" if self.lang == "hi" else "Gujarati"
+                lang_mapping = {
+                    "hi": "Hindi",
+                    "gu": "Gujarati",
+                    "en": "English"
+                }
+                lang_name = lang_mapping.get(self.lang, "English")
                 logger.info(f"Using Gemini to transcribe {lang_name} page image...")
                 img_part = types.Part.from_bytes(data=image_bytes, mime_type="image/png")
                 
