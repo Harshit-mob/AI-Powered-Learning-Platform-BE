@@ -24,90 +24,97 @@ class PromptBuilder:
         else:
             self.prompts_dir = Path(prompts_dir)
             
-    def _inject_schema_if_needed(self, template_key: str, content: str) -> str:
-        if template_key == "question_generator":
-            # 1. Inject Critical Technical Rules
-            if "# CRITICAL FORMATTING AND TECHNICAL RULES" not in content:
-                technical_rules = (
-                    "\n\n---\n\n"
-                    "# CRITICAL FORMATTING AND TECHNICAL RULES\n\n"
-                    "You MUST follow these technical rules strictly to prevent system parser crashes:\n\n"
-                    "1. **NO TRAILING PUNCTUATION**: The `expected_answer` and all items in `acceptable_answers` MUST NOT have trailing periods, commas, question marks, or exclamation marks (e.g., use 'He goes to school' instead of 'He goes to school.').\n"
-                    "2. **MCQ IDENTITY MATCH**: For MCQ, DEFINITION, and RECALL types:\n"
-                    "   - The `correct_option` and `expected_answer` MUST be exactly identical (character-for-character, case-sensitive) to one of the options listed in `mcq_options`.\n"
-                    "   - Exactly 4 options in `mcq_options`.\n"
-                    "   - The `question` string MUST contain ONLY the question query. Do NOT append option letters or options to the question text.\n"
-                    "3. **TRUE_FALSE SCHEMAS**: For every TRUE_FALSE question type:\n"
-                    "   - `mcq_options` MUST contain exactly 2 options: `[\"True\", \"False\"]` in English, `[\"हाँ (True)\", \"नहीं (False)\"]` in Hindi, or `[\"સાચું (True)\", \"ખોટું (False)\"]` in Gujarati.\n"
-                    "   - Both `correct_option` and `expected_answer` MUST exactly match one of these 2 options.\n"
-                    "   - Set `evaluation_method` to 'MCQ' and include 'MCQ' in `supported_answer_modes`.\n"
-                    "4. **FILL_BLANK SCHEMAS**: For every FILL_BLANK question type:\n"
-                    "   - `mcq_options` MUST be empty `[]`.\n"
-                    "   - `supported_answer_modes` MUST be exactly `[\"TEXT\"]`.\n"
-                    "5. **SUPPORTED ANSWER MODES**:\n"
-                    "   - For MCQ, TRUE_FALSE, DEFINITION, and RECALL: `supported_answer_modes` MUST be exactly `[\"MCQ\"]`.\n"
-                    "   - For UNDERSTANDING, REASONING: `supported_answer_modes` MUST be exactly `[\"VOICE\", \"TEXT\"]`.\n"
-                    "   - For FILL_BLANK: `supported_answer_modes` MUST be exactly `[\"TEXT\"]`.\n"
-                )
-                if "---" in content:
-                    parts = content.rsplit("---", 1)
-                    content = parts[0] + technical_rules + "\n---\n" + parts[1]
-                else:
-                    content += technical_rules
+    def _strip_schema_and_rules(self, content: str) -> str:
+        # Remove final validation block
+        if "# FINAL VALIDATION" in content:
+            content = content.split("# FINAL VALIDATION")[0].rstrip()
 
-            # 2. Inject JSON Schema
-            if '"mcq_options": []' not in content:
-                schema_block = (
-                    "\n\nReturn an array.\n\n"
-                    "Each object MUST follow this schema.\n\n"
-                    "{\n"
-                    '  "question": "",\n'
-                    '  "question_type": "",\n'
-                    '  "concept": "",\n'
-                    '  "expected_answer": "",\n'
-                    '  "acceptable_answers": [],\n'
-                    '  "evaluation_method": "",\n'
-                    '  "hint_level_1": "",\n'
-                    '  "hint_level_2": "",\n'
-                    '  "full_explanation": "",\n'
-                    '  "difficulty": 1,\n'
-                    '  "keywords": [],\n'
-                    '  "voice_expected_keywords": [],\n'
-                    '  "learning_unit_id": "",\n'
-                    '  "learning_objective": "",\n'
-                    '  "source_pages": [],\n'
-                    '  "estimated_answer_time": 5,\n'
-                    '  "supported_answer_modes": [],\n'
-                    '  "answer_complexity": "",\n'
-                    '  "mcq_options": [],\n'
-                    '  "correct_option": ""\n'
-                    "}\n"
-                )
-                if "---" in content:
-                    parts = content.rsplit("---", 1)
-                    content = parts[0] + schema_block + "\n---\n" + parts[1]
-                else:
-                    content += schema_block
-
-            # 3. Inject Final Validation
-            if "# FINAL VALIDATION" not in content:
-                validation_block = (
-                    "\n\n---\n\n"
-                    "# FINAL VALIDATION\n\n"
-                    "Before returning JSON verify:\n\n"
-                    "- Every question comes from a Learning Unit.\n"
-                    "- JSON is valid.\n"
-                    "- No duplicate questions.\n"
-                    "- Questions are suitable for Grade 6.\n"
-                    "- Questions work naturally in a voice conversation.\n"
-                    "- Expected answers are short.\n"
-                    "- Acceptable answers include natural spoken variations.\n"
-                    "- MCQs have exactly four options.\n"
-                    "- Only one correct option exists.\n"
-                    "- Output contains JSON only.\n"
-                )
-                content += validation_block
+        # Remove technical rules block
+        if "# CRITICAL FORMATTING AND TECHNICAL RULES" in content:
+            content = content.split("# CRITICAL FORMATTING AND TECHNICAL RULES")[0].rstrip()
+            
+        # Remove schema block
+        if "Each object MUST follow this schema." in content:
+            parts = content.split("Each object MUST follow this schema.")
+            if "Return an array." in parts[0]:
+                before = parts[0].rsplit("Return an array.", 1)[0].rstrip()
+            else:
+                before = parts[0].rstrip()
+            content = before
+                
+        content = content.rstrip()
+        if content.endswith("---"):
+            content = content.rsplit("---", 1)[0].rstrip()
+            
         return content
+
+    def _append_technical_rules_and_schema(self, content: str) -> str:
+        technical_rules = (
+            "\n\n---\n\n"
+            "# CRITICAL FORMATTING AND TECHNICAL RULES\n\n"
+            "You MUST follow these technical rules strictly to prevent system parser crashes:\n\n"
+            "1. **NO TRAILING PUNCTUATION**: The `expected_answer` and all items in `acceptable_answers` MUST NOT have trailing periods, commas, question marks, or exclamation marks (e.g., use 'He goes to school' instead of 'He goes to school.').\n"
+            "2. **MCQ IDENTITY MATCH**: For MCQ, DEFINITION, and RECALL types:\n"
+            "   - The `correct_option` and `expected_answer` MUST be exactly identical (character-for-character, case-sensitive) to one of the options listed in `mcq_options`.\n"
+            "   - Exactly 4 options in `mcq_options`.\n"
+            "   - The `question` string MUST contain ONLY the question query. Do NOT append option letters or options to the question text.\n"
+            "3. **TRUE_FALSE SCHEMAS**: For every TRUE_FALSE question type:\n"
+            "   - `mcq_options` MUST contain exactly 2 options: `[\"True\", \"False\"]` in English, `[\"हाँ (True)\", \"नहीं (False)\"]` in Hindi, or `[\"સાચું (True)\", \"ખોટું (False)\"]` in Gujarati.\n"
+            "   - Both `correct_option` and `expected_answer` MUST exactly match one of these 2 options.\n"
+            "   - Set `evaluation_method` to 'MCQ' and include 'MCQ' in `supported_answer_modes`.\n"
+            "4. **FILL_BLANK SCHEMAS**: For every FILL_BLANK question type:\n"
+            "   - `mcq_options` MUST be empty `[]`.\n"
+            "   - `supported_answer_modes` MUST be exactly `[\"TEXT\"]`.\n"
+            "5. **SUPPORTED ANSWER MODES**:\n"
+            "   - For MCQ, TRUE_FALSE, DEFINITION, and RECALL: `supported_answer_modes` MUST be exactly `[\"MCQ\"]`.\n"
+            "   - For UNDERSTANDING, REASONING: `supported_answer_modes` MUST be exactly `[\"VOICE\", \"TEXT\"]`.\n"
+            "   - For FILL_BLANK: `supported_answer_modes` MUST be exactly `[\"TEXT\"]`.\n"
+        )
+        
+        schema_block = (
+            "\n\nReturn an array.\n\n"
+            "Each object MUST follow this schema.\n\n"
+            "{\n"
+            '  "question": "",\n'
+            '  "question_type": "",\n'
+            '  "concept": "",\n'
+            '  "expected_answer": "",\n'
+            '  "acceptable_answers": [],\n'
+            '  "evaluation_method": "",\n'
+            '  "hint_level_1": "",\n'
+            '  "hint_level_2": "",\n'
+            '  "full_explanation": "",\n'
+            '  "difficulty": 1,\n'
+            '  "keywords": [],\n'
+            '  "voice_expected_keywords": [],\n'
+            '  "learning_unit_id": "",\n'
+            '  "learning_objective": "",\n'
+            '  "source_pages": [],\n'
+            '  "estimated_answer_time": 5,\n'
+            '  "supported_answer_modes": [],\n'
+            '  "answer_complexity": "",\n'
+            '  "mcq_options": [],\n'
+            '  "correct_option": ""\n'
+            "}\n"
+        )
+        
+        validation_block = (
+            "\n\n---\n\n"
+            "# FINAL VALIDATION\n\n"
+            "Before returning JSON verify:\n\n"
+            "- Every question comes from a Learning Unit.\n"
+            "- JSON is valid.\n"
+            "- No duplicate questions.\n"
+            "- Questions are suitable for Grade 6.\n"
+            "- Questions work naturally in a voice conversation.\n"
+            "- Expected answers are short.\n"
+            "- Acceptable answers include natural spoken variations.\n"
+            "- MCQs have exactly four options.\n"
+            "- Only one correct option exists.\n"
+            "- Output contains JSON only.\n"
+        )
+        
+        return content + technical_rules + schema_block + validation_block
 
     def build(self, template_name: str, db_session = None, **kwargs) -> str:
         template_key = template_name.replace(".md", "")
@@ -130,8 +137,10 @@ class PromptBuilder:
             with open(template_path, 'r', encoding='utf-8') as f:
                 template_content = f.read()
 
-        # Inject schema block if it's the question_generator and has no schema
-        template_content = self._inject_schema_if_needed(template_key, template_content)
+        # Inject schema block if it's the question_generator
+        if template_key == "question_generator":
+            template_content = self._strip_schema_and_rules(template_content)
+            template_content = self._append_technical_rules_and_schema(template_content)
             
         # Basic variable interpolation using {var_name}
         try:
