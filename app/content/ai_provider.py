@@ -25,23 +25,10 @@ class PromptBuilder:
             self.prompts_dir = Path(prompts_dir)
             
     def _strip_schema_and_rules(self, content: str) -> str:
-        # Remove final validation block
-        if "# FINAL VALIDATION" in content:
-            content = content.split("# FINAL VALIDATION")[0].rstrip()
-
-        # Remove technical rules block
-        if "# CRITICAL FORMATTING AND TECHNICAL RULES" in content:
-            content = content.split("# CRITICAL FORMATTING AND TECHNICAL RULES")[0].rstrip()
+        # Remove everything starting from # OUTPUT to the end of the file
+        if "# OUTPUT" in content:
+            content = content.split("# OUTPUT")[0].rstrip()
             
-        # Remove schema block
-        if "Each object MUST follow this schema." in content:
-            parts = content.split("Each object MUST follow this schema.")
-            if "Return an array." in parts[0]:
-                before = parts[0].rsplit("Return an array.", 1)[0].rstrip()
-            else:
-                before = parts[0].rstrip()
-            content = before
-                
         content = content.rstrip()
         if content.endswith("---"):
             content = content.rsplit("---", 1)[0].rstrip()
@@ -49,6 +36,15 @@ class PromptBuilder:
         return content
 
     def _append_technical_rules_and_schema(self, content: str) -> str:
+        output_section = (
+            "\n\n---\n\n"
+            "# OUTPUT\n\n"
+            "Return ONLY valid JSON.\n\n"
+            "No markdown.\n"
+            "No explanations.\n"
+            "No comments.\n"
+        )
+
         technical_rules = (
             "\n\n---\n\n"
             "# CRITICAL FORMATTING AND TECHNICAL RULES\n\n"
@@ -114,7 +110,7 @@ class PromptBuilder:
             "- Output contains JSON only.\n"
         )
         
-        return content + technical_rules + schema_block + validation_block
+        return content + output_section + technical_rules + schema_block + validation_block
 
     def build(self, template_name: str, db_session = None, **kwargs) -> str:
         template_key = template_name.replace(".md", "")
