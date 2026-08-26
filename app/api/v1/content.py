@@ -35,10 +35,10 @@ class DraftQuestionUpdateRequest(BaseModel):
     correct_option: Optional[str] = None
     expected_answer: Optional[str] = None
     acceptable_answers: Optional[List[str]] = None
-    difficulty: Optional[int] = None
     hint_level_1: Optional[str] = None
     hint_level_2: Optional[str] = None
     full_explanation: Optional[str] = None
+
 
 
 @router.get("/subjects", response_model=GenericSuccessResponse[List[SubjectResponse]])
@@ -338,9 +338,6 @@ def update_draft_question(
             
         if payload.acceptable_answers is not None:
             draft_q.acceptable_answers = payload.acceptable_answers
-            
-        if payload.difficulty is not None:
-            draft_q.difficulty = payload.difficulty
             
         if payload.hint_level_1 is not None:
             draft_q.hint_level_1 = payload.hint_level_1
