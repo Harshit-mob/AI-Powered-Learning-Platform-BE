@@ -110,7 +110,7 @@ class PromptBuilder:
             "- Output contains JSON only.\n"
         )
         
-        return content + output_section + technical_rules + schema_block + validation_block
+        return content + technical_rules + output_section + schema_block + validation_block
 
     def build(self, template_name: str, db_session = None, **kwargs) -> str:
         template_key = template_name.replace(".md", "")
