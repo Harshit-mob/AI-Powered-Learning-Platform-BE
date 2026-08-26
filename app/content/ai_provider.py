@@ -24,8 +24,44 @@ class PromptBuilder:
         else:
             self.prompts_dir = Path(prompts_dir)
             
+    def _inject_schema_if_needed(self, template_key: str, content: str) -> str:
+        if template_key == "question_generator" and '"mcq_options": []' not in content:
+            schema_block = (
+                "\n\nReturn an array.\n\n"
+                "Each object MUST follow this schema.\n\n"
+                "{\n"
+                '  "question": "",\n'
+                '  "question_type": "",\n'
+                '  "concept": "",\n'
+                '  "expected_answer": "",\n'
+                '  "acceptable_answers": [],\n'
+                '  "evaluation_method": "",\n'
+                '  "hint_level_1": "",\n'
+                '  "hint_level_2": "",\n'
+                '  "full_explanation": "",\n'
+                '  "difficulty": 1,\n'
+                '  "keywords": [],\n'
+                '  "voice_expected_keywords": [],\n'
+                '  "learning_unit_id": "",\n'
+                '  "learning_objective": "",\n'
+                '  "source_pages": [],\n'
+                '  "estimated_answer_time": 5,\n'
+                '  "supported_answer_modes": [],\n'
+                '  "answer_complexity": "",\n'
+                '  "mcq_options": [],\n'
+                '  "correct_option": ""\n'
+                "}\n"
+            )
+            if "---" in content:
+                parts = content.rsplit("---", 1)
+                content = parts[0] + schema_block + "\n---\n" + parts[1]
+            else:
+                content += schema_block
+        return content
+
     def build(self, template_name: str, db_session = None, **kwargs) -> str:
         template_key = template_name.replace(".md", "")
+        template_content = None
         
         if db_session:
             try:
@@ -33,20 +69,19 @@ class PromptBuilder:
                 db_prompt = db_session.query(SystemPrompt).filter(SystemPrompt.name == template_key).first()
                 if db_prompt:
                     template_content = db_prompt.content
-                    try:
-                        return template_content.format(**kwargs)
-                    except KeyError as e:
-                        logger.warning(f"Missing formatting key in database prompt: {e}")
-                        return template_content
             except Exception as e:
                 logger.error(f"Failed to read prompt from database: {e}")
 
-        template_path = self.prompts_dir / template_name
-        if not template_path.exists():
-            raise FileNotFoundError(f"Prompt template '{template_name}' not found at {template_path}")
-            
-        with open(template_path, 'r', encoding='utf-8') as f:
-            template_content = f.read()
+        if template_content is None:
+            template_path = self.prompts_dir / template_name
+            if not template_path.exists():
+                raise FileNotFoundError(f"Prompt template '{template_name}' not found at {template_path}")
+                
+            with open(template_path, 'r', encoding='utf-8') as f:
+                template_content = f.read()
+
+        # Inject schema block if it's the question_generator and has no schema
+        template_content = self._inject_schema_if_needed(template_key, template_content)
             
         # Basic variable interpolation using {var_name}
         try:

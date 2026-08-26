@@ -22,6 +22,21 @@ PROMPT_LABELS = {
     "learning_unit_builder": "Learning Unit Builder"
 }
 
+def strip_schema_from_question_generator(content: str) -> str:
+    if "Each object MUST follow this schema." in content:
+        parts = content.split("Each object MUST follow this schema.")
+        if "Return an array." in parts[0]:
+            before = parts[0].rsplit("Return an array.", 1)[0].rstrip()
+        else:
+            before = parts[0].rstrip()
+        after = parts[1]
+        if "---" in after:
+            after_parts = after.split("---", 1)
+            content = before + "\n\n---\n" + after_parts[1]
+        else:
+            content = before
+    return content
+
 def load_default_prompt_file(name: str) -> str:
     filename = PROMPT_FILES_MAP.get(name)
     if not filename:
@@ -47,6 +62,11 @@ def list_prompts(
             content = db_prompts.get(name)
             if not content:
                 content = load_default_prompt_file(name)
+            
+            # Strip schema block before presenting it in the UI response
+            if name == "question_generator":
+                content = strip_schema_from_question_generator(content)
+                
             label = PROMPT_LABELS.get(name, name)
             results.append(PromptResponse(id=name, name=name, label=label, content=content))
             
