@@ -73,6 +73,13 @@ class StudentService:
             
             completed_topic_ids = completed_session_topic_ids.union(completed_daily_topic_ids)
 
+            # Get IDs of subjects that have at least one APPROVED question bank
+            from app.models.quiz import QuestionBank
+            active_subject_ids = {
+                str(row[0]) for row in self.uow.session.query(QuestionBank.subject_id)
+                .filter(QuestionBank.status == "APPROVED").all()
+            }
+
             # Retrieve all topics grouped by subject and chapter
             topics_query = self.uow.session.query(
                 Subject.id, Subject.name, Chapter.id, Chapter.title, Topic.id
@@ -83,6 +90,8 @@ class StudentService:
             subject_map = {}
             for sub_id, sub_name, ch_id, ch_title, topic_id in topics_query:
                 sub_id_str = str(sub_id)
+                if sub_id_str not in active_subject_ids:
+                    continue
                 ch_id_str = str(ch_id)
                 
                 if sub_id_str not in subject_map:
