@@ -108,7 +108,7 @@ class QBankPipelineService:
                         "grade": grade_name,
                         "subject": subject_name,
                         "chapter": chapter.title
-                    })
+                    }, db_session=self.uow.session)
                     
                     # B. Import the Board/Grade/Subject/Chapter/Topic/Subtopic hierarchy
                     importer = ContentImporter()
@@ -145,7 +145,7 @@ class QBankPipelineService:
                                 }]
                             })
                             lu_builder = LearningUnitBuilder(ai_provider=self.question_generator.ai_provider)
-                            parsed_lus = lu_builder.build_from_curriculum(subtopic_payload)
+                            parsed_lus = lu_builder.build_from_curriculum(subtopic_payload, db_session=self.uow.session)
                             
                             # D. Persist learning units linked to subtopic
                             importer.import_learning_units(self.uow.session, subtopic.id, parsed_lus)
@@ -192,7 +192,8 @@ class QBankPipelineService:
                 chapter=chapter.title,
                 topic=db_lus[0].topic_title if db_lus else "General",
                 sub_topic=db_lus[0].subtopic_title if db_lus else "General",
-                learning_units=learning_units_payload
+                learning_units=learning_units_payload,
+                db_session=self.uow.session
             )
 
             generated_questions = generation_result.get("questions", [])

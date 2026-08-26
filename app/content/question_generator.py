@@ -415,10 +415,10 @@ class QuestionGenerationService:
         return validated_questions, total_failures
 
     def generate_question_bank(
-        self, subject: str, grade: int, board: str, chapter: str, topic: str, sub_topic: str, learning_units: List[Dict[str, Any]]
+        self, subject: str, grade: int, board: str, chapter: str, topic: str, sub_topic: str, learning_units: List[Dict[str, Any]], db_session = None
     ) -> Dict[str, Any]:
         start_time = time.time()
-        system_prompt = self.prompt_builder.build("question_generator.md")
+        system_prompt = self.prompt_builder.build("question_generator.md", db_session=db_session)
         
         if subject.lower() in ("hindi", "gujarati"):
             lang_name = "Hindi" if subject.lower() == "hindi" else "Gujarati"

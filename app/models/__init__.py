@@ -6,3 +6,4 @@ from app.models.core.student import Student
 from app.models.core.device_token import StudentDeviceToken
 from app.models.learning.student_daily_learning import StudentDailyLearning
 from app.models.learning.student_mastery import StudentMastery
+from app.models.prompt import SystemPrompt

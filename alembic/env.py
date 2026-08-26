@@ -29,6 +29,7 @@ from app.models.core.device_token import StudentDeviceToken
 from app.models.course import Topic, Chapter, LearningUnit
 from app.models.learning.student_mastery import StudentMastery
 from app.models.learning.student_daily_learning import StudentDailyLearning
+from app.models.prompt import SystemPrompt
 
 # Set the sqlalchemy.url dynamically from our settings
 # Use database_url_fixed to normalize postgres:// -> postgresql:// (Render compatibility)

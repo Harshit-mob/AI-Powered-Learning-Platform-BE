@@ -29,14 +29,14 @@ class LearningUnitBuilder:
         self.ai_provider = ai_provider
         self.prompt_builder = PromptBuilder()
 
-    def build_from_curriculum(self, curriculum_json: str) -> List[ParsedLearningUnit]:
+    def build_from_curriculum(self, curriculum_json: str, db_session = None) -> List[ParsedLearningUnit]:
         """
         Takes the entire Curriculum JSON (or a batch of topics) and uses AI to intelligently 
         slice it into multiple focused Learning Units in a single API call.
         """
         logger.info("Building Learning Units for batched curriculum scope...")
         
-        system_prompt = self.prompt_builder.build("learning_unit_builder.md")
+        system_prompt = self.prompt_builder.build("learning_unit_builder.md", db_session=db_session)
 
         try:
             structured_data = self.ai_provider.generate_structured_data(

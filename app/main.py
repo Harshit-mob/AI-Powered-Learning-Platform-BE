@@ -7,6 +7,7 @@ from app.api.v1.student import router as student_router
 from app.api.v1.home import router as home_router
 from app.api.v1.masterdata import router as masterdata_router
 from app.api.v1.notification import router as notification_router
+from app.api.v1.admin_prompt import router as admin_prompt_router
 from app.api.v1.middleware import setup_middleware
 from app.api.v1.errors import APIException, custom_api_exception_handler, global_exception_handler
 
@@ -37,3 +38,4 @@ app.include_router(student_router, prefix=settings.API_V1_STR)
 app.include_router(home_router, prefix=settings.API_V1_STR)
 app.include_router(masterdata_router, prefix=settings.API_V1_STR)
 app.include_router(notification_router, prefix=settings.API_V1_STR)
+app.include_router(admin_prompt_router, prefix=settings.API_V1_STR)

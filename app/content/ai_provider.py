@@ -24,7 +24,23 @@ class PromptBuilder:
         else:
             self.prompts_dir = Path(prompts_dir)
             
-    def build(self, template_name: str, **kwargs) -> str:
+    def build(self, template_name: str, db_session = None, **kwargs) -> str:
+        template_key = template_name.replace(".md", "")
+        
+        if db_session:
+            try:
+                from app.models.prompt import SystemPrompt
+                db_prompt = db_session.query(SystemPrompt).filter(SystemPrompt.name == template_key).first()
+                if db_prompt:
+                    template_content = db_prompt.content
+                    try:
+                        return template_content.format(**kwargs)
+                    except KeyError as e:
+                        logger.warning(f"Missing formatting key in database prompt: {e}")
+                        return template_content
+            except Exception as e:
+                logger.error(f"Failed to read prompt from database: {e}")
+
         template_path = self.prompts_dir / template_name
         if not template_path.exists():
             raise FileNotFoundError(f"Prompt template '{template_name}' not found at {template_path}")
