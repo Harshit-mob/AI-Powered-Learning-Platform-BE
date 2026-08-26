@@ -78,3 +78,28 @@ def test_update_draft_question_validation_fails(mock_uow):
     response = client.put(f"/api/v1/content/curriculum/qbank/draft-questions/{mock_draft.id}", json=payload)
     assert response.status_code == 400
     assert "correct_option must match" in response.json()["message"]
+
+def test_convert_reasoning_to_mcq(mock_uow):
+    mock_draft = DraftQuestion(
+        id=uuid.uuid4(),
+        question_type="REASONING",
+        text="Why is thinking important?",
+        mcq_options=[],
+        correct_option=None,
+        expected_answer="To make good decisions"
+    )
+    mock_uow.session.query().filter().first.return_value = mock_draft
+    
+    payload = {
+        "mcq_options": ["Option A", "Option B", "Option C", "Option D"],
+        "correct_option": "Option B",
+        "expected_answer": "Option B"
+    }
+    
+    response = client.put(f"/api/v1/content/curriculum/qbank/draft-questions/{mock_draft.id}", json=payload)
+    assert response.status_code == 200
+    assert response.json()["success"] is True
+    assert mock_draft.question_type == "MCQ"
+    assert mock_draft.evaluation_method == "MCQ"
+    assert mock_draft.answer_complexity == "MCQ"
+

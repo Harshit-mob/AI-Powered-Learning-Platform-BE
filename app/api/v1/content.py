@@ -348,28 +348,56 @@ def update_draft_question(
         if payload.full_explanation is not None:
             draft_q.full_explanation = payload.full_explanation
             
-        # Enforce validation rules to prevent crashes on active Question promo
-        if draft_q.question_type == "MCQ":
-            if not draft_q.mcq_options or len(draft_q.mcq_options) != 4:
-                from app.api.v1.errors import error_response
-                return error_response("BAD_REQUEST", "MCQ question type must have exactly 4 options.", status_code=400)
-            if draft_q.correct_option not in draft_q.mcq_options:
-                from app.api.v1.errors import error_response
-                return error_response("BAD_REQUEST", "correct_option must match one of the mcq_options exactly.", status_code=400)
-            if draft_q.expected_answer != draft_q.correct_option:
-                from app.api.v1.errors import error_response
-                return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for MCQs.", status_code=400)
+        # Dynamically determine the question type and validation based on mcq_options
+        if draft_q.mcq_options and len(draft_q.mcq_options) > 0:
+            if len(draft_q.mcq_options) == 4:
+                draft_q.question_type = "MCQ"
+                draft_q.evaluation_method = "MCQ"
+                draft_q.answer_complexity = "MCQ"
                 
-        elif draft_q.question_type == "TRUE_FALSE":
-            if not draft_q.mcq_options or len(draft_q.mcq_options) != 2:
+                if not draft_q.correct_option:
+                    from app.api.v1.errors import error_response
+                    return error_response("BAD_REQUEST", "correct_option is required for MCQ question type.", status_code=400)
+                if draft_q.correct_option not in draft_q.mcq_options:
+                    from app.api.v1.errors import error_response
+                    return error_response("BAD_REQUEST", "correct_option must match one of the mcq_options exactly.", status_code=400)
+                if draft_q.expected_answer != draft_q.correct_option:
+                    from app.api.v1.errors import error_response
+                    return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for MCQs.", status_code=400)
+                    
+            elif len(draft_q.mcq_options) == 2:
+                draft_q.question_type = "TRUE_FALSE"
+                draft_q.evaluation_method = "MCQ"
+                draft_q.answer_complexity = "MCQ"
+                
+                if not draft_q.correct_option:
+                    from app.api.v1.errors import error_response
+                    return error_response("BAD_REQUEST", "correct_option is required for TRUE_FALSE question type.", status_code=400)
+                if draft_q.correct_option not in draft_q.mcq_options:
+                    from app.api.v1.errors import error_response
+                    return error_response("BAD_REQUEST", "correct_option must match one of the TRUE_FALSE options exactly.", status_code=400)
+                if draft_q.expected_answer != draft_q.correct_option:
+                    from app.api.v1.errors import error_response
+                    return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for True/False questions.", status_code=400)
+            else:
                 from app.api.v1.errors import error_response
-                return error_response("BAD_REQUEST", "TRUE_FALSE question type must have exactly 2 options.", status_code=400)
-            if draft_q.correct_option not in draft_q.mcq_options:
-                from app.api.v1.errors import error_response
-                return error_response("BAD_REQUEST", "correct_option must match one of the TRUE_FALSE options exactly.", status_code=400)
-            if draft_q.expected_answer != draft_q.correct_option:
-                from app.api.v1.errors import error_response
-                return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for True/False questions.", status_code=400)
+                return error_response("BAD_REQUEST", "mcq_options must contain exactly 4 options (for MCQ) or exactly 2 options (for True/False).", status_code=400)
+        else:
+            if draft_q.question_type in ("MCQ", "TRUE_FALSE"):
+                draft_q.question_type = "UNDERSTANDING"
+            
+            draft_q.mcq_options = []
+            draft_q.correct_option = None
+            
+            if draft_q.question_type == "FILL_BLANK":
+                draft_q.evaluation_method = "WORD_MATCH"
+                draft_q.answer_complexity = "WORD"
+            elif draft_q.question_type in ("RECALL", "DEFINITION"):
+                draft_q.evaluation_method = "WORD_MATCH"
+                draft_q.answer_complexity = "WORD"
+            else:
+                draft_q.evaluation_method = "SEMANTIC"
+                draft_q.answer_complexity = "SENTENCE"
                 
         uow.commit()
         return create_response(None, "Draft question updated successfully")
@@ -471,6 +499,11 @@ def toggle_qbank_active_status(
                     existing.keywords = d.keywords
                     existing.question_purpose = d.question_purpose
                     existing.progression_level = d.progression_level
+                    existing.supported_answer_modes = (
+                        ["MCQ"] if d.question_type in ("MCQ", "TRUE_FALSE")
+                        else ["TEXT"] if d.question_type == "FILL_BLANK"
+                        else ["VOICE", "TEXT"]
+                    )
                 else:
                     # Insert new
                     new_q = Question(
@@ -496,6 +529,11 @@ def toggle_qbank_active_status(
                         keywords=d.keywords,
                         question_purpose=d.question_purpose,
                         progression_level=d.progression_level,
+                        supported_answer_modes=(
+                            ["MCQ"] if d.question_type in ("MCQ", "TRUE_FALSE")
+                            else ["TEXT"] if d.question_type == "FILL_BLANK"
+                            else ["VOICE", "TEXT"]
+                        ),
                         question_hash=qhash,
                         is_active=True
                     )
