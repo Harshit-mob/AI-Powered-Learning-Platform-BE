@@ -54,16 +54,16 @@ def list_prompts(
 
 
 
-@router.put("/{name}", response_model=SuccessResponse)
+@router.put("/{id}", response_model=SuccessResponse)
 def update_prompt(
-    name: str,
+    id: str,
     payload: PromptUpdateRequest,
     admin = Depends(get_current_admin),
     uow: UnitOfWork = Depends(get_uow)
 ):
     """Update/save a dynamic prompt content in the database."""
-    if name not in PROMPT_FILES_MAP:
-        return error_response("BAD_REQUEST", f"System prompt key '{name}' is invalid.", status_code=400)
+    if id not in PROMPT_FILES_MAP:
+        return error_response("BAD_REQUEST", f"System prompt key '{id}' is invalid.", status_code=400)
         
     # Validation: minimum length validation is enforced by schema (min_length=100)
     # Check if empty or whitespace only
@@ -72,12 +72,12 @@ def update_prompt(
         return error_response("BAD_REQUEST", "Prompt content cannot be empty or whitespace only.", status_code=400)
         
     with uow:
-        db_prompt = uow.session.query(SystemPrompt).filter(SystemPrompt.name == name).first()
+        db_prompt = uow.session.query(SystemPrompt).filter(SystemPrompt.name == id).first()
         if db_prompt:
             db_prompt.content = clean_content
         else:
-            db_prompt = SystemPrompt(name=name, content=clean_content)
+            db_prompt = SystemPrompt(name=id, content=clean_content)
             uow.session.add(db_prompt)
         uow.commit()
         
-    return create_response(None, f"System prompt '{name}' updated successfully.")
+    return create_response(None, f"System prompt '{id}' updated successfully.")
