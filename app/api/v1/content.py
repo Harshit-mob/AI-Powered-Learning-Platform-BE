@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, File, UploadFile, Form, BackgroundTasks
 import uuid
 import os
 import shutil
-from typing import List
+from typing import List, Optional
 from pydantic import BaseModel
 
 from app.api.v1.responses import SuccessResponse, GenericSuccessResponse, create_response
@@ -28,6 +28,18 @@ class QBankReviewRequest(BaseModel):
 
 class QBankToggleActiveRequest(BaseModel):
     is_active: bool
+
+class DraftQuestionUpdateRequest(BaseModel):
+    text: Optional[str] = None
+    mcq_options: Optional[List[str]] = None
+    correct_option: Optional[str] = None
+    expected_answer: Optional[str] = None
+    acceptable_answers: Optional[List[str]] = None
+    difficulty: Optional[int] = None
+    hint_level_1: Optional[str] = None
+    hint_level_2: Optional[str] = None
+    full_explanation: Optional[str] = None
+
 
 @router.get("/subjects", response_model=GenericSuccessResponse[List[SubjectResponse]])
 def get_subjects(student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
@@ -296,6 +308,74 @@ def get_qbank_draft_questions(
             "topics": list(hierarchy.values())
         }
         return create_response(result_data, "Questions retrieved and grouped topic-wise successfully")
+
+@router.put("/curriculum/qbank/draft-questions/{question_id}", response_model=SuccessResponse)
+def update_draft_question(
+    question_id: uuid.UUID,
+    payload: DraftQuestionUpdateRequest,
+    admin = Depends(get_current_admin),
+    uow: UnitOfWork = Depends(get_uow)
+):
+    """Update details of a generated draft question before approval."""
+    with uow:
+        draft_q = uow.session.query(DraftQuestion).filter(DraftQuestion.id == question_id).first()
+        if not draft_q:
+            from app.api.v1.errors import error_response
+            return error_response("NOT_FOUND", "Draft question not found", status_code=404)
+            
+        # Update fields if provided
+        if payload.text is not None:
+            draft_q.text = payload.text
+            
+        if payload.mcq_options is not None:
+            draft_q.mcq_options = payload.mcq_options
+            
+        if payload.correct_option is not None:
+            draft_q.correct_option = payload.correct_option
+            
+        if payload.expected_answer is not None:
+            draft_q.expected_answer = payload.expected_answer
+            
+        if payload.acceptable_answers is not None:
+            draft_q.acceptable_answers = payload.acceptable_answers
+            
+        if payload.difficulty is not None:
+            draft_q.difficulty = payload.difficulty
+            
+        if payload.hint_level_1 is not None:
+            draft_q.hint_level_1 = payload.hint_level_1
+            
+        if payload.hint_level_2 is not None:
+            draft_q.hint_level_2 = payload.hint_level_2
+            
+        if payload.full_explanation is not None:
+            draft_q.full_explanation = payload.full_explanation
+            
+        # Enforce validation rules to prevent crashes on active Question promo
+        if draft_q.question_type == "MCQ":
+            if not draft_q.mcq_options or len(draft_q.mcq_options) != 4:
+                from app.api.v1.errors import error_response
+                return error_response("BAD_REQUEST", "MCQ question type must have exactly 4 options.", status_code=400)
+            if draft_q.correct_option not in draft_q.mcq_options:
+                from app.api.v1.errors import error_response
+                return error_response("BAD_REQUEST", "correct_option must match one of the mcq_options exactly.", status_code=400)
+            if draft_q.expected_answer != draft_q.correct_option:
+                from app.api.v1.errors import error_response
+                return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for MCQs.", status_code=400)
+                
+        elif draft_q.question_type == "TRUE_FALSE":
+            if not draft_q.mcq_options or len(draft_q.mcq_options) != 2:
+                from app.api.v1.errors import error_response
+                return error_response("BAD_REQUEST", "TRUE_FALSE question type must have exactly 2 options.", status_code=400)
+            if draft_q.correct_option not in draft_q.mcq_options:
+                from app.api.v1.errors import error_response
+                return error_response("BAD_REQUEST", "correct_option must match one of the TRUE_FALSE options exactly.", status_code=400)
+            if draft_q.expected_answer != draft_q.correct_option:
+                from app.api.v1.errors import error_response
+                return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for True/False questions.", status_code=400)
+                
+        uow.commit()
+        return create_response(None, "Draft question updated successfully")
 
 @router.post("/curriculum/qbank/{qbank_id}/review", response_model=SuccessResponse)
 def review_qbank_draft_questions(
