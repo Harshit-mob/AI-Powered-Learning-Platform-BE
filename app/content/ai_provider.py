@@ -88,6 +88,25 @@ class PromptBuilder:
                     content = parts[0] + schema_block + "\n---\n" + parts[1]
                 else:
                     content += schema_block
+
+            # 3. Inject Final Validation
+            if "# FINAL VALIDATION" not in content:
+                validation_block = (
+                    "\n\n---\n\n"
+                    "# FINAL VALIDATION\n\n"
+                    "Before returning JSON verify:\n\n"
+                    "- Every question comes from a Learning Unit.\n"
+                    "- JSON is valid.\n"
+                    "- No duplicate questions.\n"
+                    "- Questions are suitable for Grade 6.\n"
+                    "- Questions work naturally in a voice conversation.\n"
+                    "- Expected answers are short.\n"
+                    "- Acceptable answers include natural spoken variations.\n"
+                    "- MCQs have exactly four options.\n"
+                    "- Only one correct option exists.\n"
+                    "- Output contains JSON only.\n"
+                )
+                content += validation_block
         return content
 
     def build(self, template_name: str, db_session = None, **kwargs) -> str:
