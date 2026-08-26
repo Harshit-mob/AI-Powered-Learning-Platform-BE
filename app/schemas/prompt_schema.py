@@ -1,7 +1,9 @@
 from pydantic import BaseModel, Field
 
 class PromptResponse(BaseModel):
+    id: str = Field(..., description="The unique key of the system prompt")
     name: str = Field(..., description="The unique key of the system prompt")
+    label: str = Field(..., description="A user-friendly label for displaying in UI")
     content: str = Field(..., description="The actual markdown system prompt content")
 
 class PromptUpdateRequest(BaseModel):

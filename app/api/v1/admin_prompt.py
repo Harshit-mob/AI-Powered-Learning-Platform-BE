@@ -17,6 +17,10 @@ PROMPT_FILES_MAP = {
     "question_generator": "question_generator.md",
     "learning_unit_builder": "learning_unit_builder.md"
 }
+PROMPT_LABELS = {
+    "question_generator": "Question Generator",
+    "learning_unit_builder": "Learning Unit Builder"
+}
 
 def load_default_prompt_file(name: str) -> str:
     filename = PROMPT_FILES_MAP.get(name)
@@ -43,7 +47,8 @@ def list_prompts(
             content = db_prompts.get(name)
             if not content:
                 content = load_default_prompt_file(name)
-            results.append(PromptResponse(name=name, content=content))
+            label = PROMPT_LABELS.get(name, name)
+            results.append(PromptResponse(id=name, name=name, label=label, content=content))
             
         return create_response(results, "Prompts retrieved successfully")
 
@@ -60,8 +65,9 @@ def get_prompt(
     with uow:
         db_prompt = uow.session.query(SystemPrompt).filter(SystemPrompt.name == name).first()
         content = db_prompt.content if db_prompt else load_default_prompt_file(name)
+        label = PROMPT_LABELS.get(name, name)
         
-        return create_response(PromptResponse(name=name, content=content), "Prompt retrieved successfully")
+        return create_response(PromptResponse(id=name, name=name, label=label, content=content), "Prompt retrieved successfully")
 
 @router.put("/{name}", response_model=SuccessResponse)
 def update_prompt(
