@@ -43,11 +43,6 @@ class MasterdataService:
             board = self.uow.session.query(Board).filter(Board.id == board_id).first()
             if not board:
                 return False
-            
-            # Check for associated active question banks
-            qb_exists = self.uow.session.query(QuestionBank).join(Subject).join(Grade).filter(Grade.board_id == board_id).first()
-            if qb_exists:
-                raise APIException("CONSTRAINT_VIOLATION", "Cannot delete board because it has associated question banks.", 400)
                 
             self.uow.session.delete(board)
             self.uow.commit()
@@ -93,11 +88,6 @@ class MasterdataService:
             if not grade:
                 return False
                 
-            # Check for associated active question banks
-            qb_exists = self.uow.session.query(QuestionBank).join(Subject).filter(Subject.grade_id == grade_id).first()
-            if qb_exists:
-                raise APIException("CONSTRAINT_VIOLATION", "Cannot delete grade because it has associated question banks.", 400)
-                
             self.uow.session.delete(grade)
             self.uow.commit()
             return True
@@ -141,11 +131,6 @@ class MasterdataService:
             subject = self.uow.session.query(Subject).filter(Subject.id == subject_id).first()
             if not subject:
                 return False
-                
-            # Check for associated active question banks
-            qb_exists = self.uow.session.query(QuestionBank).filter(QuestionBank.subject_id == subject_id).first()
-            if qb_exists:
-                raise APIException("CONSTRAINT_VIOLATION", "Cannot delete subject because it has associated question banks.", 400)
                 
             self.uow.session.delete(subject)
             self.uow.commit()
