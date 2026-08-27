@@ -39,6 +39,7 @@ class Question(Base):
     supported_answer_modes = Column(ARRAY(String), nullable=True)
     expected_answer = Column(String, nullable=True)
     acceptable_answers = Column(JSONB, nullable=True)
+    source_type = Column(String(50), nullable=False, default="AI_GENERATED", server_default="AI_GENERATED")
 
     # --- Intelligence Engine Metadata ---
     question_hash = Column(String, nullable=True, unique=True)
@@ -157,6 +158,7 @@ class DraftQuestion(Base):
     question_purpose = Column(String(50), nullable=False, default="Practice", server_default="Practice")
     progression_level = Column(Integer, nullable=False, default=3, server_default="3")
     status = Column(String(50), nullable=False, default="APPROVED", server_default="APPROVED") # 'PENDING', 'APPROVED', 'REJECTED'
+    source_type = Column(String(50), nullable=False, default="AI_GENERATED", server_default="AI_GENERATED")
     
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 

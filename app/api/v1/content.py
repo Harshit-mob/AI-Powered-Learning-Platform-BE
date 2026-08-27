@@ -18,6 +18,7 @@ from app.application.content_service import ContentService
 from app.api.v1.dependencies import get_uow, get_current_student, get_current_admin
 from app.repositories.base.unit_of_work import UnitOfWork
 from app.models.quiz import QuestionBank, DraftQuestion, Question
+from app.models.course import Topic, Subtopic, LearningUnit, Chapter
 
 router = APIRouter(prefix="/content", tags=["Content"])
 
@@ -38,6 +39,22 @@ class DraftQuestionUpdateRequest(BaseModel):
     hint_level_1: Optional[str] = None
     hint_level_2: Optional[str] = None
     full_explanation: Optional[str] = None
+
+class TopicCreateRequest(BaseModel):
+    title: str
+    chapter_id: uuid.UUID
+
+class QuestionCreateRequest(BaseModel):
+    topic_id: uuid.UUID
+    text: str
+    mcq_options: List[str] = []
+    correct_option: Optional[str] = None
+    expected_answer: Optional[str] = None
+    acceptable_answers: List[str] = []
+    hint_level_1: Optional[str] = None
+    hint_level_2: Optional[str] = None
+    full_explanation: Optional[str] = None
+    difficulty: int = 2
 
 
 
@@ -573,4 +590,164 @@ def delete_qbank(
         uow.commit()
         
     return create_response(None, "Question bank removed successfully.")
+
+
+@router.post("/curriculum/topics", response_model=SuccessResponse)
+def create_topic_manually(
+    payload: TopicCreateRequest,
+    admin = Depends(get_current_admin),
+    uow: UnitOfWork = Depends(get_uow)
+):
+    """Manually add a Topic. Automatically creates standard Subtopic and Learning Unit under the hood."""
+    from app.api.v1.errors import error_response
+    with uow:
+        # Verify Chapter exists
+        chapter = uow.session.query(Chapter).filter(Chapter.id == payload.chapter_id).first()
+        if not chapter:
+            return error_response("NOT_FOUND", "Chapter not found", status_code=404)
+            
+        # Create Topic
+        topic = Topic(title=payload.title, chapter_id=payload.chapter_id)
+        uow.session.add(topic)
+        uow.session.flush() # get topic ID
+        
+        # Auto-create Subtopic
+        subtopic = Subtopic(
+            title=f"{payload.title} - Core Content",
+            content=f"Core subtopic for {payload.title}",
+            topic_id=topic.id
+        )
+        uow.session.add(subtopic)
+        uow.session.flush() # get subtopic ID
+        
+        # Auto-create LearningUnit
+        lu = LearningUnit(
+            subtopic_id=subtopic.id,
+            title=f"{payload.title} - Focus Unit",
+            content=f"Focus learning unit for {payload.title}",
+            learning_objective=f"Master the concepts of {payload.title}"
+        )
+        uow.session.add(lu)
+        uow.commit()
+        
+        return create_response({"topic_id": topic.id}, "Topic and default structures created successfully")
+
+
+@router.post("/curriculum/questions", response_model=SuccessResponse)
+def create_question_manually(
+    payload: QuestionCreateRequest,
+    admin = Depends(get_current_admin),
+    uow: UnitOfWork = Depends(get_uow)
+):
+    """Manually add a Question. Dynamically maps it to a dedicated manual Learning Unit."""
+    from app.api.v1.errors import error_response
+    with uow:
+        # Verify Topic exists
+        topic = uow.session.query(Topic).filter(Topic.id == payload.topic_id).first()
+        if not topic:
+            return error_response("NOT_FOUND", "Topic not found", status_code=404)
+            
+        # Try to find an existing manual additions subtopic/learning unit
+        manual_sub = uow.session.query(Subtopic).filter(
+            Subtopic.topic_id == payload.topic_id,
+            Subtopic.title == f"{topic.title} - Manual Additions"
+        ).first()
+        
+        if not manual_sub:
+            # Create the manual additions subtopic
+            manual_sub = Subtopic(
+                title=f"{topic.title} - Manual Additions",
+                content=f"Dedicated subtopic for manually added questions in {topic.title}",
+                topic_id=topic.id
+            )
+            uow.session.add(manual_sub)
+            uow.session.flush()
+            
+        manual_lu = uow.session.query(LearningUnit).filter(
+            LearningUnit.subtopic_id == manual_sub.id,
+            LearningUnit.title == f"{topic.title} - Manual Additions"
+        ).first()
+        
+        if not manual_lu:
+            # Create the manual additions learning unit
+            manual_lu = LearningUnit(
+                subtopic_id=manual_sub.id,
+                title=f"{topic.title} - Manual Additions",
+                content=f"Dedicated learning unit for manually added questions in {topic.title}",
+                learning_objective=f"Evaluate manually supplemented topics for {topic.title}"
+            )
+            uow.session.add(manual_lu)
+            uow.session.flush()
+            
+        # Determine the question type dynamically based on options length
+        q_type = "UNDERSTANDING"
+        eval_method = "SEMANTIC"
+        complexity = "SENTENCE"
+        modes = ["VOICE", "TEXT"]
+        
+        if payload.mcq_options and len(payload.mcq_options) > 0:
+            if len(payload.mcq_options) == 4:
+                q_type = "MCQ"
+                eval_method = "MCQ"
+                complexity = "MCQ"
+                modes = ["MCQ"]
+                
+                # MCQ Validations
+                if not payload.correct_option:
+                    return error_response("BAD_REQUEST", "correct_option is required for MCQ question type.", status_code=400)
+                if payload.correct_option not in payload.mcq_options:
+                    return error_response("BAD_REQUEST", "correct_option must match one of the mcq_options exactly.", status_code=400)
+                if payload.expected_answer != payload.correct_option:
+                    return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for MCQs.", status_code=400)
+            elif len(payload.mcq_options) == 2:
+                q_type = "TRUE_FALSE"
+                eval_method = "MCQ"
+                complexity = "MCQ"
+                modes = ["MCQ"]
+                
+                # TF Validations
+                if not payload.correct_option:
+                    return error_response("BAD_REQUEST", "correct_option is required for TRUE_FALSE question type.", status_code=400)
+                if payload.correct_option not in payload.mcq_options:
+                    return error_response("BAD_REQUEST", "correct_option must match one of the TRUE_FALSE options exactly.", status_code=400)
+                if payload.expected_answer != payload.correct_option:
+                    return error_response("BAD_REQUEST", "expected_answer must be identical to correct_option for True/False questions.", status_code=400)
+            else:
+                return error_response("BAD_REQUEST", "mcq_options must contain exactly 4 options (for MCQ) or exactly 2 options (for True/False).", status_code=400)
+                
+        # Generate question hash
+        import hashlib
+        qhash = hashlib.sha256(payload.text.strip().lower().encode()).hexdigest()
+        
+        # Check duplicate
+        existing = uow.session.query(Question).filter(Question.question_hash == qhash).first()
+        if existing:
+            return error_response("BAD_REQUEST", "A question with identical content already exists.", status_code=400)
+            
+        # Create Question directly in active questions table
+        new_q = Question(
+            id=uuid.uuid4(),
+            learning_unit_id=manual_lu.id,
+            question_type=q_type,
+            concept="Manual Supplementary",
+            text=payload.text,
+            mcq_options=payload.mcq_options,
+            correct_option=payload.correct_option,
+            answer_complexity=complexity,
+            evaluation_method=eval_method,
+            expected_answer=payload.expected_answer,
+            acceptable_answers=payload.acceptable_answers,
+            difficulty=payload.difficulty,
+            hint_level_1=payload.hint_level_1,
+            hint_level_2=payload.hint_level_2,
+            full_explanation=payload.full_explanation,
+            supported_answer_modes=modes,
+            question_hash=qhash,
+            source_type="MANUAL",
+            is_active=True
+        )
+        uow.session.add(new_q)
+        uow.commit()
+        
+        return create_response({"question_id": new_q.id}, "Question created successfully in active pool")
 

@@ -52,6 +52,8 @@ class QuotaDistributionPolicy(DistributionPolicy):
         # Track current counts
         diff_counts = {k: 0 for k in self.diff_quotas.keys()}
         bloom_counts = {k: 0 for k in self.bloom_quotas.keys()}
+        manual_selected_count = 0
+        target_manual_quota = 2
         
         # First Pass: Try to pick best variant per LU that fulfills open quotas (1 question per LU maximum)
         for lu_id in ranked_lus:
@@ -62,21 +64,34 @@ class QuotaDistributionPolicy(DistributionPolicy):
             if not candidates:
                 continue
                 
+            # Prioritize manual questions up to target_manual_quota
+            manual_variant = None
+            if manual_selected_count < target_manual_quota:
+                for variant in candidates:
+                    q_source = getattr(variant.question, "source_type", None)
+                    if q_source == "MANUAL":
+                        manual_variant = variant
+                        manual_variant.selection_reasons.append("manual_priority")
+                        manual_selected_count += 1
+                        break
+            
             best_match = None
             best_fallback = candidates[0] # Absolute best variant by score
             
-            # Find a variant that satisfies BOTH an open diff quota AND an open bloom quota
-            for variant in candidates:
-                d = variant.difficulty
-                b = variant.bloom
-                if diff_counts.get(d, 0) < self.diff_quotas.get(d, 0):
-                    best_match = variant
-                    best_match.selection_reasons.append("difficulty_quota")
-                    break
-                    
-            chosen = best_match if best_match else best_fallback
-            if not best_match:
-                chosen.selection_reasons.append("soft_fallback")
+            if manual_variant:
+                chosen = manual_variant
+            else:
+                # Find a variant that satisfies BOTH an open diff quota AND an open bloom quota
+                for variant in candidates:
+                    d = variant.difficulty
+                    b = variant.bloom
+                    if diff_counts.get(d, 0) < self.diff_quotas.get(d, 0):
+                        best_match = variant
+                        best_match.selection_reasons.append("difficulty_quota")
+                        break
+                chosen = best_match if best_match else best_fallback
+                if not best_match:
+                    chosen.selection_reasons.append("soft_fallback")
                 
             selected_variants.append(chosen)
             selected_qids.add(chosen.question.id)
