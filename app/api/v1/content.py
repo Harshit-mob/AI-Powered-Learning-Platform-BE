@@ -625,7 +625,8 @@ def create_topic_manually(
             subtopic_id=subtopic.id,
             title=f"{payload.title} - Focus Unit",
             content=f"Focus learning unit for {payload.title}",
-            learning_objective=f"Master the concepts of {payload.title}"
+            learning_objective=f"Master the concepts of {payload.title}",
+            summary=f"Summary of master concepts for {payload.title}"
         )
         uow.session.add(lu)
         uow.commit()
@@ -710,7 +711,8 @@ def create_question_manually(
                 subtopic_id=manual_sub.id,
                 title=f"{topic.title} - Manual Additions",
                 content=f"Dedicated learning unit for manually added questions in {topic.title}",
-                learning_objective=f"Evaluate manually supplemented topics for {topic.title}"
+                learning_objective=f"Evaluate manually supplemented topics for {topic.title}",
+                summary=f"Summary of manually added questions in {topic.title}"
             )
             uow.session.add(manual_lu)
             uow.session.flush()
