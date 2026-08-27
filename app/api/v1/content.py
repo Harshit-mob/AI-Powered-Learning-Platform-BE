@@ -218,13 +218,12 @@ def get_qbank_draft_questions(
         from collections import OrderedDict
         
         # We will build a structured hierarchy of the questions grouped by Topic -> Subtopic -> Learning Unit
-        # Pre-populate only manually added topics under this chapter (even if they have 0 questions)
-        manual_topics = uow.session.query(Topic).filter(
-            Topic.chapter_id == qbank.chapter_id,
-            Topic.source_type == "MANUAL"
-        ).order_by(Topic.created_at).all()
+        # We pre-populate all topics of the chapter to keep a strict database-defined chronological sorting
+        all_topics = uow.session.query(Topic).filter(Topic.chapter_id == qbank.chapter_id).order_by(Topic.created_at).all()
+        manual_topic_ids = {str(t.id) for t in all_topics if t.source_type == "MANUAL"}
+        
         hierarchy = OrderedDict()
-        for t in manual_topics:
+        for t in all_topics:
             hierarchy[str(t.id)] = {
                 "topic_id": str(t.id),
                 "topic_title": t.title,
@@ -244,7 +243,7 @@ def get_qbank_draft_questions(
              .join(Topic, Topic.id == Subtopic.topic_id) \
              .filter(DraftQuestion.question_bank_id == qbank_id) \
              .order_by(Topic.created_at, DraftQuestion.created_at).all()
-             
+              
             for row in rows:
                 d = row.DraftQuestion
                 q_dict = {
@@ -270,13 +269,8 @@ def get_qbank_draft_questions(
                 }
                 
                 t_id = str(row.topic_id)
-                if t_id not in hierarchy:
-                    hierarchy[t_id] = {
-                        "topic_id": t_id,
-                        "topic_title": row.topic_title,
-                        "questions": []
-                    }
-                hierarchy[t_id]["questions"].append(q_dict)
+                if t_id in hierarchy:
+                    hierarchy[t_id]["questions"].append(q_dict)
         else:
             # Fetch from main questions table with curriculum contexts
             rows = uow.session.query(
@@ -288,7 +282,7 @@ def get_qbank_draft_questions(
              .join(Topic, Topic.id == Subtopic.topic_id) \
              .filter(Question.question_bank_id == qbank_id) \
              .order_by(Topic.created_at, Question.created_at).all()
-             
+              
             for row in rows:
                 q = row.Question
                 q_dict = {
@@ -314,26 +308,27 @@ def get_qbank_draft_questions(
                 }
                 
                 t_id = str(row.topic_id)
-                if t_id not in hierarchy:
-                    hierarchy[t_id] = {
-                        "topic_id": t_id,
-                        "topic_title": row.topic_title,
-                        "questions": []
-                    }
-                hierarchy[t_id]["questions"].append(q_dict)
+                if t_id in hierarchy:
+                    hierarchy[t_id]["questions"].append(q_dict)
                 
+        # Filter empty AI-generated topics out of the response while maintaining order
+        filtered_topics = [
+            t_data for t_id, t_data in hierarchy.items()
+            if len(t_data["questions"]) > 0 or t_id in manual_topic_ids
+        ]
+        
         # Fetch subject & chapter names
         subject = uow.session.query(Subject).filter(Subject.id == qbank.subject_id).first()
         chapter = uow.session.query(Chapter).filter(Chapter.id == qbank.chapter_id).first()
         
-        total_questions = sum(len(t["questions"]) for t in hierarchy.values())
+        total_questions = sum(len(t["questions"]) for t in filtered_topics)
         
         result_data = {
             "subject_name": subject.name if subject else None,
             "chapter_title": chapter.title if chapter else None,
             "total_questions": total_questions,
             "status": qbank.status,
-            "topics": list(hierarchy.values())
+            "topics": filtered_topics
         }
         return create_response(result_data, "Questions retrieved and grouped topic-wise successfully")
 
