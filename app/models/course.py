@@ -49,6 +49,7 @@ class Topic(Base):
     __tablename__ = "topics"
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     title = Column(String, index=True, nullable=False)
+    source_type = Column(String(50), nullable=False, default="AI_GENERATED", server_default="AI_GENERATED")
     
     chapter_id = Column(UUID(as_uuid=True), ForeignKey("chapters.id"), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())

@@ -218,10 +218,13 @@ def get_qbank_draft_questions(
         from collections import OrderedDict
         
         # We will build a structured hierarchy of the questions grouped by Topic -> Subtopic -> Learning Unit
-        # Pre-populate all topics under the chapter so that empty manual topics show up in curation lists
-        topics = uow.session.query(Topic).filter(Topic.chapter_id == qbank.chapter_id).order_by(Topic.created_at).all()
+        # Pre-populate only manually added topics under this chapter (even if they have 0 questions)
+        manual_topics = uow.session.query(Topic).filter(
+            Topic.chapter_id == qbank.chapter_id,
+            Topic.source_type == "MANUAL"
+        ).order_by(Topic.created_at).all()
         hierarchy = OrderedDict()
-        for t in topics:
+        for t in manual_topics:
             hierarchy[str(t.id)] = {
                 "topic_id": str(t.id),
                 "topic_title": t.title,
@@ -636,7 +639,7 @@ def create_topic_manually(
             return error_response("NOT_FOUND", "Chapter associated with question bank not found", status_code=404)
             
         # Create Topic
-        topic = Topic(title=payload.title, chapter_id=chapter.id)
+        topic = Topic(title=payload.title, chapter_id=chapter.id, source_type="MANUAL")
         uow.session.add(topic)
         uow.session.flush() # get topic ID
         
