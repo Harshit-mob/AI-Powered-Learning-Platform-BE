@@ -744,6 +744,14 @@ def create_question_manually(
             supported_answer_modes=modes,
             question_hash=qhash,
             source_type="MANUAL",
+            estimated_time=5,
+            learning_objective=f"Master concepts for {topic.title}",
+            keywords=[],
+            source_pages=[],
+            question_purpose="Practice",
+            progression_level=3,
+            bloom_level="COMPREHENSION",
+            cognitive_level="UNDERSTAND",
             is_active=True
         )
         uow.session.add(new_q)
