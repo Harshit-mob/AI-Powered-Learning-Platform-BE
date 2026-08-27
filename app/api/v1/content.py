@@ -633,6 +633,42 @@ def create_topic_manually(
         return create_response({"topic_id": topic.id}, "Topic and default structures created successfully")
 
 
+def calculate_estimated_time(text: str, expected_answer: str, question_type: str, complexity: str, difficulty: int) -> int:
+    # 1. Speaking time
+    comp_time = 2.0
+    if complexity == "SHORT_PHRASE": comp_time = 4.0
+    elif complexity == "PHRASE": comp_time = 6.0
+    elif complexity == "SENTENCE": comp_time = 10.0
+    elif complexity == "PARAGRAPH": comp_time = 15.0
+        
+    len_time = len(expected_answer) / 10.0
+    
+    type_bonus = 0.0
+    if question_type in ("MCQ", "TRUE_FALSE"):
+        type_bonus = 2.0
+        
+    speaking_time = (comp_time + len_time) / 2.0 + type_bonus
+    speaking_time = min(15.0, max(2.0, speaking_time))
+
+    # 2. Thinking time
+    q_words = len(text.strip().split())
+    ans_words = len(expected_answer.strip().split())
+    reading_time = (q_words + ans_words) / 3.3
+    
+    base_time = 5.0 # default to UNDERSTAND level cognitive time
+    diff_bonus = float(difficulty) * 1.5
+    
+    thinking_time = reading_time + base_time + diff_bonus
+    thinking_time = min(45.0, max(2.0, thinking_time))
+
+    # 3. Buffer
+    buffer_map = {1: 1, 2: 2, 3: 2, 4: 3, 5: 3}
+    buffer = buffer_map.get(difficulty, 2)
+    
+    total_time = speaking_time + thinking_time + buffer
+    return int(round(total_time))
+
+
 @router.post("/curriculum/questions", response_model=SuccessResponse)
 def create_question_manually(
     payload: QuestionCreateRequest,
@@ -724,6 +760,15 @@ def create_question_manually(
         if existing:
             return error_response("BAD_REQUEST", "A question with identical content already exists.", status_code=400)
             
+        # Calculate estimated answering time dynamically
+        est_time = calculate_estimated_time(
+            text=payload.text,
+            expected_answer=payload.expected_answer or "",
+            question_type=q_type,
+            complexity=complexity,
+            difficulty=payload.difficulty
+        )
+
         # Create Question directly in active questions table
         new_q = Question(
             id=uuid.uuid4(),
@@ -744,7 +789,7 @@ def create_question_manually(
             supported_answer_modes=modes,
             question_hash=qhash,
             source_type="MANUAL",
-            estimated_time=5,
+            estimated_time=est_time,
             learning_objective=f"Master concepts for {topic.title}",
             keywords=[],
             source_pages=[],
