@@ -218,7 +218,15 @@ def get_qbank_draft_questions(
         from collections import OrderedDict
         
         # We will build a structured hierarchy of the questions grouped by Topic -> Subtopic -> Learning Unit
+        # Pre-populate all topics under the chapter so that empty manual topics show up in curation lists
+        topics = uow.session.query(Topic).filter(Topic.chapter_id == qbank.chapter_id).order_by(Topic.created_at).all()
         hierarchy = OrderedDict()
+        for t in topics:
+            hierarchy[str(t.id)] = {
+                "topic_id": str(t.id),
+                "topic_title": t.title,
+                "questions": []
+            }
         
         draft_count = uow.session.query(DraftQuestion).filter(DraftQuestion.question_bank_id == qbank_id).count()
         
