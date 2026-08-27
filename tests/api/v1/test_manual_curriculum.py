@@ -6,6 +6,7 @@ from app.main import app
 from app.api.v1.dependencies import get_current_admin, get_uow
 from app.models.course import Chapter, Topic, Subtopic, LearningUnit
 from app.models.core.student import Student
+from app.models.quiz import QuestionBank
 
 client = TestClient(app)
 
@@ -97,3 +98,29 @@ def test_create_question_manually_validation_fails(mock_uow):
     response = client.post("/api/v1/content/curriculum/questions", json=payload)
     assert response.status_code == 400
     assert "correct_option must match" in response.json()["message"]
+
+
+def test_create_question_manually_active_qbank_fails(mock_uow):
+    mock_topic = Topic(id=uuid.uuid4(), title="Test Topic", chapter_id=uuid.uuid4())
+    mock_qbank = QuestionBank(id=uuid.uuid4(), chapter_id=mock_topic.chapter_id, status="APPROVED")
+    
+    mock_uow.session.query().filter().first.side_effect = [
+        mock_topic,
+        None,
+        None,
+        None,
+        None,
+        mock_qbank
+    ]
+    
+    payload = {
+        "topic_id": str(mock_topic.id),
+        "text": "New manual MCQ question",
+        "mcq_options": ["Option A", "Option B", "Option C", "Option D"],
+        "correct_option": "Option B",
+        "expected_answer": "Option B"
+    }
+    
+    response = client.post("/api/v1/content/curriculum/questions", json=payload)
+    assert response.status_code == 400
+    assert "Cannot add manual questions to an active question bank" in response.json()["message"]

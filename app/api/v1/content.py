@@ -521,6 +521,7 @@ def toggle_qbank_active_status(
                         else ["TEXT"] if d.question_type == "FILL_BLANK"
                         else ["VOICE", "TEXT"]
                     )
+                    existing.source_type = getattr(d, "source_type", "AI_GENERATED")
                 else:
                     # Insert new
                     new_q = Question(
@@ -552,6 +553,7 @@ def toggle_qbank_active_status(
                             else ["VOICE", "TEXT"]
                         ),
                         question_hash=qhash,
+                        source_type=getattr(d, "source_type", "AI_GENERATED"),
                         is_active=True
                     )
                     uow.session.add(new_q)
@@ -765,6 +767,9 @@ def create_question_manually(
             
         # Find the QBank associated with this Chapter
         qbank = uow.session.query(QuestionBank).filter(QuestionBank.chapter_id == topic.chapter_id).first()
+        if qbank and qbank.status == "APPROVED":
+            return error_response("BAD_REQUEST", "Cannot add manual questions to an active question bank. Please deactivate it first.", status_code=400)
+            
         q_id = uuid.uuid4()
         
         # Calculate estimated answering time dynamically
@@ -796,7 +801,7 @@ def create_question_manually(
                 hint_level_2=payload.hint_level_2,
                 full_explanation=payload.full_explanation,
                 source_type="MANUAL",
-                status="APPROVED",
+                status="APPROVED",  # default to APPROVED so it's ready to promote
                 question_purpose="Practice",
                 progression_level=3,
                 bloom_level="COMPREHENSION",
@@ -806,8 +811,8 @@ def create_question_manually(
             )
             uow.session.add(new_draft)
 
-        # 2. If the QBank is already active/approved, OR if no QBank exists, insert into active Question pool
-        if not qbank or qbank.status == "APPROVED":
+        # 2. If no QBank exists (e.g. manually created topic), insert directly into active Question pool
+        else:
             new_q = Question(
                 id=q_id,
                 learning_unit_id=manual_lu.id,
