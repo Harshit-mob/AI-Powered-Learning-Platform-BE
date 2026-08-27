@@ -340,6 +340,12 @@ def update_draft_question(
             from app.api.v1.errors import error_response
             return error_response("NOT_FOUND", "Draft question not found", status_code=404)
             
+        # Check if QBank is active
+        qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == draft_q.question_bank_id).first()
+        if qbank and qbank.status == "APPROVED":
+            from app.api.v1.errors import error_response
+            return error_response("BAD_REQUEST", "Cannot edit questions in an active question bank. Please deactivate it first.", status_code=400)
+            
         # Update fields if provided
         if payload.text is not None:
             draft_q.text = payload.text
@@ -431,6 +437,10 @@ def review_qbank_draft_questions(
         if not qbank:
             from app.api.v1.errors import error_response
             return error_response("NOT_FOUND", "Question bank not found", status_code=404)
+            
+        if qbank.status == "APPROVED":
+            from app.api.v1.errors import error_response
+            return error_response("BAD_REQUEST", "Cannot review questions in an active question bank. Please deactivate it first.", status_code=400)
             
         # 1. Reject questions
         if payload.rejected_ids:

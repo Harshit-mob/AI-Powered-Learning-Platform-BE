@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 from fastapi.testclient import TestClient
 from app.main import app
 from app.api.v1.dependencies import get_current_admin, get_uow
-from app.models.quiz import DraftQuestion
+from app.models.quiz import DraftQuestion, QuestionBank
 from app.models.core.student import Student
 
 client = TestClient(app)
@@ -102,4 +102,45 @@ def test_convert_reasoning_to_mcq(mock_uow):
     assert mock_draft.question_type == "MCQ"
     assert mock_draft.evaluation_method == "MCQ"
     assert mock_draft.answer_complexity == "MCQ"
+
+
+def test_update_draft_question_active_qbank_fails(mock_uow):
+    mock_draft = DraftQuestion(
+        id=uuid.uuid4(),
+        question_bank_id=uuid.uuid4(),
+        question_type="MCQ",
+        text="Old question",
+        mcq_options=["A", "B", "C", "D"],
+        correct_option="A",
+        expected_answer="A"
+    )
+    mock_qbank = QuestionBank(id=mock_draft.question_bank_id, status="APPROVED")
+    
+    mock_uow.session.query().filter().first.side_effect = [
+        mock_draft,
+        mock_qbank
+    ]
+    
+    payload = {
+        "text": "Attempted edit text"
+    }
+    
+    response = client.put(f"/api/v1/content/curriculum/qbank/draft-questions/{mock_draft.id}", json=payload)
+    assert response.status_code == 400
+    assert "Cannot edit questions in an active question bank" in response.json()["message"]
+
+
+def test_review_draft_questions_active_qbank_fails(mock_uow):
+    qbank_id = uuid.uuid4()
+    mock_qbank = QuestionBank(id=qbank_id, status="APPROVED")
+    mock_uow.session.query().filter().first.return_value = mock_qbank
+    
+    payload = {
+        "approved_ids": [str(uuid.uuid4())],
+        "rejected_ids": []
+    }
+    
+    response = client.post(f"/api/v1/content/curriculum/qbank/{qbank_id}/review", json=payload)
+    assert response.status_code == 400
+    assert "Cannot review questions in an active question bank" in response.json()["message"]
 
