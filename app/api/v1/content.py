@@ -758,10 +758,15 @@ def create_question_manually(
         qhash = hashlib.sha256(payload.text.strip().lower().encode()).hexdigest()
         
         # Check duplicate
-        existing = uow.session.query(Question).filter(Question.question_hash == qhash).first()
-        if existing:
+        existing_active = uow.session.query(Question).filter(Question.question_hash == qhash).first()
+        existing_draft = uow.session.query(DraftQuestion).filter(DraftQuestion.text == payload.text).first()
+        if existing_active or existing_draft:
             return error_response("BAD_REQUEST", "A question with identical content already exists.", status_code=400)
             
+        # Find the QBank associated with this Chapter
+        qbank = uow.session.query(QuestionBank).filter(QuestionBank.chapter_id == topic.chapter_id).first()
+        q_id = uuid.uuid4()
+        
         # Calculate estimated answering time dynamically
         est_time = calculate_estimated_time(
             text=payload.text,
@@ -770,39 +775,70 @@ def create_question_manually(
             complexity=complexity,
             difficulty=payload.difficulty
         )
-
-        # Create Question directly in active questions table
-        new_q = Question(
-            id=uuid.uuid4(),
-            learning_unit_id=manual_lu.id,
-            question_type=q_type,
-            concept="Manual Supplementary",
-            text=payload.text,
-            mcq_options=payload.mcq_options,
-            correct_option=payload.correct_option,
-            answer_complexity=complexity,
-            evaluation_method=eval_method,
-            expected_answer=payload.expected_answer,
-            acceptable_answers=payload.acceptable_answers,
-            difficulty=payload.difficulty,
-            hint_level_1=payload.hint_level_1,
-            hint_level_2=payload.hint_level_2,
-            full_explanation=payload.full_explanation,
-            supported_answer_modes=modes,
-            question_hash=qhash,
-            source_type="MANUAL",
-            estimated_time=est_time,
-            learning_objective=f"Master concepts for {topic.title}",
-            keywords=[],
-            source_pages=[],
-            question_purpose="Practice",
-            progression_level=3,
-            bloom_level="COMPREHENSION",
-            cognitive_level="UNDERSTAND",
-            is_active=True
-        )
-        uow.session.add(new_q)
-        uow.commit()
         
-        return create_response({"question_id": new_q.id}, "Question created successfully in active pool")
+        # 1. Create the DraftQuestion record if QBank exists, so it shows up in curation lists
+        if qbank:
+            new_draft = DraftQuestion(
+                id=q_id,
+                question_bank_id=qbank.id,
+                learning_unit_id=manual_lu.id,
+                question_type=q_type,
+                concept="Manual Supplementary",
+                text=payload.text,
+                mcq_options=payload.mcq_options,
+                correct_option=payload.correct_option,
+                answer_complexity=complexity,
+                evaluation_method=eval_method,
+                expected_answer=payload.expected_answer,
+                acceptable_answers=payload.acceptable_answers,
+                difficulty=payload.difficulty,
+                hint_level_1=payload.hint_level_1,
+                hint_level_2=payload.hint_level_2,
+                full_explanation=payload.full_explanation,
+                source_type="MANUAL",
+                status="APPROVED",
+                question_purpose="Practice",
+                progression_level=3,
+                bloom_level="COMPREHENSION",
+                cognitive_level="UNDERSTAND",
+                source_pages=[],
+                keywords=[]
+            )
+            uow.session.add(new_draft)
+
+        # 2. If the QBank is already active/approved, OR if no QBank exists, insert into active Question pool
+        if not qbank or qbank.status == "APPROVED":
+            new_q = Question(
+                id=q_id,
+                learning_unit_id=manual_lu.id,
+                question_type=q_type,
+                concept="Manual Supplementary",
+                text=payload.text,
+                mcq_options=payload.mcq_options,
+                correct_option=payload.correct_option,
+                answer_complexity=complexity,
+                evaluation_method=eval_method,
+                expected_answer=payload.expected_answer,
+                acceptable_answers=payload.acceptable_answers,
+                difficulty=payload.difficulty,
+                hint_level_1=payload.hint_level_1,
+                hint_level_2=payload.hint_level_2,
+                full_explanation=payload.full_explanation,
+                supported_answer_modes=modes,
+                question_hash=qhash,
+                source_type="MANUAL",
+                estimated_time=est_time,
+                learning_objective=f"Master concepts for {topic.title}",
+                keywords=[],
+                source_pages=[],
+                question_purpose="Practice",
+                progression_level=3,
+                bloom_level="COMPREHENSION",
+                cognitive_level="UNDERSTAND",
+                is_active=True
+            )
+            uow.session.add(new_q)
+            
+        uow.commit()
+        return create_response({"question_id": q_id}, "Question created successfully in curation pipeline")
 

@@ -57,7 +57,9 @@ def test_create_question_manually_mcq_success(mock_uow):
         mock_topic, # Topic check
         None,       # Subtopic check
         None,       # LearningUnit check
-        None        # Duplicate Question check
+        None,       # Duplicate Active Question check
+        None,       # Duplicate Draft Question check
+        None        # QBank check
     ]
     
     payload = {
@@ -77,6 +79,9 @@ def test_create_question_manually_validation_fails(mock_uow):
     mock_topic = Topic(id=uuid.uuid4(), title="Test Topic", chapter_id=uuid.uuid4())
     mock_uow.session.query().filter().first.side_effect = [
         mock_topic,
+        None,
+        None,
+        None,
         None,
         None
     ]
