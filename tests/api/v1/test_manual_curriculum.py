@@ -36,12 +36,17 @@ def setup_dependencies(mock_uow):
     app.dependency_overrides.clear()
 
 def test_create_topic_manually_success(mock_uow):
-    mock_chapter = Chapter(id=uuid.uuid4(), title="Test Chapter", subject_id=uuid.uuid4())
-    mock_uow.session.query().filter().first.return_value = mock_chapter
+    mock_qbank = QuestionBank(id=uuid.uuid4(), chapter_id=uuid.uuid4(), status="PENDING_REVIEW")
+    mock_chapter = Chapter(id=mock_qbank.chapter_id, title="Test Chapter", subject_id=uuid.uuid4())
+    
+    mock_uow.session.query().filter().first.side_effect = [
+        mock_qbank,
+        mock_chapter
+    ]
     
     payload = {
         "title": "New Topic",
-        "chapter_id": str(mock_chapter.id)
+        "qbank_id": str(mock_qbank.id)
     }
     
     response = client.post("/api/v1/content/curriculum/topics", json=payload)

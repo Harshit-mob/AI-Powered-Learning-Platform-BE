@@ -42,7 +42,7 @@ class DraftQuestionUpdateRequest(BaseModel):
 
 class TopicCreateRequest(BaseModel):
     title: str
-    chapter_id: uuid.UUID
+    qbank_id: uuid.UUID
 
 class QuestionCreateRequest(BaseModel):
     topic_id: uuid.UUID
@@ -613,13 +613,22 @@ def create_topic_manually(
     """Manually add a Topic. Automatically creates standard Subtopic and Learning Unit under the hood."""
     from app.api.v1.errors import error_response
     with uow:
+        # Verify QBank exists
+        qbank = uow.session.query(QuestionBank).filter(QuestionBank.id == payload.qbank_id).first()
+        if not qbank:
+            return error_response("NOT_FOUND", "Question bank not found", status_code=404)
+            
+        # Check active status
+        if qbank.status == "APPROVED":
+            return error_response("BAD_REQUEST", "Cannot add manual topics to an active question bank. Please deactivate it first.", status_code=400)
+            
         # Verify Chapter exists
-        chapter = uow.session.query(Chapter).filter(Chapter.id == payload.chapter_id).first()
+        chapter = uow.session.query(Chapter).filter(Chapter.id == qbank.chapter_id).first()
         if not chapter:
-            return error_response("NOT_FOUND", "Chapter not found", status_code=404)
+            return error_response("NOT_FOUND", "Chapter associated with question bank not found", status_code=404)
             
         # Create Topic
-        topic = Topic(title=payload.title, chapter_id=payload.chapter_id)
+        topic = Topic(title=payload.title, chapter_id=chapter.id)
         uow.session.add(topic)
         uow.session.flush() # get topic ID
         
