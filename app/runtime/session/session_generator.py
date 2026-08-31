@@ -115,6 +115,8 @@ class SessionGenerator:
                 target_count = 20
             elif session_type == SessionType.WEAK_POINT:
                 target_count = 8
+            elif session_type == SessionType.TEST:
+                target_count = 25
                 
             policy = PolicyFactory.get_policy(session_type, target_count)
             final_scored_variants = policy.apply(ranked_lus, variants_by_lu)

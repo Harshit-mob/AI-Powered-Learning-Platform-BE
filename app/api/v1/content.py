@@ -12,7 +12,8 @@ from app.schemas.content_schema import (
     CurriculumResponse,
     QBankUploadResponse,
     QBankItemResponse,
-    QBankTopicQuestionsResponse
+    QBankTopicQuestionsResponse,
+    CheckedInChapterResponse
 )
 from app.application.content_service import ContentService
 from app.api.v1.dependencies import get_uow, get_current_student, get_current_admin
@@ -75,6 +76,12 @@ def get_full_curriculum(student = Depends(get_current_student), uow: UnitOfWork 
     service = ContentService(uow)
     data = service.get_full_curriculum(student.id)
     return create_response(data, "Curriculum retrieved successfully")
+
+@router.get("/checked-in-curriculum", response_model=GenericSuccessResponse[List[CheckedInChapterResponse]])
+def get_checked_in_curriculum(subject_name: str, student = Depends(get_current_student), uow: UnitOfWork = Depends(get_uow)):
+    service = ContentService(uow)
+    data = service.get_checked_in_curriculum(student.id, subject_name)
+    return create_response(data, "Checked-in curriculum retrieved successfully")
 
 # --- QBank Curation Pipeline APIs ---
 

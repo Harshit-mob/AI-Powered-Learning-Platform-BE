@@ -44,6 +44,18 @@ class MasterdataService:
             if not board:
                 return False
                 
+            # Check for active question banks
+            active_count = self.uow.session.query(QuestionBank).join(
+                Subject, Subject.id == QuestionBank.subject_id
+            ).join(
+                Grade, Grade.id == Subject.grade_id
+            ).filter(
+                Grade.board_id == board_id,
+                QuestionBank.status == "APPROVED"
+            ).count()
+            if active_count > 0:
+                raise APIException("ACTIVE_QUESTION_BANK_EXISTS", "Cannot delete board. Please deactivate all active question banks under this board first.", 400)
+                
             self.uow.session.delete(board)
             self.uow.commit()
             return True
@@ -88,6 +100,16 @@ class MasterdataService:
             if not grade:
                 return False
                 
+            # Check for active question banks
+            active_count = self.uow.session.query(QuestionBank).join(
+                Subject, Subject.id == QuestionBank.subject_id
+            ).filter(
+                Subject.grade_id == grade_id,
+                QuestionBank.status == "APPROVED"
+            ).count()
+            if active_count > 0:
+                raise APIException("ACTIVE_QUESTION_BANK_EXISTS", "Cannot delete grade. Please deactivate all active question banks under this grade first.", 400)
+                
             self.uow.session.delete(grade)
             self.uow.commit()
             return True
@@ -131,6 +153,14 @@ class MasterdataService:
             subject = self.uow.session.query(Subject).filter(Subject.id == subject_id).first()
             if not subject:
                 return False
+                
+            # Check for active question banks
+            active_count = self.uow.session.query(QuestionBank).filter(
+                QuestionBank.subject_id == subject_id,
+                QuestionBank.status == "APPROVED"
+            ).count()
+            if active_count > 0:
+                raise APIException("ACTIVE_QUESTION_BANK_EXISTS", "Cannot delete subject. Please deactivate all active question banks in this subject first.", 400)
                 
             self.uow.session.delete(subject)
             self.uow.commit()

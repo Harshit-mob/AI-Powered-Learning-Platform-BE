@@ -77,3 +77,14 @@ class QBankTopicQuestionsResponse(BaseModel):
     topic_id: str
     topic_title: str
     questions: List[QBankQuestionDTO]
+
+
+class CheckedInTopicResponse(BaseModel):
+    id: str
+    title: str
+
+
+class CheckedInChapterResponse(BaseModel):
+    chapter_id: str
+    title: str
+    topics: List[CheckedInTopicResponse]

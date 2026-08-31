@@ -105,16 +105,17 @@ class ContentService:
                             
                 avg_mastery = int((mastery_sum / len(chapter_lu_ids)) * 100) if chapter_lu_ids else 0
                 
-                topics_data = [
-                    {
-                        "id": str(t.Topic.id),
+                topics_data = []
+                for t in topics:
+                    tid_str = str(t.Topic.id)
+                    is_comp = tid_str in completed_topic_ids
+                    topics_data.append({
+                        "id": tid_str,
                         "title": t.Topic.title,
                         "learning_units_count": t.lu_count,
-                        "is_completed": str(t.Topic.id) in completed_topic_ids,
-                        "is_selected": str(t.Topic.id) in selected_topic_ids
-                    }
-                    for t in topics
-                ]
+                        "is_completed": is_comp,
+                        "is_selected": (tid_str in selected_topic_ids) or is_comp
+                    })
                 
                 total_topics = len(topics)
                 completed_topics = sum(1 for t in topics_data if t["is_completed"])
@@ -146,3 +147,43 @@ class ContentService:
             s_copy["chapters"] = chapters
             result.append(s_copy)
         return result
+
+    def get_checked_in_curriculum(self, student_id: uuid.UUID, subject_name: str) -> List[Dict[str, Any]]:
+        from app.models.course import Subject, Chapter
+        from app.models.learning.student_daily_learning import StudentDailyLearning
+        from sqlalchemy import func
+        
+        with self.uow:
+            daily_learnings = self.uow.session.query(StudentDailyLearning).filter(
+                StudentDailyLearning.student_id == student_id
+            ).all()
+            checked_in_topic_ids = {dl.topic_id for dl in daily_learnings}
+            
+            if not checked_in_topic_ids:
+                return []
+                
+            chapters = self.uow.session.query(Chapter).join(
+                Subject, Subject.id == Chapter.subject_id
+            ).filter(
+                func.lower(Subject.name) == func.lower(subject_name)
+            ).all()
+            
+            result = []
+            for chapter in chapters:
+                chapter_topics = [
+                    {
+                        "id": str(t.id),
+                        "title": t.title
+                    }
+                    for t in chapter.topics
+                    if t.id in checked_in_topic_ids
+                ]
+                
+                if chapter_topics:
+                    result.append({
+                        "chapter_id": str(chapter.id),
+                        "title": chapter.title,
+                        "topics": chapter_topics
+                    })
+                    
+            return result

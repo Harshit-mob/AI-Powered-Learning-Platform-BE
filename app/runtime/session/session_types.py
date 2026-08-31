@@ -10,6 +10,7 @@ class SessionType(Enum):
     TEACHER_ASSIGNMENT = "TEACHER_ASSIGNMENT"
     CUSTOM = "CUSTOM"
     AI_RECOMMENDED = "AI_RECOMMENDED"
+    TEST = "TEST"
     
     # Legacy fallbacks
     RECOVERY = "RECOVERY"

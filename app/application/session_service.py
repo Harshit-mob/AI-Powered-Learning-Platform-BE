@@ -247,6 +247,7 @@ class SessionApplicationService:
                 "EXAM_PREPARATION": {"xp_per_correct": 10, "completion_bonus": 30, "accuracy_bonus": 40},
                 "MOCK_TEST":        {"xp_per_correct": 10, "completion_bonus": 30, "accuracy_bonus": 40},
                 "CHALLENGE":        {"xp_per_correct": 12, "completion_bonus": 25, "accuracy_bonus": 50},
+                "TEST":             {"xp_per_correct": 10, "completion_bonus": 30, "accuracy_bonus": 40},
             }
 
             # Read session type from DB (set at generation time)

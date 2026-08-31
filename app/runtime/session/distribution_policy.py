@@ -182,6 +182,13 @@ class PolicyFactory:
             )
         elif session_type == SessionType.REVISION:
             return RevisionDistributionPolicy()
+        elif session_type == SessionType.TEST:
+            return QuotaDistributionPolicy(
+                target_count=target_count,
+                difficulty_distribution={"EASY": 0.3, "MEDIUM": 0.4, "HARD": 0.3},
+                bloom_distribution={"RECALL": 0.3, "COMPREHENSION": 0.4, "APPLICATION": 0.3},
+                allow_partial=True
+            )
         else:
             # Default fallback
             return QuotaDistributionPolicy(

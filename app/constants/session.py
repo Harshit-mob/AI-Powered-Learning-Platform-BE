@@ -10,6 +10,7 @@ class SessionType(str, Enum):
     WEEKLY_REVIEW = "WEEKLY_REVIEW"
     MOCK_TEST = "MOCK_TEST"
     ADAPTIVE = "ADAPTIVE"
+    TEST = "TEST"
 
 class ContentType(str, Enum):
     BOOK = "BOOK"

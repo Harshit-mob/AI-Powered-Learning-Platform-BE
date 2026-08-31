@@ -62,14 +62,14 @@ class QuestionVariantSelector:
             elif bloom_val in ["EVALUATE", "EVALUATION"]: bloom_val = "EVALUATION"
             elif bloom_val in ["CREATE", "CREATION"]: bloom_val = "CREATION"
 
-            # If the student answered ANY variant of this concept correctly, exhaust it (unless revision)
-            if (is_correct or concept_correct) and session_type != SessionType.REVISION:
+            # If the student answered ANY variant of this concept correctly, exhaust it (unless revision or test)
+            if (is_correct or concept_correct) and session_type not in [SessionType.REVISION, SessionType.TEST]:
                 score = -1000.0
                 reasons.append("exhausted_variant")
             elif attempts == 0 and concept_attempts == 0:
                 score = 100.0
                 reasons.append("unseen_variant")
-            elif (is_correct or concept_correct) and session_type == SessionType.REVISION:
+            elif (is_correct or concept_correct) and session_type in [SessionType.REVISION, SessionType.TEST]:
                 score = 10.0
                 reasons.append("correct_variant")
             else:
