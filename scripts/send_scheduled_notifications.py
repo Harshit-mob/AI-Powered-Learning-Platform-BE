@@ -26,7 +26,7 @@ def get_first_name(full_name: str) -> str:
 
 def process_scheduled_notifications():
     db = SessionLocal()
-    uow = UnitOfWork(lambda: db)
+    uow = UnitOfWork()
     notification_service = NotificationService(uow)
 
     now = datetime.now(timezone.utc)
